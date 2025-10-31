@@ -98,6 +98,9 @@ def generate(
     for attempt in range(RETRIES):
         raw_resp = None
         try:
+            # 添加中文系统消息
+            system_message = "请用中文回答所有问题和进行所有对话。你是狼人杀游戏的AI玩家，需要用中文进行发言、推理和互动。"
+
             # 调用LLM
             raw_resp = llm_client.call(
                 model=model,
@@ -105,6 +108,7 @@ def generate(
                 temperature=temperature,
                 json_mode=True,
                 response_schema=response_schema,
+                system_message=system_message,
             )
 
             # 解析JSON响应

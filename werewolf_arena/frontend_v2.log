@@ -7,180 +7,2326 @@
   - Environments: .env.local
 
  ✓ Starting...
- ✓ Ready in 2.3s
+ ✓ Ready in 2.4s
  ○ Compiling / ...
- ✓ Compiled / in 6.5s (733 modules)
- GET / 200 in 5250ms
- GET / 200 in 2113ms
- ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
- GET / 200 in 7200ms
- ✓ Compiled in 1195ms (710 modules)
- GET / 200 in 708ms
- GET /.well-known/appspecific/com.chrome.devtools.json 404 in 712ms
- ○ Compiling /favicon.ico ...
- ✓ Compiled /favicon.ico in 845ms (438 modules)
- GET /favicon.ico 200 in 937ms
- GET / 200 in 93ms
- GET / 200 in 15ms
- ○ Compiling /live/[sessionId] ...
- ✓ Compiled /live/[sessionId] in 2.4s (1870 modules)
- GET / 200 in 536ms
- GET / 200 in 1292ms
- GET / 200 in 28ms
- GET / 200 in 31ms
- GET / 200 in 28ms
- GET / 200 in 30ms
+ ✓ Compiled / in 3.7s (721 modules)
+ GET / 200 in 2468ms
+ GET / 200 in 2470ms
+ GET / 200 in 4155ms
+ ✓ Compiled in 355ms (316 modules)
+ GET / 200 in 72ms
+ GET / 200 in 96ms
+ GET / 200 in 18ms
  GET / 200 in 19ms
- GET / 200 in 20ms
+ GET / 200 in 12ms
  GET / 200 in 20ms
  GET / 200 in 22ms
+ GET / 200 in 14ms
+ GET / 200 in 19ms
+ GET / 200 in 21ms
+ GET / 200 in 14ms
+ GET / 200 in 15ms
+ GET / 200 in 15ms
+ GET / 200 in 11ms
+ GET / 200 in 16ms
  GET / 200 in 18ms
+ GET / 200 in 11ms
+ GET / 200 in 11ms
+ GET / 200 in 15ms
+ GET / 200 in 12ms
  GET / 200 in 20ms
+ GET / 200 in 23ms
+ GET / 200 in 15ms
+ GET / 200 in 20ms
+ GET / 200 in 21ms
+ GET / 200 in 14ms
+ GET / 200 in 17ms
+ GET / 200 in 18ms
+ GET / 200 in 16ms
+ GET / 200 in 13ms
+ GET / 200 in 19ms
+ GET / 200 in 14ms
+ GET / 200 in 13ms
+ GET / 200 in 17ms
+ GET / 200 in 13ms
+ GET / 200 in 12ms
+ GET / 200 in 16ms
+ GET / 200 in 12ms
+ GET / 200 in 12ms
+ GET / 200 in 15ms
+ GET / 200 in 14ms
+ GET / 200 in 12ms
+ GET / 200 in 14ms
+ GET / 200 in 14ms
+ GET / 200 in 15ms
+ GET / 200 in 17ms
+ GET / 200 in 16ms
+ GET / 200 in 12ms
+ GET / 200 in 12ms
+ GET / 200 in 14ms
+ GET / 200 in 11ms
+ GET / 200 in 16ms
+ GET / 200 in 12ms
+ GET / 200 in 10ms
+ GET / 200 in 18ms
+ GET / 200 in 13ms
+ GET / 200 in 13ms
+ GET / 200 in 11ms
+ GET / 200 in 10ms
+ GET / 200 in 9ms
+ GET / 200 in 15ms
+ GET / 200 in 12ms
+ GET / 200 in 11ms
+ GET / 200 in 16ms
+ GET / 200 in 11ms
+ GET / 200 in 16ms
+ GET / 200 in 27ms
+ GET / 200 in 16ms
+ GET / 200 in 13ms
+ GET / 200 in 18ms
+ GET / 200 in 11ms
+ GET / 200 in 20ms
+ GET / 200 in 21ms
+ GET / 200 in 12ms
+ GET / 200 in 12ms
+ GET / 200 in 13ms
+ GET / 200 in 12ms
+ GET / 200 in 13ms
+ GET / 200 in 15ms
+ GET / 200 in 14ms
+ GET / 200 in 15ms
+ GET / 200 in 18ms
+ GET / 200 in 11ms
+ GET / 200 in 12ms
+ GET / 200 in 15ms
+ GET / 200 in 13ms
+ GET / 200 in 12ms
+ GET / 200 in 19ms
+ GET / 200 in 13ms
+ GET / 200 in 11ms
+ GET / 200 in 16ms
+ GET / 200 in 12ms
+ GET / 200 in 11ms
+ GET / 200 in 13ms
+ GET / 200 in 11ms
+ GET / 200 in 11ms
+ GET / 200 in 18ms
+ GET / 200 in 12ms
+ GET / 200 in 14ms
+ GET / 200 in 20ms
+ GET / 200 in 16ms
+ ○ Compiling /live/[sessionId] ...
+ ✓ Compiled /live/[sessionId] in 1942ms (1835 modules)
+ GET / 200 in 927ms
+ GET / 200 in 854ms
+ GET / 200 in 931ms
  GET / 200 in 28ms
  GET / 200 in 29ms
+ GET / 200 in 30ms
+ GET / 200 in 29ms
+ GET / 200 in 32ms
+ GET / 200 in 34ms
+ GET / 200 in 14ms
  GET / 200 in 21ms
  GET / 200 in 23ms
  GET / 200 in 15ms
  GET / 200 in 16ms
+ GET / 200 in 17ms
+ GET / 200 in 18ms
+ GET / 200 in 20ms
+ GET / 200 in 21ms
+ GET / 200 in 21ms
+ GET / 200 in 21ms
+ GET / 200 in 22ms
+ GET / 200 in 17ms
+ GET / 200 in 13ms
+ GET / 200 in 14ms
+ GET / 200 in 10ms
  GET / 200 in 15ms
+ GET / 200 in 18ms
+ GET / 200 in 12ms
+ GET / 200 in 17ms
+ GET / 200 in 18ms
+ GET / 200 in 10ms
+ GET / 200 in 15ms
+ GET / 200 in 15ms
+ GET / 200 in 14ms
+ GET / 200 in 16ms
+ GET / 200 in 18ms
+ GET / 200 in 22ms
+ GET / 200 in 14ms
+ GET / 200 in 15ms
+ GET / 200 in 13ms
+ GET / 200 in 13ms
+ GET / 200 in 17ms
+ GET / 200 in 14ms
+ GET / 200 in 14ms
+ GET / 200 in 16ms
+ GET / 200 in 12ms
+ GET / 200 in 15ms
+ GET / 200 in 17ms
+ GET / 200 in 12ms
+ GET / 200 in 14ms
+ GET / 200 in 15ms
+ GET / 200 in 15ms
+ GET / 200 in 18ms
+ GET / 200 in 20ms
+ GET / 200 in 14ms
+ GET / 200 in 16ms
+ GET / 200 in 18ms
+ GET / 200 in 15ms
+ GET / 200 in 13ms
+ GET / 200 in 13ms
+ GET / 200 in 13ms
+ GET / 200 in 15ms
+ GET / 200 in 15ms
+ GET / 200 in 12ms
+ GET / 200 in 12ms
+ GET / 200 in 15ms
+ GET / 200 in 34ms
+ GET / 200 in 17ms
+ GET / 200 in 19ms
+ GET / 200 in 14ms
+ GET / 200 in 13ms
+ GET / 200 in 18ms
+ GET / 200 in 12ms
+ GET / 200 in 13ms
+ GET / 200 in 13ms
+ GET / 200 in 14ms
+ GET / 200 in 14ms
+ GET / 200 in 16ms
+ GET / 200 in 12ms
+ GET / 200 in 16ms
+ GET / 200 in 19ms
+ GET / 200 in 9ms
+ GET / 200 in 14ms
+ GET / 200 in 17ms
+ GET / 200 in 50ms
+ GET / 200 in 19ms
+ GET / 200 in 32ms
+ GET / 200 in 11ms
+ GET / 200 in 10ms
+ GET / 200 in 14ms
+ GET / 200 in 12ms
+ GET / 200 in 11ms
+ GET / 200 in 12ms
+ GET / 200 in 13ms
+ GET / 200 in 11ms
+ GET / 200 in 12ms
+ GET / 200 in 12ms
+ GET / 200 in 13ms
+ GET / 200 in 12ms
+ GET / 200 in 13ms
+ GET / 200 in 10ms
+ GET / 200 in 13ms
+ GET / 200 in 11ms
+ GET / 200 in 11ms
+ GET / 200 in 19ms
+ GET / 200 in 19ms
+ GET / 200 in 13ms
+ GET / 200 in 11ms
+ GET / 200 in 11ms
+ GET / 200 in 13ms
+ GET / 200 in 13ms
+ GET / 200 in 12ms
  GET / 200 in 16ms
  GET / 200 in 17ms
- GET / 200 in 24ms
+ GET / 200 in 13ms
+ GET / 200 in 12ms
+ GET / 200 in 11ms
+ GET / 200 in 10ms
+ GET / 200 in 10ms
+ GET / 200 in 13ms
+ GET / 200 in 13ms
+ GET / 200 in 14ms
+ GET / 200 in 16ms
+ GET / 200 in 13ms
+ GET / 200 in 13ms
+ GET / 200 in 14ms
+ GET / 200 in 13ms
+ GET / 200 in 11ms
+ GET / 200 in 14ms
+ GET / 200 in 10ms
+ GET / 200 in 12ms
+ GET / 200 in 12ms
+ GET / 200 in 13ms
+ GET / 200 in 13ms
+ GET / 200 in 12ms
+ GET / 200 in 14ms
+ GET / 200 in 10ms
+ GET / 200 in 15ms
+ GET / 200 in 28ms
+ GET / 200 in 18ms
+ GET / 200 in 21ms
+ GET / 200 in 15ms
+ GET / 200 in 14ms
+ GET / 200 in 11ms
+ ✓ Compiled in 423ms (879 modules)
+ GET / 200 in 16ms
+ GET / 200 in 16ms
+ GET / 200 in 13ms
+ ✓ Compiled in 214ms (879 modules)
+ GET / 200 in 17ms
+ GET / 200 in 12ms
+ GET / 200 in 15ms
+ GET / 200 in 13ms
+ GET / 200 in 14ms
+ GET / 200 in 14ms
+ ✓ Compiled in 206ms (879 modules)
+ GET / 200 in 14ms
+ GET / 200 in 11ms
+ GET / 200 in 12ms
+ GET / 200 in 12ms
+ GET / 200 in 15ms
+ GET / 200 in 12ms
+ GET / 200 in 13ms
+ GET / 200 in 13ms
+ GET / 200 in 14ms
+ ✓ Compiled in 176ms (879 modules)
+ GET / 200 in 16ms
+ GET / 200 in 13ms
+ GET / 200 in 12ms
+ ✓ Compiled in 772ms (1849 modules)
+ ✓ Compiled in 0ms (970 modules)
+ ✓ Compiled in 0ms (970 modules)
+ ✓ Compiled in 0ms (970 modules)
+ GET / 200 in 757ms
+ GET / 200 in 805ms
+ GET / 200 in 774ms
+ ✓ Compiled in 183ms (879 modules)
+ ✓ Compiled in 230ms (1835 modules)
+ GET / 200 in 87ms
+ GET / 200 in 88ms
+ GET / 200 in 90ms
+ GET / 200 in 18ms
+ GET / 200 in 20ms
+ GET / 200 in 21ms
+ GET / 200 in 46ms
+ GET / 200 in 46ms
+ GET / 200 in 50ms
+ ✓ Compiled in 403ms (879 modules)
+ ✓ Compiled in 363ms (879 modules)
  GET / 200 in 31ms
- GET / 200 in 31ms
- GET / 200 in 63ms
- GET / 200 in 63ms
  GET / 200 in 34ms
  GET / 200 in 35ms
+ ✓ Compiled in 255ms (879 modules)
+ ✓ Compiled in 177ms (879 modules)
+ ✓ Compiled in 225ms (879 modules)
  GET / 200 in 29ms
+ GET / 200 in 30ms
  GET / 200 in 29ms
+ ✓ Compiled in 253ms (879 modules)
+ GET / 200 in 26ms
+ GET / 200 in 27ms
+ GET / 200 in 30ms
+ ✓ Compiled in 155ms (879 modules)
+ GET / 200 in 28ms
+ GET / 200 in 28ms
+ GET / 200 in 30ms
+ ✓ Compiled in 211ms (879 modules)
+ ✓ Compiled in 224ms (879 modules)
+ ✓ Compiled in 132ms (879 modules)
  GET / 200 in 22ms
- GET / 200 in 23ms
- GET / 200 in 26ms
- GET / 200 in 26ms
+ GET / 200 in 22ms
  GET / 200 in 25ms
- GET / 200 in 26ms
- GET / 200 in 29ms
+ ✓ Compiled in 124ms (879 modules)
  GET / 200 in 33ms
- GET / 200 in 21ms
- GET / 200 in 22ms
- GET / 200 in 17ms
- GET / 200 in 27ms
- GET / 200 in 13ms
- GET / 200 in 23ms
- GET / 200 in 31ms
  GET / 200 in 34ms
- GET / 200 in 14ms
- GET / 200 in 24ms
- GET / 200 in 16ms
- GET / 200 in 20ms
- GET / 200 in 17ms
- GET / 200 in 19ms
- GET / 200 in 23ms
- GET / 200 in 31ms
- GET / 200 in 14ms
- GET / 200 in 16ms
- GET / 200 in 18ms
- GET / 200 in 17ms
  GET / 200 in 37ms
- GET / 200 in 31ms
- GET / 200 in 20ms
- GET / 200 in 16ms
- GET / 200 in 21ms
- GET / 200 in 20ms
- GET / 200 in 19ms
- GET / 200 in 15ms
- GET / 200 in 26ms
- GET / 200 in 27ms
- GET / 200 in 20ms
- GET / 200 in 20ms
- GET / 200 in 25ms
- GET / 200 in 27ms
- GET / 200 in 22ms
  GET / 200 in 23ms
- GET / 200 in 19ms
- GET / 200 in 21ms
- GET / 200 in 19ms
- GET / 200 in 20ms
- GET / 200 in 14ms
- GET / 200 in 25ms
- GET / 200 in 20ms
- GET / 200 in 31ms
- GET / 200 in 28ms
  GET / 200 in 24ms
- GET / 200 in 15ms
- GET / 200 in 12ms
- GET / 200 in 15ms
- GET / 200 in 18ms
- GET / 200 in 25ms
- GET / 200 in 28ms
+ GET / 200 in 26ms
+ GET / 200 in 20ms
  GET / 200 in 21ms
+ GET / 200 in 25ms
+ GET / 200 in 12ms
+ GET / 200 in 20ms
  GET / 200 in 22ms
+ GET / 200 in 18ms
+ GET / 200 in 122ms
+ GET / 200 in 124ms
+[LiveGamePage] sessionId from params: session_20251031_114244 type: string
+ GET /live/session_20251031_114244 200 in 38ms
+ ○ Compiling /favicon.ico ...
+ ✓ Compiled /favicon.ico in 623ms (1002 modules)
+ GET /favicon.ico 200 in 702ms
+ GET /favicon.ico 200 in 5ms
+ ○ Compiling /live-game/[sessionId] ...
+ ⨯ ./src/components/GameInfo.tsx:3:1
+Module not found: Can't resolve '@/components/ui/scroll-area'
+[0m [90m 1 |[39m [36mimport[39m { [33mCard[39m } [36mfrom[39m [32m"@/components/ui/card"[39m[33m;[39m[0m
+[0m [90m 2 |[39m [36mimport[39m { [33mBadge[39m } [36mfrom[39m [32m"@/components/ui/badge"[39m[33m;[39m[0m
+[0m[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m { [33mScrollArea[39m } [36mfrom[39m [32m"@/components/ui/scroll-area"[39m[33m;[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[0m
+[0m [90m 4 |[39m [36mimport[39m { [33mClock[39m[33m,[39m [33mMessageSquare[39m[33m,[39m [33mUsers[39m } [36mfrom[39m [32m"lucide-react"[39m[33m;[39m[0m
+[0m [90m 5 |[39m[0m
+[0m [90m 6 |[39m [36minterface[39m [33mGameInfoProps[39m {[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/pages/LiveGamePage.tsx
+./src/app/live-game/[sessionId]/page.tsx
+ ⨯ ./src/components/GameInfo.tsx:3:1
+Module not found: Can't resolve '@/components/ui/scroll-area'
+[0m [90m 1 |[39m [36mimport[39m { [33mCard[39m } [36mfrom[39m [32m"@/components/ui/card"[39m[33m;[39m[0m
+[0m [90m 2 |[39m [36mimport[39m { [33mBadge[39m } [36mfrom[39m [32m"@/components/ui/badge"[39m[33m;[39m[0m
+[0m[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m { [33mScrollArea[39m } [36mfrom[39m [32m"@/components/ui/scroll-area"[39m[33m;[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[0m
+[0m [90m 4 |[39m [36mimport[39m { [33mClock[39m[33m,[39m [33mMessageSquare[39m[33m,[39m [33mUsers[39m } [36mfrom[39m [32m"lucide-react"[39m[33m;[39m[0m
+[0m [90m 5 |[39m[0m
+[0m [90m 6 |[39m [36minterface[39m [33mGameInfoProps[39m {[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/pages/LiveGamePage.tsx
+./src/app/live-game/[sessionId]/page.tsx
+ ⨯ ./src/components/GameInfo.tsx:3:1
+Module not found: Can't resolve '@/components/ui/scroll-area'
+[0m [90m 1 |[39m [36mimport[39m { [33mCard[39m } [36mfrom[39m [32m"@/components/ui/card"[39m[33m;[39m[0m
+[0m [90m 2 |[39m [36mimport[39m { [33mBadge[39m } [36mfrom[39m [32m"@/components/ui/badge"[39m[33m;[39m[0m
+[0m[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m { [33mScrollArea[39m } [36mfrom[39m [32m"@/components/ui/scroll-area"[39m[33m;[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[0m
+[0m [90m 4 |[39m [36mimport[39m { [33mClock[39m[33m,[39m [33mMessageSquare[39m[33m,[39m [33mUsers[39m } [36mfrom[39m [32m"lucide-react"[39m[33m;[39m[0m
+[0m [90m 5 |[39m[0m
+[0m [90m 6 |[39m [36minterface[39m [33mGameInfoProps[39m {[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/pages/LiveGamePage.tsx
+./src/app/live-game/[sessionId]/page.tsx
+ GET /live-game/session_20251031_115415 500 in 11ms
+ GET / 500 in 11ms
+ GET / 500 in 8ms
+ GET / 500 in 8ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 500 in 10ms
+ GET / 500 in 10ms
+ GET / 500 in 8ms
+ GET / 500 in 10ms
+ GET / 500 in 12ms
+ GET / 500 in 8ms
+ GET / 500 in 12ms
+ GET / 500 in 7ms
+ GET / 500 in 6ms
+ GET / 500 in 5ms
+ GET / 500 in 6ms
+ GET / 500 in 6ms
+ GET / 500 in 7ms
+ GET / 500 in 6ms
+ GET / 500 in 8ms
+ GET / 500 in 6ms
+ GET / 500 in 9ms
+ GET / 500 in 5ms
+ GET / 500 in 7ms
+ ⨯ ./src/components/GameInfo.tsx:3:1
+Module not found: Can't resolve '@/components/ui/scroll-area'
+[0m [90m 1 |[39m [36mimport[39m { [33mCard[39m } [36mfrom[39m [32m"@/components/ui/card"[39m[33m;[39m[0m
+[0m [90m 2 |[39m [36mimport[39m { [33mBadge[39m } [36mfrom[39m [32m"@/components/ui/badge"[39m[33m;[39m[0m
+[0m[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m { [33mScrollArea[39m } [36mfrom[39m [32m"@/components/ui/scroll-area"[39m[33m;[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[0m
+[0m [90m 4 |[39m [36mimport[39m { [33mClock[39m[33m,[39m [33mMessageSquare[39m[33m,[39m [33mUsers[39m } [36mfrom[39m [32m"lucide-react"[39m[33m;[39m[0m
+[0m [90m 5 |[39m[0m
+[0m [90m 6 |[39m [36minterface[39m [33mGameInfoProps[39m {[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/pages/LiveGamePage.tsx
+./src/app/live-game/[sessionId]/page.tsx
+ GET / 500 in 11ms
+ GET / 500 in 11ms
+ GET / 500 in 12ms
+ ⨯ ./src/components/GameInfo.tsx:3:1
+Module not found: Can't resolve '@/components/ui/scroll-area'
+[0m [90m 1 |[39m [36mimport[39m { [33mCard[39m } [36mfrom[39m [32m"@/components/ui/card"[39m[33m;[39m[0m
+[0m [90m 2 |[39m [36mimport[39m { [33mBadge[39m } [36mfrom[39m [32m"@/components/ui/badge"[39m[33m;[39m[0m
+[0m[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m { [33mScrollArea[39m } [36mfrom[39m [32m"@/components/ui/scroll-area"[39m[33m;[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[0m
+[0m [90m 4 |[39m [36mimport[39m { [33mClock[39m[33m,[39m [33mMessageSquare[39m[33m,[39m [33mUsers[39m } [36mfrom[39m [32m"lucide-react"[39m[33m;[39m[0m
+[0m [90m 5 |[39m[0m
+[0m [90m 6 |[39m [36minterface[39m [33mGameInfoProps[39m {[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/pages/LiveGamePage.tsx
+./src/app/live-game/[sessionId]/page.tsx
+ GET / 500 in 12ms
+ GET / 500 in 11ms
+ GET / 500 in 10ms
+ ⨯ ./src/components/GameInfo.tsx:3:1
+Module not found: Can't resolve '@/components/ui/scroll-area'
+[0m [90m 1 |[39m [36mimport[39m { [33mCard[39m } [36mfrom[39m [32m"@/components/ui/card"[39m[33m;[39m[0m
+[0m [90m 2 |[39m [36mimport[39m { [33mBadge[39m } [36mfrom[39m [32m"@/components/ui/badge"[39m[33m;[39m[0m
+[0m[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m { [33mScrollArea[39m } [36mfrom[39m [32m"@/components/ui/scroll-area"[39m[33m;[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[0m
+[0m [90m 4 |[39m [36mimport[39m { [33mClock[39m[33m,[39m [33mMessageSquare[39m[33m,[39m [33mUsers[39m } [36mfrom[39m [32m"lucide-react"[39m[33m;[39m[0m
+[0m [90m 5 |[39m[0m
+[0m [90m 6 |[39m [36minterface[39m [33mGameInfoProps[39m {[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/pages/LiveGamePage.tsx
+./src/app/live-game/[sessionId]/page.tsx
+ GET / 500 in 9ms
+ GET / 500 in 11ms
+ GET / 500 in 11ms
+ ⨯ ./src/components/GameInfo.tsx:3:1
+Module not found: Can't resolve '@/components/ui/scroll-area'
+[0m [90m 1 |[39m [36mimport[39m { [33mCard[39m } [36mfrom[39m [32m"@/components/ui/card"[39m[33m;[39m[0m
+[0m [90m 2 |[39m [36mimport[39m { [33mBadge[39m } [36mfrom[39m [32m"@/components/ui/badge"[39m[33m;[39m[0m
+[0m[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m { [33mScrollArea[39m } [36mfrom[39m [32m"@/components/ui/scroll-area"[39m[33m;[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[0m
+[0m [90m 4 |[39m [36mimport[39m { [33mClock[39m[33m,[39m [33mMessageSquare[39m[33m,[39m [33mUsers[39m } [36mfrom[39m [32m"lucide-react"[39m[33m;[39m[0m
+[0m [90m 5 |[39m[0m
+[0m [90m 6 |[39m [36minterface[39m [33mGameInfoProps[39m {[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/pages/LiveGamePage.tsx
+./src/app/live-game/[sessionId]/page.tsx
+ ⨯ ./src/components/GameInfo.tsx:3:1
+Module not found: Can't resolve '@/components/ui/scroll-area'
+[0m [90m 1 |[39m [36mimport[39m { [33mCard[39m } [36mfrom[39m [32m"@/components/ui/card"[39m[33m;[39m[0m
+[0m [90m 2 |[39m [36mimport[39m { [33mBadge[39m } [36mfrom[39m [32m"@/components/ui/badge"[39m[33m;[39m[0m
+[0m[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m { [33mScrollArea[39m } [36mfrom[39m [32m"@/components/ui/scroll-area"[39m[33m;[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[0m
+[0m [90m 4 |[39m [36mimport[39m { [33mClock[39m[33m,[39m [33mMessageSquare[39m[33m,[39m [33mUsers[39m } [36mfrom[39m [32m"lucide-react"[39m[33m;[39m[0m
+[0m [90m 5 |[39m[0m
+[0m [90m 6 |[39m [36minterface[39m [33mGameInfoProps[39m {[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/pages/LiveGamePage.tsx
+./src/app/live-game/[sessionId]/page.tsx
+ GET / 500 in 390ms
+ GET / 500 in 349ms
+ GET / 500 in 348ms
+ GET / 500 in 10ms
+ GET / 500 in 11ms
+ GET / 500 in 12ms
+ ⨯ ./src/pages/LiveGamePage.tsx:7:1
+Module not found: Can't resolve '@/components/ui/scroll-area'
+[0m [90m  5 |[39m [36mimport[39m { [33mCard[39m } [36mfrom[39m [32m"@/components/ui/card"[39m[33m;[39m[0m
+[0m [90m  6 |[39m [36mimport[39m { [33mBadge[39m } [36mfrom[39m [32m"@/components/ui/badge"[39m[33m;[39m[0m
+[0m[31m[1m>[22m[39m[90m  7 |[39m [36mimport[39m { [33mScrollArea[39m } [36mfrom[39m [32m"@/components/ui/scroll-area"[39m[33m;[39m[0m
+[0m [90m    |[39m [31m[1m^[22m[39m[0m
+[0m [90m  8 |[39m [36mimport[39m [33mModelAvatar[39m [36mfrom[39m [32m"@/components/ModelAvatar"[39m[33m;[39m[0m
+[0m [90m  9 |[39m [36mimport[39m [33mGameInfo[39m [36mfrom[39m [32m"@/components/GameInfo"[39m[33m;[39m[0m
+[0m [90m 10 |[39m [36mimport[39m { [33mWebSocketMessageFormatter[39m[33m,[39m [33mFormattedMessage[39m } [36mfrom[39m [32m"@/lib/websocket-formatter"[39m[33m;[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/app/live-game/[sessionId]/page.tsx
+ GET / 500 in 12ms
+ GET / 500 in 14ms
+ GET / 500 in 15ms
+ ⨯ ./src/pages/LiveGamePage.tsx:7:1
+Module not found: Can't resolve '@/components/ui/scroll-area'
+[0m [90m  5 |[39m [36mimport[39m { [33mCard[39m } [36mfrom[39m [32m"@/components/ui/card"[39m[33m;[39m[0m
+[0m [90m  6 |[39m [36mimport[39m { [33mBadge[39m } [36mfrom[39m [32m"@/components/ui/badge"[39m[33m;[39m[0m
+[0m[31m[1m>[22m[39m[90m  7 |[39m [36mimport[39m { [33mScrollArea[39m } [36mfrom[39m [32m"@/components/ui/scroll-area"[39m[33m;[39m[0m
+[0m [90m    |[39m [31m[1m^[22m[39m[0m
+[0m [90m  8 |[39m [36mimport[39m [33mModelAvatar[39m [36mfrom[39m [32m"@/components/ModelAvatar"[39m[33m;[39m[0m
+[0m [90m  9 |[39m [36mimport[39m [33mGameInfo[39m [36mfrom[39m [32m"@/components/GameInfo"[39m[33m;[39m[0m
+[0m [90m 10 |[39m [36mimport[39m { [33mWebSocketMessageFormatter[39m[33m,[39m [33mFormattedMessage[39m } [36mfrom[39m [32m"@/lib/websocket-formatter"[39m[33m;[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/app/live-game/[sessionId]/page.tsx
+ GET / 500 in 8ms
+ GET / 500 in 10ms
+ GET / 500 in 11ms
+ GET / 500 in 10ms
+ GET / 500 in 10ms
+ GET / 500 in 12ms
+ GET / 500 in 12ms
+ GET / 500 in 12ms
+ GET / 500 in 13ms
+ GET / 500 in 14ms
+ GET / 500 in 15ms
+ GET / 500 in 15ms
+ GET / 500 in 12ms
+ GET / 500 in 12ms
+ GET / 500 in 13ms
+ GET / 500 in 12ms
+ GET / 500 in 13ms
+ GET / 500 in 13ms
+ GET / 500 in 40ms
+ GET / 500 in 37ms
+ GET / 500 in 39ms
+ GET / 500 in 7ms
+ GET / 500 in 9ms
+ GET / 500 in 10ms
+ GET / 500 in 7ms
+ GET / 500 in 7ms
+ GET / 500 in 8ms
+ ✓ Compiled /_error in 395ms (1091 modules)
+ ○ Compiling /live-game/[sessionId] ...
+ ✓ Compiled /live-game/[sessionId] in 652ms (2111 modules)
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ GET /live-game/session_20251031_115415 200 in 917ms
+ GET /_next/static/webpack/2afa31da7c6fce71.webpack.hot-update.json 404 in 918ms
+ GET /live-game/session_20251031_115415 200 in 382ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 31ms
+ ✓ Compiled in 798ms (2125 modules)
+ ✓ Compiled /favicon.ico in 251ms (1064 modules)
+ GET /favicon.ico 200 in 362ms
+ GET / 200 in 283ms
+ GET / 200 in 42ms
+ GET / 200 in 38ms
+ ✓ Compiled in 370ms (2143 modules)
+ GET / 200 in 106ms
+ GET / 200 in 28ms
+ GET / 200 in 28ms
+ GET / 200 in 27ms
+ GET / 200 in 39ms
+ GET / 200 in 42ms
+ GET / 200 in 20ms
+ GET / 200 in 18ms
  GET / 200 in 26ms
  GET / 200 in 30ms
+ GET / 200 in 20ms
+ GET / 200 in 19ms
+ GET / 200 in 19ms
+ GET / 200 in 20ms
+ GET / 200 in 17ms
+ GET / 200 in 16ms
+ GET / 200 in 18ms
+ GET / 200 in 16ms
+ GET / 200 in 25ms
+ GET / 200 in 31ms
+ GET / 200 in 27ms
+ GET / 200 in 15ms
+ GET / 200 in 20ms
+ GET / 200 in 17ms
+ GET /live-game/session_20251031_115415 200 in 38ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 43ms
+ GET /favicon.ico 200 in 68ms
+ GET / 200 in 35ms
+ GET / 200 in 47ms
+ GET / 200 in 51ms
  GET / 200 in 21ms
+ GET / 200 in 22ms
  GET / 200 in 26ms
- GET / 200 in 17ms
- GET / 200 in 24ms
- GET / 200 in 16ms
- GET / 200 in 21ms
- GET / 200 in 15ms
- GET / 200 in 21ms
- GET / 200 in 17ms
- GET / 200 in 18ms
- GET / 200 in 16ms
- GET / 200 in 15ms
- GET / 200 in 13ms
- GET / 200 in 15ms
- GET / 200 in 15ms
- GET / 200 in 15ms
- GET / 200 in 13ms
- GET / 200 in 17ms
- GET / 200 in 15ms
- GET / 200 in 17ms
- GET / 200 in 16ms
- GET / 200 in 14ms
  GET / 200 in 16ms
  GET / 200 in 18ms
- GET / 200 in 14ms
- GET / 200 in 12ms
- GET / 200 in 17ms
- GET / 200 in 23ms
+ GET / 200 in 16ms
  GET / 200 in 30ms
- GET / 200 in 41ms
+ GET / 200 in 18ms
+ GET / 200 in 28ms
+ ✓ Compiled in 857ms (2157 modules)
+ GET / 200 in 99ms
+ GET / 200 in 29ms
+ GET / 200 in 29ms
+ ✓ Compiled in 400ms (2157 modules)
+ GET / 200 in 50ms
+ GET / 200 in 38ms
+ GET / 200 in 38ms
+ GET / 200 in 18ms
+ GET / 200 in 20ms
+ GET / 200 in 23ms
+ ✓ Compiled in 622ms (2122 modules)
+ ✓ Compiled in 308ms (2122 modules)
+ GET / 200 in 78ms
+ GET / 200 in 26ms
+ GET / 200 in 24ms
+ GET / 200 in 32ms
+ GET / 200 in 37ms
+ GET / 200 in 33ms
+ GET / 200 in 26ms
+ GET / 200 in 21ms
+ GET / 200 in 31ms
+ GET / 200 in 23ms
+ GET / 200 in 19ms
+ GET / 200 in 18ms
+ GET / 200 in 20ms
+ GET / 200 in 26ms
+ GET / 200 in 18ms
+ GET / 200 in 24ms
+ GET / 200 in 30ms
+ GET / 200 in 33ms
+ GET /live-game/session_20251031_115415 200 in 36ms
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 840ms (2111 modules)
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 923ms
+ ✓ Compiled /favicon.ico in 255ms (1064 modules)
+ GET /favicon.ico 200 in 366ms
+ GET / 200 in 90ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 46ms
+ GET /favicon.ico 200 in 7ms
+ GET / 200 in 26ms
+ GET / 200 in 34ms
+ GET / 200 in 147ms
+ GET / 200 in 13ms
+ GET / 200 in 15ms
+ GET / 200 in 17ms
+ GET / 200 in 17ms
+ GET / 200 in 16ms
+ GET / 200 in 19ms
+ GET / 200 in 18ms
+ GET / 200 in 15ms
+ GET / 200 in 16ms
+ GET / 200 in 19ms
+ GET / 200 in 16ms
+ GET / 200 in 13ms
+ GET / 200 in 17ms
+ GET / 200 in 16ms
+ GET / 200 in 18ms
+ GET / 200 in 17ms
+ GET / 200 in 17ms
+ GET / 200 in 19ms
+ GET / 200 in 17ms
+ GET / 200 in 13ms
+ GET / 200 in 18ms
+ GET / 200 in 26ms
+ GET / 200 in 19ms
+ GET / 200 in 24ms
+ GET / 200 in 19ms
+ GET / 200 in 19ms
+ GET / 200 in 22ms
+ GET / 200 in 19ms
+ GET / 200 in 21ms
+ GET / 200 in 17ms
+ GET / 200 in 16ms
+ GET / 200 in 17ms
+ GET / 200 in 21ms
+ GET / 200 in 17ms
+ GET / 200 in 18ms
+ GET / 200 in 24ms
+ GET / 200 in 21ms
+ GET / 200 in 19ms
+ GET / 200 in 21ms
+ GET / 200 in 17ms
+ GET / 200 in 21ms
+ GET / 200 in 117ms
+ GET / 200 in 24ms
+ GET / 200 in 22ms
+ GET / 200 in 19ms
+ GET / 200 in 22ms
+ GET / 200 in 20ms
+ GET / 200 in 19ms
+ GET / 200 in 29ms
+ GET / 200 in 25ms
+ GET / 200 in 19ms
+ GET / 200 in 26ms
+ GET / 200 in 29ms
+ GET / 200 in 29ms
+ GET / 200 in 30ms
+ GET / 200 in 34ms
+ GET / 200 in 22ms
+ GET / 200 in 27ms
+ GET / 200 in 28ms
+ GET / 200 in 30ms
+ GET / 200 in 49ms
+ GET / 200 in 27ms
+ GET / 200 in 40ms
+ GET / 200 in 23ms
+ GET / 200 in 19ms
+ GET / 200 in 16ms
+ GET / 200 in 32ms
+ GET / 200 in 42ms
+ GET / 200 in 29ms
+ GET / 200 in 22ms
+ GET / 200 in 20ms
+ GET / 200 in 15ms
+ GET / 200 in 21ms
+ GET / 200 in 20ms
+ GET / 200 in 18ms
+ GET / 200 in 192ms
+ GET / 200 in 196ms
+ ✓ Compiled in 1185ms (2122 modules)
+ ✓ Compiled in 0ms (1031 modules)
+ GET / 200 in 934ms
+ ✓ Compiled in 579ms (2122 modules)
+ ✓ Compiled in 654ms (2122 modules)
+ GET / 200 in 65ms
+ GET / 200 in 72ms
+ GET / 200 in 16ms
+ ✓ Compiled in 570ms (2122 modules)
+ GET / 200 in 37ms
+ GET / 200 in 25ms
+ GET / 200 in 17ms
+ ✓ Compiled in 459ms (2122 modules)
+ GET / 200 in 43ms
+ GET / 200 in 38ms
+ ✓ Compiled in 415ms (2122 modules)
+ GET / 200 in 208ms
+ ✓ Compiled in 665ms (2122 modules)
+ GET / 200 in 45ms
+ GET / 200 in 40ms
+ GET / 200 in 17ms
+ ✓ Compiled in 1010ms (2122 modules)
+ GET / 200 in 537ms
+ GET / 200 in 544ms
+ GET / 200 in 33ms
+ ✓ Compiled in 368ms (2122 modules)
+ GET / 200 in 51ms
+ GET / 200 in 53ms
+ GET / 200 in 16ms
+ ✓ Compiled in 463ms (2122 modules)
+ GET / 200 in 52ms
+ GET / 200 in 54ms
+ GET / 200 in 16ms
+ ✓ Compiled in 365ms (2122 modules)
+ GET / 200 in 53ms
+ GET / 200 in 58ms
+ GET / 200 in 16ms
+ ✓ Compiled in 395ms (2122 modules)
+ GET / 200 in 53ms
+ GET / 200 in 55ms
+ GET / 200 in 17ms
+ ✓ Compiled in 630ms (2122 modules)
+ GET / 200 in 53ms
+ GET / 200 in 67ms
+ GET / 200 in 18ms
+ ✓ Compiled in 501ms (2122 modules)
+ GET / 200 in 146ms
+ GET / 200 in 32ms
+ GET / 200 in 20ms
+ GET / 200 in 24ms
+ GET / 200 in 25ms
+ GET / 200 in 123ms
  GET / 200 in 25ms
  GET / 200 in 32ms
- GET / 200 in 28ms
- GET / 200 in 20ms
- GET / 200 in 60ms
- GET / 200 in 138ms
- GET / 200 in 14ms
- GET / 200 in 15ms
- GET / 200 in 17ms
- GET / 200 in 12ms
- GET / 200 in 31ms
+ GET / 200 in 30ms
+ GET / 200 in 166ms
+ GET / 200 in 145ms
+ GET / 200 in 165ms
+ GET / 200 in 30ms
+ GET / 200 in 38ms
+ GET / 200 in 19ms
+ GET / 200 in 23ms
  GET / 200 in 27ms
- GET / 200 in 20ms
- GET / 200 in 16ms
- GET / 200 in 17ms
- GET / 200 in 13ms
- GET / 200 in 16ms
- GET / 200 in 15ms
- GET / 200 in 20ms
- GET / 200 in 16ms
- GET / 200 in 16ms
+ GET / 200 in 23ms
+ GET / 200 in 32ms
+ GET / 200 in 21ms
+ GET / 200 in 19ms
+ GET / 200 in 22ms
  GET / 200 in 17ms
  GET / 200 in 19ms
- GET / 200 in 18ms
+ GET / 200 in 27ms
+ GET / 200 in 37ms
+ GET / 200 in 23ms
  GET / 200 in 24ms
- GET / 200 in 14ms
+ GET / 200 in 21ms
  GET / 200 in 20ms
- GET / 200 in 15ms
- GET / 200 in 15ms
- GET / 200 in 16ms
+ GET / 200 in 25ms
+ GET / 200 in 23ms
+ GET / 200 in 24ms
+ GET / 200 in 24ms
+ GET / 200 in 22ms
+ GET / 200 in 22ms
+ GET / 200 in 24ms
+ GET / 200 in 26ms
  GET / 200 in 20ms
- GET / 200 in 13ms
- GET / 200 in 14ms
+ GET / 200 in 22ms
+ GET / 200 in 20ms
+ GET / 200 in 20ms
+ GET / 200 in 24ms
+ GET / 200 in 26ms
+ GET / 200 in 25ms
+ GET / 200 in 22ms
+ GET / 200 in 27ms
+ GET / 200 in 20ms
+ GET / 200 in 26ms
+ GET / 200 in 33ms
+ GET / 200 in 26ms
+ GET / 200 in 22ms
+ GET / 200 in 19ms
+ GET / 200 in 23ms
+ GET / 200 in 23ms
+ GET / 200 in 23ms
+ GET / 200 in 22ms
+ GET / 200 in 25ms
+ GET / 200 in 28ms
  GET / 200 in 18ms
+ GET / 200 in 27ms
+ GET / 200 in 22ms
+ GET / 200 in 20ms
+ GET / 200 in 24ms
+ GET / 200 in 20ms
+ GET / 200 in 17ms
+ GET / 200 in 45ms
+ GET / 200 in 50ms
+ GET / 200 in 56ms
+ GET / 200 in 31ms
+ GET / 200 in 39ms
+ GET / 200 in 42ms
+ GET / 200 in 28ms
+ GET / 200 in 33ms
+ GET / 200 in 36ms
+ GET / 200 in 31ms
+ GET / 200 in 25ms
+ GET / 200 in 28ms
+ GET / 200 in 27ms
+ GET / 200 in 22ms
+ GET / 200 in 21ms
+ GET / 200 in 27ms
+ GET / 200 in 24ms
+ GET / 200 in 22ms
+ GET / 200 in 21ms
+ GET / 200 in 21ms
+ GET / 200 in 16ms
+ GET / 200 in 37ms
+ GET / 200 in 39ms
+ GET / 200 in 42ms
+ GET / 200 in 39ms
+ GET / 200 in 43ms
+ GET / 200 in 45ms
+ GET / 200 in 31ms
+ GET / 200 in 34ms
+ GET / 200 in 20ms
+ GET / 200 in 36ms
+ GET / 200 in 40ms
+ GET / 200 in 40ms
+ GET / 200 in 26ms
+ GET / 200 in 43ms
+ GET / 200 in 30ms
+ GET / 200 in 27ms
+ GET / 200 in 25ms
+ GET / 200 in 38ms
+ GET / 200 in 28ms
+ GET / 200 in 123ms
+ GET / 200 in 23ms
+ GET / 200 in 23ms
+ GET / 200 in 22ms
+ GET / 200 in 21ms
+ GET / 200 in 22ms
+ GET / 200 in 22ms
+ GET / 200 in 16ms
+ GET / 200 in 29ms
+ GET / 200 in 23ms
+ GET / 200 in 23ms
+ GET / 200 in 43ms
+ GET / 200 in 30ms
+ GET / 200 in 26ms
+ GET / 200 in 20ms
+ GET / 200 in 23ms
+ GET / 200 in 23ms
+ GET / 200 in 23ms
+ GET / 200 in 21ms
+ GET / 200 in 21ms
+ GET / 200 in 27ms
+ GET / 200 in 24ms
+ GET / 200 in 21ms
+ GET / 200 in 21ms
+ GET / 200 in 21ms
+ GET / 200 in 18ms
+ GET / 200 in 20ms
+ GET / 200 in 20ms
+ GET / 200 in 24ms
+ GET / 200 in 22ms
+ GET / 200 in 20ms
+ GET / 200 in 22ms
+ GET / 200 in 25ms
+ GET / 200 in 28ms
+ GET / 200 in 43ms
+ GET / 200 in 23ms
+ GET / 200 in 119ms
+ GET / 200 in 18ms
+ GET / 200 in 26ms
+ GET / 200 in 21ms
+ GET / 200 in 26ms
+ GET / 200 in 26ms
+ GET / 200 in 27ms
+ GET / 200 in 22ms
+ GET / 200 in 22ms
+ GET / 200 in 24ms
+ GET / 200 in 19ms
+ GET / 200 in 20ms
+ GET / 200 in 23ms
+ GET / 200 in 20ms
+ GET / 200 in 26ms
+ GET / 200 in 22ms
+ GET / 200 in 22ms
+ GET / 200 in 18ms
+ GET / 200 in 22ms
+ GET / 200 in 24ms
+ GET / 200 in 25ms
+ GET / 200 in 19ms
+ GET / 200 in 23ms
+ GET / 200 in 23ms
+ GET / 200 in 22ms
+ GET / 200 in 24ms
+ GET / 200 in 25ms
+ GET / 200 in 21ms
+ GET / 200 in 16ms
+ GET / 200 in 24ms
+ GET / 200 in 22ms
+ GET / 200 in 21ms
+ GET / 200 in 23ms
+ GET / 200 in 22ms
+ GET / 200 in 20ms
+ GET / 200 in 24ms
+ GET / 200 in 25ms
+ GET / 200 in 23ms
+ GET / 200 in 36ms
+ GET / 200 in 38ms
+ GET / 200 in 40ms
+ GET / 200 in 56ms
+ GET / 200 in 65ms
+ GET / 200 in 73ms
+ GET / 200 in 33ms
+ GET / 200 in 42ms
+ GET / 200 in 38ms
+ GET / 200 in 22ms
+ GET / 200 in 28ms
+ GET / 200 in 24ms
+ GET / 200 in 23ms
+ GET / 200 in 20ms
+ GET / 200 in 22ms
+ GET / 200 in 31ms
+ GET / 200 in 23ms
+ GET / 200 in 31ms
+ GET / 200 in 22ms
+ GET / 200 in 18ms
+ GET / 200 in 19ms
+ GET / 200 in 27ms
+ GET / 200 in 31ms
+ GET / 200 in 26ms
+ GET / 200 in 25ms
+ GET / 200 in 21ms
+ GET / 200 in 18ms
+ GET / 200 in 27ms
+ GET / 200 in 22ms
+ GET / 200 in 23ms
+ GET / 200 in 37ms
+ GET / 200 in 127ms
+ GET / 200 in 43ms
+ GET / 200 in 25ms
+ GET / 200 in 22ms
+ GET / 200 in 19ms
+ GET / 200 in 70ms
+ GET / 200 in 21ms
+ GET / 200 in 25ms
+ GET / 200 in 25ms
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 1058ms (2111 modules)
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 1204ms
+ GET / 200 in 90ms
+ GET / 200 in 23ms
+ GET / 200 in 26ms
+ GET / 200 in 22ms
+ GET / 200 in 22ms
+ GET / 200 in 20ms
+ GET / 200 in 21ms
+ GET / 200 in 22ms
+ GET / 200 in 19ms
+ GET / 200 in 19ms
+ GET / 200 in 23ms
+ GET / 200 in 20ms
+ GET / 200 in 17ms
+ GET / 200 in 19ms
+ GET / 200 in 17ms
+ GET / 200 in 19ms
+ GET / 200 in 19ms
+ GET / 200 in 18ms
+ GET / 200 in 20ms
+ GET / 200 in 20ms
+ GET / 200 in 19ms
+ GET / 200 in 27ms
+ GET / 200 in 20ms
+ GET / 200 in 22ms
+ GET / 200 in 19ms
+ GET / 200 in 19ms
+ GET / 200 in 17ms
+ GET / 200 in 20ms
+ GET / 200 in 20ms
+ GET / 200 in 19ms
+ GET / 200 in 18ms
+ GET / 200 in 18ms
+ GET / 200 in 20ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 23ms
+ GET / 200 in 21ms
+ GET / 200 in 23ms
+ GET / 200 in 18ms
+ GET /live-game/session_20251031_122006 200 in 77ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 65ms
+ ○ Compiling /favicon.ico ...
+ ✓ Compiled /favicon.ico in 732ms (1064 modules)
+ GET /favicon.ico 200 in 985ms
+ GET / 200 in 130ms
+ GET / 200 in 40ms
+ GET / 200 in 39ms
+ GET / 200 in 21ms
+ GET / 200 in 22ms
+ GET / 200 in 29ms
+ GET / 200 in 19ms
+ GET / 200 in 22ms
+ GET / 200 in 22ms
+ GET / 200 in 23ms
+ GET / 200 in 24ms
+ GET / 200 in 19ms
+ GET / 200 in 24ms
+ GET / 200 in 25ms
+ GET / 200 in 23ms
+ GET / 200 in 41ms
+ GET / 200 in 24ms
+ GET / 200 in 23ms
+ GET / 200 in 20ms
  GET / 200 in 15ms
- GET / 200 in 14ms
+ GET / 200 in 18ms
+ GET / 200 in 19ms
+ GET / 200 in 25ms
+ GET / 200 in 21ms
+ GET / 200 in 21ms
+ GET / 200 in 30ms
+ GET / 200 in 24ms
+ GET / 200 in 49ms
+ GET / 200 in 27ms
+ GET / 200 in 22ms
+ GET / 200 in 35ms
+ GET / 200 in 31ms
+ GET / 200 in 20ms
+ GET / 200 in 20ms
+ GET / 200 in 21ms
+ GET / 200 in 19ms
+ GET / 200 in 21ms
+ GET / 200 in 20ms
+ GET / 200 in 20ms
+ GET / 200 in 23ms
+ GET / 200 in 22ms
+ GET / 200 in 25ms
+ GET / 200 in 21ms
+ GET / 200 in 19ms
+ GET / 200 in 21ms
+ GET / 200 in 21ms
+ GET / 200 in 19ms
+ GET / 200 in 19ms
+ GET / 200 in 25ms
+ GET / 200 in 24ms
+ GET / 200 in 22ms
+ GET / 200 in 19ms
+ GET / 200 in 22ms
+ GET / 200 in 24ms
+ GET / 200 in 18ms
+ GET / 200 in 20ms
+ GET / 200 in 19ms
+ GET / 200 in 19ms
+ GET / 200 in 19ms
+ GET / 200 in 16ms
+ GET / 200 in 19ms
+ GET / 200 in 21ms
+ GET / 200 in 21ms
+ GET / 200 in 18ms
+ GET / 200 in 18ms
+ GET / 200 in 18ms
+ GET / 200 in 30ms
+ GET / 200 in 24ms
+ GET / 200 in 25ms
+ GET / 200 in 30ms
+ GET / 200 in 22ms
+ GET / 200 in 19ms
+ GET / 200 in 20ms
+ GET / 200 in 22ms
+ GET / 200 in 19ms
+ GET / 200 in 19ms
+ GET / 200 in 21ms
+ GET / 200 in 18ms
+ GET / 200 in 20ms
+ GET / 200 in 18ms
+ GET / 200 in 18ms
+ GET / 200 in 19ms
+ GET / 200 in 26ms
+ GET / 200 in 33ms
+ GET / 200 in 19ms
+ GET / 200 in 18ms
+ GET / 200 in 20ms
+ GET / 200 in 17ms
+ GET / 200 in 20ms
+ GET / 200 in 16ms
+ GET / 200 in 22ms
+ GET / 200 in 22ms
+ GET / 200 in 18ms
+ GET / 200 in 18ms
+ GET / 200 in 21ms
+ GET / 200 in 17ms
+ GET / 200 in 19ms
+ GET / 200 in 19ms
+ GET / 200 in 19ms
+ GET / 200 in 18ms
+ GET / 200 in 21ms
+ GET / 200 in 20ms
+ GET / 200 in 17ms
+ GET / 200 in 18ms
+ GET / 200 in 17ms
+ GET / 200 in 20ms
+ GET / 200 in 18ms
+ GET / 200 in 16ms
+ GET / 200 in 18ms
+ GET / 200 in 18ms
+ GET / 200 in 17ms
+ GET / 200 in 18ms
+ GET / 200 in 19ms
+ GET / 200 in 17ms
+ GET / 200 in 18ms
+ GET / 200 in 20ms
+ GET / 200 in 20ms
+ GET / 200 in 16ms
+ GET / 200 in 19ms
+ GET / 200 in 20ms
+ GET / 200 in 19ms
+ GET / 200 in 19ms
+ GET / 200 in 20ms
+ GET / 200 in 19ms
+ GET / 200 in 17ms
+ GET / 200 in 17ms
+ GET / 200 in 20ms
+ GET / 200 in 19ms
+ GET / 200 in 19ms
+ GET / 200 in 21ms
+ GET / 200 in 20ms
+ GET / 200 in 18ms
+ GET / 200 in 20ms
+ GET / 200 in 25ms
+ GET / 200 in 21ms
+ GET / 200 in 19ms
+ GET / 200 in 19ms
+ GET / 200 in 25ms
+ GET / 200 in 28ms
+ GET / 200 in 20ms
+ GET / 200 in 24ms
+ GET / 200 in 24ms
+ GET / 200 in 25ms
+ GET / 200 in 21ms
+ GET / 200 in 17ms
+ GET / 200 in 25ms
+ GET / 200 in 20ms
+ GET / 200 in 17ms
+ GET / 200 in 17ms
+ GET / 200 in 20ms
+ GET / 200 in 19ms
+ GET / 200 in 18ms
+ GET / 200 in 18ms
+ GET / 200 in 18ms
+ GET / 200 in 20ms
+ GET / 200 in 16ms
+ GET / 200 in 16ms
+ GET / 200 in 19ms
+ GET / 200 in 17ms
+ GET / 200 in 18ms
+ GET / 200 in 18ms
+ GET / 200 in 18ms
+ GET / 200 in 19ms
+ GET / 200 in 18ms
+ GET / 200 in 18ms
+ GET / 200 in 20ms
+ GET / 200 in 17ms
+ GET / 200 in 21ms
+ GET / 200 in 19ms
+ GET / 200 in 18ms
+ GET / 200 in 20ms
+ GET / 200 in 30ms
+ GET / 200 in 45ms
+ GET / 200 in 44ms
+ GET / 200 in 20ms
+ GET / 200 in 22ms
+ GET / 200 in 23ms
+ GET / 200 in 31ms
+ GET / 200 in 21ms
+ GET / 200 in 27ms
+ GET / 200 in 24ms
+ GET / 200 in 33ms
+ GET / 200 in 36ms
+ GET / 200 in 24ms
+ GET / 200 in 33ms
+ GET / 200 in 44ms
+ GET / 200 in 22ms
+ GET / 200 in 19ms
+ GET / 200 in 31ms
+ ✓ Compiled in 1941ms (2108 modules)
+ GET / 200 in 1035ms
+ GET / 200 in 1035ms
+ GET / 200 in 1047ms
+ ✓ Compiled in 247ms (2108 modules)
+ GET / 200 in 71ms
+ GET / 200 in 83ms
+ GET / 200 in 100ms
+ ✓ Compiled in 442ms (2108 modules)
+ GET / 200 in 84ms
+ GET / 200 in 55ms
+ GET / 200 in 51ms
+ ✓ Compiled in 312ms (2108 modules)
+ GET / 200 in 90ms
+ GET / 200 in 65ms
+ GET / 200 in 70ms
+ ✓ Compiled in 1473ms (2108 modules)
+ GET / 200 in 80ms
+ GET / 200 in 49ms
+ GET / 200 in 70ms
+ GET / 200 in 21ms
+ GET / 200 in 21ms
+ GET / 200 in 28ms
+ GET / 200 in 29ms
+ GET / 200 in 32ms
+ GET / 200 in 30ms
+ ✓ Compiled in 540ms (2108 modules)
+ GET / 200 in 64ms
+ GET / 200 in 24ms
+ GET / 200 in 22ms
+ GET / 200 in 21ms
+ GET / 200 in 21ms
+ GET / 200 in 21ms
+ ✓ Compiled in 457ms (2108 modules)
+ GET / 200 in 77ms
+ GET / 200 in 44ms
+ GET / 200 in 43ms
+ GET / 200 in 43ms
+ GET / 200 in 41ms
+ GET / 200 in 45ms
+ GET / 200 in 28ms
+ GET / 200 in 33ms
+ GET / 200 in 39ms
+ GET / 200 in 33ms
+ GET / 200 in 27ms
+ GET / 200 in 39ms
+ GET / 200 in 25ms
+ GET / 200 in 31ms
+ GET / 200 in 29ms
+ GET / 200 in 26ms
+ GET / 200 in 22ms
+ GET / 200 in 23ms
+ GET / 200 in 28ms
+ GET / 200 in 24ms
+ GET / 200 in 22ms
+ GET / 200 in 26ms
+ GET / 200 in 22ms
+ GET / 200 in 21ms
+ GET / 200 in 22ms
+ GET / 200 in 29ms
+ GET / 200 in 33ms
+ GET / 200 in 71ms
+ GET / 200 in 100ms
+ GET / 200 in 113ms
+ GET / 200 in 25ms
+ GET / 200 in 21ms
+ GET / 200 in 27ms
+ GET / 200 in 25ms
+ GET / 200 in 21ms
+ GET / 200 in 21ms
+ GET / 200 in 26ms
+ GET / 200 in 38ms
+ GET / 200 in 26ms
+ GET / 200 in 43ms
+ GET / 200 in 25ms
+ GET / 200 in 24ms
+ GET / 200 in 23ms
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 804ms (2111 modules)
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 942ms
+ GET / 200 in 84ms
+ GET / 200 in 34ms
+ GET / 200 in 30ms
+ GET / 200 in 22ms
+ GET / 200 in 22ms
+ GET / 200 in 20ms
+ GET / 200 in 26ms
+ GET / 200 in 29ms
+ GET / 200 in 38ms
+ GET / 200 in 23ms
+ GET / 200 in 20ms
+ GET / 200 in 22ms
+ GET / 200 in 22ms
+ GET / 200 in 26ms
+ GET / 200 in 20ms
+ GET / 200 in 25ms
+ GET / 200 in 29ms
+ GET / 200 in 24ms
+ GET /live-game/session_20251031_123636 200 in 153ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 109ms
+ ○ Compiling /favicon.ico ...
+ ✓ Compiled /favicon.ico in 587ms (1064 modules)
+ GET /favicon.ico 200 in 709ms
+ GET / 200 in 113ms
+ GET / 200 in 40ms
+ GET / 200 in 40ms
+ GET / 200 in 23ms
+ GET / 200 in 20ms
+ GET / 200 in 35ms
+ GET / 200 in 29ms
+ GET / 200 in 27ms
+ GET / 200 in 25ms
+ GET / 200 in 23ms
+ GET / 200 in 27ms
+ GET / 200 in 28ms
+ GET / 200 in 20ms
+ GET / 200 in 19ms
+ GET / 200 in 20ms
+ GET / 200 in 21ms
+ GET / 200 in 20ms
+ GET / 200 in 21ms
+ GET / 200 in 24ms
+ GET / 200 in 21ms
+ GET / 200 in 34ms
+ GET / 200 in 23ms
+ GET / 200 in 21ms
+ GET / 200 in 19ms
+ GET / 200 in 20ms
+ GET / 200 in 22ms
+ GET / 200 in 20ms
+ GET / 200 in 46ms
+ GET / 200 in 51ms
+ GET / 200 in 54ms
+ GET / 200 in 39ms
+ GET / 200 in 43ms
+ GET / 200 in 47ms
+ ✓ Compiled in 1666ms (2122 modules)
+ ✓ Compiled in 0ms (1031 modules)
+ GET / 200 in 1273ms
+ GET / 200 in 1281ms
+ GET / 200 in 1298ms
+ ✓ Compiled in 472ms (2122 modules)
+ GET / 200 in 77ms
+ GET / 200 in 49ms
+ GET / 200 in 46ms
+ ✓ Compiled in 377ms (2122 modules)
+ GET / 200 in 56ms
+ GET / 200 in 46ms
+ GET / 200 in 50ms
+ GET / 200 in 27ms
+ GET / 200 in 38ms
+ GET / 200 in 42ms
+ GET / 200 in 31ms
+ GET / 200 in 34ms
+ GET / 200 in 40ms
+ GET / 200 in 21ms
+ GET / 200 in 25ms
+ GET / 200 in 33ms
+ GET / 200 in 37ms
+ GET / 200 in 28ms
+ GET / 200 in 37ms
+ GET / 200 in 165ms
+ GET / 200 in 242ms
+ GET / 200 in 258ms
+ GET / 200 in 36ms
+ GET / 200 in 28ms
+ GET / 200 in 31ms
+ GET / 200 in 26ms
+ GET / 200 in 35ms
+ GET / 200 in 34ms
+ GET / 200 in 26ms
+ GET / 200 in 31ms
+ GET / 200 in 29ms
+ GET / 200 in 26ms
+ GET / 200 in 32ms
+ GET / 200 in 32ms
+ GET / 200 in 27ms
+ GET / 200 in 28ms
+ GET / 200 in 28ms
+ GET / 200 in 27ms
+ GET / 200 in 32ms
+ GET / 200 in 31ms
+ GET / 200 in 33ms
+ GET / 200 in 25ms
+ GET / 200 in 25ms
+ GET / 200 in 28ms
+ GET / 200 in 21ms
+ GET / 200 in 24ms
+ GET / 200 in 22ms
+ GET / 200 in 25ms
+ GET / 200 in 23ms
+ GET / 200 in 22ms
+ GET / 200 in 30ms
+ GET / 200 in 35ms
+ GET / 200 in 35ms
+ GET / 200 in 27ms
+ GET / 200 in 33ms
+ GET / 200 in 23ms
+ GET / 200 in 28ms
+ GET / 200 in 23ms
+ GET / 200 in 25ms
+ GET / 200 in 28ms
+ GET / 200 in 24ms
+ GET / 200 in 28ms
+ GET / 200 in 28ms
+ GET / 200 in 28ms
+ GET / 200 in 22ms
+ GET / 200 in 23ms
+ GET / 200 in 21ms
+ GET / 200 in 47ms
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 790ms (2111 modules)
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 916ms
+ ○ Compiling /favicon.ico ...
+ ✓ Compiled /favicon.ico in 525ms (1064 modules)
+ GET /favicon.ico 200 in 602ms
+ GET / 200 in 121ms
+ GET / 200 in 24ms
+ GET / 200 in 28ms
+ GET / 200 in 27ms
+ GET / 200 in 26ms
+ GET / 200 in 25ms
+ GET / 200 in 25ms
+ GET / 200 in 24ms
+ GET / 200 in 25ms
+ GET / 200 in 23ms
+ GET / 200 in 28ms
+ GET / 200 in 23ms
+ GET / 200 in 23ms
+ GET / 200 in 30ms
+ GET / 200 in 23ms
+ GET / 200 in 23ms
+ GET / 200 in 28ms
+ GET / 200 in 24ms
+ GET / 200 in 28ms
+ GET / 200 in 29ms
+ GET / 200 in 24ms
+ GET / 200 in 27ms
+ GET / 200 in 27ms
+ GET / 200 in 25ms
+ GET / 200 in 22ms
+ GET / 200 in 29ms
+ GET / 200 in 25ms
+ GET / 200 in 26ms
+ GET / 200 in 23ms
+ GET / 200 in 24ms
+ GET / 200 in 23ms
+ GET / 200 in 33ms
+ GET / 200 in 26ms
+ GET / 200 in 24ms
+ GET / 200 in 26ms
+ GET / 200 in 27ms
+ GET / 200 in 25ms
+ GET / 200 in 23ms
+ GET / 200 in 21ms
+ GET / 200 in 30ms
+ GET / 200 in 36ms
+ GET / 200 in 30ms
+ GET / 200 in 23ms
+ GET / 200 in 26ms
+ GET / 200 in 25ms
+ GET / 200 in 21ms
+ GET / 200 in 28ms
+ GET / 200 in 23ms
+ GET / 200 in 24ms
+ GET / 200 in 32ms
+ GET / 200 in 26ms
+ GET / 200 in 22ms
+ GET / 200 in 24ms
+ GET / 200 in 23ms
+ GET / 200 in 21ms
+ GET / 200 in 29ms
+ GET / 200 in 34ms
+ GET / 200 in 22ms
+ GET / 200 in 26ms
+ GET / 200 in 22ms
+ GET / 200 in 20ms
+ GET / 200 in 26ms
+ GET / 200 in 24ms
+ GET / 200 in 30ms
+ GET / 200 in 24ms
+ GET / 200 in 25ms
+ GET / 200 in 29ms
+ GET / 200 in 25ms
+ GET / 200 in 23ms
+ GET / 200 in 25ms
+ GET / 200 in 34ms
+ GET / 200 in 29ms
+ GET / 200 in 78ms
+ GET / 200 in 43ms
+ GET / 200 in 41ms
+ GET / 200 in 28ms
+ GET / 200 in 23ms
+ GET / 200 in 22ms
+ GET / 200 in 23ms
+ GET / 200 in 26ms
+ GET / 200 in 25ms
+ GET / 200 in 24ms
+ GET / 200 in 25ms
+ GET / 200 in 24ms
+ GET / 200 in 23ms
+ GET / 200 in 28ms
+ GET / 200 in 26ms
+ GET / 200 in 25ms
+ GET / 200 in 28ms
+ GET / 200 in 49ms
+ GET / 200 in 22ms
+ GET / 200 in 25ms
+ GET / 200 in 23ms
+ ⨯ ./src/app/page.tsx:9:1
+Module not found: Can't resolve 'recharts'
+[0m [90m  7 |[39m [36mimport[39m { [33mBadge[39m } [36mfrom[39m [32m'@/components/ui/Badge'[39m[33m;[39m[0m
+[0m [90m  8 |[39m [36mimport[39m { [33mTrophy[39m[33m,[39m [33mTrendingUp[39m[33m,[39m [33mZap[39m[33m,[39m [33mUsers[39m[33m,[39m [33mDollarSign[39m } [36mfrom[39m [32m'lucide-react'[39m[33m;[39m[0m
+[0m[31m[1m>[22m[39m[90m  9 |[39m [36mimport[39m { [33mLineChart[39m[33m,[39m [33mLine[39m[33m,[39m [33mXAxis[39m[33m,[39m [33mYAxis[39m[33m,[39m [33mCartesianGrid[39m[33m,[39m [33mTooltip[39m[33m,[39m [33mResponsiveContainer[39m } [36mfrom[39m [32m'recharts'[39m[33m;[39m[0m
+[0m [90m    |[39m [31m[1m^[22m[39m[0m
+[0m [90m 10 |[39m [36mimport[39m { useGameActions[33m,[39m useGameLoading[33m,[39m useGameError[33m,[39m useCurrentGame } [36mfrom[39m [32m'@/lib/store/gameStore'[39m[33m;[39m[0m
+[0m [90m 11 |[39m[0m
+[0m [90m 12 |[39m [36mexport[39m [36mdefault[39m [36mfunction[39m [33mHome[39m() {[0m
+
+https://nextjs.org/docs/messages/module-not-found
+ GET / 500 in 1722ms
+ GET / 500 in 1611ms
+ GET / 500 in 1582ms
+ GET / 500 in 33ms
+ GET / 500 in 31ms
+ GET / 500 in 36ms
+ GET / 500 in 26ms
+ GET / 500 in 27ms
+ GET / 500 in 35ms
+ GET / 500 in 31ms
+ GET / 500 in 31ms
+ GET / 500 in 29ms
+ GET / 500 in 30ms
+ GET / 500 in 30ms
+ GET / 500 in 33ms
+ GET / 500 in 35ms
+ GET / 500 in 37ms
+ GET / 500 in 38ms
+ GET / 500 in 172ms
+ GET / 500 in 135ms
+ GET / 500 in 133ms
+ GET / 500 in 37ms
+ GET / 500 in 47ms
+ GET / 500 in 47ms
+ GET / 500 in 20ms
+ GET / 500 in 34ms
+ GET / 500 in 35ms
+ GET / 500 in 14ms
+ GET / 500 in 22ms
+ GET / 500 in 20ms
+ ✓ Compiled in 11.6s (3362 modules)
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 10771ms
+ GET / 200 in 10757ms
+ GET / 200 in 10805ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 32ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 51ms
+ GET / 200 in 48ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 66ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 74ms
+ GET / 200 in 80ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 38ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 39ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 59ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 41ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 34ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 33ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 39ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 33ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 32ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 27ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 26ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 27ms
+ ✓ Compiled in 1132ms (3376 modules)
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 201ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 71ms
+ GET / 200 in 66ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 33ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 55ms
+ GET / 200 in 59ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 28ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 36ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 58ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 34ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 30ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 27ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 41ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 34ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 31ms
+ GET /live-game/session_20251031_124333 200 in 122ms
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 1070ms (3365 modules)
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 1158ms
+ ○ Compiling /favicon.ico ...
+ ✓ Compiled /favicon.ico in 881ms (1691 modules)
+ GET /favicon.ico 200 in 1002ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 146ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 66ms
+ GET / 200 in 65ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 216ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 152ms
+ GET /models 404 in 26ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 45ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 58ms
+ GET / 200 in 66ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 40ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 35ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 34ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 58ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 25ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 61ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 24ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 24ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 30ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 25ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 33ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 28ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 27ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 29ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 27ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 32ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 43ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 26ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 26ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 24ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 27ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 27ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 23ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 26ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 26ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 26ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 29ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 188ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 27ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 31ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 31ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 37ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 38ms
+ GET /favicon.ico 200 in 27ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 31ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 25ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 23ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 33ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 26ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 25ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 26ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 25ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 29ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 32ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 25ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 26ms
+ ✓ Compiled in 697ms (1720 modules)
+ ✓ Compiled in 527ms (1720 modules)
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 27ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 25ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 26ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 26ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 25ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 28ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 30ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 27ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 26ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 39ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 42ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 40ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 25ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 29ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 402ms
+ ✓ Compiled in 1876ms (3376 modules)
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 225ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 50ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 36ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 31ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 32ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 29ms
+ ✓ Compiled in 1047ms (3362 modules)
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 243ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 57ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 46ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 32ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 27ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 33ms
+ ✓ Compiled in 2.4s (3376 modules)
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 84ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 58ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 28ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 30ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 29ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 26ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 30ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 29ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 29ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 49ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 54ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 27ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 40ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 30ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 28ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 39ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 30ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 33ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 99ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 57ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 26ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 36ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 36ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 30ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 30ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 24ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 26ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 29ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 26ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 31ms
