@@ -111,7 +111,7 @@ export interface GameListResponse {
 
 // WebSocket Message Types
 export interface WebSocketMessage {
-  type: 'game_update' | 'round_complete' | 'game_complete' | 'error';
+  type: 'game_update' | 'round_complete' | 'game_complete' | 'error' | 'connection_established' | 'ping' | 'pong';
   data: any;
   timestamp: string;
 }

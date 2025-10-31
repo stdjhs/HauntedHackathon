@@ -168,7 +168,7 @@ export default function Home() {
               <Select
                 value={gameSettings.discussion_time_minutes.toString()}
                 onChange={(value) => setGameSettings({
-                  discussion_time_minutes: parseInt(value)
+                  discussion_time_minutes: parseInt(Array.isArray(value) ? value[0] : value)
                 })}
                 options={[
                   { value: '3', label: '3 minutes' },
@@ -186,7 +186,7 @@ export default function Home() {
               <Select
                 value={gameSettings.max_rounds.toString()}
                 onChange={(value) => setGameSettings({
-                  max_rounds: parseInt(value)
+                  max_rounds: parseInt(Array.isArray(value) ? value[0] : value)
                 })}
                 options={[
                   { value: '5', label: '5 rounds' },

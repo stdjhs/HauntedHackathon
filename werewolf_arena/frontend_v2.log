@@ -7,66 +7,24 @@
   - Environments: .env.local
 
  ✓ Starting...
- ✓ Ready in 4.4s
+ ✓ Ready in 2.3s
  ○ Compiling / ...
- ✓ Compiled / in 7.3s (730 modules)
- GET / 200 in 7886ms
- ✓ Compiled in 763ms (316 modules)
- GET / 200 in 143ms
- GET / 200 in 171ms
+ ✓ Compiled / in 6.5s (733 modules)
+ GET / 200 in 5250ms
+ GET / 200 in 2113ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET / 200 in 7200ms
+ ✓ Compiled in 1195ms (710 modules)
+ GET / 200 in 708ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 712ms
+ ○ Compiling /favicon.ico ...
+ ✓ Compiled /favicon.ico in 845ms (438 modules)
+ GET /favicon.ico 200 in 937ms
+ GET / 200 in 93ms
+ GET / 200 in 15ms
  ○ Compiling /live/[sessionId] ...
- ✓ Compiled /live/[sessionId] in 2.2s (1829 modules)
- GET / 200 in 1537ms
- GET / 200 in 16ms
- GET / 200 in 26ms
- GET / 200 in 19ms
- GET / 200 in 14ms
- GET / 200 in 13ms
- GET / 200 in 25ms
- GET / 200 in 17ms
- GET / 200 in 22ms
- GET / 200 in 14ms
- GET / 200 in 15ms
- GET / 200 in 14ms
- GET / 200 in 14ms
- GET / 200 in 16ms
- GET / 200 in 15ms
- GET / 200 in 15ms
- GET / 200 in 12ms
- GET / 200 in 14ms
- GET / 200 in 13ms
- GET / 200 in 11ms
- GET / 200 in 14ms
- GET / 200 in 21ms
- GET / 200 in 12ms
- GET / 200 in 14ms
- GET / 200 in 14ms
- GET / 200 in 11ms
- GET / 200 in 15ms
- GET / 200 in 13ms
- GET / 200 in 14ms
- GET / 200 in 14ms
- GET / 200 in 12ms
- GET / 200 in 14ms
- GET / 200 in 13ms
- GET / 200 in 14ms
- GET / 200 in 23ms
- GET / 200 in 16ms
- GET / 200 in 12ms
- GET / 200 in 14ms
- GET / 200 in 17ms
- GET / 200 in 13ms
- GET / 200 in 13ms
- GET / 200 in 13ms
- GET / 200 in 15ms
- GET / 200 in 12ms
- GET / 200 in 14ms
- GET / 200 in 12ms
- GET / 200 in 13ms
- GET / 200 in 14ms
- GET / 200 in 12ms
- GET / 200 in 10ms
- GET / 200 in 15ms
- GET / 200 in 13ms
- GET / 200 in 18ms
- GET / 200 in 16ms
+ ✓ Compiled /live/[sessionId] in 2.4s (1870 modules)
+ GET / 200 in 536ms
+ GET / 200 in 1292ms
+ GET / 200 in 28ms
+ GET / 200 in 31ms

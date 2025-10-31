@@ -1,125 +1,47 @@
 INFO:     Will watch for changes in these directories: ['/Users/admin/Project/HauntedHackathon/werewolf_arena/backend']
 INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
-INFO:     Started reloader process [84226] using WatchFiles
-INFO:     Started server process [84231]
+INFO:     Started reloader process [41177] using WatchFiles
+INFO:     Started server process [41180]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
-INFO:     ('127.0.0.1', 52226) - "WebSocket /ws/session_20251031_081311" [accepted]
-INFO:     connection open
 ✅ 已加载延迟配置: /Users/admin/Project/HauntedHackathon/werewolf_arena/backend/src/config/timing_config.yaml
+📊 Sequence Manager initialized
 🚀 Starting Werewolf Arena API...
 📝 Environment: development
 🔧 Debug mode: False
 🤖 LLM Providers Health: {'glm': True}
 ✅ Global LLM client initialized successfully
 🎮 Ready to start games!
-WebSocket connected for session session_20251031_081311. Total connections: 1
-INFO:     127.0.0.1:52265 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52434 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52507 - "GET /api/v1/models/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52507 - "GET /api/v1/models/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52507 - "OPTIONS /api/v1/games/start HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50284 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50341 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50495 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50552 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50707 - "GET /api/v1/models/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50708 - "GET /api/v1/models/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50743 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50753 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50917 - "OPTIONS /api/v1/games/start HTTP/1.1" 200 OK
 Model conversion: glmz1-flash -> glm/GLM-Z1-Flash
 Model conversion: glmz1-flash -> glm/GLM-Z1-Flash
 🎮 应用游戏模式 normal，延迟倍数: 1.0x
 🎮 游戏模式: normal (延迟倍数: 1.0x)
-INFO:     127.0.0.1:52507 - "POST /api/v1/games/start HTTP/1.1" 201 Created
+INFO:     127.0.0.1:50917 - "POST /api/v1/games/start HTTP/1.1" 201 Created
 STARTING ROUND: 0
 The Werewolves are picking someone to remove from the game.
-INFO:     127.0.0.1:52553 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52507 - "GET /api/v1/models/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52507 - "GET /api/v1/games/session_20251031_082553 HTTP/1.1" 200 OK
-INFO:     ('127.0.0.1', 52579) - "WebSocket /ws/session_20251031_082553" [accepted]
-WebSocket connected for session session_20251031_082553. Total connections: 1
-INFO:     127.0.0.1:52509 - "GET /api/v1/games/session_20251031_082553 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50926 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50953 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50917 - "GET /api/v1/models/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50917 - "GET /api/v1/games/session_20251031_110705 HTTP/1.1" 200 OK
+INFO:     ('127.0.0.1', 50968) - "WebSocket /ws/session_20251031_110705" [accepted]
 INFO:     connection open
-INFO:     127.0.0.1:52507 - "GET /api/v1/games/session_20251031_082553 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52509 - "GET /api/v1/games/session_20251031_082553 HTTP/1.1" 200 OK
-Sam eliminated Derek
+WebSocket connected for session session_20251031_110705. Total connections: 1
+[RealtimeLogger] New subscriber for session session_20251031_110705
+INFO:     127.0.0.1:50970 - "GET /api/v1/games/session_20251031_110705 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50972 - "GET /api/v1/games/session_20251031_110705 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50974 - "GET /api/v1/games/session_20251031_110705 HTTP/1.1" 200 OK
+Ginger eliminated Derek
 The Doctor is protecting someone.
-INFO:     127.0.0.1:52613 - "GET /health HTTP/1.1" 200 OK
-Derek protected Paul
+Scott protected Derek
 The Seer is investigating someone.
-
-Player Derek not in current players: ['Will', 'Sam', 'Paul', 'Harold', 'Leah']
-Player Derek not in current players: ['Will', 'Sam', 'Paul', 'Harold', 'Leah']
-Player Derek not in current players: ['Will', 'Sam', 'Paul', 'Harold', 'Leah']
-Player Derek not in current players: ['Will', 'Sam', 'Paul', 'Harold', 'Leah']
-The Werewolves removed Derek from the game during the night.
-Checking for a winner after Night Phase.
-The Players are debating and voting.
-INFO:     127.0.0.1:52694 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52741 - "GET /health HTTP/1.1" 200 OK
-Paul bid: 2
-Harold bid: 3
-INFO:     127.0.0.1:52773 - "GET /health HTTP/1.1" 200 OK
-Will bid: 2
-Leah bid: 2
-INFO:     127.0.0.1:52894 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52983 - "GET /health HTTP/1.1" 200 OK
-Harold (Villager): Let’s focus on Sam. His sudden silence during the night phase and ambiguous responses in previous interactions raise red flags. If the Werewolves are still among us, eliminating a可疑 candidate like Sam weakens their numbers. If wrong, his elimination still advances the Village’s advantage. Let’s vote Sam tonight.
-INFO:     127.0.0.1:53036 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53195 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53302 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53345 - "GET /health HTTP/1.1" 200 OK
-Leah bid: 2
-INFO:     127.0.0.1:53374 - "GET /health HTTP/1.1" 200 OK
-Sam bid: 2
-Will bid: 2
-INFO:     127.0.0.1:53433 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53492 - "GET /health HTTP/1.1" 200 OK
-Sam (Werewolf): Harold's accusation is premature. The Doctor's save remains unknown—perhaps Paul saved himself, explaining his silence. Let's vote Paul; his ambiguity undermines trust.
-INFO:     127.0.0.1:53619 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53684 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53782 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53918 - "GET /health HTTP/1.1" 200 OK
-Paul voted to remove Sam
-Harold voted to remove Paul
-Leah voted to remove Sam
-Sam voted to remove Paul
-Will voted to remove Sam
-
-Player Sam not in current players: ['Will', 'Paul', 'Harold', 'Leah']
-Player Sam not in current players: ['Will', 'Paul', 'Harold', 'Leah']
-Player Sam not in current players: ['Will', 'Paul', 'Harold', 'Leah']
-The majority voted to remove Sam from the game.
-Checking for a winner after Day Phase.
-The winner is Villagers!
-Round 0 is complete.
-Game is complete!
-INFO:     127.0.0.1:54021 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54066 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54157 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54217 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54301 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54371 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54438 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54563 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54682 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54734 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54820 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54868 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54927 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54992 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55066 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55119 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55182 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55281 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55359 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55462 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55596 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55711 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55821 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55868 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55993 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56101 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56146 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56225 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56303 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56372 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56541 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56690 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56765 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56846 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56877 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56954 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51059 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51060 - "GET /health HTTP/1.1" 200 OK
