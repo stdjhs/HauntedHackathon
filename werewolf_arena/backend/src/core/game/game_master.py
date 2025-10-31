@@ -17,7 +17,7 @@
 from collections import Counter
 from concurrent.futures import ThreadPoolExecutor
 import random
-from typing import List, Optional, Callable
+from typing import List, Optional, Callable, Dict, Any
 
 import tqdm
 import time
@@ -118,8 +118,32 @@ class GameMaster:
             f" night, {'we' if len(werewolves_alive) > 1 else 'I'} decided to"
             f" eliminate {eliminated}."
         )
+
+      # 发送 WebSocket 通知 - 狼人击杀行动
+      self._notify_night_action(
+        action_type="eliminate",
+        player_name=wolf.name,
+        player_role="Werewolf",
+        target_name=eliminated,
+        details={
+          "action": "夜间击杀",
+          "reasoning": log.result.get("reasoning", "无推理信息") if log.result else "无日志"
+        }
+      )
     else:
       print(f"No player was eliminated this round")
+
+      # 发送 WebSocket 通知 - 狼人行动失败
+      self._notify_night_action(
+        action_type="eliminate_failed",
+        player_name=wolf.name,
+        player_role="Werewolf",
+        details={
+          "action": "夜间击杀失败",
+          "reason": "没有有效目标"
+        }
+      )
+
     self._progress()
 
   def protect(self):
@@ -149,8 +173,32 @@ class GameMaster:
     if protect is not None:
       self.this_round.protected = protect
       tqdm.tqdm.write(f"{self.state.doctor.name} protected {protect}")
+
+      # 发送 WebSocket 通知 - 医生保护行动
+      self._notify_night_action(
+        action_type="protect",
+        player_name=self.state.doctor.name,
+        player_role="Doctor",
+        target_name=protect,
+        details={
+          "action": "医生保护",
+          "reasoning": log.result.get("reasoning", "无推理信息") if log.result else "无日志"
+        }
+      )
     else:
       print(f"No player was protected this round")
+
+      # 发送 WebSocket 通知 - 医生行动失败
+      self._notify_night_action(
+        action_type="protect_failed",
+        player_name=self.state.doctor.name,
+        player_role="Doctor",
+        details={
+          "action": "医生保护失败",
+          "reason": "没有可保护的目标"
+        }
+      )
+
     self._progress()
 
   def unmask(self):
@@ -182,9 +230,36 @@ class GameMaster:
 
     if unmask is not None:
       self.this_round.unmasked = unmask
-      self.state.seer.reveal_and_update(unmask, self.state.players[unmask].role)
+      target_role = self.state.players[unmask].role
+      self.state.seer.reveal_and_update(unmask, target_role)
+
+      # 发送 WebSocket 通知 - 预言家查验行动
+      self._notify_night_action(
+        action_type="investigate",
+        player_name=self.state.seer.name,
+        player_role="Seer",
+        target_name=unmask,
+        details={
+          "action": "预言家查验",
+          "reasoning": log.result.get("reasoning", "无推理信息") if log.result else "无日志",
+          "target_role": target_role,
+          "investigation_result": target_role
+        }
+      )
     else:
       print(f"No player was investigated this round")
+
+      # 发送 WebSocket 通知 - 预言家行动失败
+      self._notify_night_action(
+        action_type="investigate_failed",
+        player_name=self.state.seer.name,
+        player_role="Seer",
+        details={
+          "action": "预言家查验失败",
+          "reason": "没有可查验的目标"
+        }
+      )
+
     self._progress()
 
   def _get_bid(self, player_name):
@@ -307,8 +382,15 @@ class GameMaster:
       delay = get_delay("debate", self.delay_multiplier)
       time.sleep(delay)
 
-      self._progress()
+      # 发送 WebSocket 通知 - 辩论发言
+      self._notify_debate_turn(
+        player_name=next_speaker,
+        dialogue=dialogue,
+        player_role=player.role,
+        turn_number=idx + 1
+      )
 
+      # 更新其他玩家的游戏状态
       for name in self.this_round.players:
         player = self.state.players[name]
         if player.gamestate:
@@ -316,7 +398,10 @@ class GameMaster:
         else:
           raise ValueError(f"{name}.gamestate needs to be initialized.")
 
+      self._progress()
+
       if idx == MAX_DEBATE_TURNS - 1 or RUN_SYNTHETIC_VOTES:
+        # 进入投票阶段
         votes, vote_logs = self.run_voting()
         self.this_round.votes.append(votes)
         self.this_round_log.votes.append(vote_logs)
@@ -330,41 +415,51 @@ class GameMaster:
     vote_log = []
     votes = {}
 
-    with ThreadPoolExecutor(max_workers=self.num_threads) as executor:
-      player_votes = {
-          name: executor.submit(self.state.players[name].vote)
-          for name in self.this_round.players
-      }
+    # 改为顺序处理投票，以便发送实时通知
+    for player_name in self.this_round.players:
+      player = self.state.players[player_name]
+      try:
+        vote, log = player.vote()
 
-      for player_name, vote_task in player_votes.items():
-        try:
-          vote, log = vote_task.result()
-          vote_log.append(VoteLog(player_name, vote, log))
+        if vote is None:
+          # 如果没有返回投票，使用默认投票
+          print(f"Warning: {player_name} did not return a valid vote, using default")
+          vote = next((p for p in self.this_round.players if p and p != player_name), player_name)
+          log = f"Default vote used due to empty response"
 
-          if vote is not None:
-            # 验证投票是否是有效的玩家名
-            if vote in self.this_round.players:
-              votes[player_name] = vote
-            else:
-              # 如果投票无效，记录警告但继续
-              print(f"Warning: {player_name} voted for invalid player '{vote}', skipping vote")
-              # 安全地选择一个默认玩家
-              default_target = next((p for p in self.this_round.players if p and p != player_name), player_name)
-              votes[player_name] = default_target
-          else:
-            # 如果没有返回投票，记录警告但继续
-            print(f"Warning: {player_name} did not return a valid vote, skipping")
-            # 安全地选择一个默认玩家
-            default_target = next((p for p in self.this_round.players if p and p != player_name), player_name)
-            votes[player_name] = default_target
-        except Exception as e:
-          # 如果投票过程出错，记录错误但继续
-          print(f"Error during voting for {player_name}: {e}")
-          # 安全地选择一个默认玩家
-          default_target = next((p for p in self.this_round.players if p and p != player_name), player_name)
-          votes[player_name] = default_target
-          # 创建一个空的日志条目
-          vote_log.append(VoteLog(player_name, default_target, f"Error: {str(e)}"))
+        # 验证投票是否是有效的玩家名
+        if vote not in self.this_round.players:
+          print(f"Warning: {player_name} voted for invalid player '{vote}', using default")
+          vote = next((p for p in self.this_round.players if p and p != player_name), player_name)
+          log = f"Invalid vote corrected to: {vote}"
+
+        votes[player_name] = vote
+        vote_log.append(VoteLog(player_name, vote, log))
+
+        # 发送 WebSocket 通知 - 投票
+        self._notify_vote_cast(
+          voter=player_name,
+          target=vote,
+          voter_role=player.role
+        )
+
+        # 添加投票延迟（使用配置文件）
+        delay = get_delay("vote", self.delay_multiplier)
+        time.sleep(delay)
+
+      except Exception as e:
+        # 如果投票过程出错，使用默认投票并记录错误
+        print(f"Error during voting for {player_name}: {e}")
+        default_target = next((p for p in self.this_round.players if p and p != player_name), player_name)
+        votes[player_name] = default_target
+        vote_log.append(VoteLog(player_name, default_target, f"Error: {str(e)}"))
+
+        # 发送 WebSocket 通知 - 投票错误
+        self._notify_vote_cast(
+          voter=player_name,
+          target=default_target,
+          voter_role=player.role
+        )
 
     return votes, vote_log
 
@@ -503,6 +598,101 @@ class GameMaster:
     """设置停止标志，让游戏优雅终止"""
     self.should_stop = True
     tqdm.tqdm.write("Game stop requested, will finish current round and exit gracefully.")
+
+  def _notify_night_action(self, action_type: str, player_name: str, player_role: str, target_name: Optional[str] = None, details: Optional[Dict[str, Any]] = None):
+    """发送夜间行动 WebSocket 通知"""
+    try:
+      # 延迟导入避免循环依赖
+      from src.services.game_manager.session_manager import _notify_night_action
+      import asyncio
+
+      def run_async():
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+        try:
+          # 从 ActionType 导入
+          from src.services.game_manager.sequence_manager import ActionType
+          action_type_enum = ActionType(action_type)
+
+          loop.run_until_complete(
+            _notify_night_action(
+              session_id=self.state.session_id,
+              action_type=action_type_enum,
+              player_name=player_name,
+              player_role=player_role,
+              target_name=target_name,
+              details=details
+            )
+          )
+        finally:
+          loop.close()
+
+      # 在线程池中运行异步函数
+      import concurrent.futures
+      executor = concurrent.futures.ThreadPoolExecutor(max_workers=1)
+      executor.submit(run_async)
+      executor.shutdown(wait=False)
+
+    except Exception as e:
+      print(f"Failed to send night action notification: {e}")
+
+  def _notify_debate_turn(self, player_name: str, dialogue: str, player_role: str, turn_number: int):
+    """发送辩论发言 WebSocket 通知"""
+    try:
+      from src.services.game_manager.session_manager import _notify_debate_turn
+      import asyncio
+
+      def run_async():
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+        try:
+          loop.run_until_complete(
+            _notify_debate_turn(
+              session_id=self.state.session_id,
+              player_name=player_name,
+              dialogue=dialogue,
+              player_role=player_role
+            )
+          )
+        finally:
+          loop.close()
+
+      import concurrent.futures
+      executor = concurrent.futures.ThreadPoolExecutor(max_workers=1)
+      executor.submit(run_async)
+      executor.shutdown(wait=False)
+
+    except Exception as e:
+      print(f"Failed to send debate turn notification: {e}")
+
+  def _notify_vote_cast(self, voter: str, target: str, voter_role: str):
+    """发送投票 WebSocket 通知"""
+    try:
+      from src.services.game_manager.session_manager import _notify_vote_cast
+      import asyncio
+
+      def run_async():
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+        try:
+          loop.run_until_complete(
+            _notify_vote_cast(
+              session_id=self.state.session_id,
+              voter=voter,
+              target=target,
+              voter_role=voter_role
+            )
+          )
+        finally:
+          loop.close()
+
+      import concurrent.futures
+      executor = concurrent.futures.ThreadPoolExecutor(max_workers=1)
+      executor.submit(run_async)
+      executor.shutdown(wait=False)
+
+    except Exception as e:
+      print(f"Failed to send vote cast notification: {e}")
 
   def run_game(self) -> str:
     """Run the entire Werewolf game and return the winner."""

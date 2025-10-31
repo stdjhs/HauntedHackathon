@@ -7,66 +7,21 @@
   - Environments: .env.local
 
  ✓ Starting...
- ✓ Ready in 4.4s
+ ✓ Ready in 3.2s
  ○ Compiling / ...
- ✓ Compiled / in 7.3s (730 modules)
- GET / 200 in 7886ms
- ✓ Compiled in 763ms (316 modules)
- GET / 200 in 143ms
- GET / 200 in 171ms
- ○ Compiling /live/[sessionId] ...
- ✓ Compiled /live/[sessionId] in 2.2s (1829 modules)
- GET / 200 in 1537ms
- GET / 200 in 16ms
- GET / 200 in 26ms
- GET / 200 in 19ms
- GET / 200 in 14ms
- GET / 200 in 13ms
- GET / 200 in 25ms
- GET / 200 in 17ms
+ ✓ Compiled / in 3.4s (721 modules)
+ GET / 200 in 3801ms
+ ✓ Compiled in 585ms (316 modules)
+ GET / 200 in 90ms
  GET / 200 in 22ms
- GET / 200 in 14ms
- GET / 200 in 15ms
- GET / 200 in 14ms
- GET / 200 in 14ms
- GET / 200 in 16ms
- GET / 200 in 15ms
- GET / 200 in 15ms
- GET / 200 in 12ms
- GET / 200 in 14ms
- GET / 200 in 13ms
- GET / 200 in 11ms
- GET / 200 in 14ms
+ GET / 200 in 26ms
  GET / 200 in 21ms
- GET / 200 in 12ms
- GET / 200 in 14ms
- GET / 200 in 14ms
- GET / 200 in 11ms
  GET / 200 in 15ms
- GET / 200 in 13ms
+ GET / 200 in 163ms
+ GET / 200 in 33ms
+ ○ Compiling /live/[sessionId] ...
+ ✓ Compiled /live/[sessionId] in 992ms (1835 modules)
+ GET / 200 in 110ms
+ GET / 200 in 30ms
  GET / 200 in 14ms
- GET / 200 in 14ms
- GET / 200 in 12ms
- GET / 200 in 14ms
- GET / 200 in 13ms
- GET / 200 in 14ms
- GET / 200 in 23ms
- GET / 200 in 16ms
- GET / 200 in 12ms
- GET / 200 in 14ms
- GET / 200 in 17ms
- GET / 200 in 13ms
- GET / 200 in 13ms
- GET / 200 in 13ms
- GET / 200 in 15ms
- GET / 200 in 12ms
- GET / 200 in 14ms
- GET / 200 in 12ms
- GET / 200 in 13ms
- GET / 200 in 14ms
- GET / 200 in 12ms
- GET / 200 in 10ms
- GET / 200 in 15ms
- GET / 200 in 13ms
- GET / 200 in 18ms
- GET / 200 in 16ms
+ GET / 200 in 19ms

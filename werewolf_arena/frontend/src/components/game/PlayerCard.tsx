@@ -41,9 +41,8 @@ export function PlayerCard({
         className
       )}
       padding="sm"
-      onClick={handleClick}
     >
-      <div className="flex items-center space-x-3">
+      <div className="flex items-center space-x-3" onClick={handleClick}>
         {/* Avatar */}
         <div className="relative">
           <div className={cn(

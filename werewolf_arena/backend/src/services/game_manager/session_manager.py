@@ -224,5 +224,63 @@ async def _notify_game_update(session_id: str, state: State):
     except Exception as e:
         print(f"Failed to send WebSocket notification: {e}")
 
+async def _notify_player_action(session_id: str, action_type, player_name: str, player_role: str, target_name: Optional[str] = None, details: Optional[Dict[str, Any]] = None):
+    """发送玩家动作通知"""
+    try:
+        from src.api.v1.routes.websocket import notify_player_action
+        from src.services.game_manager.sequence_manager import ActionType
+
+        await notify_player_action(
+            session_id=session_id,
+            action_type=ActionType(action_type),
+            player_name=player_name,
+            player_role=player_role,
+            target_name=target_name,
+            details=details
+        )
+    except Exception as e:
+        print(f"Failed to send player action notification: {e}")
+
+async def _notify_debate_turn(session_id: str, player_name: str, dialogue: str, player_role: str):
+    """发送辩论发言通知"""
+    try:
+        from src.api.v1.routes.websocket import notify_debate_turn
+        await notify_debate_turn(session_id, player_name, dialogue, player_role)
+    except Exception as e:
+        print(f"Failed to send debate turn notification: {e}")
+
+async def _notify_vote_cast(session_id: str, voter: str, target: str, voter_role: str):
+    """发送投票通知"""
+    try:
+        from src.api.v1.routes.websocket import notify_vote_cast
+        await notify_vote_cast(session_id, voter, target, voter_role)
+    except Exception as e:
+        print(f"Failed to send vote cast notification: {e}")
+
+async def _notify_night_action(session_id: str, action_type, player_name: str, player_role: str, target_name: Optional[str] = None, details: Optional[Dict[str, Any]] = None):
+    """发送夜间行动通知"""
+    try:
+        from src.api.v1.routes.websocket import notify_night_action
+        from src.services.game_manager.sequence_manager import ActionType
+
+        await notify_night_action(
+            session_id=session_id,
+            action_type=ActionType(action_type),
+            player_name=player_name,
+            player_role=player_role,
+            target_name=target_name,
+            details=details
+        )
+    except Exception as e:
+        print(f"Failed to send night action notification: {e}")
+
+async def _notify_phase_change(session_id: str, phase: str, round_number: int):
+    """发送阶段变化通知"""
+    try:
+        from src.api.v1.routes.websocket import notify_phase_change
+        await notify_phase_change(session_id, phase, round_number)
+    except Exception as e:
+        print(f"Failed to send phase change notification: {e}")
+
 # 全局实例
 game_manager = GameSessionManager()
