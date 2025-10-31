@@ -1,7 +1,7 @@
 INFO:     Will watch for changes in these directories: ['/Users/admin/Project/HauntedHackathon/werewolf_arena/backend']
 INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
-INFO:     Started reloader process [35086] using WatchFiles
-INFO:     Started server process [35102]
+INFO:     Started reloader process [41177] using WatchFiles
+INFO:     Started server process [41180]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 ✅ 已加载延迟配置: /Users/admin/Project/HauntedHackathon/werewolf_arena/backend/src/config/timing_config.yaml
@@ -12,49 +12,36 @@ INFO:     Application startup complete.
 🤖 LLM Providers Health: {'glm': True}
 ✅ Global LLM client initialized successfully
 🎮 Ready to start games!
-INFO:     127.0.0.1:52637 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52885 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52964 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52986 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53017 - "GET /api/v1/models/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53080 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53144 - "GET /docs HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53144 - "GET /openapi.json HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53246 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53146 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53146 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:53367 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53383 - "GET /api/v1/models/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53385 - "GET /api/v1/models/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53385 - "OPTIONS /api/v1/games/start HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50284 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50341 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50495 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50552 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50707 - "GET /api/v1/models/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50708 - "GET /api/v1/models/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50743 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50753 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50917 - "OPTIONS /api/v1/games/start HTTP/1.1" 200 OK
 Model conversion: glmz1-flash -> glm/GLM-Z1-Flash
 Model conversion: glmz1-flash -> glm/GLM-Z1-Flash
 🎮 应用游戏模式 normal，延迟倍数: 1.0x
 🎮 游戏模式: normal (延迟倍数: 1.0x)
-INFO:     127.0.0.1:53385 - "POST /api/v1/games/start HTTP/1.1" 201 Created
+INFO:     127.0.0.1:50917 - "POST /api/v1/games/start HTTP/1.1" 201 Created
 STARTING ROUND: 0
 The Werewolves are picking someone to remove from the game.
-INFO:     127.0.0.1:53385 - "GET /api/v1/models/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53385 - "GET /api/v1/games/session_20251031_104829 HTTP/1.1" 200 OK
-INFO:     ('127.0.0.1', 53453) - "WebSocket /ws/session_20251031_104829" [accepted]
-WebSocket connected for session session_20251031_104829. Total connections: 1
-[RealtimeLogger] New subscriber for session session_20251031_104829
-INFO:     127.0.0.1:53383 - "GET /api/v1/games/session_20251031_104829 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50926 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50953 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50917 - "GET /api/v1/models/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50917 - "GET /api/v1/games/session_20251031_110705 HTTP/1.1" 200 OK
+INFO:     ('127.0.0.1', 50968) - "WebSocket /ws/session_20251031_110705" [accepted]
 INFO:     connection open
-INFO:     127.0.0.1:53385 - "GET /api/v1/games/session_20251031_104829 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53383 - "GET /api/v1/games/session_20251031_104829 HTTP/1.1" 200 OK
-Dan eliminated Derek
+WebSocket connected for session session_20251031_110705. Total connections: 1
+[RealtimeLogger] New subscriber for session session_20251031_110705
+INFO:     127.0.0.1:50970 - "GET /api/v1/games/session_20251031_110705 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50972 - "GET /api/v1/games/session_20251031_110705 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50974 - "GET /api/v1/games/session_20251031_110705 HTTP/1.1" 200 OK
+Ginger eliminated Derek
 The Doctor is protecting someone.
-INFO:     127.0.0.1:53505 - "GET /health HTTP/1.1" 200 OK
-Paul protected Derek
+Scott protected Derek
 The Seer is investigating someone.
-
-No one was removed from the game during the night (Doctor's protection succeeded).
-Checking for a winner after Night Phase.
-The Players are debating and voting.
-INFO:     127.0.0.1:53600 - "GET /health HTTP/1.1" 200 OK
-Leah bid: 2
-Jacob bid: 2
-INFO:     127.0.0.1:53669 - "GET /health HTTP/1.1" 200 OK
-Paul bid: 2
-INFO:     127.0.0.1:53782 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51059 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51060 - "GET /health HTTP/1.1" 200 OK
