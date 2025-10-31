@@ -108,7 +108,7 @@ export class WebSocketMessageFormatter {
       content: `🔗 游戏会话已连接: ${data.session_id}`,
       icon: '🔗',
       colorClass: 'text-blue-500',
-      isSystemMessage: false
+      isSystemMessage: true
     };
   }
 
@@ -350,7 +350,7 @@ export class WebSocketMessageFormatter {
       content: `🔗 ${message}`,
       icon: '🔗',
       colorClass: 'text-blue-500',
-      isSystemMessage: false
+      isSystemMessage: true
     };
   }
 
@@ -365,7 +365,7 @@ export class WebSocketMessageFormatter {
       content: `❌ 连接错误: ${error}`,
       icon: '❌',
       colorClass: 'text-red-600',
-      isSystemMessage: false
+      isSystemMessage: true
     };
   }
 
@@ -380,7 +380,7 @@ export class WebSocketMessageFormatter {
       content: '🔌 WebSocket连接已关闭',
       icon: '🔌',
       colorClass: 'text-gray-500',
-      isSystemMessage: false
+      isSystemMessage: true
     };
   }
 
