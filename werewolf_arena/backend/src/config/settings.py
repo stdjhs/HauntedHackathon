@@ -64,6 +64,14 @@ class LLMSettings(BaseSettings):
     # Anthropic
     anthropic_api_key: Optional[str] = None
 
+    # MiniMax
+    minimax_api_key: Optional[str] = None
+    minimax_base_url: str = "https://api.minimaxi.com/anthropic"
+    minimax_model: str = "MiniMax-M2"
+
+    # 默认使用的模型
+    default_model: str = "minimax/MiniMax-M2"
+
 
 class ServerSettings(BaseSettings):
     """服务器配置"""

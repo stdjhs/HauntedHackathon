@@ -98,6 +98,12 @@ def generate(
     for attempt in range(RETRIES):
         raw_resp = None
         try:
+            # 添加中文系统消息
+            system_message = "请用中文回答所有问题和进行所有对话。你是狼人杀游戏的AI玩家，需要用中文进行发言、推理和互动。"
+
+            # 详细的调试日志
+            print(f"[LLM调用] 第{attempt + 1}/{RETRIES}次尝试 | 模型: {model} | 温度: {temperature:.2f}")
+
             # 调用LLM
             raw_resp = llm_client.call(
                 model=model,
@@ -105,7 +111,10 @@ def generate(
                 temperature=temperature,
                 json_mode=True,
                 response_schema=response_schema,
+                system_message=system_message,
             )
+
+            print(f"[LLM响应] 成功获取响应，长度: {len(raw_resp) if raw_resp else 0} 字符")
 
             # 解析JSON响应
             result = parse_json(raw_resp)
@@ -122,21 +131,26 @@ def generate(
             if result_key:
                 if isinstance(result, dict):
                     result = result.get(result_key)
+                    print(f"[LLM结果] 提取键 '{result_key}': {result}")
                 else:
                     # 非字典结果无法提取键，触发重试
+                    print(f"[LLM警告] 结果不是字典类型，无法提取键 '{result_key}'，将重试")
                     result = None
 
             # 验证结果
             if allowed_values is None or result in allowed_values:
+                print(f"[LLM成功] 返回有效结果: {result}")
                 return result, log
 
             # 结果不在允许值中，记录并重试
-            print(f"Result '{result}' not in allowed values {allowed_values}, retrying...")
+            print(f"[LLM警告] 结果 '{result}' 不在允许值 {allowed_values} 中，将重试...")
 
         except Exception as e:
-            print(f"Attempt {attempt + 1}/{RETRIES} failed: {e}")
+            print(f"[LLM错误] 第{attempt + 1}/{RETRIES}次失败: {type(e).__name__}: {e}")
             if raw_resp:
-                print(f"Raw response snippet: {str(raw_resp)[:200]}")
+                # 截取响应的前200个字符用于调试
+                resp_snippet = str(raw_resp)[:200].replace('\n', ' ')
+                print(f"[LLM响应片段] {resp_snippet}")
 
             # 增加温度以获得更多样化的输出
             temperature = min(1.0, temperature + 0.2)
@@ -145,6 +159,7 @@ def generate(
             raw_responses.append(raw_resp if isinstance(raw_resp, str) else "")
 
     # 所有重试都失败
+    print(f"[LLM失败] 所有{RETRIES}次重试均失败，返回None")
     return None, LmLog(
         prompt=prompt,
         raw_resp="-------".join(raw_responses),

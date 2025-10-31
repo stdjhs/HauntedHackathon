@@ -83,6 +83,8 @@ class LLMClient:
             return self._get_provider("glm")
         elif model.startswith("openrouter/"):
             return self._get_provider("openrouter")
+        elif model.startswith("minimax/"):
+            return self._get_provider("minimax")
         elif "gpt" in model.lower():
             return self._get_provider("openai")
         elif "claude" in model.lower():
@@ -92,6 +94,14 @@ class LLMClient:
             raise ValueError(
                 f"No provider available for model: {model}. "
                 "Claude models require OpenRouter provider."
+            )
+        elif "minimax" in model.lower() or "M2" in model:
+            # MiniMax模型
+            if "minimax" in self.providers:
+                return self._get_provider("minimax")
+            raise ValueError(
+                f"No provider available for model: {model}. "
+                "MiniMax provider not configured."
             )
         else:
             # 默认尝试GLM
@@ -166,6 +176,13 @@ class LLMClient:
                 "base_url": settings.llm.openrouter_base_url,
                 "referrer": settings.llm.openrouter_referrer,
                 "app_title": settings.llm.openrouter_app_title,
+            })
+
+        # 配置MiniMax
+        if settings.llm.minimax_api_key:
+            providers["minimax"] = LLMFactory.create("minimax", {
+                "api_key": settings.llm.minimax_api_key,
+                "base_url": settings.llm.minimax_base_url,
             })
 
         if not providers:

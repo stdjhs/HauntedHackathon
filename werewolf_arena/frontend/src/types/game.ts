@@ -111,7 +111,22 @@ export interface GameListResponse {
 
 // WebSocket Message Types
 export interface WebSocketMessage {
-  type: 'game_update' | 'round_complete' | 'game_complete' | 'error' | 'connection_established' | 'ping' | 'pong';
+  type:
+    | 'game_update'
+    | 'round_complete'
+    | 'game_complete'
+    | 'error'
+    | 'connection_established'
+    | 'ping'
+    | 'pong'
+    | 'debate_turn'
+    | 'vote_cast'
+    | 'night_action'
+    | 'phase_change'
+    | 'player_action'
+    | 'log_update'
+    | 'log_history'
+    | 'status_update';
   data: any;
   timestamp: string;
 }
@@ -138,5 +153,86 @@ export interface GameCompleteMessage extends WebSocketMessage {
     winner: PlayerRole;
     final_round: Round;
     game_state: GameState;
+  };
+}
+
+export interface DebateTurnMessage extends WebSocketMessage {
+  type: 'debate_turn';
+  data: {
+    sequence_number: number;
+    player_name: string;
+    dialogue: string;
+    timestamp: string;
+  };
+}
+
+export interface VoteCastMessage extends WebSocketMessage {
+  type: 'vote_cast';
+  data: {
+    sequence_number: number;
+    voter: string;
+    target: string;
+    timestamp: string;
+  };
+}
+
+export interface NightActionMessage extends WebSocketMessage {
+  type: 'night_action';
+  data: {
+    sequence_number: number;
+    action_type: string;
+    player_name: string;
+    player_role?: string;
+    target_name?: string;
+    details?: Record<string, any>;
+    timestamp: string;
+  };
+}
+
+export interface PhaseChangeMessage extends WebSocketMessage {
+  type: 'phase_change';
+  data: {
+    sequence_number?: number;
+    phase: string;
+    round_number: number;
+    timestamp: string;
+  };
+}
+
+export interface PlayerActionMessage extends WebSocketMessage {
+  type: 'player_action';
+  data: {
+    sequence_number: number;
+    action_type: string;
+    player_name: string;
+    player_role: string;
+    target_name?: string;
+    details?: Record<string, any>;
+    timestamp: string;
+  };
+}
+
+export interface LogUpdateMessage extends WebSocketMessage {
+  type: 'log_update';
+  data: {
+    action: string;
+    player_name?: string;
+    round_number?: number;
+    phase?: string;
+  };
+}
+
+export interface LogHistoryMessage extends WebSocketMessage {
+  type: 'log_history';
+  data: {
+    logs: any[];
+  };
+}
+
+export interface StatusUpdateMessage extends WebSocketMessage {
+  type: 'status_update';
+  data: {
+    status: 'running' | 'stopped';
+    game_state?: GameState;
   };
 }

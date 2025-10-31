@@ -50,7 +50,7 @@ def group_and_format_observations(observations):
 
     formatted_obs = []
     for round_num, round_obs in sorted(grouped.items()):
-        formatted_round = f"Round {round_num}:\n"
+        formatted_round = f"第{round_num}轮：\n"
         formatted_round += "\n".join(f"   - {obs}" for obs in round_obs)
         formatted_obs.append(formatted_round)
 
@@ -89,12 +89,12 @@ class Player(Deserializable):
             )
 
         self.observations.append(
-            f"Round {self.gamestate.round_number}: {observation}"
+            f"第{self.gamestate.round_number}轮：{observation}"
         )
 
     def add_announcement(self, announcement: str):
         """添加游戏公告到观察记录"""
-        self._add_observation(f"Moderator Announcement: {announcement}")
+        self._add_observation(f"主持人公告：{announcement}")
 
     def _get_game_state(self) -> Dict[str, Any]:
         """获取玩家视角的游戏状态"""
@@ -179,7 +179,7 @@ class Player(Deserializable):
         vote, log = self._generate_action("vote", options)
         if vote is not None and len(self.gamestate.debate) == MAX_DEBATE_TURNS:
             self._add_observation(
-                f"After the debate, I voted to remove {vote} from the game."
+                f"辩论结束后，我投票淘汰了{vote}。"
             )
         return vote, log
 
@@ -187,28 +187,44 @@ class Player(Deserializable):
         """竞价发言"""
         bid, log = self._generate_action("bid", options=["0", "1", "2", "3", "4"])
         if bid is not None:
-            bid = int(bid)
-            self.bidding_rationale = log.result.get("reasoning", "")
+            # 验证 bid 是数字字符串
+            try:
+                bid = int(bid)
+                # 安全地获取reasoning，避免None访问
+                if log.result and isinstance(log.result, dict):
+                    self.bidding_rationale = log.result.get("reasoning", "")
+                else:
+                    self.bidding_rationale = "无法获取推理信息"
+            except (ValueError, TypeError) as e:
+                print(f"Warning: {self.name} returned invalid bid value '{bid}', using default 0")
+                bid = 0
+                self.bidding_rationale = f"默认竞价：{str(e)}"
+        else:
+            # bid为None时的默认处理
+            bid = 0
+            self.bidding_rationale = "AI调用失败，使用默认竞价"
         return bid, log
 
     def debate(self) -> Tuple[Optional[str], LmLog]:
         """参与辩论"""
         result, log = self._generate_action("debate", [])
-        if result is not None:
+        if result is not None and isinstance(result, dict):
             say = result.get("say", None)
             return say, log
-        return result, log
+        # 如果result为None或不是字典，返回None
+        return None, log
 
     def summarize(self) -> Tuple[Optional[str], LmLog]:
         """总结游戏状态"""
         result, log = self._generate_action("summarize", [])
-        if result is not None:
+        if result is not None and isinstance(result, dict):
             summary = result.get("summary", None)
             if summary is not None:
                 summary = summary.strip('"')
-                self._add_observation(f"Summary: {summary}")
+                self._add_observation(f"总结：{summary}")
             return summary, log
-        return result, log
+        # 如果result为None或不是字典，返回None
+        return None, log
 
     def to_dict(self) -> Any:
         return to_dict(self)
@@ -326,11 +342,11 @@ class Werewolf(Player):
             )
 
         if self.gamestate.other_wolf in self.gamestate.current_players:
-            context = f"\n- The other Werewolf is {self.gamestate.other_wolf}."
+            context = f"\n- 另一只狼人是{self.gamestate.other_wolf}。"
         else:
             context = (
-                f"\n- The other Werewolf, {self.gamestate.other_wolf}, was exiled by"
-                " the Villagers. Only you remain."
+                f"\n- 另一只狼人{self.gamestate.other_wolf}已被"
+                "村民投票淘汰。现在只剩下你。"
             )
 
         return context
@@ -376,7 +392,7 @@ class Seer(Player):
     def reveal_and_update(self, player, role):
         """揭示并更新调查结果"""
         self._add_observation(
-            f"During the night, I decided to investigate {player} and learned they are a {role}."
+            f"夜晚阶段，我决定调查{player}，发现他们是{role}。"
         )
         self.previously_unmasked[player] = role
 
@@ -416,7 +432,7 @@ class Doctor(Player):
         random.shuffle(options)
         protected, log = self._generate_action("protect", options)
         if protected is not None:
-            self._add_observation(f"During the night, I chose to protect {protected}")
+            self._add_observation(f"夜晚阶段，我选择保护{protected}")
         return protected, log
 
     @classmethod
