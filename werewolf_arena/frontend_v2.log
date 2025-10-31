@@ -1,0 +1,72 @@
+
+> werewolf-arena-frontend@0.1.0 dev
+> next dev
+
+  ▲ Next.js 14.2.33
+  - Local:        http://localhost:3000
+  - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Ready in 4.4s
+ ○ Compiling / ...
+ ✓ Compiled / in 7.3s (730 modules)
+ GET / 200 in 7886ms
+ ✓ Compiled in 763ms (316 modules)
+ GET / 200 in 143ms
+ GET / 200 in 171ms
+ ○ Compiling /live/[sessionId] ...
+ ✓ Compiled /live/[sessionId] in 2.2s (1829 modules)
+ GET / 200 in 1537ms
+ GET / 200 in 16ms
+ GET / 200 in 26ms
+ GET / 200 in 19ms
+ GET / 200 in 14ms
+ GET / 200 in 13ms
+ GET / 200 in 25ms
+ GET / 200 in 17ms
+ GET / 200 in 22ms
+ GET / 200 in 14ms
+ GET / 200 in 15ms
+ GET / 200 in 14ms
+ GET / 200 in 14ms
+ GET / 200 in 16ms
+ GET / 200 in 15ms
+ GET / 200 in 15ms
+ GET / 200 in 12ms
+ GET / 200 in 14ms
+ GET / 200 in 13ms
+ GET / 200 in 11ms
+ GET / 200 in 14ms
+ GET / 200 in 21ms
+ GET / 200 in 12ms
+ GET / 200 in 14ms
+ GET / 200 in 14ms
+ GET / 200 in 11ms
+ GET / 200 in 15ms
+ GET / 200 in 13ms
+ GET / 200 in 14ms
+ GET / 200 in 14ms
+ GET / 200 in 12ms
+ GET / 200 in 14ms
+ GET / 200 in 13ms
+ GET / 200 in 14ms
+ GET / 200 in 23ms
+ GET / 200 in 16ms
+ GET / 200 in 12ms
+ GET / 200 in 14ms
+ GET / 200 in 17ms
+ GET / 200 in 13ms
+ GET / 200 in 13ms
+ GET / 200 in 13ms
+ GET / 200 in 15ms
+ GET / 200 in 12ms
+ GET / 200 in 14ms
+ GET / 200 in 12ms
+ GET / 200 in 13ms
+ GET / 200 in 14ms
+ GET / 200 in 12ms
+ GET / 200 in 10ms
+ GET / 200 in 15ms
+ GET / 200 in 13ms
+ GET / 200 in 18ms
+ GET / 200 in 16ms
