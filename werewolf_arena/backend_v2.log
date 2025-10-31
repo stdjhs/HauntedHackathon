@@ -45,3 +45,256 @@ Scott protected Derek
 The Seer is investigating someone.
 INFO:     127.0.0.1:51059 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:51060 - "GET /health HTTP/1.1" 200 OK
+
+No one was removed from the game during the night (Doctor's protection succeeded).
+Checking for a winner after Night Phase.
+The Players are debating and voting.
+INFO:     127.0.0.1:51159 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51161 - "GET /health HTTP/1.1" 200 OK
+Scott bid: 2
+INFO:     127.0.0.1:51301 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51302 - "GET /health HTTP/1.1" 200 OK
+Jacob bid: 2
+INFO:     127.0.0.1:51408 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51410 - "GET /health HTTP/1.1" 200 OK
+Warning: Jacob did not return a valid dialogue, using default
+Jacob (Seer): I think we need to be careful and look for clues.
+[RealtimeLogger] Initialized session session_20251031_110705, log file: logs/session_20251031_110705/realtime_logs.jsonl
+[RealtimeLogger] session_20251031_110705 [action] Jacob 发言: I think we need to be careful and look for clues.
+INFO:     127.0.0.1:51496 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51498 - "GET /health HTTP/1.1" 200 OK
+⚠️ 未知的延迟类型: vote
+[RealtimeLogger] session_20251031_110705 [vote] Derek 投票给 Scott
+INFO:     127.0.0.1:51568 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51570 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51644 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51645 - "GET /health HTTP/1.1" 200 OK
+⚠️ 未知的延迟类型: vote
+[RealtimeLogger] session_20251031_110705 [vote] Jackson 投票给 Derek
+INFO:     127.0.0.1:51740 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51741 - "GET /health HTTP/1.1" 200 OK
+[RealtimeLogger] session_20251031_110705 [vote] Sam 投票给 Derek
+⚠️ 未知的延迟类型: vote
+INFO:     127.0.0.1:51909 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51911 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52040 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52042 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52161 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52163 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52304 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52303 - "GET /health HTTP/1.1" 200 OK
+⚠️ 未知的延迟类型: vote
+[RealtimeLogger] session_20251031_110705 [vote] Ginger 投票给 Derek
+INFO:     127.0.0.1:52404 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52406 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52482 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52484 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52631 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52632 - "GET /health HTTP/1.1" 200 OK
+⚠️ 未知的延迟类型: vote
+[RealtimeLogger] session_20251031_110705 [vote] Scott 投票给 Sam
+INFO:     127.0.0.1:52703 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52704 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52817 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52818 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52948 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52950 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53072 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53073 - "GET /health HTTP/1.1" 200 OK
+⚠️ 未知的延迟类型: vote
+[RealtimeLogger] session_20251031_110705 [vote] Jacob 投票给 Ginger
+INFO:     127.0.0.1:53175 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53176 - "GET /health HTTP/1.1" 200 OK
+Scott bid: 2
+INFO:     127.0.0.1:53343 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53345 - "GET /health HTTP/1.1" 200 OK
+Ginger bid: 2
+INFO:     127.0.0.1:53451 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53453 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53559 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53562 - "GET /health HTTP/1.1" 200 OK
+Ginger (Werewolf): Jacob's focus on caution aligns with the Doctor's protective instincts. If Derek was targeted, the Doctor saved him—why does Jacob act so defensive? Let's vote Jacob to expose the fraud and restore order.
+[RealtimeLogger] session_20251031_110705 [action] Ginger 发言: Jacob's focus on caution aligns with the Doctor's protective instincts. If Derek was targeted, the Doctor saved him—why does Jacob act so defensive? Let's vote Jacob to expose the fraud and restore order.
+INFO:     127.0.0.1:53676 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53679 - "GET /health HTTP/1.1" 200 OK
+⚠️ 未知的延迟类型: vote
+[RealtimeLogger] session_20251031_110705 [vote] Derek 投票给 Jacob
+INFO:     127.0.0.1:53749 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53751 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53838 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53841 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54072 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54075 - "GET /health HTTP/1.1" 200 OK
+[RealtimeLogger] session_20251031_110705 [vote] Jackson 投票给 Jacob
+⚠️ 未知的延迟类型: vote
+INFO:     127.0.0.1:54167 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54170 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54283 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54286 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54394 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54397 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54520 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54525 - "GET /health HTTP/1.1" 200 OK
+⚠️ 未知的延迟类型: vote
+[RealtimeLogger] session_20251031_110705 [vote] Sam 投票给 Jacob
+INFO:     127.0.0.1:54626 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54633 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54832 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54833 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54949 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54948 - "GET /health HTTP/1.1" 200 OK
+⚠️ 未知的延迟类型: vote
+[RealtimeLogger] session_20251031_110705 [vote] Ginger 投票给 Jacob
+INFO:     127.0.0.1:55074 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55076 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55216 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55215 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55287 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55288 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55377 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55378 - "GET /health HTTP/1.1" 200 OK
+[RealtimeLogger] session_20251031_110705 [vote] Scott 投票给 Jacob
+⚠️ 未知的延迟类型: vote
+INFO:     127.0.0.1:55514 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55516 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55703 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55705 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55811 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55813 - "GET /health HTTP/1.1" 200 OK
+⚠️ 未知的延迟类型: vote
+[RealtimeLogger] session_20251031_110705 [vote] Jacob 投票给 Ginger
+Derek voted to remove Jacob
+Jackson voted to remove Jacob
+Sam voted to remove Jacob
+Ginger voted to remove Jacob
+Scott voted to remove Jacob
+Jacob voted to remove Ginger
+
+Player Jacob not in current players: ['Scott', 'Ginger', 'Derek', 'Jackson', 'Sam']
+Player Jacob not in current players: ['Scott', 'Ginger', 'Derek', 'Jackson', 'Sam']
+Player Jacob not in current players: ['Scott', 'Ginger', 'Derek', 'Jackson', 'Sam']
+Player Jacob not in current players: ['Scott', 'Ginger', 'Derek', 'Jackson', 'Sam']
+The majority voted to remove Jacob from the game.
+Checking for a winner after Day Phase.
+The Players are summarizing the debate.
+INFO:     127.0.0.1:55929 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55932 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56139 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56141 - "GET /health HTTP/1.1" 200 OK
+Derek summary: I voted to remove Jacob after the debate, where Ginger argued his cautiousness and defensiveness suggest he's a fraud linked to the Doctor's role. Sam, Scott, and Jackson stayed silent, which is unusual and could signal hidden roles or fear. I suspect Ginger might be trustworthy but need to confirm her motives. Jacob's removal may have reduced Werewolf numbers, but his role (Werewolf or Villager) is still unclear. I'll prioritize exposing remaining threats and watch for contradictions among the quiet players.
+Jackson summary: I voted to remove Jacob, who focused on caution during the debate. Ginger supported Jacob by claiming his behavior aligns with the Doctor, but Jacob was eliminated, raising doubts about Ginger's motives. Scott, Sam, and Derek remained silent, which could signal hidden roles or inactivity. The Doctor saved someone (unknown), so I must identify them to prevent future losses. I need to analyze Ginger's credibility and monitor quiet players in upcoming debates.
+Sam summary: As Sam, I voted to remove Jacob but now realize his cautious stance about 'looking for clues' and the Doctor's protective role might have been misunderstood. Ginger's claim that Derek was targeted and saved by the Doctor raises questions: if Derek is safe, does that mean the Doctor is still alive and active? Jacob's elimination could have risked losing a potential Seer or Doctor. I now suspect Ginger is strategically positioning herself to gain trust, but her focus on Jacob might mask her own motives. Derek's survival if targeted adds weight to the Doctor's role. Scott and Jackson, who didn't speak, might be hiding intentions or influenced by the Werewolves.
+Ginger summary: I targeted Derek at night but was outmaneuvered by the Doctor. During the day, I accused Jacob of being a fraud for his defensive stance, leading to his exile. This might have backfired if Jacob was truthful. Derek remains a potential Doctor or key ally. Jackson, Scott, and Sam are now prime suspects for hidden roles—I’ll monitor their debate patterns to avoid accusing the wrong villager or exposed roles.
+INFO:     127.0.0.1:56326 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56328 - "GET /health HTTP/1.1" 200 OK
+Scott summary: As Scott the Doctor, I protected Derek during the night, which succeeded, leaving him safe. Jacob's cautious approach mirrored my protective instincts, but his defensive stance led Ginger to accuse him of being a fraud. Ginger's statement hinted at alignment with the Doctor's role but also signaled potential suspicion. Derek remains a trusted ally, while Jacob's removal eliminates a potential ally or threat. Jackson, Ginger, and Sam warrant closer scrutiny—I note Ginger's assertiveness and lack of hesitation in targeting Jacob, which could indicate the Seer or a proactive Villager, but her logic feels rushed and unconvincing. I will prioritize saving Derek and monitoring others for hidden motives or contradictions.
+Round 0 is complete.
+STARTING ROUND: 1
+The Werewolves are picking someone to remove from the game.
+INFO:     127.0.0.1:56488 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56490 - "GET /health HTTP/1.1" 200 OK
+INFO:     connection closed
+WebSocket disconnected for session session_20251031_110705. Remaining connections: 0
+WebSocket disconnected for session session_20251031_110705
+INFO:     127.0.0.1:56535 - "GET /api/v1/models/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56537 - "GET /api/v1/models/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56582 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56584 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56657 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56658 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56728 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56730 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56922 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56924 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56996 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56998 - "GET /health HTTP/1.1" 200 OK
+Ginger eliminated Scott
+The Doctor is protecting someone.
+INFO:     127.0.0.1:57168 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57171 - "GET /health HTTP/1.1" 200 OK
+Scott protected Scott
+The Seer is investigating someone.
+
+No one was removed from the game during the night (Doctor's protection succeeded).
+Checking for a winner after Night Phase.
+The Players are debating and voting.
+Sam bid: 2
+INFO:     127.0.0.1:57348 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57350 - "GET /health HTTP/1.1" 200 OK
+Derek bid: 2
+Jackson bid: 2
+INFO:     127.0.0.1:57422 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57424 - "GET /health HTTP/1.1" 200 OK
+Scott bid: 2
+INFO:     127.0.0.1:57552 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57555 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57722 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57724 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57897 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57899 - "GET /health HTTP/1.1" 200 OK
+Scott (Doctor): I protected myself last night, which may seem odd, but the Werewolves would prioritize eliminating the Doctor. Let’s scrutinize Ginger’s rapid accusations against Jacob—her logic felt rushed, and her assertiveness could mask a hidden motive. If we don’t expose the Werewolves soon, they’ll manipulate the votes. I propose we focus on players who’ve shown inconsistency or sudden defensiveness. voting for [Sam/Jackson/Ginger] based on their patterns.
+[RealtimeLogger] session_20251031_110705 [action] Scott 发言: I protected myself last night, which may seem odd, but the Werewolves would prioritize eliminating the Doctor. Let’s scrutinize Ginger’s rapid accusations against Jacob—her logic felt rushed, and her assertiveness could mask a hidden motive. If we don’t expose the Werewolves soon, they’ll manipulate the votes. I propose we focus on players who’ve shown inconsistency or sudden defensiveness. voting for [Sam/Jackson/Ginger] based on their patterns.
+INFO:     127.0.0.1:58084 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58086 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58189 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58192 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58265 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58268 - "GET /health HTTP/1.1" 200 OK
+[RealtimeLogger] session_20251031_110705 [vote] Derek 投票给 Ginger
+⚠️ 未知的延迟类型: vote
+INFO:     127.0.0.1:58441 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58443 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58668 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58670 - "GET /health HTTP/1.1" 200 OK
+[RealtimeLogger] session_20251031_110705 [vote] Jackson 投票给 Ginger
+⚠️ 未知的延迟类型: vote
+INFO:     127.0.0.1:58796 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58799 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58876 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58879 - "GET /health HTTP/1.1" 200 OK
+[RealtimeLogger] session_20251031_110705 [vote] Sam 投票给 Scott
+⚠️ 未知的延迟类型: vote
+INFO:     127.0.0.1:58937 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58939 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59075 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59078 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59206 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59209 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59252 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59255 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59353 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59356 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59445 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59448 - "GET /health HTTP/1.1" 200 OK
+[RealtimeLogger] session_20251031_110705 [vote] Ginger 投票给 Scott
+⚠️ 未知的延迟类型: vote
+INFO:     127.0.0.1:59477 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59480 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59509 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59512 - "GET /health HTTP/1.1" 200 OK
+[RealtimeLogger] session_20251031_110705 [vote] Scott 投票给 Ginger
+⚠️ 未知的延迟类型: vote
+INFO:     127.0.0.1:59589 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59592 - "GET /health HTTP/1.1" 200 OK
+Derek bid: 2
+Sam bid: 2
+Ginger bid: 2
+INFO:     127.0.0.1:59667 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59670 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59721 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59724 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59784 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59808 - "GET /health HTTP/1.1" 200 OK
+Jackson bid: 2
+Derek (Villager): Scott correctly identified Ginger's急躁 accusations, but let's dig deeper. Sam and Jackson have contributed nothing in two debates—this isn't 'quiet leadership.' Villagers don't ghost the conversation unless they have something to hide. I'll vote for Jackson. His silence matches Scott's own odd self-protection claim—either both are hiding, or one's silence is a weapon. The Village needs to eliminate threats before they game us.
+[RealtimeLogger] session_20251031_110705 [action] Derek 发言: Scott correctly identified Ginger's急躁 accusations, but let's dig deeper. Sam and Jackson have contributed nothing in two debates—this isn't 'quiet leadership.' Villagers don't ghost the conversation unless they have something to hide. I'll vote for Jackson. His silence matches Scott's own odd self-protection claim—either both are hiding, or one's silence is a weapon. The Village needs to eliminate threats before they game us.
+INFO:     127.0.0.1:59911 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59914 - "GET /health HTTP/1.1" 200 OK
+[RealtimeLogger] session_20251031_110705 [vote] Derek 投票给 Jackson
+⚠️ 未知的延迟类型: vote
+INFO:     127.0.0.1:60001 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60007 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60088 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60091 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60144 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60147 - "GET /health HTTP/1.1" 200 OK
