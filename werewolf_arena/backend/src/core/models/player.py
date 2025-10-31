@@ -187,28 +187,44 @@ class Player(Deserializable):
         """竞价发言"""
         bid, log = self._generate_action("bid", options=["0", "1", "2", "3", "4"])
         if bid is not None:
-            bid = int(bid)
-            self.bidding_rationale = log.result.get("reasoning", "")
+            # 验证 bid 是数字字符串
+            try:
+                bid = int(bid)
+                # 安全地获取reasoning，避免None访问
+                if log.result and isinstance(log.result, dict):
+                    self.bidding_rationale = log.result.get("reasoning", "")
+                else:
+                    self.bidding_rationale = "无法获取推理信息"
+            except (ValueError, TypeError) as e:
+                print(f"Warning: {self.name} returned invalid bid value '{bid}', using default 0")
+                bid = 0
+                self.bidding_rationale = f"默认竞价：{str(e)}"
+        else:
+            # bid为None时的默认处理
+            bid = 0
+            self.bidding_rationale = "AI调用失败，使用默认竞价"
         return bid, log
 
     def debate(self) -> Tuple[Optional[str], LmLog]:
         """参与辩论"""
         result, log = self._generate_action("debate", [])
-        if result is not None:
+        if result is not None and isinstance(result, dict):
             say = result.get("say", None)
             return say, log
-        return result, log
+        # 如果result为None或不是字典，返回None
+        return None, log
 
     def summarize(self) -> Tuple[Optional[str], LmLog]:
         """总结游戏状态"""
         result, log = self._generate_action("summarize", [])
-        if result is not None:
+        if result is not None and isinstance(result, dict):
             summary = result.get("summary", None)
             if summary is not None:
                 summary = summary.strip('"')
                 self._add_observation(f"总结：{summary}")
             return summary, log
-        return result, log
+        # 如果result为None或不是字典，返回None
+        return None, log
 
     def to_dict(self) -> Any:
         return to_dict(self)

@@ -31,8 +31,8 @@ export default function Home() {
 
       // 使用默认参数启动游戏
       await startGame({
-        villager_model: 'glmz1-flash',
-        werewolf_model: 'glmz1-flash',
+        villager_model: 'minimax/MiniMax-M2',
+        werewolf_model: 'minimax/MiniMax-M2',
         discussion_time_minutes: 5,
         max_rounds: 10,
       });

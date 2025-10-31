@@ -1,7 +1,7 @@
 INFO:     Will watch for changes in these directories: ['/Users/admin/Project/HauntedHackathon/werewolf_arena/backend']
 INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
-INFO:     Started reloader process [78143] using WatchFiles
-INFO:     Started server process [78146]
+INFO:     Started reloader process [86435] using WatchFiles
+INFO:     Started server process [86438]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 ✅ 已加载延迟配置: /Users/admin/Project/HauntedHackathon/werewolf_arena/backend/src/config/timing_config.yaml
@@ -9,131 +9,634 @@ INFO:     Application startup complete.
 🚀 Starting Werewolf Arena API...
 📝 Environment: development
 🔧 Debug mode: False
-🤖 LLM Providers Health: {'glm': True}
+🤖 LLM Providers Health: {'glm': True, 'minimax': True}
 ✅ Global LLM client initialized successfully
 🎮 Ready to start games!
-INFO:     127.0.0.1:59428 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59427 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59462 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59758 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59870 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59988 - "OPTIONS /api/v1/games/start HTTP/1.1" 200 OK
-Model conversion: glmz1-flash -> glm/GLM-Z1-Flash
-Model conversion: glmz1-flash -> glm/GLM-Z1-Flash
+INFO:     127.0.0.1:52630 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52873 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52997 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53101 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53259 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53280 - "OPTIONS /api/v1/games/start HTTP/1.1" 200 OK
+Model conversion: minimax/MiniMax-M2 -> minimax/MiniMax-M2
+Model conversion: minimax/MiniMax-M2 -> minimax/MiniMax-M2
 🎮 应用游戏模式 normal，延迟倍数: 1.0x
 🎮 游戏模式: normal (延迟倍数: 1.0x)
-INFO:     127.0.0.1:59988 - "POST /api/v1/games/start HTTP/1.1" 201 Created
-INFO:     ('127.0.0.1', 60043) - "WebSocket /ws/session_20251031_131714" [accepted]
+INFO:     127.0.0.1:53280 - "POST /api/v1/games/start HTTP/1.1" 201 Created
+INFO:     ('127.0.0.1', 53291) - "WebSocket /ws/session_20251031_134921" [accepted]
 INFO:     connection open
-INFO:     ('127.0.0.1', 60045) - "WebSocket /ws/session_20251031_131714" [accepted]
+INFO:     ('127.0.0.1', 53297) - "WebSocket /ws/session_20251031_134921" [accepted]
 INFO:     connection open
-Task was destroyed but it is pending!
-task: <Task pending name='Task-41' coro=<RealtimeGameLogger._write_to_file() running at /Users/admin/Project/HauntedHackathon/werewolf_arena/backend/src/services/logger/realtime_logger.py:146> wait_for=<Future finished result=True>>
 STARTING ROUND: 0
-The Werewolves are picking someone to remove from the game.
-Attempt 1/3 failed: Completions.create() got an unexpected keyword argument 'system_message'
-Attempt 2/3 failed: Completions.create() got an unexpected keyword argument 'system_message'
-Attempt 3/3 failed: Completions.create() got an unexpected keyword argument 'system_message'
-Warning: Jackson (Werewolf) did not return a valid eliminate target, using default
-Jackson eliminated Dan
-The Doctor is protecting someone.
-Attempt 1/3 failed: Completions.create() got an unexpected keyword argument 'system_message'
-Attempt 2/3 failed: Completions.create() got an unexpected keyword argument 'system_message'
-Attempt 3/3 failed: Completions.create() got an unexpected keyword argument 'system_message'
-Warning: David failed to choose protection target, randomly selected David
-David protected David
-The Seer is investigating someone.
-WebSocket connected for session session_20251031_131714. Total connections: 1
-[RealtimeLogger] New subscriber for session session_20251031_131714
-WebSocket connected for session session_20251031_131714. Total connections: 2
-[RealtimeLogger] New subscriber for session session_20251031_131714
-Attempt 1/3 failed: Completions.create() got an unexpected keyword argument 'system_message'
-Attempt 2/3 failed: Completions.create() got an unexpected keyword argument 'system_message'
-Attempt 3/3 failed: Completions.create() got an unexpected keyword argument 'system_message'
-Warning: Harold failed to choose investigation target, randomly selected Jacob
+狼人正在选择淘汰目标。
+WebSocket connected for session session_20251031_134921. Total connections: 1
+[RealtimeLogger] New subscriber for session session_20251031_134921
+WebSocket connected for session session_20251031_134921. Total connections: 2
+[RealtimeLogger] New subscriber for session session_20251031_134921
+Attempt 1/3 failed: <html>
+<head><title>404 Not Found</title></head>
+<body>
+<center><h1>404 Not Found</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
+Attempt 2/3 failed: <html>
+<head><title>404 Not Found</title></head>
+<body>
+<center><h1>404 Not Found</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
+Attempt 3/3 failed: <html>
+<head><title>404 Not Found</title></head>
+<body>
+<center><h1>404 Not Found</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
+Warning: Paul (Werewolf) did not return a valid eliminate target, using default
+Paul eliminated David
+医生正在选择保护目标。
+Attempt 1/3 failed: <html>
+<head><title>404 Not Found</title></head>
+<body>
+<center><h1>404 Not Found</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
+Attempt 2/3 failed: <html>
+<head><title>404 Not Found</title></head>
+<body>
+<center><h1>404 Not Found</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
+Attempt 3/3 failed: <html>
+<head><title>404 Not Found</title></head>
+<body>
+<center><h1>404 Not Found</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
+Warning: Dan failed to choose protection target, randomly selected Derek
+Dan protected Derek
+预言家正在查验身份。
+Attempt 1/3 failed: <html>
+<head><title>404 Not Found</title></head>
+<body>
+<center><h1>404 Not Found</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
+Attempt 2/3 failed: <html>
+<head><title>404 Not Found</title></head>
+<body>
+<center><h1>404 Not Found</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
+Attempt 3/3 failed: <html>
+<head><title>404 Not Found</title></head>
+<body>
+<center><h1>404 Not Found</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
+Warning: Derek failed to choose investigation target, randomly selected Paul
 
-Player Dan not in current players: ['Harold', 'David', 'Jackson', 'Leah', 'Jacob']
-Player Dan not in current players: ['Harold', 'David', 'Jackson', 'Leah', 'Jacob']
-Player Dan not in current players: ['Harold', 'David', 'Jackson', 'Leah', 'Jacob']
-Player Dan not in current players: ['Harold', 'David', 'Jackson', 'Leah', 'Jacob']
-The Werewolves removed Dan from the game during the night.
-Checking for a winner after Night Phase.
-The Players are debating and voting.
-Error during bidding for Leah: invalid literal for int() with base 10: 'Werewolves'
-Error during bidding for Jacob: invalid literal for int() with base 10: 'Werewolves'
-Error during bidding for Jackson: invalid literal for int() with base 10: 'the'
-Error during bidding for David: invalid literal for int() with base 10: 'Werewolves'
-Error during bidding for Harold: list index out of range
-Error during debate for David: invalid literal for int() with base 10: 'Werewolves'
-David (Doctor): I think we need to be careful and look for clues.
-[RealtimeLogger] Initialized session session_20251031_131714, log file: logs/session_20251031_131714/realtime_logs.jsonl
-[RealtimeLogger] session_20251031_131714 [action] David 发言: I think we need to be careful and look for clues.
-Error during voting for Leah: invalid literal for int() with base 10: 'Werewolves'
-Error during voting for Jacob: invalid literal for int() with base 10: 'Werewolves'
-Error during voting for Jackson: invalid literal for int() with base 10: 'the'
-Error during voting for David: invalid literal for int() with base 10: 'Werewolves'
-Error during voting for Harold: list index out of range
-[RealtimeLogger] session_20251031_131714 [vote] Jacob 投票给 Leah
-[RealtimeLogger] session_20251031_131714 [vote] Jackson 投票给 Leah
-[RealtimeLogger] session_20251031_131714 [vote] Leah 投票给 Jacob
-[RealtimeLogger] session_20251031_131714 [vote] Harold 投票给 Leah
-[RealtimeLogger] Error writing log to file: <asyncio.locks.Lock object at 0x10b654f90 [locked, waiters:1]> is bound to a different event loop
-[RealtimeLogger] Error writing log to file: <asyncio.locks.Lock object at 0x10b654f90 [locked, waiters:1]> is bound to a different event loop
-[RealtimeLogger] session_20251031_131714 [vote] David 投票给 Leah
-[RealtimeLogger] Error writing log to file: Event loop is closed
-Error during bidding for Leah: invalid literal for int() with base 10: 'Werewolves'
-Error during bidding for Jacob: invalid literal for int() with base 10: 'Werewolves'
-Error during bidding for Jackson: invalid literal for int() with base 10: 'the'
-Error during bidding for Harold: list index out of range
-Error during debate for Jacob: invalid literal for int() with base 10: 'Werewolves'
-Jacob (Villager): I think we need to be careful and look for clues.
-INFO:     127.0.0.1:60061 - "GET /health HTTP/1.1" 200 OK
-[RealtimeLogger] session_20251031_131714 [action] Jacob 发言: I think we need to be careful and look for clues.
-Error during voting for Leah: invalid literal for int() with base 10: 'Werewolves'
-Error during voting for Jacob: invalid literal for int() with base 10: 'Werewolves'
-Error during voting for Jackson: invalid literal for int() with base 10: 'the'
-Error during voting for David: invalid literal for int() with base 10: 'Werewolves'
-Error during voting for Harold: list index out of range
-[RealtimeLogger] session_20251031_131714 [vote] Leah 投票给 Jacob
-[RealtimeLogger] session_20251031_131714 [vote] Jacob 投票给 Leah
-[RealtimeLogger] session_20251031_131714 [vote] Jackson 投票给 Leah
-[RealtimeLogger] Error writing log to file: <asyncio.locks.Lock object at 0x10b654f90 [locked]> is bound to a different event loop
-[RealtimeLogger] Error writing log to file: <asyncio.locks.Lock object at 0x10b654f90 [locked]> is bound to a different event loop
-[RealtimeLogger] session_20251031_131714 [vote] David 投票给 Leah
-[RealtimeLogger] session_20251031_131714 [vote] Harold 投票给 Leah
-[RealtimeLogger] Error writing log to file: <asyncio.locks.Lock object at 0x10b654f90 [locked]> is bound to a different event loop
-Leah voted to remove Jacob
-Jacob voted to remove Leah
-Jackson voted to remove Leah
-David voted to remove Leah
-Harold voted to remove Leah
+Player David not in current players: ['Derek', 'Dan', 'Paul', 'Hayley', 'Bert']
+Player David not in current players: ['Derek', 'Dan', 'Paul', 'Hayley', 'Bert']
+Player David not in current players: ['Derek', 'Dan', 'Paul', 'Hayley', 'Bert']
+Player David not in current players: ['Derek', 'Dan', 'Paul', 'Hayley', 'Bert']
+狼人在夜晚阶段淘汰了David。
+夜晚阶段后检查胜负。
+玩家开始辩论和投票。
+Error during bidding for Hayley: list index out of range
+Error during bidding for Bert: list index out of range
+Error during bidding for Paul: list index out of range
+Error during bidding for Dan: list index out of range
+Error during bidding for Derek: list index out of range
+Error during debate for Dan: list index out of range
+Dan (Doctor): 我需要仔细观察并寻找线索。
+[RealtimeLogger] Initialized session session_20251031_134921, log file: logs/session_20251031_134921/realtime_logs.jsonl
+[RealtimeLogger] session_20251031_134921 [action] Dan 发言: 我需要仔细观察并寻找线索。
+Error during voting for Hayley: list index out of range
+Error during voting for Bert: list index out of range
+Error during voting for Paul: list index out of range
+Error during voting for Dan: list index out of range
+Error during voting for Derek: list index out of range
+[RealtimeLogger] session_20251031_134921 [vote] Bert 投票给 Hayley
+[RealtimeLogger] session_20251031_134921 [vote] Paul 投票给 Hayley
+[RealtimeLogger] session_20251031_134921 [vote] Dan 投票给 Hayley
+[RealtimeLogger] session_20251031_134921 [vote] Hayley 投票给 Bert
+[RealtimeLogger] session_20251031_134921 [vote] Derek 投票给 Hayley
+Error during bidding for Hayley: list index out of range
+Error during bidding for Bert: list index out of range
+Error during bidding for Paul: list index out of range
+Error during bidding for Derek: list index out of range
+Error during debate for Paul: list index out of range
+Paul (Werewolf): 我需要仔细观察并寻找线索。
+[RealtimeLogger] session_20251031_134921 [action] Paul 发言: 我需要仔细观察并寻找线索。
+Error during voting for Hayley: list index out of range
+Error during voting for Bert: list index out of range
+Error during voting for Paul: list index out of range
+Error during voting for Dan: list index out of range
+Error during voting for Derek: list index out of range
+[RealtimeLogger] session_20251031_134921 [vote] Hayley 投票给 Bert
+[RealtimeLogger] session_20251031_134921 [vote] Paul 投票给 Hayley
+[RealtimeLogger] session_20251031_134921 [vote] Dan 投票给 Hayley
+[RealtimeLogger] session_20251031_134921 [vote] Bert 投票给 Hayley
+[RealtimeLogger] session_20251031_134921 [vote] Derek 投票给 Hayley
+Hayley 投票淘汰 Bert
+Bert 投票淘汰 Hayley
+Paul 投票淘汰 Hayley
+Dan 投票淘汰 Hayley
+Derek 投票淘汰 Hayley
 
-Player Leah not in current players: ['Harold', 'David', 'Jackson', 'Jacob']
-Player Leah not in current players: ['Harold', 'David', 'Jackson', 'Jacob']
-Player Leah not in current players: ['Harold', 'David', 'Jackson', 'Jacob']
-The majority voted to remove Leah from the game.
-Checking for a winner after Day Phase.
-The Players are summarizing the debate.
-Error during summary for Jacob: invalid literal for int() with base 10: 'Werewolves'
-Jacob summary: I need to think about what happened today and analyze the situation carefully.
-Error during summary for Jackson: invalid literal for int() with base 10: 'the'
-Jackson summary: I need to think about what happened today and analyze the situation carefully.
-Error during summary for David: invalid literal for int() with base 10: 'Werewolves'
-David summary: I need to think about what happened today and analyze the situation carefully.
-Error during summary for Harold: list index out of range
-Harold summary: I need to think about what happened today and analyze the situation carefully.
-Round 0 is complete.
+Player Hayley not in current players: ['Derek', 'Dan', 'Paul', 'Bert']
+Player Hayley not in current players: ['Derek', 'Dan', 'Paul', 'Bert']
+Player Hayley not in current players: ['Derek', 'Dan', 'Paul', 'Bert']
+大多数人投票淘汰了Hayley。
+白天阶段后检查胜负。
+玩家开始总结辩论。
+Error during summary for Bert: list index out of range
+Bert summary: 我需要仔细思考今天发生的情况，并仔细分析局势。
+Error during summary for Paul: list index out of range
+Paul summary: 我需要仔细思考今天发生的情况，并仔细分析局势。
+Error during summary for Dan: list index out of range
+Dan summary: 我需要仔细思考今天发生的情况，并仔细分析局势。
+INFO:     127.0.0.1:53384 - "GET /health HTTP/1.1" 200 OK
+Error during summary for Derek: list index out of range
+Derek summary: 我需要仔细思考今天发生的情况，并仔细分析局势。
+第0轮结束。
 STARTING ROUND: 1
-The Werewolves are picking someone to remove from the game.
-Error during eliminate action for Jackson: invalid literal for int() with base 10: 'the'
-Jackson eliminated Harold
-The Doctor is protecting someone.
-Game error in session session_20251031_131714: invalid literal for int() with base 10: 'Werewolves'
-INFO:     127.0.0.1:60192 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60317 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60425 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60534 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60623 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60771 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60884 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:61011 - "GET /health HTTP/1.1" 200 OK
+狼人正在选择淘汰目标。
+Error during eliminate action for Paul: list index out of range
+Paul eliminated Bert
+医生正在选择保护目标。
+Game error in session session_20251031_134921: list index out of range
+INFO:     127.0.0.1:53487 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53559 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53628 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53741 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53858 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53955 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54061 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54148 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54226 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54314 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54456 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54609 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54791 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54918 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55086 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55229 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55384 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55590 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55704 - "GET /health HTTP/1.1" 200 OK
+INFO:     connection closed
+INFO:     ('127.0.0.1', 55763) - "WebSocket /ws/session_20251031_134921" [accepted]
+INFO:     connection open
+INFO:     ('127.0.0.1', 55765) - "WebSocket /ws/session_20251031_134921" [accepted]
+INFO:     connection open
+WebSocket disconnected for session session_20251031_134921. Remaining connections: 1
+WebSocket disconnected for session session_20251031_134921
+WebSocket connected for session session_20251031_134921. Total connections: 2
+[RealtimeLogger] New subscriber for session session_20251031_134921
+WebSocket connected for session session_20251031_134921. Total connections: 3
+[RealtimeLogger] New subscriber for session session_20251031_134921
+INFO:     127.0.0.1:55798 - "GET /health HTTP/1.1" 200 OK
+INFO:     connection closed
+INFO:     connection closed
+INFO:     connection closed
+WebSocket disconnected for session session_20251031_134921. Remaining connections: 2
+WebSocket disconnected for session session_20251031_134921
+[RealtimeLogger] Subscriber removed for session session_20251031_134921
+WebSocket disconnected for session session_20251031_134921. Remaining connections: 1
+WebSocket disconnected for session session_20251031_134921
+[RealtimeLogger] Subscriber removed for session session_20251031_134921
+WebSocket disconnected for session session_20251031_134921. Remaining connections: 0
+WebSocket disconnected for session session_20251031_134921
+INFO:     127.0.0.1:55910 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55916 - "OPTIONS /api/v1/games/start HTTP/1.1" 200 OK
+Model conversion: minimax/MiniMax-M2 -> minimax/MiniMax-M2
+Model conversion: minimax/MiniMax-M2 -> minimax/MiniMax-M2
+🎮 应用游戏模式 normal，延迟倍数: 1.0x
+🎮 游戏模式: normal (延迟倍数: 1.0x)
+STARTING ROUND: 0
+狼人正在选择淘汰目标。
+INFO:     127.0.0.1:55916 - "POST /api/v1/games/start HTTP/1.1" 201 Created
+INFO:     ('127.0.0.1', 55924) - "WebSocket /ws/session_20251031_135300" [accepted]
+INFO:     connection open
+INFO:     ('127.0.0.1', 55926) - "WebSocket /ws/session_20251031_135300" [accepted]
+INFO:     connection open
+WebSocket connected for session session_20251031_135300. Total connections: 1
+[RealtimeLogger] New subscriber for session session_20251031_135300
+WebSocket connected for session session_20251031_135300. Total connections: 2
+[RealtimeLogger] New subscriber for session session_20251031_135300
+Attempt 1/3 failed: <html>
+<head><title>404 Not Found</title></head>
+<body>
+<center><h1>404 Not Found</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
+Attempt 2/3 failed: <html>
+<head><title>404 Not Found</title></head>
+<body>
+<center><h1>404 Not Found</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
+Attempt 3/3 failed: <html>
+<head><title>404 Not Found</title></head>
+<body>
+<center><h1>404 Not Found</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
+Warning: Ginger (Werewolf) did not return a valid eliminate target, using default
+Ginger eliminated Harold
+医生正在选择保护目标。
+Attempt 1/3 failed: <html>
+<head><title>404 Not Found</title></head>
+<body>
+<center><h1>404 Not Found</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
+Attempt 2/3 failed: <html>
+<head><title>404 Not Found</title></head>
+<body>
+<center><h1>404 Not Found</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
+Attempt 3/3 failed: <html>
+<head><title>404 Not Found</title></head>
+<body>
+<center><h1>404 Not Found</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
+Warning: Derek failed to choose protection target, randomly selected Will
+Derek protected Will
+预言家正在查验身份。
+Attempt 1/3 failed: <html>
+<head><title>404 Not Found</title></head>
+<body>
+<center><h1>404 Not Found</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
+Attempt 2/3 failed: <html>
+<head><title>404 Not Found</title></head>
+<body>
+<center><h1>404 Not Found</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
+Attempt 3/3 failed: <html>
+<head><title>404 Not Found</title></head>
+<body>
+<center><h1>404 Not Found</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
+Warning: Will failed to choose investigation target, randomly selected Jacob
+
+Player Harold not in current players: ['Will', 'Derek', 'Ginger', 'Jacob', 'David']
+Player Harold not in current players: ['Will', 'Derek', 'Ginger', 'Jacob', 'David']
+Player Harold not in current players: ['Will', 'Derek', 'Ginger', 'Jacob', 'David']
+Player Harold not in current players: ['Will', 'Derek', 'Ginger', 'Jacob', 'David']
+狼人在夜晚阶段淘汰了Harold。
+夜晚阶段后检查胜负。
+玩家开始辩论和投票。
+Error during bidding for Jacob: list index out of range
+Error during bidding for David: list index out of range
+Error during bidding for Ginger: list index out of range
+Error during bidding for Derek: list index out of range
+Error during bidding for Will: list index out of range
+Error during debate for Will: list index out of range
+Will (Seer): 我需要仔细观察并寻找线索。
+[RealtimeLogger] Initialized session session_20251031_135300, log file: logs/session_20251031_135300/realtime_logs.jsonl
+[RealtimeLogger] session_20251031_135300 [action] Will 发言: 我需要仔细观察并寻找线索。
+Error during voting for Jacob: list index out of range
+Error during voting for David: list index out of range
+Error during voting for Ginger: list index out of range
+Error during voting for Derek: list index out of range
+Error during voting for Will: list index out of range
+[RealtimeLogger] session_20251031_135300 [vote] Jacob 投票给 David
+[RealtimeLogger] session_20251031_135300 [vote] David 投票给 Jacob
+[RealtimeLogger] session_20251031_135300 [vote] Ginger 投票给 Jacob
+[RealtimeLogger] session_20251031_135300 [vote] Derek 投票给 Jacob
+[RealtimeLogger] session_20251031_135300 [vote] Will 投票给 Jacob
+Error during bidding for Jacob: list index out of range
+Error during bidding for David: list index out of range
+Error during bidding for Ginger: list index out of range
+Error during bidding for Derek: list index out of range
+Error during debate for Derek: list index out of range
+Derek (Doctor): 我需要仔细观察并寻找线索。
+[RealtimeLogger] session_20251031_135300 [action] Derek 发言: 我需要仔细观察并寻找线索。
+Error during voting for Jacob: list index out of range
+Error during voting for David: list index out of range
+Error during voting for Ginger: list index out of range
+Error during voting for Derek: list index out of range
+Error during voting for Will: list index out of range
+[RealtimeLogger] session_20251031_135300 [vote] Derek 投票给 Jacob
+[RealtimeLogger] session_20251031_135300 [vote] Jacob 投票给 David
+Jacob 投票淘汰 David
+David 投票淘汰 Jacob
+Ginger 投票淘汰 Jacob
+Derek 投票淘汰 Jacob
+Will 投票淘汰 Jacob
+[RealtimeLogger] session_20251031_135300 [vote] David 投票给 Jacob
+[RealtimeLogger] session_20251031_135300 [vote] Will 投票给 Jacob
+[RealtimeLogger] session_20251031_135300 [vote] Ginger 投票给 Jacob
+
+Player Jacob not in current players: ['Will', 'Derek', 'Ginger', 'David']
+Player Jacob not in current players: ['Will', 'Derek', 'Ginger', 'David']
+Player Jacob not in current players: ['Will', 'Derek', 'Ginger', 'David']
+大多数人投票淘汰了Jacob。
+白天阶段后检查胜负。
+玩家开始总结辩论。
+Error during summary for David: list index out of range
+David summary: 我需要仔细思考今天发生的情况，并仔细分析局势。
+Error during summary for Ginger: list index out of range
+Ginger summary: 我需要仔细思考今天发生的情况，并仔细分析局势。
+Error during summary for Derek: list index out of range
+Derek summary: 我需要仔细思考今天发生的情况，并仔细分析局势。
+Error during summary for Will: list index out of range
+Will summary: 我需要仔细思考今天发生的情况，并仔细分析局势。
+第0轮结束。
+STARTING ROUND: 1
+狼人正在选择淘汰目标。
+INFO:     127.0.0.1:56020 - "GET /health HTTP/1.1" 200 OK
+Error during eliminate action for Ginger: list index out of range
+Ginger eliminated David
+医生正在选择保护目标。
+Game error in session session_20251031_135300: list index out of range
+INFO:     127.0.0.1:56119 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56251 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56341 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56410 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56514 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56604 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56714 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56800 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56927 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57025 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57108 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57179 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57298 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57502 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57647 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57789 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57878 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57947 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58110 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58263 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58391 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58477 - "GET /health HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'src/core/models/player.py'. Reloading...
+INFO:     Shutting down
+INFO:     connection closed
+INFO:     connection closed
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [86438]
+WebSocket disconnected for session session_20251031_135300. Remaining connections: 1
+WebSocket disconnected for session session_20251031_135300
+WebSocket disconnected for session session_20251031_135300. Remaining connections: 0
+WebSocket disconnected for session session_20251031_135300
+🛑 Shutting down Werewolf Arena API...
+WARNING:  WatchFiles detected changes in 'src/core/models/player.py'. Reloading...
+INFO:     Started server process [87877]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+✅ 已加载延迟配置: /Users/admin/Project/HauntedHackathon/werewolf_arena/backend/src/config/timing_config.yaml
+📊 Sequence Manager initialized
+🚀 Starting Werewolf Arena API...
+📝 Environment: development
+🔧 Debug mode: False
+🤖 LLM Providers Health: {'glm': True, 'minimax': True}
+✅ Global LLM client initialized successfully
+🎮 Ready to start games!
+INFO:     127.0.0.1:58690 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58811 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58930 - "GET /health HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'src/services/llm/generator.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [87877]
+🛑 Shutting down Werewolf Arena API...
+INFO:     Started server process [88022]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+✅ 已加载延迟配置: /Users/admin/Project/HauntedHackathon/werewolf_arena/backend/src/config/timing_config.yaml
+📊 Sequence Manager initialized
+🚀 Starting Werewolf Arena API...
+📝 Environment: development
+🔧 Debug mode: False
+🤖 LLM Providers Health: {'glm': True, 'minimax': True}
+✅ Global LLM client initialized successfully
+🎮 Ready to start games!
+INFO:     127.0.0.1:59049 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59227 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59378 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59472 - "GET /health HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'src/core/game/game_master.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [88022]
+🛑 Shutting down Werewolf Arena API...
+WARNING:  WatchFiles detected changes in 'src/core/game/game_master.py'. Reloading...
+INFO:     Started server process [88150]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+✅ 已加载延迟配置: /Users/admin/Project/HauntedHackathon/werewolf_arena/backend/src/config/timing_config.yaml
+📊 Sequence Manager initialized
+🚀 Starting Werewolf Arena API...
+📝 Environment: development
+🔧 Debug mode: False
+🤖 LLM Providers Health: {'glm': True, 'minimax': True}
+✅ Global LLM client initialized successfully
+🎮 Ready to start games!
+INFO:     127.0.0.1:59700 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59819 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59971 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60076 - "GET /health HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'src/core/game/game_master.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [88150]
+🛑 Shutting down Werewolf Arena API...
+WARNING:  WatchFiles detected changes in 'src/core/game/game_master.py'. Reloading...
+INFO:     Started server process [88280]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+✅ 已加载延迟配置: /Users/admin/Project/HauntedHackathon/werewolf_arena/backend/src/config/timing_config.yaml
+📊 Sequence Manager initialized
+🚀 Starting Werewolf Arena API...
+📝 Environment: development
+🔧 Debug mode: False
+🤖 LLM Providers Health: {'glm': True, 'minimax': True}
+✅ Global LLM client initialized successfully
+🎮 Ready to start games!
+INFO:     127.0.0.1:60343 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60434 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60602 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60715 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60800 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60894 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60985 - "GET /health HTTP/1.1" 200 OK
+INFO:     ('127.0.0.1', 61039) - "WebSocket /ws/session_20251031_135300" [accepted]
+INFO:     connection open
+INFO:     ('127.0.0.1', 61041) - "WebSocket /ws/session_20251031_135300" [accepted]
+INFO:     connection open
+INFO:     connection closed
+WebSocket connected for session session_20251031_135300. Total connections: 1
+[RealtimeLogger] New subscriber for session session_20251031_135300
+WebSocket connected for session session_20251031_135300. Total connections: 2
+[RealtimeLogger] New subscriber for session session_20251031_135300
+[RealtimeLogger] Subscriber removed for session session_20251031_135300
+WebSocket disconnected for session session_20251031_135300. Remaining connections: 1
+WebSocket disconnected for session session_20251031_135300
+INFO:     127.0.0.1:61090 - "OPTIONS /api/v1/games/start HTTP/1.1" 200 OK
+Model conversion: minimax/MiniMax-M2 -> minimax/MiniMax-M2
+Model conversion: minimax/MiniMax-M2 -> minimax/MiniMax-M2
+🎮 应用游戏模式 normal，延迟倍数: 1.0x
+🎮 游戏模式: normal (延迟倍数: 1.0x)
+INFO:     127.0.0.1:61090 - "POST /api/v1/games/start HTTP/1.1" 201 Created
+INFO:     ('127.0.0.1', 61092) - "WebSocket /ws/session_20251031_140000" [accepted]
+INFO:     connection open
+INFO:     ('127.0.0.1', 61094) - "WebSocket /ws/session_20251031_140000" [accepted]
+INFO:     connection open
+STARTING ROUND: 0
+狼人正在选择淘汰目标。
+WebSocket connected for session session_20251031_140000. Total connections: 1
+[RealtimeLogger] New subscriber for session session_20251031_140000
+WebSocket connected for session session_20251031_140000. Total connections: 2
+[RealtimeLogger] New subscriber for session session_20251031_140000
+[LLM调用] 第1/3次尝试 | 模型: minimax/MiniMax-M2 | 温度: 0.50
+INFO:     127.0.0.1:61125 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61194 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61288 - "GET /health HTTP/1.1" 200 OK
+[LLM响应] 成功获取响应，长度: 3122 字符
+[LLM结果] 提取键 'remove': David
+[LLM成功] 返回有效结果: David
+Ginger eliminated David
+[WebSocket错误] 夜间行动通知发送失败: 'eliminate' is not a valid ActionType
+医生正在选择保护目标。
+[LLM调用] 第1/3次尝试 | 模型: minimax/MiniMax-M2 | 温度: 0.50
+INFO:     127.0.0.1:61393 - "GET /health HTTP/1.1" 200 OK
+[LLM响应] 成功获取响应，长度: 758 字符
+[LLM结果] 提取键 'protect': David
+[LLM成功] 返回有效结果: David
+Paul protected David
+[WebSocket错误] 夜间行动通知发送失败: 'protect' is not a valid ActionType
+预言家正在查验身份。
+[LLM调用] 第1/3次尝试 | 模型: minimax/MiniMax-M2 | 温度: 0.50
+INFO:     127.0.0.1:61481 - "GET /health HTTP/1.1" 200 OK
+[LLM响应] 成功获取响应，长度: 1266 字符
+[LLM结果] 提取键 'investigate': Paul
+[LLM成功] 返回有效结果: Paul
+[WebSocket错误] 夜间行动通知发送失败: 'investigate' is not a valid ActionType
+
+夜晚阶段没有人被淘汰（医生保护成功）。
+夜晚阶段后检查胜负。
+玩家开始辩论和投票。
+Error during bidding for Will: list index out of range
+Error during bidding for Harold: list index out of range
+Error during bidding for Derek: list index out of range
+Error during bidding for Ginger: list index out of range
+Error during bidding for Paul: list index out of range
+Error during bidding for David: list index out of range
+Error during debate for Paul: list index out of range
+Paul (Doctor): 我需要仔细观察并寻找线索。
+[RealtimeLogger] Initialized session session_20251031_140000, log file: logs/session_20251031_140000/realtime_logs.jsonl
+[RealtimeLogger] session_20251031_140000 [action] Paul 发言: 我需要仔细观察并寻找线索。
+[WebSocket] 辩论发言通知已发送: Paul
+Error during voting for Will: list index out of range
+[RealtimeLogger] session_20251031_140000 [vote] Will 投票给 Harold
+[WebSocket] 投票通知已发送: Will -> Harold
+Error during voting for Harold: list index out of range
+[RealtimeLogger] session_20251031_140000 [vote] Harold 投票给 Will
+[WebSocket] 投票通知已发送: Harold -> Will
+Error during voting for Derek: list index out of range
+[RealtimeLogger] session_20251031_140000 [vote] Derek 投票给 Will
+[WebSocket] 投票通知已发送: Derek -> Will
+Error during voting for Ginger: list index out of range
+[RealtimeLogger] session_20251031_140000 [vote] Ginger 投票给 Will
+[WebSocket] 投票通知已发送: Ginger -> Will
+Error during voting for Paul: list index out of range
+[RealtimeLogger] session_20251031_140000 [vote] Paul 投票给 Will
+[WebSocket] 投票通知已发送: Paul -> Will
+Error during voting for David: list index out of range
+[RealtimeLogger] session_20251031_140000 [vote] David 投票给 Will
+[WebSocket] 投票通知已发送: David -> Will
+Error during bidding for Will: list index out of range
+Error during bidding for Harold: list index out of range
+Error during bidding for Derek: list index out of range
+Error during bidding for Ginger: list index out of range
+Error during bidding for David: list index out of range
+Error during debate for Derek: list index out of range
+Derek (Villager): 我需要仔细观察并寻找线索。
+[RealtimeLogger] session_20251031_140000 [action] Derek 发言: 我需要仔细观察并寻找线索。
+[WebSocket] 辩论发言通知已发送: Derek
+Error during voting for Will: list index out of range
+[RealtimeLogger] session_20251031_140000 [vote] Will 投票给 Harold
+[WebSocket] 投票通知已发送: Will -> Harold
+Error during voting for Harold: list index out of range
+[RealtimeLogger] session_20251031_140000 [vote] Harold 投票给 Will
+[WebSocket] 投票通知已发送: Harold -> Will
+Error during voting for Derek: list index out of range
+[RealtimeLogger] session_20251031_140000 [vote] Derek 投票给 Will
+[WebSocket] 投票通知已发送: Derek -> Will
+Error during voting for Ginger: list index out of range
+[RealtimeLogger] session_20251031_140000 [vote] Ginger 投票给 Will
+[WebSocket] 投票通知已发送: Ginger -> Will
+Error during voting for Paul: list index out of range
+[RealtimeLogger] session_20251031_140000 [vote] Paul 投票给 Will
+[WebSocket] 投票通知已发送: Paul -> Will
+Error during voting for David: list index out of range
+[RealtimeLogger] session_20251031_140000 [vote] David 投票给 Will
+[WebSocket] 投票通知已发送: David -> Will
+Will 投票淘汰 Harold
+Harold 投票淘汰 Will
+Derek 投票淘汰 Will
+Ginger 投票淘汰 Will
+Paul 投票淘汰 Will
+David 投票淘汰 Will
+
+Player Will not in current players: ['David', 'Paul', 'Ginger', 'Harold', 'Derek']
+Player Will not in current players: ['David', 'Paul', 'Ginger', 'Harold', 'Derek']
+Player Will not in current players: ['David', 'Paul', 'Ginger', 'Harold', 'Derek']
+Player Will not in current players: ['David', 'Paul', 'Ginger', 'Harold', 'Derek']
+大多数人投票淘汰了Will。
+白天阶段后检查胜负。
+玩家开始总结辩论。
+Error during summary for Harold: list index out of range
+Harold summary: 我需要仔细思考今天发生的情况，并仔细分析局势。
+Error during summary for Derek: list index out of range
+Derek summary: 我需要仔细思考今天发生的情况，并仔细分析局势。
+Error during summary for Ginger: list index out of range
+Ginger summary: 我需要仔细思考今天发生的情况，并仔细分析局势。
+INFO:     127.0.0.1:61550 - "GET /health HTTP/1.1" 200 OK
+Error during summary for Paul: list index out of range
+Paul summary: 我需要仔细思考今天发生的情况，并仔细分析局势。
+Error during summary for David: list index out of range
+David summary: 我需要仔细思考今天发生的情况，并仔细分析局势。
+第0轮结束。
+STARTING ROUND: 1
+狼人正在选择淘汰目标。
+Error during eliminate action for Ginger: list index out of range
+Ginger eliminated Harold
+[WebSocket错误] 夜间行动通知发送失败: 'eliminate' is not a valid ActionType
+医生正在选择保护目标。
+Game error in session session_20251031_140000: list index out of range
+INFO:     127.0.0.1:61645 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61802 - "GET /health HTTP/1.1" 200 OK

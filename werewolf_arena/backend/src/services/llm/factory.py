@@ -6,7 +6,7 @@ LLM Provider Factory
 from typing import Dict, Type
 
 from .base import LLMProvider
-from .providers import OpenAIProvider, GLMProvider, OpenRouterProvider
+from .providers import OpenAIProvider, GLMProvider, OpenRouterProvider, MiniMaxProvider
 
 
 class LLMFactory:
@@ -20,6 +20,7 @@ class LLMFactory:
         "openai": OpenAIProvider,
         "glm": GLMProvider,
         "openrouter": OpenRouterProvider,
+        "minimax": MiniMaxProvider,
     }
 
     @classmethod

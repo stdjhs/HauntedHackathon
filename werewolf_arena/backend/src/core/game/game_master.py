@@ -114,9 +114,7 @@ class GameMaster:
       tqdm.tqdm.write(f"{wolf.name} eliminated {eliminated}")
       for wolf in werewolves_alive:
         wolf._add_observation(
-            "During the"
-            f" night, {'we' if len(werewolves_alive) > 1 else 'I'} decided to"
-            f" eliminate {eliminated}."
+            f"在夜晚阶段，{'我们' if len(werewolves_alive) > 1 else '我'}决定淘汰{eliminated}。"
         )
 
       # 发送 WebSocket 通知 - 狼人击杀行动
@@ -272,6 +270,21 @@ class GameMaster:
         print(f"Warning: {player_name} did not return a valid bid, using default")
         bid = 1
         log = f"Default bid used due to empty response"
+      # 确保 bid 是数字类型
+      elif isinstance(bid, str):
+        try:
+          bid = int(bid)
+        except (ValueError, TypeError):
+          print(f"Warning: {player_name} returned string bid '{bid}', using default 0")
+          bid = 0
+          log = f"Error: Invalid bid value '{bid}'"
+      elif not isinstance(bid, int):
+        try:
+          bid = int(bid)
+        except (ValueError, TypeError):
+          print(f"Warning: {player_name} returned invalid bid type {type(bid)}, using default 0")
+          bid = 0
+          log = f"Error: Invalid bid type"
     except Exception as e:
       # 如果出价过程出错，使用默认出价并记录错误
       print(f"Error during bidding for {player_name}: {e}")
@@ -334,14 +347,14 @@ class GameMaster:
             if summary is None:
                 # 如果总结为空，使用默认总结并记录警告
                 print(f"Warning: {player_name} did not return a valid summary, using default")
-                summary = "I need to think about what happened today and analyze the situation carefully."
+                summary = "我需要仔细思考今天发生的情况，并仔细分析局势。"
                 log = f"Default summary used due to empty response"
             tqdm.tqdm.write(f"{player_name} summary: {summary}")
             self.this_round_log.summaries.append((player_name, log))
         except Exception as e:
             # 如果总结过程出错，使用默认总结并记录错误
             print(f"Error during summary for {player_name}: {e}")
-            summary = "I need to think about what happened today and analyze the situation carefully."
+            summary = "我需要仔细思考今天发生的情况，并仔细分析局势。"
             log = f"Error: {str(e)}"
             tqdm.tqdm.write(f"{player_name} summary: {summary}")
             self.this_round_log.summaries.append((player_name, log))
@@ -366,12 +379,12 @@ class GameMaster:
         if dialogue is None:
           # 如果发言为空，使用默认发言并记录警告
           print(f"Warning: {next_speaker} did not return a valid dialogue, using default")
-          dialogue = f"I think we need to be careful and look for clues."
+          dialogue = f"我需要仔细观察并寻找线索。"
           log = f"Default dialogue used due to empty response"
       except Exception as e:
         # 如果发言过程出错，使用默认发言并记录错误
         print(f"Error during debate for {next_speaker}: {e}")
-        dialogue = f"I think we need to be careful and look for clues."
+        dialogue = f"我需要仔细观察并寻找线索。"
         log = f"Error: {str(e)}"
 
       self.this_round_log.debate.append((next_speaker, log))
@@ -408,7 +421,7 @@ class GameMaster:
         self._progress()
 
     for player, vote in self.this_round.votes[-1].items():
-      tqdm.tqdm.write(f"{player} voted to remove {vote}")
+      tqdm.tqdm.write(f"{player} 投票淘汰 {vote}")
 
   def run_voting(self):
     """Conduct a vote among players to exile someone."""
@@ -479,29 +492,33 @@ class GameMaster:
       if exiled_player in self.this_round.players:
         self.this_round.players.remove(exiled_player)
         announcement = (
-            f"The majority voted to remove {exiled_player} from the game."
+            f"大多数人投票淘汰了{exiled_player}。"
         )
+
+        # 更新所有剩余玩家的游戏状态
+        for name in self.this_round.players:
+          player = self.state.players.get(name)
+          if player:
+            if player.gamestate:
+              player.gamestate.remove_player(exiled_player)
+            player.add_announcement(announcement)
       else:
         print(f"Warning: Exiled player {exiled_player} not found in players list")
         announcement = f"No valid player was exiled (target: {exiled_player})."
+        # 仍然通知所有玩家
+        for name in self.this_round.players:
+          player = self.state.players.get(name)
+          if player:
+            player.add_announcement(announcement)
     else:
       announcement = (
-          "A majority vote was not reached, so no one was removed from the"
-          " game."
+          "没有达到多数票，因此没有人被淘汰。"
       )
-
-    # 只有在真正流放时才从游戏状态中移除玩家
-    if self.this_round.exiled is not None and self.this_round.exiled in self.state.players:
+      # 通知所有玩家
       for name in self.this_round.players:
-        player = self.state.players[name]
-        if player.gamestate:
-          player.gamestate.remove_player(self.this_round.exiled)
-        player.add_announcement(announcement)
-    else:
-      # 如果没有流放，仍然需要通知所有玩家
-      for name in self.this_round.players:
-        player = self.state.players[name]
-        player.add_announcement(announcement)
+        player = self.state.players.get(name)
+        if player:
+          player.add_announcement(announcement)
 
     tqdm.tqdm.write(announcement)
     self._progress()
@@ -515,25 +532,32 @@ class GameMaster:
       if eliminated_player in self.this_round.players:
         self.this_round.players.remove(eliminated_player)
         announcement = (
-            f"The Werewolves removed {eliminated_player} from the game during the"
-            " night."
+            f"狼人在夜晚阶段淘汰了{eliminated_player}。"
         )
+
+        # 更新所有剩余玩家的游戏状态
+        for name in self.this_round.players:
+          player = self.state.players.get(name)
+          if player:
+            if player.gamestate:
+              player.gamestate.remove_player(eliminated_player)
+            player.add_announcement(announcement)
       else:
         print(f"Warning: Eliminated player {eliminated_player} not found in players list")
         announcement = f"No valid player was removed during the night (target: {eliminated_player})."
+        # 仍然通知所有玩家
+        for name in self.this_round.players:
+          player = self.state.players.get(name)
+          if player:
+            player.add_announcement(announcement)
 
-      # 只有在真正淘汰时才从游戏状态中移除玩家
-      for name in self.this_round.players:
-        player = self.state.players[name]
-        if player.gamestate:
-          player.gamestate.remove_player(eliminated_player)
-        player.add_announcement(announcement)
     else:
-      announcement = "No one was removed from the game during the night (Doctor's protection succeeded)."
+      announcement = "夜晚阶段没有人被淘汰（医生保护成功）。"
       # 保护成功时，不移除任何玩家，但需要更新游戏状态
       for name in self.this_round.players:
-        player = self.state.players[name]
-        player.add_announcement(announcement)
+        player = self.state.players.get(name)
+        if player:
+          player.add_announcement(announcement)
 
     tqdm.tqdm.write(announcement)
     self._progress()
@@ -552,16 +576,16 @@ class GameMaster:
     for action, message in [
         (
             self.eliminate,
-            "The Werewolves are picking someone to remove from the game.",
+            "狼人正在选择淘汰目标。",
         ),
-        (self.protect, "The Doctor is protecting someone."),
-        (self.unmask, "The Seer is investigating someone."),
+        (self.protect, "医生正在选择保护目标。"),
+        (self.unmask, "预言家正在查验身份。"),
         (self.resolve_night_phase, ""),
-        (self.check_for_winner, "Checking for a winner after Night Phase."),
-        (self.run_day_phase, "The Players are debating and voting."),
+        (self.check_for_winner, "夜晚阶段后检查胜负。"),
+        (self.run_day_phase, "玩家开始辩论和投票。"),
         (self.exile, ""),
-        (self.check_for_winner, "Checking for a winner after Day Phase."),
-        (self.run_summaries, "The Players are summarizing the debate."),
+        (self.check_for_winner, "白天阶段后检查胜负。"),
+        (self.run_summaries, "玩家开始总结辩论。"),
     ]:
       tqdm.tqdm.write(message)
       action()
@@ -569,11 +593,11 @@ class GameMaster:
       self._progress()
 
       if self.state.winner:
-        tqdm.tqdm.write(f"Round {self.current_round_num} is complete.")
+        tqdm.tqdm.write(f"第{self.current_round_num}轮结束。")
         self.this_round.success = True
         return
 
-    tqdm.tqdm.write(f"Round {self.current_round_num} is complete.")
+    tqdm.tqdm.write(f"第{self.current_round_num}轮结束。")
     self.this_round.success = True
     self._progress()
 
@@ -591,13 +615,15 @@ class GameMaster:
     """Check if there is a winner and update the state accordingly."""
     self.state.winner = self.get_winner()
     if self.state.winner:
-      tqdm.tqdm.write(f"The winner is {self.state.winner}!")
+      # 转换胜利者名称为中文
+      winner_name = "狼人" if self.state.winner == "Werewolves" else "好人"
+      tqdm.tqdm.write(f"获胜者是：{winner_name}！")
       self._progress()
 
   def stop(self):
     """设置停止标志，让游戏优雅终止"""
     self.should_stop = True
-    tqdm.tqdm.write("Game stop requested, will finish current round and exit gracefully.")
+    tqdm.tqdm.write("收到停止请求，将在完成当前轮后优雅退出。")
 
   def _notify_night_action(self, action_type: str, player_name: str, player_role: str, target_name: Optional[str] = None, details: Optional[Dict[str, Any]] = None):
     """发送夜间行动 WebSocket 通知"""
@@ -624,17 +650,26 @@ class GameMaster:
               details=details
             )
           )
+          print(f"[WebSocket] 夜间行动通知已发送: {action_type} by {player_name}")
+        except Exception as e:
+          print(f"[WebSocket错误] 夜间行动通知发送失败: {e}")
         finally:
           loop.close()
 
-      # 在线程池中运行异步函数
+      # 在线程池中运行异步函数，并等待完成
       import concurrent.futures
       executor = concurrent.futures.ThreadPoolExecutor(max_workers=1)
-      executor.submit(run_async)
-      executor.shutdown(wait=False)
+      future = executor.submit(run_async)
+      # 等待最多1秒，确保消息发送完成
+      try:
+        future.result(timeout=1.0)
+      except concurrent.futures.TimeoutError:
+        print(f"[WebSocket警告] 夜间行动通知发送超时")
+      finally:
+        executor.shutdown(wait=False)
 
     except Exception as e:
-      print(f"Failed to send night action notification: {e}")
+      print(f"[WebSocket错误] 夜间行动通知失败: {e}")
 
   def _notify_debate_turn(self, player_name: str, dialogue: str, player_role: str, turn_number: int):
     """发送辩论发言 WebSocket 通知"""
@@ -654,16 +689,24 @@ class GameMaster:
               player_role=player_role
             )
           )
+          print(f"[WebSocket] 辩论发言通知已发送: {player_name}")
+        except Exception as e:
+          print(f"[WebSocket错误] 辩论发言通知发送失败: {e}")
         finally:
           loop.close()
 
       import concurrent.futures
       executor = concurrent.futures.ThreadPoolExecutor(max_workers=1)
-      executor.submit(run_async)
-      executor.shutdown(wait=False)
+      future = executor.submit(run_async)
+      try:
+        future.result(timeout=1.0)
+      except concurrent.futures.TimeoutError:
+        print(f"[WebSocket警告] 辩论发言通知发送超时")
+      finally:
+        executor.shutdown(wait=False)
 
     except Exception as e:
-      print(f"Failed to send debate turn notification: {e}")
+      print(f"[WebSocket错误] 辩论发言通知失败: {e}")
 
   def _notify_vote_cast(self, voter: str, target: str, voter_role: str):
     """发送投票 WebSocket 通知"""
@@ -683,16 +726,24 @@ class GameMaster:
               voter_role=voter_role
             )
           )
+          print(f"[WebSocket] 投票通知已发送: {voter} -> {target}")
+        except Exception as e:
+          print(f"[WebSocket错误] 投票通知发送失败: {e}")
         finally:
           loop.close()
 
       import concurrent.futures
       executor = concurrent.futures.ThreadPoolExecutor(max_workers=1)
-      executor.submit(run_async)
-      executor.shutdown(wait=False)
+      future = executor.submit(run_async)
+      try:
+        future.result(timeout=1.0)
+      except concurrent.futures.TimeoutError:
+        print(f"[WebSocket警告] 投票通知发送超时")
+      finally:
+        executor.shutdown(wait=False)
 
     except Exception as e:
-      print(f"Failed to send vote cast notification: {e}")
+      print(f"[WebSocket错误] 投票通知失败: {e}")
 
   def run_game(self) -> str:
     """Run the entire Werewolf game and return the winner."""
@@ -702,7 +753,7 @@ class GameMaster:
 
       # 检查是否在轮次之间收到停止信号
       if self.should_stop:
-        tqdm.tqdm.write("Game stopped by user request between rounds.")
+        tqdm.tqdm.write("游戏在轮次之间被用户停止。")
         self.state.winner = "Game Stopped"
         break
 
@@ -715,7 +766,7 @@ class GameMaster:
       self.current_round_num += 1
 
     if self.should_stop:
-      tqdm.tqdm.write("Game stopped by user request!")
+      tqdm.tqdm.write("游戏被用户停止！")
     else:
-      tqdm.tqdm.write("Game is complete!")
+      tqdm.tqdm.write("游戏结束！")
     return self.state.winner

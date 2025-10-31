@@ -1,6 +1,6 @@
 """
-GLM (智谱AI) LLM提供商
-GLM (ZhipuAI) LLM Provider
+MiniMax LLM提供商
+MiniMax LLM Provider (Anthropic Compatible API)
 """
 
 from typing import Dict, Any, Optional
@@ -9,15 +9,15 @@ from openai import OpenAI
 from ..base import LLMProvider
 
 
-class GLMProvider(LLMProvider):
-    """GLM API提供商（使用OpenAI兼容接口）"""
+class MiniMaxProvider(LLMProvider):
+    """MiniMax API提供商（使用Anthropic兼容接口）"""
 
     def __init__(self, config: Dict[str, Any]):
         super().__init__(config)
-        # GLM使用OpenAI兼容的接口
+        # MiniMax使用Anthropic兼容的接口
         self.client = OpenAI(
             api_key=self.api_key,
-            base_url=self.base_url or "https://open.bigmodel.cn/api/paas/v4"
+            base_url=self.base_url or "https://api.minimaxi.com/anthropic"
         )
 
     def generate(
@@ -30,7 +30,7 @@ class GLMProvider(LLMProvider):
         system_message: Optional[str] = None,
         **kwargs
     ) -> str:
-        """使用GLM API生成文本"""
+        """使用MiniMax API生成文本"""
         response_format = {"type": "text"}
         if json_mode:
             response_format = {"type": "json_object"}
@@ -55,8 +55,7 @@ class GLMProvider(LLMProvider):
         """健康检查"""
         try:
             # 简单的API调用测试
-            # GLM可能没有models.list接口，所以只检查配置
             return self.validate_config()
         except Exception as e:
-            print(f"GLM health check failed: {e}")
+            print(f"MiniMax health check failed: {e}")
             return False

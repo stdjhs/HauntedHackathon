@@ -84,7 +84,10 @@ class RealtimeGameLogger:
         if session_id not in self._logs:
             self._logs[session_id] = []
             self._subscribers[session_id] = []
-            self._file_locks[session_id] = asyncio.Lock()
+            # 不再使用asyncio.Lock，避免事件循环问题
+            # 使用线程锁替代
+            import threading
+            self._file_locks[session_id] = threading.Lock()
 
             # 创建日志文件路径
             log_path = Path(log_dir) / "realtime_logs.jsonl"
@@ -142,10 +145,28 @@ class RealtimeGameLogger:
         try:
             if session_id in self._log_files and session_id in self._file_locks:
                 log_file = self._log_files[session_id]
-                # 异步文件写入
-                async with self._file_locks[session_id]:
-                    with open(log_file, 'a', encoding='utf-8') as f:
-                        f.write(json.dumps(entry.to_dict(), ensure_ascii=False) + '\n')
+                # 检查事件循环是否活跃
+                try:
+                    loop = asyncio.get_running_loop()
+                except RuntimeError:
+                    # 没有运行中的事件循环，直接返回
+                    return
+
+                # 使用线程锁进行文件写入
+                import threading
+                lock = self._file_locks[session_id]
+
+                # 在线程池中执行文件写入
+                def write_file():
+                    with lock:
+                        with open(log_file, 'a', encoding='utf-8') as f:
+                            f.write(json.dumps(entry.to_dict(), ensure_ascii=False) + '\n')
+
+                # 在线程池中运行
+                loop.run_in_executor(None, write_file)
+        except (RuntimeError, asyncio.InvalidStateError) as e:
+            # 事件循环已关闭或无效，静默忽略
+            pass
         except Exception as e:
             print(f"[RealtimeLogger] Error writing log to file: {e}")
 
