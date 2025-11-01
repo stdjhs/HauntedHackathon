@@ -1,0 +1,408 @@
+/* ====================================
+   动画定义 - 所有CSS动画
+   ==================================== */
+
+/* 基础动画 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+}
+
+/* 背景动画 */
+@keyframes backgroundShift {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
+}
+
+/* 南瓜动画 */
+@keyframes pumpkinSpin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pumpkinGlow {
+    0%, 100% {
+        filter: drop-shadow(0 0 20px var(--pumpkin-glow));
+        transform: scale(1);
+    }
+    50% {
+        filter: drop-shadow(0 0 40px var(--pumpkin-glow));
+        transform: scale(1.1);
+    }
+}
+
+/* 蜘蛛爬行 */
+@keyframes spiderCrawl {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 1;
+    }
+    50% {
+        transform: translate(20px, -30px) rotate(180deg);
+        opacity: 0.7;
+    }
+    100% {
+        transform: translate(0, 0) rotate(360deg);
+        opacity: 1;
+    }
+}
+
+/* 文本脉冲 */
+@keyframes textPulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* 标题闪烁 */
+@keyframes titleFlicker {
+    0%, 100% {
+        opacity: 1;
+    }
+    5% {
+        opacity: 0.8;
+    }
+    10% {
+        opacity: 1;
+    }
+    15% {
+        opacity: 0.9;
+    }
+    20% {
+        opacity: 1;
+    }
+}
+
+/* 副标题发光 */
+@keyframes subtitleGlow {
+    0%, 100% {
+        text-shadow: 0 0 15px rgba(107, 29, 158, 0.6);
+    }
+    50% {
+        text-shadow: 0 0 30px rgba(107, 29, 158, 0.9);
+    }
+}
+
+/* 蝙蝠飞行 */
+@keyframes batFly {
+    0% {
+        left: -100px;
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        left: 110%;
+        transform: rotate(360deg);
+    }
+}
+
+/* 星星闪烁 */
+@keyframes starTwinkle {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+/* 月亮发光 */
+@keyframes moonGlow {
+    0%, 100% {
+        box-shadow: 0 0 30px rgba(230, 232, 240, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 60px rgba(230, 232, 240, 0.8);
+    }
+}
+
+/* 鬼火飘动 */
+@keyframes wispFloat {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.6;
+    }
+    25% {
+        transform: translate(20px, -30px) scale(1.2);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translate(40px, -10px) scale(0.9);
+        opacity: 0.5;
+    }
+    75% {
+        transform: translate(20px, 20px) scale(1.1);
+        opacity: 0.7;
+    }
+}
+
+/* 粒子飘动 */
+@keyframes particleRise {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.5;
+    }
+    90% {
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* 震动效果 */
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-10px);
+    }
+    75% {
+        transform: translateX(10px);
+    }
+}
+
+/* 脉冲效果 */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* 惊吓缩放 */
+@keyframes scareZoom {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* 惊吓震动 */
+@keyframes scareShake {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-15deg);
+    }
+    75% {
+        transform: rotate(15deg);
+    }
+}
+
+/* 红色闪烁 */
+@keyframes flashRed {
+    0%, 100% {
+        background: var(--primary-black);
+    }
+    50% {
+        background: var(--blood-red);
+    }
+}
+
+/* 浮动效果 */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* 旋转脉冲 */
+@keyframes rotatePulse {
+    0%, 100% {
+        transform: rotate(0deg) scale(1);
+    }
+    50% {
+        transform: rotate(180deg) scale(1.1);
+    }
+}
+
+/* 从右滑入 */
+@keyframes slideInRight {
+    from {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* 向右滑出 */
+@keyframes slideOutRight {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+}
+
+/* 从下滑入 */
+@keyframes slideInUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* 向下滑出 */
+@keyframes slideOutDown {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+}
+
+/* 缩放进入 */
+@keyframes zoomIn {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* 缩放退出 */
+@keyframes zoomOut {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+/* 心跳效果 */
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    10% {
+        transform: scale(1.1);
+    }
+    20% {
+        transform: scale(1);
+    }
+    30% {
+        transform: scale(1.1);
+    }
+    40% {
+        transform: scale(1);
+    }
+}
+
+/* 弹跳效果 */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-30px);
+    }
+}
+
+/* 旋转加载 */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* 闪光效果 */
+@keyframes sparkle {
+    0%, 100% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* 性能优化：使用GPU加速 */
+.accelerated {
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+/* 性能优化：包含性能 */
+.contained {
+    contain: layout style paint;
+}

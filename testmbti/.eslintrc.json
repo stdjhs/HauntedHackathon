@@ -1,0 +1,41 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": "eslint:recommended",
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "sourceType": "script"
+  },
+  "rules": {
+    "indent": ["error", 4],
+    "linebreak-style": ["error", "windows"],
+    "quotes": ["error", "single", { "avoidEscape": true }],
+    "semi": ["error", "always"],
+    "no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }],
+    "no-console": ["warn", { "allow": ["warn", "error"] }],
+    "camelcase": ["error", { "properties": "always" }],
+    "prefer-const": "error",
+    "no-var": "error",
+    "eqeqeq": ["error", "always"],
+    "curly": ["error", "all"]
+  },
+  "globals": {
+    "audioContext": "writable",
+    "masterGain": "writable",
+    "soundEnabled": "writable",
+    "fearLevel": "writable",
+    "currentQuestionIndex": "writable",
+    "answers": "writable",
+    "fearValue": "writable",
+    "talismans": "writable",
+    "collectedClues": "writable",
+    "hasChaseGame": "writable",
+    "hasRiddleGame": "writable",
+    "secretEnding": "writable",
+    "audioManager": "readonly",
+    "questions": "readonly",
+    "personalityTypes": "readonly"
+  }
+}

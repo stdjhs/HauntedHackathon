@@ -1,0 +1,894 @@
+/* ====================================
+   管理面板样式 - Admin Panel Styles
+   配置编辑器 + 性能监控可视化
+   ==================================== */
+
+/* ==================== 配置编辑器样式 ==================== */
+
+/* 模态框背景 */
+.config-editor-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.92);
+    backdrop-filter: blur(10px);
+    z-index: 10010;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 20px;
+}
+
+.config-editor-modal.visible {
+    opacity: 1;
+}
+
+/* 编辑器容器 */
+.config-editor-container {
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.98), rgba(11, 12, 30, 0.98));
+    border-radius: 20px;
+    border: 3px solid var(--halloween-orange);
+    box-shadow: 0 20px 80px rgba(255, 102, 0, 0.5);
+    max-width: 900px;
+    width: 100%;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    animation: slideInUp 0.4s ease-out;
+}
+
+/* 头部 */
+.config-editor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 30px;
+    border-bottom: 2px solid var(--halloween-orange);
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.config-editor-title {
+    font-size: 28px;
+    color: var(--halloween-orange);
+    margin: 0;
+    font-weight: bold;
+    text-shadow: 0 0 20px rgba(248, 165, 28, 0.6);
+}
+
+.config-close-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: rgba(242, 92, 92, 0.2);
+    border-radius: 50%;
+    color: var(--blood-red);
+    font-size: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.config-close-btn:hover {
+    background: var(--blood-red);
+    color: white;
+    transform: rotate(90deg);
+}
+
+/* 内容区域 */
+.config-editor-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 30px;
+}
+
+/* 配置区块 */
+.config-section {
+    margin-bottom: 30px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+    padding: 20px;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.config-section:hover {
+    border-color: var(--halloween-orange);
+}
+
+.config-section-header {
+    margin-bottom: 20px;
+}
+
+.config-section-title {
+    font-size: 22px;
+    color: var(--ghost-white);
+    margin: 0 0 8px 0;
+    font-weight: bold;
+}
+
+.config-section-desc {
+    color: var(--fog-gray);
+    font-size: 14px;
+    margin: 0;
+}
+
+/* 配置项 */
+.config-item {
+    margin-bottom: 25px;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    transition: background 0.3s ease;
+}
+
+.config-item:hover {
+    background: rgba(248, 165, 28, 0.05);
+}
+
+.config-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.config-label-text {
+    font-size: 16px;
+    color: var(--ghost-white);
+    font-weight: 600;
+}
+
+.config-label-hint {
+    font-size: 12px;
+    color: var(--fog-gray);
+    font-style: italic;
+}
+
+/* 输入控件组 */
+.config-input-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* 滑块 */
+.config-slider {
+    flex: 1;
+    height: 6px;
+    background: rgba(176, 179, 193, 0.2);
+    border-radius: 10px;
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.config-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, var(--halloween-orange), var(--pumpkin-glow));
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(248, 165, 28, 0.6);
+    transition: transform 0.2s ease;
+}
+
+.config-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+}
+
+.config-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, var(--halloween-orange), var(--pumpkin-glow));
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 0 10px rgba(248, 165, 28, 0.6);
+}
+
+/* 数字输入 */
+.config-number {
+    width: 80px;
+    padding: 8px 12px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid var(--dark-gray);
+    border-radius: 8px;
+    color: var(--ghost-white);
+    font-size: 16px;
+    text-align: center;
+    transition: border-color 0.3s ease;
+}
+
+.config-number:focus {
+    outline: none;
+    border-color: var(--halloween-orange);
+}
+
+.config-unit {
+    color: var(--fog-gray);
+    font-size: 14px;
+    min-width: 30px;
+}
+
+/* 值显示 */
+.config-value-display {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+.config-current-value {
+    color: var(--halloween-orange);
+    font-weight: bold;
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+.config-value-changed {
+    animation: valuePulse 0.3s ease;
+}
+
+@keyframes valuePulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+.config-default-value {
+    color: var(--fog-gray);
+    font-size: 12px;
+}
+
+/* 开关 */
+.config-toggle {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+}
+
+.config-toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.config-toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(176, 179, 193, 0.3);
+    transition: 0.4s;
+    border-radius: 30px;
+}
+
+.config-toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+.config-toggle input:checked + .config-toggle-slider {
+    background: linear-gradient(135deg, var(--halloween-orange), var(--pumpkin-glow));
+    box-shadow: 0 0 10px rgba(248, 165, 28, 0.6);
+}
+
+.config-toggle input:checked + .config-toggle-slider:before {
+    transform: translateX(30px);
+}
+
+/* 文本输入 */
+.config-text {
+    width: 100%;
+    padding: 10px 15px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid var(--dark-gray);
+    border-radius: 8px;
+    color: var(--ghost-white);
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.config-text:focus {
+    outline: none;
+    border-color: var(--halloween-orange);
+}
+
+/* 底部按钮区 */
+.config-editor-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    padding: 20px 30px;
+    border-top: 2px solid var(--halloween-orange);
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.config-btn {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.config-btn-primary {
+    background: linear-gradient(135deg, var(--halloween-orange), var(--pumpkin-glow));
+    color: white;
+    box-shadow: 0 5px 20px rgba(248, 165, 28, 0.4);
+}
+
+.config-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(248, 165, 28, 0.6);
+}
+
+.config-btn-secondary {
+    background: rgba(82, 89, 255, 0.2);
+    color: var(--magic-blue);
+    border: 2px solid var(--magic-blue);
+}
+
+.config-btn-secondary:hover {
+    background: var(--magic-blue);
+    color: white;
+}
+
+/* 通知 */
+.config-notification {
+    position: fixed;
+    top: 100px;
+    right: -300px;
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.98), rgba(11, 12, 30, 0.98));
+    color: white;
+    padding: 20px 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+    z-index: 10020;
+    transition: right 0.3s ease;
+    border: 2px solid var(--halloween-orange);
+    min-width: 250px;
+}
+
+.config-notification.visible {
+    right: 20px;
+}
+
+.config-notification-success {
+    border-color: #4CAF50;
+}
+
+.config-notification-error {
+    border-color: var(--blood-red);
+}
+
+.config-notification-info {
+    border-color: var(--magic-blue);
+}
+
+/* ==================== 性能监控面板样式 ==================== */
+
+.perf-visualizer-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.92);
+    backdrop-filter: blur(10px);
+    z-index: 10010;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 20px;
+}
+
+.perf-visualizer-modal.visible {
+    opacity: 1;
+}
+
+.perf-visualizer-container {
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.98), rgba(11, 12, 30, 0.98));
+    border-radius: 20px;
+    border: 3px solid var(--magic-blue);
+    box-shadow: 0 20px 80px rgba(82, 89, 255, 0.5);
+    max-width: 1200px;
+    width: 100%;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    animation: slideInUp 0.4s ease-out;
+}
+
+/* 头部 */
+.perf-visualizer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 30px;
+    border-bottom: 2px solid var(--magic-blue);
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.perf-visualizer-title {
+    font-size: 28px;
+    color: var(--magic-blue);
+    margin: 0;
+    font-weight: bold;
+    text-shadow: 0 0 20px rgba(82, 89, 255, 0.6);
+}
+
+.perf-header-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.perf-control-btn {
+    padding: 10px 20px;
+    background: rgba(82, 89, 255, 0.2);
+    border: 2px solid var(--magic-blue);
+    border-radius: 20px;
+    color: var(--magic-blue);
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.perf-control-btn:hover {
+    background: var(--magic-blue);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.perf-close-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: rgba(242, 92, 92, 0.2);
+    border-radius: 50%;
+    color: var(--blood-red);
+    font-size: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.perf-close-btn:hover {
+    background: var(--blood-red);
+    color: white;
+    transform: rotate(90deg);
+}
+
+/* 仪表盘 */
+.perf-dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 20px 30px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.perf-metric-card {
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid var(--dark-gray);
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: all 0.3s ease;
+}
+
+.perf-metric-card:hover {
+    border-color: var(--magic-blue);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(82, 89, 255, 0.3);
+}
+
+.perf-metric-icon {
+    font-size: 36px;
+    flex-shrink: 0;
+}
+
+.perf-metric-content {
+    flex: 1;
+}
+
+.perf-metric-label {
+    font-size: 14px;
+    color: var(--fog-gray);
+    margin-bottom: 5px;
+}
+
+.perf-metric-value {
+    font-size: 28px;
+    color: var(--ghost-white);
+    font-weight: bold;
+}
+
+.perf-value-good {
+    color: #4CAF50;
+}
+
+.perf-value-warning {
+    color: var(--halloween-orange);
+}
+
+.perf-value-bad {
+    color: var(--blood-red);
+}
+
+/* 图表区域 */
+.perf-charts {
+    padding: 20px 30px;
+    overflow-y: auto;
+}
+
+.perf-chart-container {
+    margin-bottom: 30px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+    padding: 20px;
+    border: 2px solid var(--dark-gray);
+}
+
+.perf-chart-title {
+    font-size: 18px;
+    color: var(--ghost-white);
+    margin: 0 0 15px 0;
+    font-weight: bold;
+}
+
+canvas {
+    width: 100%;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.perf-chart-legend {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.perf-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: var(--fog-gray);
+}
+
+.perf-legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.perf-legend-line {
+    width: 30px;
+    height: 2px;
+}
+
+/* 详细统计 */
+.perf-details {
+    padding: 20px 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.perf-detail-section {
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+    padding: 20px;
+    border: 2px solid var(--dark-gray);
+}
+
+.perf-detail-title {
+    font-size: 18px;
+    color: var(--ghost-white);
+    margin: 0 0 15px 0;
+    font-weight: bold;
+}
+
+.perf-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.perf-stat-item {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.perf-stat-label {
+    font-size: 12px;
+    color: var(--fog-gray);
+}
+
+.perf-stat-value {
+    font-size: 18px;
+    color: var(--ghost-white);
+    font-weight: bold;
+}
+
+.perf-interactions-list {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.perf-interaction-item {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+
+.perf-interaction-type {
+    color: var(--ghost-white);
+    font-weight: 600;
+}
+
+.perf-interaction-duration {
+    color: var(--magic-blue);
+}
+
+.perf-interaction-time {
+    color: var(--fog-gray);
+    font-size: 12px;
+}
+
+.perf-empty-state {
+    text-align: center;
+    color: var(--fog-gray);
+    padding: 40px 20px;
+    font-size: 16px;
+}
+
+.perf-notification {
+    position: fixed;
+    top: 100px;
+    right: -300px;
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.98), rgba(11, 12, 30, 0.98));
+    color: white;
+    padding: 20px 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+    z-index: 10020;
+    transition: right 0.3s ease;
+    border: 2px solid var(--magic-blue);
+    min-width: 250px;
+}
+
+.perf-notification.visible {
+    right: 20px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .config-editor-container,
+    .perf-visualizer-container {
+        max-width: 100%;
+        max-height: 100vh;
+        border-radius: 0;
+    }
+
+    .config-editor-header,
+    .perf-visualizer-header {
+        padding: 15px 20px;
+    }
+
+    .config-editor-title,
+    .perf-visualizer-title {
+        font-size: 20px;
+    }
+
+    .perf-dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .config-input-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .config-number {
+        width: 100%;
+    }
+
+    .perf-stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .perf-details {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 滚动条美化 */
+.config-editor-body::-webkit-scrollbar,
+.perf-charts::-webkit-scrollbar,
+.perf-interactions-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.config-editor-body::-webkit-scrollbar-track,
+.perf-charts::-webkit-scrollbar-track,
+.perf-interactions-list::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+.config-editor-body::-webkit-scrollbar-thumb,
+.perf-charts::-webkit-scrollbar-thumb,
+.perf-interactions-list::-webkit-scrollbar-thumb {
+    background: var(--halloween-orange);
+    border-radius: 10px;
+}
+
+.config-editor-body::-webkit-scrollbar-thumb:hover,
+.perf-charts::-webkit-scrollbar-thumb:hover,
+.perf-interactions-list::-webkit-scrollbar-thumb:hover {
+    background: var(--pumpkin-glow);
+}
+
+/* ==================== 浮动按钮(FAB)样式 ==================== */
+
+.admin-panel-fab {
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    z-index: 1001;
+}
+
+.admin-fab-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--spooky-purple), var(--magic-blue));
+    border: 3px solid var(--magic-blue);
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    box-shadow: 0 5px 25px rgba(82, 89, 255, 0.6);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fabPulse 2s ease-in-out infinite;
+}
+
+.admin-fab-btn:hover {
+    transform: scale(1.1) rotate(90deg);
+    box-shadow: 0 8px 35px rgba(82, 89, 255, 0.8);
+}
+
+.admin-fab-btn.active {
+    transform: rotate(45deg);
+    background: linear-gradient(135deg, var(--blood-red), var(--halloween-orange));
+    border-color: var(--halloween-orange);
+}
+
+@keyframes fabPulse {
+    0%, 100% {
+        box-shadow: 0 5px 25px rgba(82, 89, 255, 0.6);
+    }
+    50% {
+        box-shadow: 0 8px 35px rgba(82, 89, 255, 0.9);
+    }
+}
+
+/* 菜单 */
+.admin-fab-menu {
+    position: absolute;
+    bottom: 75px;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.admin-fab-menu.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.admin-menu-item {
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.98), rgba(11, 12, 30, 0.98));
+    border: 2px solid var(--magic-blue);
+    border-radius: 30px;
+    padding: 12px 20px;
+    color: var(--ghost-white);
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    white-space: nowrap;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.admin-menu-item:hover {
+    background: var(--magic-blue);
+    transform: translateX(-5px);
+    box-shadow: 0 8px 30px rgba(82, 89, 255, 0.6);
+}
+
+.admin-menu-item:active {
+    transform: translateX(-5px) scale(0.95);
+}
+
+/* 菜单项动画 */
+.admin-fab-menu.active .admin-menu-item {
+    animation: slideInFromRight 0.3s ease-out;
+}
+
+.admin-fab-menu.active .admin-menu-item:nth-child(1) {
+    animation-delay: 0.05s;
+}
+
+.admin-fab-menu.active .admin-menu-item:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.admin-fab-menu.active .admin-menu-item:nth-child(3) {
+    animation-delay: 0.15s;
+}
+
+.admin-fab-menu.active .admin-menu-item:nth-child(4) {
+    animation-delay: 0.2s;
+}
+
+@keyframes slideInFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>最小化测试</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 20px;
+            margin: 0;
+        }
+        .fear-level-container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: rgba(0,0,0,0.7);
+            padding: 30px;
+            border-radius: 15px;
+            border: 2px solid #6b1d9e;
+        }
+        .fear-level-option {
+            padding: 20px;
+            margin: 10px 0;
+            background: rgba(107, 29, 158, 0.3);
+            border: 2px solid #6b1d9e;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .fear-level-option:hover {
+            background: rgba(107, 29, 158, 0.5);
+            transform: translateX(10px);
+        }
+        .creepy-button {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #F8A51C, #F25C5C);
+            border: none;
+            border-radius: 25px;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+    <div id="loading-screen">
+        <div style="text-align: center; padding: 50px;">
+            <div style="font-size: 50px;">🎃</div>
+            <p>正在加载...</p>
+        </div>
+    </div>
+
+    <script>
+        console.log('=== 最小化测试开始 ===');
+
+        // 等待DOM加载完成
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('DOM已加载');
+
+            // 模拟原应用的初始化流程
+            setTimeout(() => {
+                console.log('隐藏加载屏幕');
+                document.getElementById('loading-screen').style.display = 'none';
+                console.log('显示恐惧级别选择器');
+                showFearLevelSelector();
+            }, 1000);
+        });
+
+        function showFearLevelSelector() {
+            console.log('showFearLevelSelector 被调用');
+
+            const fearLevelContainer = document.createElement('div');
+            fearLevelContainer.className = 'fear-level-container';
+
+            fearLevelContainer.innerHTML = `
+                <h2 style="text-align: center; color: #F8A51C;">选择你的惊吓等级</h2>
+                <div class="fear-level-option" data-level="mild" onclick="selectLevel('mild')">
+                    <h3>🌙 温和模式</h3>
+                    <p>适合胆小鬼，没有突然惊吓</p>
+                </div>
+                <div class="fear-level-option" data-level="normal" onclick="selectLevel('normal')">
+                    <h3>👻 标准模式</h3>
+                    <p>适中的恐怖体验，有轻微惊吓</p>
+                </div>
+                <div class="fear-level-option" data-level="extreme" onclick="selectLevel('extreme')">
+                    <h3>💀 极限模式</h3>
+                    <p>终极恐怖体验，高能预警！</p>
+                </div>
+                <button class="creepy-button" onclick="confirmLevel()">
+                    确认进入测试
+                </button>
+            `;
+
+            document.body.appendChild(fearLevelContainer);
+            console.log('恐惧级别选择器已添加到页面');
+        }
+
+        let selectedLevel = 'normal';
+
+        function selectLevel(level) {
+            console.log('选择了级别:', level);
+            selectedLevel = level;
+
+            // 更新UI
+            document.querySelectorAll('.fear-level-option').forEach(el => {
+                el.style.borderColor = '#6b1d9e';
+                el.style.background = 'rgba(107, 29, 158, 0.3)';
+            });
+
+            const selected = document.querySelector(`[data-level="${level}"]`);
+            if (selected) {
+                selected.style.borderColor = '#F8A51C';
+                selected.style.background = 'rgba(248, 165, 28, 0.3)';
+            }
+        }
+
+        function confirmLevel() {
+            console.log('确认级别:', selectedLevel);
+            alert(`你选择了: ${selectedLevel}\n现在应该开始测试！`);
+            showQuestion();
+        }
+
+        function showQuestion() {
+            const container = document.querySelector('.fear-level-container');
+            container.innerHTML = `
+                <h2 style="color: #F8A51C;">问题 1/16</h2>
+                <p style="font-size: 18px;">你在万圣节派对上最想成为？</p>
+                <div class="fear-level-option" onclick="answer('A')">
+                    <h3>A. 受欢迎的焦点</h3>
+                    <p>成为派对的中心人物</p>
+                </div>
+                <div class="fear-level-option" onclick="answer('B')">
+                    <h3>B. 幕后策划者</h3>
+                    <p>在后台安排一切</p>
+                </div>
+                <div class="fear-level-option" onclick="answer('C')">
+                    <h3>C. 观察者</h3>
+                    <p>安静地观察周围</p>
+                </div>
+            `;
+        }
+
+        function answer(ans) {
+            console.log('答案:', ans);
+            alert(`你选择了: ${ans}\n测试正常运行！`);
+        }
+    </script>
+</body>
+</html>

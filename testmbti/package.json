@@ -1,0 +1,39 @@
+{
+  "name": "halloween-mbti-test",
+  "version": "3.1.1",
+  "description": "万圣节主题MBTI人格测试 - 交互式心理测评应用",
+  "main": "halloween_mbti.html",
+  "scripts": {
+    "start": "python -m http.server 8080",
+    "lint": "eslint halloween_script.js",
+    "lint:fix": "eslint halloween_script.js --fix",
+    "format": "prettier --write \"*.{js,css,html}\"",
+    "format:check": "prettier --check \"*.{js,css,html}\"",
+    "serve": "python -m http.server 8080"
+  },
+  "keywords": [
+    "MBTI",
+    "personality-test",
+    "halloween",
+    "interactive",
+    "web-audio-api",
+    "vanilla-javascript"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "prettier": "^3.1.1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "bugs": {
+    "url": ""
+  },
+  "homepage": ""
+}

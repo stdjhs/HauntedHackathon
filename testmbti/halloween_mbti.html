@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>万圣节惊吓版 MBTI 人格测试</title>
+
+    <!-- 样式文件 -->
+    <link rel="stylesheet" href="halloween_styles.css">
+
+    <!-- 字体预加载 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 加载动画 -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="pumpkin-loader">
+            <div class="pumpkin">🎃</div>
+            <div class="spider web1">🕷️</div>
+            <div class="spider web2">🕸️</div>
+            <p class="loading-text">正在唤醒黑暗力量...</p>
+        </div>
+    </div>
+
+    <!-- 惊吓开场 -->
+    <div id="scare-intro" class="scare-intro hidden">
+        <div class="scare-content">
+            <h1 class="creepy-title">万圣节惊吓版</h1>
+            <h2 class="creepy-subtitle">MBTI 人格测试</h2>
+            <div class="haunted-message">
+                <p class="typing-text"></p>
+            </div>
+            <button id="start-btn" class="creepy-button pulse">进入黑暗世界</button>
+        </div>
+        <div class="flying-bats">
+            <span class="bat">🦇</span>
+            <span class="bat">🦇</span>
+            <span class="bat">🦇</span>
+        </div>
+    </div>
+
+    <!-- 测试进度 -->
+    <div id="progress-container" class="progress-container hidden">
+        <div class="progress-header">
+            <h2 class="progress-title">🔮 测试进度</h2>
+            <div class="progress-bar">
+                <div id="progress-fill" class="progress-fill"></div>
+            </div>
+            <span id="progress-text" class="progress-text">0 / 16</span>
+        </div>
+    </div>
+
+    <!-- 测试问题区域 -->
+    <div id="question-container" class="question-container hidden">
+        <div class="question-card slide-in">
+            <div class="question-number">
+                <span id="current-question">1</span> / <span id="total-questions">16</span>
+            </div>
+            <h3 id="question-text" class="question-text"></h3>
+            <div id="answers-container" class="answers-container">
+                <!-- 动态生成答案选项 -->
+            </div>
+        </div>
+        <div class="fog-effect"></div>
+    </div>
+
+    <!-- 过渡动画 -->
+    <div id="transition-overlay" class="transition-overlay hidden">
+        <div class="transition-content">
+            <div class="spinning-pumpkin">🎃</div>
+            <p class="transition-text">正在分析你的灵魂...</p>
+        </div>
+    </div>
+
+    <!-- 结果页面 -->
+    <div id="result-container" class="result-container hidden">
+        <div class="result-card fade-in">
+            <h2 class="result-title">你的万圣节人格是</h2>
+            <div id="personality-type" class="personality-type">
+                <div class="type-badge" id="type-badge">???</div>
+                <h3 id="type-name" class="type-name"></h3>
+            </div>
+            <div id="personality-description" class="personality-description">
+                <!-- 动态生成人格描述 -->
+            </div>
+            <div class="personality-traits">
+                <h4>你的超自然特征：</h4>
+                <ul id="traits-list">
+                    <!-- 动态生成特质列表 -->
+                </ul>
+            </div>
+            <div class="compatibility">
+                <h4>最佳拍档：</h4>
+                <p id="compatibility-text"></p>
+            </div>
+            <div class="action-buttons">
+                <button id="restart-btn" class="creepy-button">再次体验</button>
+                <button id="share-btn" class="creepy-button secondary">分享结果</button>
+                <button id="achievements-btn" class="creepy-button secondary" onclick="showAchievementsList()">🏆 成就</button>
+                <button id="stats-btn" class="creepy-button secondary" onclick="showDetailedStats()">📊 统计</button>
+            </div>
+        </div>
+        <div class="result-effects">
+            <span class="floating-pumpkin">🎃</span>
+            <span class="floating-ghost">👻</span>
+            <span class="floating-bat">🦇</span>
+            <span class="floating-skull">💀</span>
+        </div>
+    </div>
+
+    <!-- 惊吓特效 -->
+    <div id="jumpscare" class="jumpscare hidden">
+        <div class="jumpscare-content">
+            <div class="jumpscare-image">💀</div>
+            <p class="jumpscare-text">BOO!</p>
+        </div>
+    </div>
+
+    <!-- 背景音效控制 -->
+    <div class="audio-control">
+        <button id="sound-toggle" class="sound-btn">🔊</button>
+    </div>
+
+    <!-- 管理面板入口 -->
+    <div class="admin-panel-fab">
+        <button class="admin-fab-btn" id="admin-fab-toggle" title="打开管理面板">
+            ⚙️
+        </button>
+        <div class="admin-fab-menu" id="admin-fab-menu">
+            <button class="admin-menu-item" onclick="configEditor.open()" title="配置编辑器">
+                ⚙️ 配置编辑
+            </button>
+            <button class="admin-menu-item" onclick="performanceVisualizer.open()" title="性能监控">
+                📊 性能监控
+            </button>
+            <button class="admin-menu-item" onclick="showAchievementsList()" title="成就列表">
+                🏆 成就列表
+            </button>
+            <button class="admin-menu-item" onclick="showDetailedStats()" title="详细统计">
+                📈 详细统计
+            </button>
+        </div>
+    </div>
+
+    <!-- JavaScript文件 - 核心系统 -->
+    <script src="performance-monitor.js"></script>
+    <script src="config-editor.js"></script>
+    <script src="performance-visualizer.js"></script>
+
+    <!-- JavaScript文件 - 基础优化系统 (v4.0.0) -->
+    <script src="visual-effects.js"></script>
+    <script src="animation-optimizer.js"></script>
+    <script src="micro-interactions.js"></script>
+    <script src="performance-adapter.js"></script>
+    <script src="mobile-enhancer.js"></script>
+    <script src="immersive-backgrounds.js"></script>
+
+    <!-- JavaScript文件 - 高级系统 (v4.5.0) -->
+    <script src="advanced-audio.js" type="module"></script>
+    <script src="advanced-gamification.js" type="module"></script>
+    <script src="webgl-3d-engine.js" type="module"></script>
+    <script src="pwa-offline.js" type="module"></script>
+    <script src="ai-recommendation.js" type="module"></script>
+    <script src="performance-dashboard.js" type="module"></script>
+
+    <!-- 主脚本文件 -->
+    <script src="halloween_script.js"></script>
+
+    <!-- 系统初始化脚本 -->
+    <script type="module">
+        // ====================================
+        // 万圣节MBTI测试 - 高级系统初始化 (v4.5.0)
+        // ====================================
+        import AdvancedAudioEngine from 'advanced-audio.js';
+        import AdvancedGamificationSystem from 'advanced-gamification.js';
+        import WebGL3DEngine from 'webgl-3d-engine.js';
+        import PWAOfflineSystem from 'pwa-offline.js';
+        import AIRecommendationSystem from 'ai-recommendation.js';
+        import PerformanceDashboard from 'performance-dashboard.js';
+
+        let advancedAudioEngine = null;
+        let gamificationSystem = null;
+        let webgl3DEngine = null;
+        let pwaSystem = null;
+        let aiRecommendationSystem = null;
+        let performanceDashboard = null;
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            console.log('%c🎃 万圣节惊吓版 MBTI 测试 v4.5.0 Ultimate', 'color: #F8A51C; font-size: 20px; font-weight: bold;');
+            console.log('%c✨ 正在启动所有高级优化系统...', 'color: #6b1d9e; font-size: 14px;');
+
+            try {
+                // 1. 智能性能适配系统 (最先启动)
+                console.log('🔧 启动智能性能适配系统...');
+                const perfAdapter = await window.PerformanceAdapter.init();
+                if (perfAdapter) console.log('✅ 智能性能适配系统已启动');
+
+                // 2. 沉浸式背景效果
+                console.log('🌌 启动沉浸式背景效果...');
+                const bgController = await window.ImmersiveBackgrounds.init();
+                if (bgController) console.log('✅ 沉浸式背景效果已启动');
+
+                // 3. 高级音效系统
+                setTimeout(async () => {
+                    console.log('🎵 启动高级音效系统...');
+                    advancedAudioEngine = new AdvancedAudioEngine();
+                    await advancedAudioEngine.init();
+                    console.log('✅ 高级音效系统已启动');
+                }, 200);
+
+                // 4. 游戏化增强系统
+                setTimeout(() => {
+                    console.log('🎮 启动游戏化增强系统...');
+                    gamificationSystem = new AdvancedGamificationSystem();
+                    console.log('✅ 游戏化增强系统已启动');
+                }, 300);
+
+                // 5. WebGL 3D渲染引擎
+                setTimeout(() => {
+                    console.log('🎨 启动WebGL 3D渲染引擎...');
+                    webgl3DEngine = new WebGL3DEngine();
+                    if (webgl3DEngine.gl) {
+                        console.log('✅ WebGL 3D渲染引擎已启动');
+                    } else {
+                        console.log('⚠️ WebGL不支持，使用2D渲染');
+                    }
+                }, 400);
+
+                // 6. PWA离线支持系统
+                setTimeout(() => {
+                    console.log('📱 启动PWA离线支持系统...');
+                    pwaSystem = new PWAOfflineSystem();
+                    pwaSystem.checkNetworkStatus();
+                    console.log('✅ PWA离线支持系统已启动');
+                }, 500);
+
+                // 7. AI智能推荐系统
+                setTimeout(() => {
+                    console.log('🤖 启动AI智能推荐系统...');
+                    aiRecommendationSystem = new AIRecommendationSystem();
+                    console.log('✅ AI智能推荐系统已启动');
+                }, 600);
+
+                // 8. 性能监控仪表板
+                setTimeout(() => {
+                    console.log('📊 启动性能监控仪表板...');
+                    performanceDashboard = new PerformanceDashboard();
+                    // 默认隐藏，用户可通过快捷键显示
+                    console.log('✅ 性能监控仪表板已启动 (按Ctrl+Shift+D显示)');
+                }, 700);
+
+                // 9. 视觉特效系统 (延迟启动，避免阻塞首屏)
+                setTimeout(() => {
+                    console.log('✨ 启动视觉特效系统...');
+                    window.VisualEffects.init();
+                    console.log('✅ 视觉特效系统已启动');
+                }, 100);
+
+                // 10. 其他系统 (已在DOMContentLoaded时自动初始化)
+                if (window.AnimationOptimizer) console.log('🎬 动画优化系统已启动');
+                if (window.MicroInteractions) console.log('✨ 微交互系统已启动');
+                if (window.MobileEnhancer) console.log('📱 移动端增强系统已启动');
+
+                // 显示系统状态报告
+                setTimeout(() => {
+                    displayAdvancedOptimizationStatus();
+                }, 1500);
+
+            } catch (error) {
+                console.error('❌ 高级系统初始化失败:', error);
+            }
+        });
+
+        function displayAdvancedOptimizationStatus() {
+            console.log('%c📊 高级优化系统状态报告 v4.5.0', 'color: #F8A51C; font-size: 16px; font-weight: bold;');
+            console.log('%c' + '='.repeat(60), 'color: #6b1d9e');
+
+            // 基础系统
+            const perfController = window.PerformanceAdapter?.getQualityController();
+            if (perfController) {
+                const stats = perfController.getPerformanceStats();
+                console.log(`🎮 性能等级: ${stats.level}`);
+                console.log(`📈 平均FPS: ${stats.averageFPS}`);
+                console.log(`⚡ 性能稳定: ${stats.isStable ? '✅ 是' : '❌ 否'}`);
+            }
+
+            const activeEffects = window.ImmersiveBackgrounds?.controller?.getActiveEffects() || [];
+            console.log(`🌌 背景效果: ${activeEffects.join(', ') || '无'}`);
+
+            // 高级系统
+            console.log('\n🎵 高级音效系统: ' + (advancedAudioEngine ? '✅ 已启动' : '❌ 未启动'));
+            console.log('🎮 游戏化系统: ' + (gamificationSystem ? '✅ 已启动' : '❌ 未启动'));
+            console.log('🎨 3D渲染引擎: ' + (webgl3DEngine?.gl ? '✅ 已启动' : '⚠️ 2D模式'));
+            console.log('📱 PWA离线支持: ' + (pwaSystem ? '✅ 已启动' : '❌ 未启动'));
+            console.log('🤖 AI推荐系统: ' + (aiRecommendationSystem ? '✅ 已启动' : '❌ 未启动'));
+            console.log('📊 性能仪表板: ' + (performanceDashboard ? '✅ 已启动' : '❌ 未启动'));
+
+            console.log('%c' + '='.repeat(60), 'color: #6b1d9e');
+            console.log('%c✅ 所有高级优化系统启动完成!', 'color: #00ff00; font-size: 14px; font-weight: bold;');
+            console.log('%c🚀 享受顶级沉浸式万圣节MBTI测试体验!', 'color: #F8A51C; font-size: 12px;');
+            console.log('%c💡 快捷键: Ctrl+Shift+D 显示性能仪表板', 'color: #6b1d9e; font-size: 10px;');
+        }
+
+        // 添加快捷键支持
+        document.addEventListener('keydown', (e) => {
+            // Ctrl+Shift+D: 显示/隐藏性能仪表板
+            if (e.ctrlKey && e.shiftKey && e.key === 'D') {
+                e.preventDefault();
+                if (performanceDashboard) {
+                    if (performanceDashboard.isVisible) {
+                        performanceDashboard.hide();
+                    } else {
+                        performanceDashboard.show();
+                    }
+                }
+            }
+
+            // Ctrl+Shift+A: 显示AI推荐
+            if (e.ctrlKey && e.shiftKey && e.key === 'A') {
+                e.preventDefault();
+                if (aiRecommendationSystem) {
+                    const recommendations = aiRecommendationSystem.generateRecommendations();
+                    console.log('🤖 AI推荐:', recommendations);
+                }
+            }
+        });
+
+        // 页面卸载时清理资源
+        window.addEventListener('beforeunload', () => {
+            console.log('🧹 正在清理系统资源...');
+            window.VisualEffects?.cleanup();
+            window.PerformanceAdapter?.getProtector()?.cleanupAll();
+        });
+
+        // 调试：检查脚本加载
+        console.log('%c🔍 调试信息', 'color: #F8A51C; font-size: 16px;');
+        console.log('加载的脚本数量:', document.scripts.length);
+        console.log('halloween_script.js是否加载:', document.querySelector('script[src*="halloween_script.js"]') !== null);
+
+        // 5秒后检查是否显示了恐惧级别选择器
+        setTimeout(() => {
+            const fearLevelContainer = document.querySelector('.fear-level-container');
+            console.log('恐惧级别选择器是否存在:', !!fearLevelContainer);
+
+            if (!fearLevelContainer) {
+                console.error('❌ 恐惧级别选择器未显示！');
+                console.log('可能的错误:');
+                console.log('- initializeTest() 未执行');
+                console.log('- showFearLevelSelector() 有错误');
+                console.log('- DOM元素未找到');
+            } else {
+                console.log('✅ 恐惧级别选择器已显示');
+            }
+        }, 5000);
+    </script>
+</body>
+</html>

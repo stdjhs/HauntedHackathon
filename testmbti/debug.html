@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>调试版本</title>
+    <style>
+        .option { padding: 20px; margin: 10px; background: #ccc; cursor: pointer; border: none; }
+        .option:hover { background: #999; }
+    </style>
+</head>
+<body>
+    <h1>调试测试</h1>
+    <div id="container"></div>
+
+    <script>
+        console.log('脚本开始执行');
+
+        // 模拟测试流程
+        setTimeout(() => {
+            console.log('创建选择界面');
+            const container = document.getElementById('container');
+
+            const fearLevelContainer = document.createElement('div');
+            fearLevelContainer.innerHTML = `
+                <h2>选择你的惊吓等级</h2>
+                <button class="option" onclick="selectLevel('mild')">🌙 温和模式</button>
+                <button class="option" onclick="selectLevel('normal')">👻 标准模式</button>
+                <button class="option" onclick="selectLevel('extreme')">💀 极限模式</button>
+                <div id="result"></div>
+            `;
+
+            container.appendChild(fearLevelContainer);
+            console.log('选择界面已创建');
+        }, 1000);
+
+        function selectLevel(level) {
+            console.log('选择的级别:', level);
+            document.getElementById('result').innerHTML = '<h2>选择成功: ' + level + '</h2>';
+
+            // 3秒后显示问题
+            setTimeout(() => {
+                showQuestion();
+            }, 3000);
+        }
+
+        function showQuestion() {
+            const container = document.getElementById('container');
+            container.innerHTML = `
+                <h2>问题 1/16</h2>
+                <p>你在万圣节派对上最想成为？</p>
+                <button class="option" onclick="answer('A')">A. 受欢迎的焦点</button>
+                <button class="option" onclick="answer('B')">B. 幕后策划者</button>
+                <button class="option" onclick="answer('C')">C. 观察者</button>
+            `;
+        }
+
+        function answer(ans) {
+            console.log('答案:', ans);
+            alert('答案已选择: ' + ans);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,3459 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>万圣节MBTI测试 - 独立版</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: white;
+            min-height: 100vh;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .hidden { display: none; }
+
+        .card {
+            background: rgba(0, 0, 0, 0.7);
+            border: 2px solid #6b1d9e;
+            border-radius: 20px;
+            padding: 40px;
+            margin: 20px 0;
+            box-shadow: 0 10px 30px rgba(107, 29, 158, 0.3);
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #F8A51C, #F25C5C);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #F8A51C;
+        }
+
+        .option {
+            background: rgba(107, 29, 158, 0.3);
+            border: 2px solid #6b1d9e;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 15px 0;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 18px;
+        }
+
+        .option:hover {
+            background: rgba(107, 29, 158, 0.5);
+            transform: translateX(10px);
+            box-shadow: 0 5px 20px rgba(248, 165, 28, 0.4);
+        }
+
+        .option.selected {
+            background: rgba(248, 165, 28, 0.3);
+            border-color: #F8A51C;
+            box-shadow: 0 0 30px rgba(248, 165, 28, 0.6);
+        }
+
+        .button {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #F8A51C, #F25C5C);
+            border: none;
+            border-radius: 25px;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s;
+        }
+
+        .button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(248, 165, 28, 0.5);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 20px 0;
+            box-shadow: 0 0 10px rgba(248, 165, 28, 0.3);
+            position: relative;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #F8A51C, #F25C5C);
+            transition: width 0.5s ease;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .progress-text {
+            text-align: center;
+            color: #F8A51C;
+            font-size: 14px;
+            margin-top: 10px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+
+        .result {
+            text-align: center;
+        }
+
+        .type-badge {
+            font-size: 100px;
+            margin: 20px 0;
+        }
+
+        .restart-btn {
+            background: linear-gradient(135deg, #6b1d9e, #9d4edd);
+            margin-top: 30px;
+        }
+
+        /* 星空背景 */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+
+        /* 答题计时器 */
+        .timer {
+            text-align: center;
+            color: #F8A51C;
+            font-size: 16px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+        }
+
+        /* 人格倾向提示 */
+        .personality-hint {
+            text-align: center;
+            color: #9d4edd;
+            font-size: 14px;
+            margin: 10px 0;
+            padding: 10px;
+            background: rgba(157, 78, 221, 0.1);
+            border-radius: 10px;
+            border: 1px solid rgba(157, 78, 221, 0.3);
+        }
+
+        /* 鼓励文字 */
+        .encouragement {
+            text-align: center;
+            color: #F8A51C;
+            font-size: 16px;
+            margin: 15px 0;
+            min-height: 24px;
+            animation: fadeInUp 0.5s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* 点击特效 */
+        .click-effect {
+            position: absolute;
+            pointer-events: none;
+            animation: clickBurst 0.5s ease;
+        }
+
+        @keyframes clickBurst {
+            0% {
+                transform: scale(0);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 0.8;
+            }
+            100% {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+
+        /* 粒子效果 */
+        .particle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: particleFloat 1s ease-out forwards;
+        }
+
+        @keyframes particleFloat {
+            0% {
+                transform: translate(0, 0) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(var(--dx), var(--dy)) scale(0);
+                opacity: 0;
+            }
+        }
+
+        /* 成就徽章 */
+        .achievement {
+            display: inline-block;
+            padding: 8px 15px;
+            margin: 5px;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: #000;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            animation: achievementPop 0.5s ease;
+        }
+
+        @keyframes achievementPop {
+            0% {
+                transform: scale(0) rotate(-180deg);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.2) rotate(0deg);
+            }
+            100% {
+                transform: scale(1) rotate(0deg);
+                opacity: 1;
+            }
+        }
+
+        /* 更炫酷的结果页 */
+        .result-type-badge {
+            font-size: 120px;
+            animation: resultFloat 3s ease-in-out infinite;
+            filter: drop-shadow(0 0 20px rgba(248, 165, 28, 0.5));
+        }
+
+        @keyframes resultFloat {
+            0%, 100% {
+                transform: translateY(0) rotate(-5deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(5deg);
+            }
+        }
+
+        .result-card-enhanced {
+            background: rgba(0, 0, 0, 0.8);
+            border: 3px solid #F8A51C;
+            box-shadow: 0 0 50px rgba(248, 165, 28, 0.5);
+            animation: resultGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes resultGlow {
+            0%, 100% {
+                box-shadow: 0 0 50px rgba(248, 165, 28, 0.5);
+            }
+            50% {
+                box-shadow: 0 0 80px rgba(248, 165, 28, 0.8);
+            }
+        }
+
+        /* 分享按钮 */
+        .share-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .share-btn {
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #6b1d9e, #9d4edd);
+            border: none;
+            border-radius: 20px;
+            color: white;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .share-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 20px rgba(157, 78, 221, 0.5);
+        }
+
+        /* 保存结果按钮 */
+        .save-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #F8A51C, #F25C5C);
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(248, 165, 28, 0.5);
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+
+        .save-btn:hover {
+            transform: scale(1.1) rotate(10deg);
+        }
+
+        /* 完成动画 */
+        .completion-animation {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 100px;
+            animation: completionPop 1s ease;
+            pointer-events: none;
+            z-index: 2000;
+        }
+
+        @keyframes completionPop {
+            0% {
+                transform: translate(-50%, -50%) scale(0) rotate(0deg);
+                opacity: 0;
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.5) rotate(180deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(1) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* 惊吓音效提示 */
+        .scare-indicator {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid #F25C5C;
+            border-radius: 10px;
+            color: #F25C5C;
+            font-size: 14px;
+            animation: scarePulse 2s infinite;
+            z-index: 1000;
+        }
+
+        @keyframes scarePulse {
+            0%, 100% { opacity: 0.7; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
+        }
+
+        /* 随机恐怖元素 */
+        .scary-element {
+            position: fixed;
+            pointer-events: none;
+            animation: scaryAppear 0.3s ease;
+            z-index: 1500;
+        }
+
+        @keyframes scaryAppear {
+            0% {
+                opacity: 0;
+                transform: scale(0) rotate(-180deg);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.2) rotate(0deg);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(1) rotate(180deg);
+            }
+        }
+
+        /* 幽灵游走 */
+        .ghost-walk {
+            position: fixed;
+            font-size: 60px;
+            animation: ghostWalk 5s linear;
+            pointer-events: none;
+            z-index: 100;
+            opacity: 0.7;
+        }
+
+        @keyframes ghostWalk {
+            0% {
+                left: -100px;
+                top: 50%;
+                transform: scale(1) rotate(0deg);
+            }
+            25% {
+                left: 25%;
+                top: 20%;
+                transform: scale(1.2) rotate(5deg);
+            }
+            50% {
+                left: 50%;
+                top: 50%;
+                transform: scale(1) rotate(0deg);
+            }
+            75% {
+                left: 75%;
+                top: 30%;
+                transform: scale(1.2) rotate(-5deg);
+            }
+            100% {
+                left: 100%;
+                top: 50%;
+                transform: scale(1) rotate(0deg);
+            }
+        }
+
+        /* 蝙蝠飞过 */
+        .bat-fly {
+            position: fixed;
+            font-size: 40px;
+            animation: batFly 3s ease-in-out;
+            pointer-events: none;
+            z-index: 100;
+        }
+
+        @keyframes batFly {
+            0% {
+                left: -50px;
+                top: 10%;
+                transform: scale(1);
+            }
+            50% {
+                left: 50%;
+                top: 15%;
+                transform: scale(1.5) rotate(10deg);
+            }
+            100% {
+                left: 100%;
+                top: 5%;
+                transform: scale(1);
+            }
+        }
+
+        /* 南瓜灯闪烁 */
+        .pumpkin-glow {
+            position: fixed;
+            font-size: 80px;
+            animation: pumpkinGlow 0.5s ease-in-out;
+            pointer-events: none;
+            z-index: 200;
+        }
+
+        @keyframes pumpkinGlow {
+            0%, 100% {
+                filter: drop-shadow(0 0 10px rgba(255, 102, 0, 0.3));
+                transform: scale(1);
+            }
+            50% {
+                filter: drop-shadow(0 0 30px rgba(255, 102, 0, 1));
+                transform: scale(1.1);
+            }
+        }
+
+        /* 摇摆蜘蛛 */
+        .spider-swing {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            font-size: 50px;
+            animation: spiderSwing 3s ease-in-out;
+            pointer-events: none;
+            z-index: 200;
+            transform-origin: top center;
+        }
+
+        @keyframes spiderSwing {
+            0%, 100% {
+                transform: rotate(-20deg);
+            }
+            50% {
+                transform: rotate(20deg);
+            }
+        }
+
+        /* 鬼火 */
+        .will-o-wisp {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle, rgba(0, 255, 0, 0.8) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: willOWisp 4s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 100;
+        }
+
+        @keyframes willOWisp {
+            0%, 100% {
+                left: 10%;
+                bottom: 10%;
+                opacity: 0.3;
+            }
+            25% {
+                left: 30%;
+                bottom: 30%;
+                opacity: 0.8;
+            }
+            50% {
+                left: 50%;
+                bottom: 50%;
+                opacity: 0.5;
+            }
+            75% {
+                left: 70%;
+                bottom: 30%;
+                opacity: 0.8;
+            }
+        }
+
+        /* 屏幕震动效果 */
+        .screen-shake {
+            animation: screenShake 0.3s ease;
+        }
+
+        @keyframes screenShake {
+            0%, 100% { transform: translate(0, 0); }
+            10% { transform: translate(-5px, -5px); }
+            20% { transform: translate(5px, 5px); }
+            30% { transform: translate(-5px, 5px); }
+            40% { transform: translate(5px, -5px); }
+            50% { transform: translate(-5px, -5px); }
+            60% { transform: translate(5px, 5px); }
+            70% { transform: translate(-5px, 5px); }
+            80% { transform: translate(5px, -5px); }
+            90% { transform: translate(-5px, -5px); }
+        }
+
+        /* 闪烁效果 */
+        .screen-flash {
+            animation: screenFlash 0.2s ease;
+        }
+
+        @keyframes screenFlash {
+            0%, 100% { background: transparent; }
+            50% { background: rgba(255, 102, 0, 0.3); }
+        }
+
+        /* 选择确认特效 */
+        .answer-confirmation {
+            position: absolute;
+            right: -50px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 30px;
+            animation: answerConfirm 0.5s ease;
+            pointer-events: none;
+        }
+
+        @keyframes answerConfirm {
+            0% {
+                opacity: 0;
+                transform: translateY(-50%) scale(0) rotate(0deg);
+            }
+            50% {
+                opacity: 1;
+                transform: translateY(-50%) scale(1.2) rotate(180deg);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-50%) scale(1) rotate(360deg);
+            }
+        }
+
+        /* 进度惊吓提示 */
+        .scare-msg {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px 40px;
+            background: rgba(0, 0, 0, 0.9);
+            border: 3px solid #F25C5C;
+            border-radius: 15px;
+            color: #F25C5C;
+            font-size: 24px;
+            font-weight: bold;
+            animation: scareMsg 1s ease;
+            pointer-events: none;
+            z-index: 2000;
+        }
+
+        @keyframes scareMsg {
+            0% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0);
+            }
+            30% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1.2);
+            }
+            70% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.8);
+            }
+        }
+
+        /* 声音可视化 */
+        .sound-wave {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            gap: 3px;
+            z-index: 1000;
+        }
+
+        .sound-wave span {
+            width: 4px;
+            height: 20px;
+            background: linear-gradient(to top, #F8A51C, #F25C5C);
+            animation: soundWave 1s ease-in-out infinite;
+        }
+
+        .sound-wave span:nth-child(2) { animation-delay: 0.1s; }
+        .sound-wave span:nth-child(3) { animation-delay: 0.2s; }
+        .sound-wave span:nth-child(4) { animation-delay: 0.3s; }
+        .sound-wave span:nth-child(5) { animation-delay: 0.4s; }
+
+        @keyframes soundWave {
+            0%, 100% { height: 10px; }
+            50% { height: 30px; }
+        }
+
+        /* 惊吓等级提示 */
+        .level-warning {
+            position: fixed;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            background: rgba(242, 92, 92, 0.2);
+            border: 2px solid #F25C5C;
+            border-radius: 10px;
+            color: #F25C5C;
+            font-weight: bold;
+            animation: levelWarning 0.5s ease;
+            z-index: 1000;
+        }
+
+        @keyframes levelWarning {
+            0% {
+                opacity: 0;
+                transform: translateX(-50%) scale(0);
+            }
+            50% {
+                opacity: 1;
+                transform: translateX(-50%) scale(1.1);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(-50%) scale(1);
+            }
+        }
+
+        /* ================ 炫酷特效系统 ================ */
+
+        /* 全息投影效果 */
+        .hologram-effect {
+            position: fixed;
+            pointer-events: none;
+            z-index: 100;
+            animation: hologramFlicker 2s infinite;
+        }
+
+        @keyframes hologramFlicker {
+            0%, 100% { opacity: 0.8; filter: hue-rotate(0deg) brightness(1); }
+            50% { opacity: 1; filter: hue-rotate(180deg) brightness(1.2); }
+        }
+
+        /* 彩虹流光效果 */
+        .rainbow-stream {
+            position: fixed;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, #F8A51C, #F25C5C, #6b1d9e, #9d4edd, #00ff00, #00ffff, #F8A51C);
+            animation: rainbowFlow 3s linear;
+            pointer-events: none;
+            z-index: 50;
+        }
+
+        @keyframes rainbowFlow {
+            0% {
+                left: -10px;
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                left: 100%;
+                opacity: 0;
+            }
+        }
+
+        /* 魔法阵 */
+        .magic-circle {
+            position: fixed;
+            width: 300px;
+            height: 300px;
+            border: 3px solid rgba(248, 165, 28, 0.5);
+            border-radius: 50%;
+            animation: magicCircleRotate 10s linear infinite;
+            pointer-events: none;
+            z-index: 100;
+        }
+
+        .magic-circle::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 80%;
+            border: 2px solid rgba(242, 92, 92, 0.5);
+            border-radius: 50%;
+            animation: magicCircleRotate 7s linear infinite reverse;
+        }
+
+        .magic-circle::after {
+            content: '⭐';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 30px;
+            animation: magicStarSpin 3s linear infinite;
+        }
+
+        @keyframes magicCircleRotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes magicStarSpin {
+            from { transform: translateX(-50%) rotate(0deg); }
+            to { transform: translateX(-50%) rotate(360deg); }
+        }
+
+        /* 雷电效果 */
+        .lightning-bolt {
+            position: fixed;
+            width: 6px;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, #fff, #F8A51C, transparent);
+            animation: lightningFlash 0.2s ease;
+            pointer-events: none;
+            z-index: 2000;
+            box-shadow: 0 0 20px #F8A51C;
+        }
+
+        @keyframes lightningFlash {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+
+        /* 能量波 */
+        .energy-wave {
+            position: fixed;
+            border: 3px solid rgba(248, 165, 28, 0.8);
+            border-radius: 50%;
+            animation: energyWaveExpand 1.5s ease-out;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        @keyframes energyWaveExpand {
+            0% {
+                width: 0;
+                height: 0;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                opacity: 1;
+            }
+            100% {
+                width: 500px;
+                height: 500px;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                opacity: 0;
+            }
+        }
+
+        /* 全屏烟花 */
+        .firework {
+            position: fixed;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            animation: fireworkExplode 1s ease-out;
+            pointer-events: none;
+            z-index: 1500;
+        }
+
+        @keyframes fireworkExplode {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 currentColor;
+            }
+            100% {
+                transform: scale(20);
+                box-shadow: 0 0 0 50px transparent;
+            }
+        }
+
+        /* 浮空文字 */
+        .floating-text {
+            position: fixed;
+            font-size: 30px;
+            font-weight: bold;
+            animation: floatingTextUp 2s ease-out;
+            pointer-events: none;
+            z-index: 2000;
+            text-shadow: 0 0 20px currentColor;
+        }
+
+        @keyframes floatingTextUp {
+            0% {
+                opacity: 0;
+                transform: translateY(0) scale(0.5);
+            }
+            20% {
+                opacity: 1;
+                transform: translateY(-50px) scale(1.2);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-150px) scale(1);
+            }
+        }
+
+        /* 黑洞效果 */
+        .black-hole {
+            position: fixed;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: radial-gradient(circle, transparent 30%, rgba(0, 0, 0, 0.8) 60%, black 100%);
+            animation: blackHoleSpin 3s linear infinite;
+            pointer-events: none;
+            z-index: 1500;
+        }
+
+        @keyframes blackHoleSpin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* 极光效果 */
+        .aurora {
+            position: fixed;
+            width: 200%;
+            height: 200px;
+            background: linear-gradient(90deg, transparent, rgba(157, 78, 221, 0.3), rgba(248, 165, 28, 0.3), rgba(0, 255, 0, 0.3), transparent);
+            animation: auroraFlow 8s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 50;
+        }
+
+        @keyframes auroraFlow {
+            0%, 100% {
+                top: -100px;
+                transform: skewX(-20deg);
+            }
+            50% {
+                top: 0;
+                transform: skewX(20deg);
+            }
+        }
+
+        /* 时间减速效果 */
+        .time-slow {
+            animation-duration: 5s !important;
+            filter: contrast(1.2) saturate(1.5);
+        }
+
+        /* 全屏震动 */
+        .mega-shake {
+            animation: megaShake 0.5s ease;
+        }
+
+        @keyframes megaShake {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            10% { transform: translate(-10px, -10px) rotate(-1deg); }
+            20% { transform: translate(10px, 10px) rotate(1deg); }
+            30% { transform: translate(-10px, 10px) rotate(-1deg); }
+            40% { transform: translate(10px, -10px) rotate(1deg); }
+            50% { transform: translate(-10px, -10px) rotate(-1deg); }
+            60% { transform: translate(10px, 10px) rotate(1deg); }
+            70% { transform: translate(-10px, 10px) rotate(-1deg); }
+            80% { transform: translate(10px, -10px) rotate(1deg); }
+            90% { transform: translate(-10px, -10px) rotate(-1deg); }
+        }
+
+        /* 炫酷提示框 */
+        .mega-msg {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            padding: 30px 60px;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.95), rgba(107, 29, 158, 0.3));
+            border: 4px solid;
+            border-image: linear-gradient(45deg, #F8A51C, #F25C5C, #6b1d9e, #9d4edd) 1;
+            border-radius: 20px;
+            color: #F8A51C;
+            font-size: 32px;
+            font-weight: bold;
+            text-align: center;
+            animation: megaMsg 2s ease;
+            pointer-events: none;
+            z-index: 3000;
+            box-shadow: 0 0 50px rgba(248, 165, 28, 0.8);
+        }
+
+        @keyframes megaMsg {
+            0% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0) rotate(-180deg);
+            }
+            20% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1.2) rotate(0deg);
+            }
+            80% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1) rotate(0deg);
+            }
+            100% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.8) rotate(180deg);
+            }
+        }
+
+        /* 3D旋转立方体 */
+        .cube {
+            position: fixed;
+            width: 80px;
+            height: 80px;
+            transform-style: preserve-3d;
+            animation: cubeRotate 4s linear infinite;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        .cube-face {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: rgba(248, 165, 28, 0.7);
+            border: 2px solid rgba(242, 92, 92, 0.9);
+        }
+
+        .cube-face:nth-child(1) { transform: rotateY(0deg) translateZ(40px); }
+        .cube-face:nth-child(2) { transform: rotateY(90deg) translateZ(40px); }
+        .cube-face:nth-child(3) { transform: rotateY(180deg) translateZ(40px); }
+        .cube-face:nth-child(4) { transform: rotateY(-90deg) translateZ(40px); }
+        .cube-face:nth-child(5) { transform: rotateX(90deg) translateZ(40px); }
+        .cube-face:nth-child(6) { transform: rotateX(-90deg) translateZ(40px); }
+
+        @keyframes cubeRotate {
+            from { transform: rotateX(0deg) rotateY(0deg); }
+            to { transform: rotateX(360deg) rotateY(360deg); }
+        }
+
+        /* 传送门 */
+        .portal {
+            position: fixed;
+            width: 150px;
+            height: 150px;
+            border: 5px solid;
+            border-radius: 50%;
+            animation: portalSpin 3s linear infinite;
+            pointer-events: none;
+            z-index: 1500;
+            border-image: conic-gradient(from 0deg, #F8A51C, #F25C5C, #6b1d9e, #9d4edd, #00ff00, #00ffff, #F8A51C) 1;
+        }
+
+        @keyframes portalSpin {
+            from { transform: rotate(0deg) scale(1); }
+            to { transform: rotate(360deg) scale(1); }
+        }
+
+        /* 全息投影文字 */
+        .hologram-text {
+            position: fixed;
+            font-size: 60px;
+            font-weight: bold;
+            color: transparent;
+            background: linear-gradient(45deg, #F8A51C, #F25C5C, #6b1d9e, #9d4edd);
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: hologramText 2s infinite;
+            pointer-events: none;
+            z-index: 2000;
+            filter: drop-shadow(0 0 10px currentColor);
+        }
+
+        @keyframes hologramText {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 1; }
+        }
+
+        /* ================ 新增好玩功能 ================ */
+
+        /* 主题切换按钮 */
+        .theme-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .theme-btn {
+            padding: 10px 15px;
+            background: rgba(0, 0, 0, 0.7);
+            border: 2px solid #F8A51C;
+            border-radius: 20px;
+            color: #F8A51C;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 14px;
+        }
+
+        .theme-btn:hover {
+            background: rgba(248, 165, 28, 0.3);
+            transform: scale(1.1);
+        }
+
+        .theme-btn.active {
+            background: #F8A51C;
+            color: black;
+        }
+
+        /* NPC对话气泡 */
+        .npc-dialog {
+            position: fixed;
+            bottom: 120px;
+            left: 50%;
+            transform: translateX(-50%);
+            max-width: 600px;
+            padding: 15px 25px;
+            background: rgba(0, 0, 0, 0.9);
+            border: 2px solid #6b1d9e;
+            border-radius: 20px;
+            color: white;
+            font-size: 16px;
+            animation: npcDialogue 0.5s ease;
+            z-index: 1500;
+            box-shadow: 0 0 20px rgba(107, 29, 158, 0.5);
+        }
+
+        .npc-dialog::before {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid #6b1d9e;
+        }
+
+        .npc-avatar {
+            position: absolute;
+            left: -60px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 50px;
+            animation: npcFloat 2s ease-in-out infinite;
+        }
+
+        @keyframes npcDialogue {
+            0% {
+                opacity: 0;
+                transform: translateX(-50%) translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+        }
+
+        @keyframes npcFloat {
+            0%, 100% { transform: translateY(-50%); }
+            50% { transform: translateY(-60%); }
+        }
+
+        /* 随机事件提示 */
+        .random-event {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 40px;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.95), rgba(157, 78, 221, 0.3));
+            border: 4px solid #9d4edd;
+            border-radius: 25px;
+            text-align: center;
+            animation: randomEvent 3s ease;
+            pointer-events: none;
+            z-index: 2500;
+            box-shadow: 0 0 50px rgba(157, 78, 221, 0.8);
+        }
+
+        @keyframes randomEvent {
+            0% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0);
+            }
+            20% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1.1);
+            }
+            80% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.8);
+            }
+        }
+
+        /* 技能/天赋显示 */
+        .skill-tree {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 200px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid #F8A51C;
+            border-radius: 15px;
+            padding: 15px;
+            z-index: 1000;
+            animation: skillTreeSlide 0.5s ease;
+        }
+
+        @keyframes skillTreeSlide {
+            from {
+                transform: translateY(-50%) translateX(250px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(-50%) translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .skill-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 10px 0;
+            padding: 8px;
+            background: rgba(248, 165, 28, 0.2);
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+
+        .skill-item.earned {
+            background: rgba(248, 165, 28, 0.5);
+            box-shadow: 0 0 15px rgba(248, 165, 28, 0.5);
+        }
+
+        .skill-icon {
+            font-size: 24px;
+        }
+
+        .skill-name {
+            flex: 1;
+            font-size: 14px;
+            color: white;
+        }
+
+        .skill-level {
+            font-size: 12px;
+            color: #F8A51C;
+        }
+
+        /* 天气系统 */
+        .weather-effect {
+            position: fixed;
+            pointer-events: none;
+            z-index: 50;
+        }
+
+        .rain-drop {
+            position: absolute;
+            width: 2px;
+            height: 20px;
+            background: linear-gradient(to bottom, transparent, #00ffff);
+            animation: rainFall 1s linear;
+        }
+
+        @keyframes rainFall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+
+        .snow-flake {
+            position: absolute;
+            font-size: 20px;
+            animation: snowFall 3s linear;
+        }
+
+        @keyframes snowFall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+
+        .fog-particle {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
+            animation: fogDrift 10s ease-in-out infinite;
+        }
+
+        @keyframes fogDrift {
+            0%, 100% {
+                left: -200px;
+                opacity: 0.3;
+            }
+            50% {
+                left: 50%;
+                opacity: 0.6;
+            }
+        }
+
+        /* 排行榜 */
+        .leaderboard {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 500px;
+            max-height: 600px;
+            background: rgba(0, 0, 0, 0.95);
+            border: 3px solid #F8A51C;
+            border-radius: 20px;
+            padding: 30px;
+            z-index: 3000;
+            overflow-y: auto;
+            animation: leaderboardPop 0.5s ease;
+        }
+
+        @keyframes leaderboardPop {
+            0% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0);
+            }
+            100% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+
+        .leaderboard-title {
+            text-align: center;
+            font-size: 28px;
+            color: #F8A51C;
+            margin-bottom: 20px;
+        }
+
+        .leaderboard-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 12px;
+            margin: 10px 0;
+            background: rgba(107, 29, 158, 0.3);
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+
+        .leaderboard-item:hover {
+            background: rgba(107, 29, 158, 0.5);
+            transform: translateX(10px);
+        }
+
+        .leaderboard-rank {
+            font-size: 24px;
+            font-weight: bold;
+            color: #F8A51C;
+            min-width: 40px;
+        }
+
+        .leaderboard-info {
+            flex: 1;
+        }
+
+        .leaderboard-name {
+            font-size: 16px;
+            color: white;
+        }
+
+        .leaderboard-time {
+            font-size: 12px;
+            color: #ccc;
+        }
+
+        .leaderboard-emoji {
+            font-size: 30px;
+        }
+
+        /* 每日挑战 */
+        .daily-challenge {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            width: 250px;
+            background: linear-gradient(135deg, rgba(242, 92, 92, 0.3), rgba(157, 78, 221, 0.3));
+            border: 2px solid #F25C5C;
+            border-radius: 15px;
+            padding: 20px;
+            z-index: 1000;
+            animation: dailyChallenge 0.5s ease;
+        }
+
+        @keyframes dailyChallenge {
+            from {
+                transform: translateX(300px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .daily-challenge-title {
+            font-size: 18px;
+            color: #F25C5C;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .daily-challenge-text {
+            font-size: 14px;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .daily-challenge-reward {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            background: rgba(255, 215, 0, 0.2);
+            border-radius: 10px;
+            color: #FFD700;
+        }
+
+        /* 小游戏弹窗 */
+        .mini-game {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            background: rgba(0, 0, 0, 0.95);
+            border: 3px solid #9d4edd;
+            border-radius: 20px;
+            padding: 30px;
+            z-index: 3000;
+            animation: miniGamePop 0.5s ease;
+        }
+
+        @keyframes miniGamePop {
+            0% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0);
+            }
+            100% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+
+        .mini-game-title {
+            text-align: center;
+            font-size: 24px;
+            color: #9d4edd;
+            margin-bottom: 20px;
+        }
+
+        .mini-game-content {
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(157, 78, 221, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+        }
+
+        /* 装备系统 */
+        .equipment-panel {
+            position: fixed;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 200px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid #6b1d9e;
+            border-radius: 15px;
+            padding: 15px;
+            z-index: 1000;
+            animation: equipmentSlide 0.5s ease;
+        }
+
+        @keyframes equipmentSlide {
+            from {
+                transform: translateY(-50%) translateX(-250px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(-50%) translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .equipment-slot {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            margin: 8px 0;
+            background: rgba(107, 29, 158, 0.2);
+            border-radius: 10px;
+            min-height: 50px;
+        }
+
+        .equipment-slot.filled {
+            background: rgba(248, 165, 28, 0.3);
+            box-shadow: 0 0 15px rgba(248, 165, 28, 0.5);
+        }
+
+        .equipment-icon {
+            font-size: 30px;
+        }
+
+        .equipment-info {
+            flex: 1;
+        }
+
+        .equipment-name {
+            font-size: 14px;
+            color: white;
+        }
+
+        .equipment-bonus {
+            font-size: 12px;
+            color: #F8A51C;
+        }
+
+        /* 背景主题变化 */
+        .theme-halloween {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+        }
+
+        .theme-christmas {
+            background: linear-gradient(135deg, #0a1929 0%, #1a3a52 50%, #2c5f7e 100%);
+        }
+
+        .theme-cyberpunk {
+            background: linear-gradient(135deg, #1a0033 0%, #330066 50%, #4d0099 100%);
+        }
+
+        .theme-ocean {
+            background: linear-gradient(135deg, #001a33 0%, #003366 50%, #004d99 100%);
+        }
+
+        /* 动态选项卡 */
+        .dynamic-option {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dynamic-option::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .dynamic-option:hover::after {
+            left: 100%;
+        }
+
+        /* 结束遮罩 */
+        .end-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 4000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: endOverlay 1s ease;
+        }
+
+        @keyframes endOverlay {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .end-content {
+            text-align: center;
+            color: white;
+        }
+
+        .end-title {
+            font-size: 72px;
+            background: linear-gradient(45deg, #F8A51C, #F25C5C, #6b1d9e, #9d4edd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 30px;
+            animation: endTitleGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes endTitleGlow {
+            0%, 100% {
+                filter: brightness(1);
+            }
+            50% {
+                filter: brightness(1.5);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .card { padding: 20px; }
+            h1 { font-size: 28px; }
+            .option { font-size: 16px; padding: 15px; }
+            .result-type-badge { font-size: 80px; }
+            .save-btn { width: 50px; height: 50px; font-size: 24px; bottom: 20px; right: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- 星空背景 -->
+    <div class="stars" id="stars"></div>
+
+    <div class="container">
+        <!-- 加载页面 -->
+        <div id="loading" class="card" style="text-align: center;">
+            <div style="font-size: 80px; margin: 30px 0;">🎃</div>
+            <h2>正在唤醒黑暗力量...</h2>
+            <p style="margin-top: 20px; color: #ccc;">请稍候，万圣节魔法即将开启</p>
+        </div>
+
+        <!-- 恐惧级别选择 -->
+        <div id="level-selection" class="card hidden">
+            <h1>🎃 万圣节 MBTI 测试</h1>
+            <h2>选择你的惊吓等级</h2>
+            <p style="text-align: center; color: #F8A51C; margin-bottom: 20px;">✨ 精简版 - 只需5道题，快速完成测试！</p>
+
+            <div class="option" data-level="mild" onclick="selectLevel(this, 'mild')">
+                <div style="font-size: 30px; margin-bottom: 10px;">🌙</div>
+                <strong>温和模式</strong>
+                <p style="margin-top: 10px; color: #ccc;">适合胆小鬼，没有突然惊吓</p>
+            </div>
+
+            <div class="option selected" data-level="normal" onclick="selectLevel(this, 'normal')">
+                <div style="font-size: 30px; margin-bottom: 10px;">👻</div>
+                <strong>标准模式</strong>
+                <p style="margin-top: 10px; color: #ccc;">适中的恐怖体验，有轻微惊吓</p>
+            </div>
+
+            <div class="option" data-level="extreme" onclick="selectLevel(this, 'extreme')">
+                <div style="font-size: 30px; margin-bottom: 10px;">💀</div>
+                <strong>极限模式</strong>
+                <p style="margin-top: 10px; color: #ccc;">终极恐怖体验，高能预警！</p>
+            </div>
+
+            <button class="button" onclick="startTest()">
+                确认进入黑暗世界
+            </button>
+        </div>
+
+        <!-- 测试题目 -->
+        <div id="quiz" class="card hidden">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <h2 id="question-number">问题 1</h2>
+                <div style="font-size: 14px; color: #F8A51C;" id="level-name">标准模式</div>
+            </div>
+
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress" style="width: 0%"></div>
+            </div>
+            <div class="progress-text" id="progress-text">0% 完成</div>
+
+            <div class="timer" id="timer">⏱️ 00:00</div>
+            <div class="personality-hint" id="personality-hint">💡 正在分析你的选择倾向...</div>
+            <div class="encouragement" id="encouragement">选择你的答案，开始探索你的万圣节人格！</div>
+
+            <h3 id="question-text" style="margin: 30px 0; font-size: 22px; line-height: 1.6;"></h3>
+
+            <div id="options"></div>
+
+            <button class="button hidden" id="next-btn" onclick="nextQuestion()">
+                下一题 ➡️
+            </button>
+        </div>
+
+        <!-- 结果页面 -->
+        <div id="result" class="card hidden">
+            <div class="result result-card-enhanced">
+                <h2>🎊 测试完成！你的万圣节人格是</h2>
+                <div class="result-type-badge" id="type-emoji">🎃</div>
+                <h3 id="type-name" style="font-size: 36px; color: #F8A51C; margin: 20px 0;"></h3>
+                <p id="type-description" style="font-size: 18px; line-height: 1.8; margin: 20px 0;"></p>
+
+                <!-- 成就系统 -->
+                <div id="achievements" style="margin: 20px 0;"></div>
+
+                <div style="background: rgba(107, 29, 158, 0.2); padding: 20px; border-radius: 10px; margin: 30px 0;">
+                    <h4 style="color: #F8A51C; margin-bottom: 15px;">你的超自然特征：</h4>
+                    <ul id="traits" style="text-align: left; list-style: none;"></ul>
+                </div>
+
+                <!-- 分享按钮 -->
+                <div class="share-buttons">
+                    <button class="share-btn" onclick="shareToWeChat()">📱 微信分享</button>
+                    <button class="share-btn" onclick="shareToQQ()">💬 QQ分享</button>
+                    <button class="share-btn" onclick="copyResult()">📋 复制结果</button>
+                </div>
+
+                <button class="button restart-btn" onclick="restart()">
+                    🔄 再次测试
+                </button>
+            </div>
+        </div>
+
+        <!-- 保存结果按钮 -->
+        <button class="save-btn" id="save-btn" onclick="saveResult()" title="保存结果">💾</button>
+
+        <!-- 惊吓指示器 -->
+        <div id="scare-indicator" class="scare-indicator hidden">👻 惊吓已激活</div>
+
+        <!-- 声音可视化 -->
+        <div id="sound-wave" class="sound-wave hidden">
+            <span></span><span></span><span></span><span></span><span></span>
+        </div>
+
+        <!-- 惊吓等级提示 -->
+        <div id="level-warning" class="level-warning hidden"></div>
+
+        <!-- 主题切换器 -->
+        <div id="theme-switcher" class="theme-switcher">
+            <button class="theme-btn active" data-theme="halloween">🎃</button>
+            <button class="theme-btn" data-theme="christmas">🎄</button>
+            <button class="theme-btn" data-theme="cyberpunk">🤖</button>
+            <button class="theme-btn" data-theme="ocean">🌊</button>
+        </div>
+
+        <!-- 技能树 -->
+        <div id="skill-tree" class="skill-tree hidden">
+            <h3 style="color: #F8A51C; margin-bottom: 15px; text-align: center;">💎 万圣节技能</h3>
+            <div id="skills-container"></div>
+        </div>
+
+        <!-- 装备面板 -->
+        <div id="equipment-panel" class="equipment-panel hidden">
+            <h3 style="color: #6b1d9e; margin-bottom: 15px; text-align: center;">🎒 虚拟装备</h3>
+            <div id="equipment-container"></div>
+        </div>
+
+        <!-- 每日挑战 -->
+        <div id="daily-challenge" class="daily-challenge hidden">
+            <div class="daily-challenge-title">🎯 每日挑战</div>
+            <div id="daily-challenge-text" class="daily-challenge-text"></div>
+            <div class="daily-challenge-reward">
+                <span>🏆</span>
+                <span id="daily-reward">奖励未知</span>
+            </div>
+        </div>
+
+        <!-- 排行榜按钮 -->
+        <button id="leaderboard-btn" class="save-btn" style="bottom: 110px;" onclick="showLeaderboard()" title="排行榜">🏆</button>
+    </div>
+
+    <script>
+        // 5道MBTI测试题目（精简版）
+        const questions = [
+            {
+                text: "在万圣节派对上，你更喜欢成为？",
+                options: [
+                    { text: "A. 受欢迎的焦点", value: "E" },
+                    { text: "B. 幕后策划者", value: "I" }
+                ]
+            },
+            {
+                text: "当你遇到一个复杂的万圣节装饰时，你会？",
+                options: [
+                    { text: "A. 注意细节和具体信息", value: "S" },
+                    { text: "B. 关注整体印象和可能性", value: "N" }
+                ]
+            },
+            {
+                text: "做决定时，你更倾向于？",
+                options: [
+                    { text: "A. 基于逻辑和客观分析", value: "T" },
+                    { text: "B. 考虑对他人的影响", value: "F" }
+                ]
+            },
+            {
+                text: "你更喜欢？",
+                options: [
+                    { text: "A. 有计划的安排", value: "J" },
+                    { text: "B. 灵活应变", value: "P" }
+                ]
+            },
+            {
+                text: "面对万圣节的惊喜，你更倾向于？",
+                options: [
+                    { text: "A. 期待与很多人一起互动", value: "E" },
+                    { text: "B. 享受安静的独处时光", value: "I" }
+                ]
+            }
+        ];
+
+        // MBTI人格类型定义
+        const personalities = {
+            "INTJ": {
+                name: "万圣节建筑师",
+                emoji: "🎩",
+                description: "你是黑暗城堡的创造者，拥有战略眼光和独立精神。你喜欢提前规划每一个细节，创造出令人惊叹的万圣节体验。",
+                traits: ["深谋远虑", "独立自主", "追求完美", "神秘莫测"]
+            },
+            "INTP": {
+                name: "南瓜发明家",
+                emoji: "🧪",
+                description: "你是万圣节科技的先驱，喜欢发明各种新奇的装置和特效。你对未知事物充满好奇，总能想出别人想不到的创意。",
+                traits: ["创新思维", "理性分析", "独立思考", "追求真理"]
+            },
+            "ENTJ": {
+                name: "恐怖之王",
+                emoji: "👑",
+                description: "你是万圣节派对的天生领导者，具有强大的组织能力和远见。你能让每一个万圣节活动都成为难忘的盛典。",
+                traits: ["天生的领导者", "高效执行", "目标导向", "魅力十足"]
+            },
+            "ENTP": {
+                name: "恶作剧大师",
+                emoji: "🎭",
+                description: "你是万圣节的灵魂人物，总能想出出人意料的创意和恶作剧。你的幽默感和创新能力让所有人都印象深刻。",
+                traits: ["富有创意", "善于交际", "灵活应变", "充满热情"]
+            },
+            "INFJ": {
+                name: "精神导师",
+                emoji: "🔮",
+                description: "你是万圣节的神秘守护者，能够洞察他人的内心世界。你创造的环境总是能让每个人找到属于自己的那份温暖。",
+                traits: ["富有洞察力", "理想主义", "善解人意", "神秘优雅"]
+            },
+            "INFP": {
+                name: "梦幻诗人",
+                emoji: "🦋",
+                description: "你是万圣节的浪漫主义者，用独特的视角看待世界。你的创意和真诚总能触动人心，创造出温馨的节日氛围。",
+                traits: ["富有想象力", "真诚善良", "价值观强", "追求美好"]
+            },
+            "ENFJ": {
+                name: "万圣节引路人",
+                emoji: "🕊️",
+                description: "你是万圣节的正能量传播者，能够激发每个人内心的勇敢和善良。你总是能让最内向的人也能享受节日的快乐。",
+                traits: ["天生的鼓舞者", "善于沟通", "关爱他人", "具有魅力"]
+            },
+            "ENFP": {
+                name: "快乐幽灵",
+                emoji: "🎈",
+                description: "你是万圣节的开心果，总是充满活力和正能量。你的乐观和热情感染着每一个人，让万圣节充满欢声笑语。",
+                traits: ["热情洋溢", "社交达人", "创造力强", "积极乐观"]
+            },
+            "ISTJ": {
+                name: "传统守护者",
+                emoji: "🏰",
+                description: "你是万圣节传统的坚定守护者，严格遵循古老的习俗和仪式。你的可靠和稳重让万圣节庆祝更加有序和温馨。",
+                traits: ["责任担当", "忠诚可靠", "注重传统", "细致认真"]
+            },
+            "ISFJ": {
+                name: "守护天使",
+                emoji: "🛡️",
+                description: "你是万圣节的守护天使，默默关心着每一个人的感受。你的温暖和体贴让所有人都能安心享受节日。",
+                traits: ["温暖体贴", "乐于助人", "保护他人", "默默奉献"]
+            },
+            "ESTJ": {
+                name: "庆典总监",
+                emoji: "🎪",
+                description: "你是万圣节活动的完美执行者，所有细节都在你的掌控之中。你的组织能力让每一次庆祝都完美无缺。",
+                traits: ["组织能力强", "高效执行", "注重结果", "值得信赖"]
+            },
+            "ESFJ": {
+                name: "节日协调员",
+                emoji: "🎊",
+                description: "你是万圣节的和谐使者，总能让所有人都感到受欢迎和被关爱。你的社交天赋让每一个聚会都充满温暖。",
+                traits: ["善于协调", "关爱他人", "营造和谐", "人见人爱"]
+            },
+            "ISTP": {
+                name: "特效工匠",
+                emoji: "⚙️",
+                description: "你是万圣节的技巧大师，能够用巧手创造惊人的特效。你的冷静和精准让所有装置都完美运行。",
+                traits: ["动手能力强", "冷静理性", "适应性强", "解决问题"]
+            },
+            "ISFP": {
+                name: "艺术家幽灵",
+                emoji: "🎨",
+                description: "你是万圣节的美学大师，用艺术家的眼光打造每一个细节。你的创意和美感让万圣节充满了独特的魅力。",
+                traits: ["艺术天赋", "审美独特", "温柔敏感", "创造力强"]
+            },
+            "ESTP": {
+                name: "冒险家",
+                emoji: "⚡",
+                description: "你是万圣节的行动派，总是充满活力和冒险精神。你的勇敢和果断让每一个时刻都充满刺激。",
+                traits: ["勇敢果断", "充满活力", "适应力强", "享受当下"]
+            },
+            "ESFP": {
+                name: "开心果",
+                emoji: "🎉",
+                description: "你是万圣节的欢乐制造机，总是能用你的热情和活力点燃全场。你让每一个万圣节都充满欢声笑语。",
+                traits: ["热情开朗", "感染力强", "社交达人", "活在当下"]
+            }
+        };
+
+        let currentQuestion = 0;
+        let answers = [];
+        let selectedLevel = 'normal';
+        let startTime = null;
+        let timerInterval = null;
+        let totalTime = 0;
+        let achievements = [];
+        let scareActive = false;
+        let scaryElementsInterval = null;
+
+        // 新增系统变量
+        let currentTheme = 'halloween';
+        let skills = [];
+        let equipment = {};
+        let npcMessagesShown = [];
+        let randomEventsTriggered = [];
+        let currentWeather = null;
+        let weatherInterval = null;
+        let currentMiniGame = null;
+        let gameStats = {
+            gamesPlayed: 0,
+            perfectAnswers: 0,
+            hintsUsed: 0,
+            fastestTime: null
+        };
+
+        // 创建星空背景
+        function createStars() {
+            const starsContainer = document.getElementById('stars');
+            for (let i = 0; i < 100; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.animationDelay = Math.random() * 3 + 's';
+                starsContainer.appendChild(star);
+            }
+        }
+
+        // 选择恐惧级别
+        function selectLevel(element, level) {
+            selectedLevel = level;
+            document.querySelectorAll('#level-selection .option').forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            element.classList.add('selected');
+        }
+
+        // 开始测试
+        function startTest() {
+            document.getElementById('loading').classList.remove('hidden');
+            setTimeout(() => {
+                document.getElementById('loading').classList.add('hidden');
+                document.getElementById('level-selection').classList.add('hidden');
+                document.getElementById('quiz').classList.remove('hidden');
+                showQuestion();
+            }, 1500);
+        }
+
+        // 显示问题
+        function showQuestion() {
+            const q = questions[currentQuestion];
+            const progress = (currentQuestion / questions.length) * 100;
+
+            document.getElementById('question-number').textContent = `问题 ${currentQuestion + 1} / ${questions.length}`;
+            document.getElementById('question-text').textContent = q.text;
+            document.getElementById('progress').style.width = progress + '%';
+            document.getElementById('progress-text').textContent = `${Math.round(progress)}% 完成`;
+            document.getElementById('level-name').textContent = selectedLevel === 'mild' ? '温和模式' :
+                selectedLevel === 'normal' ? '标准模式' : '极限模式';
+
+            // 更新人格倾向提示
+            updatePersonalityHint();
+
+            // 启动计时器
+            startTimer();
+
+            // 更新鼓励文字
+            updateEncouragement();
+
+            // 激活惊吓系统（仅在非温和模式）
+            if (!scareActive && selectedLevel !== 'mild') {
+                activateScareMode();
+                showLevelWarning();
+            }
+
+            // 温和模式：偶尔出现小恐怖元素
+            if (selectedLevel === 'mild' && Math.random() < 0.3) {
+                setTimeout(() => {
+                    createRandomScaryElement();
+                }, 1000);
+            }
+
+            const optionsContainer = document.getElementById('options');
+            optionsContainer.innerHTML = '';
+            answers[currentQuestion] = null;
+
+            q.options.forEach((option, index) => {
+                const div = document.createElement('div');
+                div.className = 'option';
+                div.textContent = option.text;
+                div.onclick = (e) => {
+                    selectAnswer(index, option.value);
+                    createClickEffect(e);
+                    createParticles(e.target);
+                    triggerAnswerEffects(div);
+                };
+                optionsContainer.appendChild(div);
+            });
+
+            // 随机触发炫酷背景特效
+            if (Math.random() < 0.4) {
+                setTimeout(() => triggerRandomCoolEffect(), 1000);
+            }
+
+            document.getElementById('next-btn').classList.add('hidden');
+        }
+
+        // 启动计时器
+        function startTimer() {
+            if (!startTime) {
+                startTime = Date.now();
+            }
+            if (timerInterval) {
+                clearInterval(timerInterval);
+            }
+            timerInterval = setInterval(() => {
+                const elapsed = Math.floor((Date.now() - startTime) / 1000);
+                const minutes = Math.floor(elapsed / 60);
+                const seconds = elapsed % 60;
+                document.getElementById('timer').textContent =
+                    `⏱️ ${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+            }, 1000);
+        }
+
+        // 更新人格倾向提示
+        function updatePersonalityHint() {
+            const counts = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
+            answers.forEach(a => {
+                if (a) counts[a]++;
+            });
+
+            let hint = '';
+            if (currentQuestion === 0) {
+                hint = '💡 正在分析你的社交偏好...';
+            } else if (currentQuestion === 1) {
+                hint = '🔍 你的信息处理方式是...';
+            } else if (currentQuestion === 2) {
+                hint = '🧠 决策风格正在显现...';
+            } else if (currentQuestion === 3) {
+                hint = '📋 你偏爱的生活方式...';
+            } else if (currentQuestion === 4) {
+                hint = '🌟 你的万圣节人格即将揭晓！';
+            }
+
+            const personalities = [
+                { letter: 'E', name: '外向型', emoji: '🎉', desc: '喜欢社交和互动' },
+                { letter: 'I', name: '内向型', emoji: '🌙', desc: '偏爱深度思考' },
+                { letter: 'S', name: '感觉型', emoji: '🔎', desc: '注重实际细节' },
+                { letter: 'N', name: '直觉型', emoji: '💡', desc: '富有想象力' },
+                { letter: 'T', name: '思维型', emoji: '🧠', desc: '理性分析' },
+                { letter: 'F', name: '情感型', emoji: '❤️', desc: '重视和谐' },
+                { letter: 'J', name: '判断型', emoji: '📋', desc: '喜欢计划' },
+                { letter: 'P', name: '知觉型', emoji: '🎯', desc: '灵活应变' }
+            ];
+
+            const maxCount = Math.max(...Object.values(counts));
+            if (maxCount > 0) {
+                const dominant = Object.keys(counts).find(key => counts[key] === maxCount);
+                const personality = personalities.find(p => p.letter === dominant);
+                hint += ` 当前倾向: ${personality.emoji} ${personality.name}`;
+            }
+
+            document.getElementById('personality-hint').textContent = hint;
+        }
+
+        // 更新鼓励文字
+        function updateEncouragement() {
+            const encouragements = [
+                '选择你的答案，开始探索你的万圣节人格！',
+                '每一个选择都揭示你的真实本质 ✨',
+                '万圣节的魔法正在你的选择中显现 👻',
+                '你的人格密码即将解锁 🎭',
+                '继续前进，真相即将揭晓 🔮'
+            ];
+            const randomEncouragement = encouragements[Math.floor(Math.random() * encouragements.length)];
+            document.getElementById('encouragement').textContent = randomEncouragement;
+        }
+
+        // 创建点击特效
+        function createClickEffect(event) {
+            const effect = document.createElement('div');
+            effect.className = 'click-effect';
+            effect.style.left = event.clientX + 'px';
+            effect.style.top = event.clientY + 'px';
+            effect.style.color = '#F8A51C';
+            effect.textContent = '✨';
+            effect.style.fontSize = '30px';
+            document.body.appendChild(effect);
+
+            setTimeout(() => effect.remove(), 500);
+        }
+
+        // 创建粒子效果
+        function createParticles(element) {
+            const rect = element.getBoundingClientRect();
+            const colors = ['#F8A51C', '#F25C5C', '#6b1d9e', '#9d4edd'];
+
+            for (let i = 0; i < 10; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+                particle.style.left = rect.left + rect.width / 2 + 'px';
+                particle.style.top = rect.top + rect.height / 2 + 'px';
+
+                const dx = (Math.random() - 0.5) * 200;
+                const dy = (Math.random() - 0.5) * 200;
+                particle.style.setProperty('--dx', dx + 'px');
+                particle.style.setProperty('--dy', dy + 'px');
+
+                document.body.appendChild(particle);
+
+                setTimeout(() => particle.remove(), 1000);
+            }
+        }
+
+        // ==================== 惊吓系统 ====================
+
+        // 激活惊吓模式
+        function activateScareMode() {
+            scareActive = true;
+            document.getElementById('scare-indicator').classList.remove('hidden');
+            document.getElementById('sound-wave').classList.remove('hidden');
+
+            if (selectedLevel === 'extreme') {
+                // 极限模式：高频率惊吓
+                scaryElementsInterval = setInterval(() => {
+                    if (Math.random() < 0.7) {
+                        triggerRandomScare();
+                    }
+                }, 8000);
+            } else if (selectedLevel === 'normal') {
+                // 标准模式：中等频率惊吓
+                scaryElementsInterval = setInterval(() => {
+                    if (Math.random() < 0.5) {
+                        triggerRandomScare();
+                    }
+                }, 15000);
+            } else {
+                // 温和模式：低频率惊吓
+                scaryElementsInterval = setInterval(() => {
+                    if (Math.random() < 0.3) {
+                        triggerRandomScare();
+                    }
+                }, 25000);
+            }
+        }
+
+        // 触发随机惊吓
+        function triggerRandomScare() {
+            const scares = ['ghost', 'bat', 'pumpkin', 'spider', 'willowisp', 'scaryMsg', 'screenShake', 'screenFlash'];
+            const randomScare = scares[Math.floor(Math.random() * scares.length)];
+
+            switch(randomScare) {
+                case 'ghost': createGhost(); break;
+                case 'bat': createBat(); break;
+                case 'pumpkin': createPumpkinGlow(); break;
+                case 'spider': createSpider(); break;
+                case 'willowisp': createWillOWisp(); break;
+                case 'scaryMsg': showScaryMessage(); break;
+                case 'screenShake': screenShake(); break;
+                case 'screenFlash': screenFlash(); break;
+            }
+
+            // 播放惊吓音效
+            playScareSound();
+        }
+
+        // 创建幽灵
+        function createGhost() {
+            const ghost = document.createElement('div');
+            ghost.className = 'ghost-walk';
+            ghost.textContent = '👻';
+            document.body.appendChild(ghost);
+
+            setTimeout(() => ghost.remove(), 5000);
+        }
+
+        // 创建蝙蝠
+        function createBat() {
+            const bat = document.createElement('div');
+            bat.className = 'bat-fly';
+            bat.textContent = '🦇';
+            document.body.appendChild(bat);
+
+            setTimeout(() => bat.remove(), 3000);
+        }
+
+        // 创建南瓜灯闪烁
+        function createPumpkinGlow() {
+            const pumpkin = document.createElement('div');
+            pumpkin.className = 'pumpkin-glow';
+            pumpkin.style.left = '50%';
+            pumpkin.style.top = '50%';
+            pumpkin.style.transform = 'translate(-50%, -50%)';
+            pumpkin.textContent = '🎃';
+            document.body.appendChild(pumpkin);
+
+            setTimeout(() => pumpkin.remove(), 500);
+        }
+
+        // 创建摇摆蜘蛛
+        function createSpider() {
+            const spider = document.createElement('div');
+            spider.className = 'spider-swing';
+            spider.textContent = '🕷️';
+            document.body.appendChild(spider);
+
+            setTimeout(() => spider.remove(), 3000);
+        }
+
+        // 创建鬼火
+        function createWillOWisp() {
+            const will = document.createElement('div');
+            will.className = 'will-o-wisp';
+            will.style.left = Math.random() * 80 + 10 + '%';
+            will.style.bottom = Math.random() * 50 + 10 + '%';
+            document.body.appendChild(will);
+
+            setTimeout(() => will.remove(), 4000);
+        }
+
+        // 显示恐怖消息
+        function showScaryMessage() {
+            const messages = [
+                '👻 你不是一个人...',
+                '🕯️ 黑暗中有什么在看着你',
+                '🦇 蝙蝠已经苏醒',
+                '🎃 南瓜在对你微笑',
+                '👁️ 你被监视着...',
+                '💀 死神在靠近',
+                '🌙 月亮见证了一切',
+                '🔮 真相即将揭晓'
+            ];
+            const message = messages[Math.floor(Math.random() * messages.length)];
+
+            const msg = document.createElement('div');
+            msg.className = 'scare-msg';
+            msg.textContent = message;
+            document.body.appendChild(msg);
+
+            setTimeout(() => msg.remove(), 1500);
+        }
+
+        // 屏幕震动
+        function screenShake() {
+            document.body.classList.add('screen-shake');
+            setTimeout(() => {
+                document.body.classList.remove('screen-shake');
+            }, 300);
+        }
+
+        // 屏幕闪烁
+        function screenFlash() {
+            document.body.classList.add('screen-flash');
+            setTimeout(() => {
+                document.body.classList.remove('screen-flash');
+            }, 200);
+        }
+
+        // 显示惊吓等级提示
+        function showLevelWarning() {
+            const warning = document.getElementById('level-warning');
+            if (selectedLevel === 'extreme') {
+                warning.textContent = '💀 极限模式已激活 - 做好心理准备！';
+            } else if (selectedLevel === 'normal') {
+                warning.textContent = '👻 标准模式 - 惊吓即将开始';
+            } else {
+                warning.textContent = '🌙 温和模式 - 安全体验';
+            }
+            warning.classList.remove('hidden');
+
+            setTimeout(() => {
+                warning.classList.add('hidden');
+            }, 3000);
+        }
+
+        // 播放惊吓音效（使用Web Audio API）
+        function playScareSound() {
+            try {
+                const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                const oscillator = audioContext.createOscillator();
+                const gainNode = audioContext.createGain();
+
+                oscillator.connect(gainNode);
+                gainNode.connect(audioContext.destination);
+
+                if (selectedLevel === 'extreme') {
+                    // 极限模式：低沉的恐怖音效
+                    oscillator.frequency.setValueAtTime(80, audioContext.currentTime);
+                    oscillator.frequency.exponentialRampToValueAtTime(40, audioContext.currentTime + 0.1);
+                } else {
+                    // 正常模式：轻微音效
+                    oscillator.frequency.setValueAtTime(200, audioContext.currentTime);
+                    oscillator.frequency.exponentialRampToValueAtTime(150, audioContext.currentTime + 0.1);
+                }
+
+                gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
+                gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.1);
+
+                oscillator.start();
+                oscillator.stop(audioContext.currentTime + 0.1);
+            } catch (e) {
+                console.log('音效播放失败:', e);
+            }
+        }
+
+        // 创建随机恐怖元素
+        function createRandomScaryElement() {
+            const scaryElements = ['🎃', '👻', '🦇', '🕷️', '💀', '🕯️'];
+            const element = document.createElement('div');
+            element.className = 'scary-element';
+            element.textContent = scaryElements[Math.floor(Math.random() * scaryElements.length)];
+            element.style.left = Math.random() * window.innerWidth + 'px';
+            element.style.top = Math.random() * window.innerHeight + 'px';
+            document.body.appendChild(element);
+
+            setTimeout(() => element.remove(), 300);
+        }
+
+        // ==================== 炫酷特效系统 ====================
+
+        // 创建彩虹流光
+        function createRainbowStream() {
+            const stream = document.createElement('div');
+            stream.className = 'rainbow-stream';
+            stream.style.left = Math.random() * 100 + '%';
+            document.body.appendChild(stream);
+
+            setTimeout(() => stream.remove(), 3000);
+        }
+
+        // 创建魔法阵
+        function createMagicCircle() {
+            const circle = document.createElement('div');
+            circle.className = 'magic-circle';
+            circle.style.left = '50%';
+            circle.style.top = '50%';
+            circle.style.transform = 'translate(-50%, -50%)';
+            document.body.appendChild(circle);
+
+            setTimeout(() => circle.remove(), 5000);
+        }
+
+        // 雷电效果
+        function createLightning() {
+            const bolt = document.createElement('div');
+            bolt.className = 'lightning-bolt';
+            bolt.style.left = Math.random() * 100 + '%';
+            document.body.appendChild(bolt);
+
+            setTimeout(() => bolt.remove(), 200);
+        }
+
+        // 能量波
+        function createEnergyWave() {
+            const wave = document.createElement('div');
+            wave.className = 'energy-wave';
+            document.body.appendChild(wave);
+
+            setTimeout(() => wave.remove(), 1500);
+        }
+
+        // 烟花爆炸
+        function createFirework(x, y) {
+            const colors = ['#F8A51C', '#F25C5C', '#6b1d9e', '#9d4edd', '#00ff00', '#00ffff'];
+            const firework = document.createElement('div');
+            firework.className = 'firework';
+            firework.style.left = x + 'px';
+            firework.style.top = y + 'px';
+            firework.style.color = colors[Math.floor(Math.random() * colors.length)];
+            document.body.appendChild(firework);
+
+            setTimeout(() => firework.remove(), 1000);
+        }
+
+        // 创建浮空文字
+        function createFloatingText(text, x, y) {
+            const floating = document.createElement('div');
+            floating.className = 'floating-text';
+            floating.textContent = text;
+            floating.style.left = x + 'px';
+            floating.style.top = y + 'px';
+            floating.style.color = '#F8A51C';
+            document.body.appendChild(floating);
+
+            setTimeout(() => floating.remove(), 2000);
+        }
+
+        // 黑洞效果
+        function createBlackHole() {
+            const blackHole = document.createElement('div');
+            blackHole.className = 'black-hole';
+            blackHole.style.left = '50%';
+            blackHole.style.top = '50%';
+            blackHole.style.transform = 'translate(-50%, -50%)';
+            document.body.appendChild(blackHole);
+
+            setTimeout(() => blackHole.remove(), 3000);
+        }
+
+        // 极光效果
+        function createAurora() {
+            const aurora = document.createElement('div');
+            aurora.className = 'aurora';
+            aurora.style.left = '-50%';
+            document.body.appendChild(aurora);
+
+            setTimeout(() => aurora.remove(), 8000);
+        }
+
+        // 全屏震动（增强版）
+        function megaShake() {
+            document.body.classList.add('mega-shake');
+            setTimeout(() => {
+                document.body.classList.remove('mega-shake');
+            }, 500);
+        }
+
+        // 炫酷提示框
+        function showMegaMessage(text) {
+            const msg = document.createElement('div');
+            msg.className = 'mega-msg';
+            msg.textContent = text;
+            document.body.appendChild(msg);
+
+            setTimeout(() => msg.remove(), 2000);
+        }
+
+        // 3D旋转立方体
+        function createCube() {
+            const cube = document.createElement('div');
+            cube.className = 'cube';
+            cube.style.left = '50%';
+            cube.style.top = '50%';
+            cube.style.transform = 'translate(-50%, -50%)';
+
+            // 创建6个面
+            for (let i = 0; i < 6; i++) {
+                const face = document.createElement('div');
+                face.className = 'cube-face';
+                cube.appendChild(face);
+            }
+
+            document.body.appendChild(cube);
+
+            setTimeout(() => cube.remove(), 4000);
+        }
+
+        // 传送门
+        function createPortal() {
+            const portal = document.createElement('div');
+            portal.className = 'portal';
+            portal.style.left = '50%';
+            portal.style.top = '50%';
+            portal.style.transform = 'translate(-50%, -50%)';
+            document.body.appendChild(portal);
+
+            setTimeout(() => portal.remove(), 3000);
+        }
+
+        // 全息投影文字
+        function createHologramText(text) {
+            const hologram = document.createElement('div');
+            hologram.className = 'hologram-text';
+            hologram.textContent = text;
+            hologram.style.left = '50%';
+            hologram.style.top = '30%';
+            hologram.style.transform = 'translate(-50%, -50%)';
+            document.body.appendChild(hologram);
+
+            setTimeout(() => hologram.remove(), 2000);
+        }
+
+        // 时间减速效果
+        function timeSlowEffect() {
+            document.body.classList.add('time-slow');
+            setTimeout(() => {
+                document.body.classList.remove('time-slow');
+            }, 2000);
+        }
+
+        // 创建全息投影特效
+        function createHologramEffect() {
+            const hologram = document.createElement('div');
+            hologram.className = 'hologram-effect';
+            hologram.style.left = Math.random() * window.innerWidth + 'px';
+            hologram.style.top = Math.random() * window.innerHeight + 'px';
+            hologram.textContent = '👁️';
+            hologram.style.fontSize = '100px';
+            document.body.appendChild(hologram);
+
+            setTimeout(() => hologram.remove(), 2000);
+        }
+
+        // 随机触发炫酷特效
+        function triggerRandomCoolEffect() {
+            const effects = [
+                'rainbow', 'magic', 'lightning', 'energy', 'firework',
+                'floatingText', 'blackHole', 'aurora', 'cube', 'portal',
+                'hologram', 'timeSlow'
+            ];
+            const randomEffect = effects[Math.floor(Math.random() * effects.length)];
+
+            switch(randomEffect) {
+                case 'rainbow': createRainbowStream(); break;
+                case 'magic': createMagicCircle(); break;
+                case 'lightning': createLightning(); break;
+                case 'energy': createEnergyWave(); break;
+                case 'firework':
+                    createFirework(Math.random() * window.innerWidth, Math.random() * window.innerHeight);
+                    break;
+                case 'floatingText':
+                    const texts = ['✨', '🌟', '💫', '⭐', '🎯'];
+                    createFloatingText(texts[Math.floor(Math.random() * texts.length)],
+                        Math.random() * window.innerWidth, Math.random() * window.innerHeight);
+                    break;
+                case 'blackHole': createBlackHole(); break;
+                case 'aurora': createAurora(); break;
+                case 'cube': createCube(); break;
+                case 'portal': createPortal(); break;
+                case 'hologram': createHologramEffect(); break;
+                case 'timeSlow': timeSlowEffect(); break;
+            }
+        }
+
+        // 答题特效合集
+        function triggerAnswerEffects(element) {
+            const rect = element.getBoundingClientRect();
+            const x = rect.left + rect.width / 2;
+            const y = rect.top + rect.height / 2;
+
+            // 创建烟花
+            createFirework(x, y);
+
+            // 创建能量波
+            createEnergyWave();
+
+            // 创建浮空文字
+            const confirmTexts = ['✓', '✨', '🎯', '💫'];
+            createFloatingText(confirmTexts[Math.floor(Math.random() * confirmTexts.length)], x, y);
+
+            // 随机炫酷特效
+            if (Math.random() < 0.5) {
+                triggerRandomCoolEffect();
+            }
+        }
+
+        // 问题切换特效
+        function triggerQuestionTransition() {
+            // 彩虹流光
+            for (let i = 0; i < 3; i++) {
+                setTimeout(() => createRainbowStream(), i * 200);
+            }
+
+            // 魔法阵
+            createMagicCircle();
+
+            // 全息投影文字
+            setTimeout(() => {
+                createHologramText('下一页');
+            }, 500);
+        }
+
+        // 完成测试特效合集
+        function triggerCompletionEffects() {
+            // 大量烟花
+            for (let i = 0; i < 10; i++) {
+                setTimeout(() => {
+                    createFirework(
+                        Math.random() * window.innerWidth,
+                        Math.random() * window.innerHeight
+                    );
+                }, i * 100);
+            }
+
+            // 多个魔法阵
+            setTimeout(createMagicCircle, 200);
+            setTimeout(createMagicCircle, 600);
+            setTimeout(createMagicCircle, 1000);
+
+            // 传送门
+            setTimeout(createPortal, 300);
+
+            // 黑洞
+            setTimeout(createBlackHole, 500);
+
+            // 极光
+            setTimeout(createAurora, 800);
+
+            // 全息投影文字
+            setTimeout(() => createHologramText('测试完成！'), 400);
+
+            // 雷电
+            setTimeout(() => {
+                for (let i = 0; i < 5; i++) {
+                    setTimeout(createLightning, i * 150);
+                }
+            }, 600);
+
+            // 全屏震动
+            setTimeout(megaShake, 1000);
+
+            // 炫酷提示框
+            setTimeout(() => {
+                showMegaMessage('🎉 万圣节人格已解锁！');
+            }, 1200);
+        }
+
+        // ==================== 新功能系统实现 ====================
+
+        // 1. 主题切换系统
+        function initThemeSystem() {
+            const themeButtons = document.querySelectorAll('.theme-btn');
+            themeButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const theme = btn.dataset.theme;
+                    switchTheme(theme);
+                    themeButtons.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                });
+            });
+        }
+
+        function switchTheme(theme) {
+            currentTheme = theme;
+            const body = document.body;
+            body.className = body.className.replace(/theme-\w+/, '');
+            body.classList.add(`theme-${theme}`);
+
+            // 主题对应的天气
+            if (theme === 'christmas') {
+                startWeather('snow');
+            } else if (theme === 'ocean') {
+                startWeather('rain');
+            } else if (theme === 'cyberpunk') {
+                startWeather('fog');
+            } else {
+                stopWeather();
+            }
+
+            showNpcMessage(`切换到${getThemeName(theme)}主题！`);
+        }
+
+        function getThemeName(theme) {
+            const names = {
+                halloween: '万圣节',
+                christmas: '圣诞节',
+                cyberpunk: '赛博朋克',
+                ocean: '深海'
+            };
+            return names[theme] || theme;
+        }
+
+        // 2. 技能系统
+        function initSkillSystem() {
+            const skillTree = document.getElementById('skill-tree');
+            skillTree.classList.remove('hidden');
+
+            const defaultSkills = [
+                { id: 1, name: '快速思考', icon: '⚡', level: 0, maxLevel: 3 },
+                { id: 2, name: '直觉洞察', icon: '👁️', level: 0, maxLevel: 3 },
+                { id: 3, name: '社交魅力', icon: '✨', level: 0, maxLevel: 3 },
+                { id: 4, name: '逻辑分析', icon: '🧠', level: 0, maxLevel: 3 },
+                { id: 5, name: '情绪感知', icon: '❤️', level: 0, maxLevel: 3 }
+            ];
+
+            skills = defaultSkills;
+            updateSkillDisplay();
+        }
+
+        function updateSkillDisplay() {
+            const container = document.getElementById('skills-container');
+            container.innerHTML = '';
+            skills.forEach(skill => {
+                const div = document.createElement('div');
+                div.className = `skill-item ${skill.level > 0 ? 'earned' : ''}`;
+                div.innerHTML = `
+                    <span class="skill-icon">${skill.icon}</span>
+                    <span class="skill-name">${skill.name}</span>
+                    <span class="skill-level">${skill.level}/${skill.maxLevel}</span>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        function addSkillExperience(skillType) {
+            const skill = skills.find(s => s.name.includes(skillType));
+            if (skill && skill.level < skill.maxLevel) {
+                skill.level++;
+                updateSkillDisplay();
+                showNpcMessage(`💎 技能提升！${skill.name} 达到 Lv.${skill.level}`);
+            }
+        }
+
+        // 3. 装备系统
+        function initEquipmentSystem() {
+            const equipmentPanel = document.getElementById('equipment-panel');
+            equipmentPanel.classList.remove('hidden');
+
+            equipment = {
+                hat: null,
+                cloak: null,
+                staff: null,
+                shoes: null
+            };
+            updateEquipmentDisplay();
+        }
+
+        function updateEquipmentDisplay() {
+            const container = document.getElementById('equipment-container');
+            container.innerHTML = '';
+
+            const slots = [
+                { key: 'hat', name: '帽子', icon: '🎩' },
+                { key: 'cloak', name: '斗篷', icon: '🦇' },
+                { key: 'staff', name: '法杖', icon: '🔮' },
+                { key: 'shoes', name: '靴子', icon: '🥾' }
+            ];
+
+            slots.forEach(slot => {
+                const div = document.createElement('div');
+                div.className = `equipment-slot ${equipment[slot.key] ? 'filled' : ''}`;
+                div.innerHTML = `
+                    <span class="equipment-icon">${equipment[slot.key]?.icon || slot.icon}</span>
+                    <div class="equipment-info">
+                        <div class="equipment-name">${equipment[slot.key]?.name || slot.name}</div>
+                        <div class="equipment-bonus">${equipment[slot.key]?.bonus || ''}</div>
+                    </div>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        function equipItem(item) {
+            if (!equipment[item.slot]) {
+                equipment[item.slot] = item;
+                updateEquipmentDisplay();
+                showNpcMessage(`🎒 获得装备：${item.name}！`);
+                return true;
+            }
+            return false;
+        }
+
+        // 4. NPC对话系统
+        function showNpcMessage(message) {
+            const dialog = document.createElement('div');
+            dialog.className = 'npc-dialog';
+            const avatars = ['🎃', '👻', '🦇', '🕷️', '🧙'];
+            const avatar = avatars[Math.floor(Math.random() * avatars.length)];
+
+            dialog.innerHTML = `
+                <span class="npc-avatar">${avatar}</span>
+                <div style="padding-left: 40px;">${message}</div>
+            `;
+            document.body.appendChild(dialog);
+
+            setTimeout(() => dialog.remove(), 4000);
+        }
+
+        function initNpcSystem() {
+            const messages = [
+                '准备好接受测试了吗？',
+                '你的选择将决定你的命运...',
+                '万圣节的魔法正在觉醒！',
+                '小心，不要被外表迷惑！',
+                '真正的力量来自内心！',
+                '我能感受到你的勇气...',
+                '继续前进，真相就在前方！',
+                '每一次选择都是成长！'
+            ];
+
+            // 随机显示NPC消息
+            setInterval(() => {
+                const unreadMessages = messages.filter((msg, index) => !npcMessagesShown.includes(index));
+                if (unreadMessages.length > 0 && Math.random() < 0.3) {
+                    const randomIndex = Math.floor(Math.random() * unreadMessages.length);
+                    const message = unreadMessages[randomIndex];
+                    const originalIndex = messages.indexOf(message);
+                    npcMessagesShown.push(originalIndex);
+                    showNpcMessage(message);
+                }
+            }, 15000);
+        }
+
+        // 5. 随机事件系统
+        function triggerRandomEvent() {
+            const events = [
+                { type: 'equipment', message: '🎁 发现神秘宝箱！获得随机装备！' },
+                { type: 'skill', message: '⭐ 神秘力量加持！技能经验 +1！' },
+                { type: 'weather', message: '🌩️ 天气突变！新的体验等着你！' },
+                { type: 'minigame', message: '🎮 迷你小游戏触发！' }
+            ];
+
+            const randomEvent = events[Math.floor(Math.random() * events.length)];
+
+            const eventDiv = document.createElement('div');
+            eventDiv.className = 'random-event';
+            eventDiv.innerHTML = `
+                <div style="font-size: 48px; margin-bottom: 20px;">🎲</div>
+                <div style="font-size: 24px; color: #9d4edd; margin-bottom: 15px;">随机事件！</div>
+                <div style="font-size: 18px;">${randomEvent.message}</div>
+            `;
+            document.body.appendChild(eventDiv);
+
+            setTimeout(() => eventDiv.remove(), 3000);
+
+            // 执行事件效果
+            setTimeout(() => {
+                switch(randomEvent.type) {
+                    case 'equipment': triggerEquipmentDrop(); break;
+                    case 'skill': triggerSkillBoost(); break;
+                    case 'weather': triggerWeatherChange(); break;
+                    case 'minigame': triggerMiniGame(); break;
+                }
+            }, 3000);
+
+            randomEventsTriggered.push(Date.now());
+        }
+
+        function triggerEquipmentDrop() {
+            const items = [
+                { name: '南瓜帽', icon: '🎩', slot: 'hat', bonus: '+10% 速度' },
+                { name: '幽灵斗篷', icon: '🦇', slot: 'cloak', bonus: '+15% 恐惧抗性' },
+                { name: '魔法法杖', icon: '🔮', slot: 'staff', bonus: '+20% 特效触发' },
+                { name: '飞天靴', icon: '🥾', slot: 'shoes', bonus: '+10% 移动速度' }
+            ];
+            const item = items[Math.floor(Math.random() * items.length)];
+            equipItem(item);
+        }
+
+        function triggerSkillBoost() {
+            const skillTypes = ['快速思考', '直觉洞察', '社交魅力', '逻辑分析', '情绪感知'];
+            const randomType = skillTypes[Math.floor(Math.random() * skillTypes.length)];
+            addSkillExperience(randomType);
+        }
+
+        function triggerWeatherChange() {
+            const weathers = ['rain', 'snow', 'fog'];
+            const randomWeather = weathers[Math.floor(Math.random() * weathers.length)];
+            startWeather(randomWeather);
+        }
+
+        function triggerMiniGame() {
+            const games = ['memory', 'reaction'];
+            const randomGame = games[Math.floor(Math.random() * games.length)];
+            startMiniGame(randomGame);
+        }
+
+        // 6. 天气系统
+        function startWeather(weatherType) {
+            stopWeather();
+            currentWeather = weatherType;
+            const weatherContainer = document.createElement('div');
+            weatherContainer.className = 'weather-effect';
+            weatherContainer.id = 'weather-container';
+            document.body.appendChild(weatherContainer);
+
+            switch(weatherType) {
+                case 'rain':
+                    for (let i = 0; i < 50; i++) {
+                        const drop = document.createElement('div');
+                        drop.className = 'rain-drop';
+                        drop.style.left = Math.random() * 100 + '%';
+                        drop.style.animationDelay = Math.random() * 2 + 's';
+                        weatherContainer.appendChild(drop);
+                    }
+                    break;
+                case 'snow':
+                    for (let i = 0; i < 30; i++) {
+                        const flake = document.createElement('div');
+                        flake.className = 'snow-flake';
+                        flake.textContent = '❄️';
+                        flake.style.left = Math.random() * 100 + '%';
+                        flake.style.animationDelay = Math.random() * 3 + 's';
+                        weatherContainer.appendChild(flake);
+                    }
+                    break;
+                case 'fog':
+                    for (let i = 0; i < 5; i++) {
+                        const fog = document.createElement('div');
+                        fog.className = 'fog-particle';
+                        fog.style.top = Math.random() * 100 + '%';
+                        fog.style.animationDelay = Math.random() * 5 + 's';
+                        weatherContainer.appendChild(fog);
+                    }
+                    break;
+            }
+        }
+
+        function stopWeather() {
+            const weatherContainer = document.getElementById('weather-container');
+            if (weatherContainer) {
+                weatherContainer.remove();
+            }
+            currentWeather = null;
+        }
+
+        // 7. 排行榜系统
+        function showLeaderboard() {
+            const leaderboard = document.createElement('div');
+            leaderboard.className = 'leaderboard';
+            leaderboard.innerHTML = `
+                <div class="leaderboard-title">🏆 速度排行榜</div>
+                <div id="leaderboard-list"></div>
+                <button onclick="this.closest('.leaderboard').remove()"
+                        style="margin-top: 20px; width: 100%; padding: 10px; background: #F8A51C; border: none; border-radius: 10px; color: black; cursor: pointer;">
+                    关闭
+                </button>
+            `;
+            document.body.appendChild(leaderboard);
+
+            updateLeaderboard();
+        }
+
+        function updateLeaderboard() {
+            const saved = JSON.parse(localStorage.getItem('mbtiResults') || '[]');
+            const sorted = saved.sort((a, b) => {
+                const timeA = parseTime(a.timeSpent);
+                const timeB = parseTime(b.timeSpent);
+                return timeA - timeB;
+            }).slice(0, 10);
+
+            const list = document.getElementById('leaderboard-list');
+            if (list) {
+                list.innerHTML = sorted.map((result, index) => `
+                    <div class="leaderboard-item">
+                        <div class="leaderboard-rank">${index + 1}</div>
+                        <div class="leaderboard-info">
+                            <div class="leaderboard-name">${result.type} - ${result.timeSpent}</div>
+                            <div class="leaderboard-time">${result.time}</div>
+                        </div>
+                        <div class="leaderboard-emoji">${result.emoji}</div>
+                    </div>
+                `).join('') || '<div style="text-align: center; color: #ccc; padding: 20px;">暂无记录</div>';
+            }
+        }
+
+        function parseTime(timeStr) {
+            const [minutes, seconds] = timeStr.split(':').map(Number);
+            return minutes * 60 + seconds;
+        }
+
+        // 8. 每日挑战系统
+        function initDailyChallenge() {
+            const challenge = document.getElementById('daily-challenge');
+            challenge.classList.remove('hidden');
+
+            const challenges = [
+                { text: '在60秒内完成测试', reward: '闪电徽章', icon: '⚡' },
+                { text: '不查看提示完成测试', reward: '独立徽章', icon: '💪' },
+                { text: '选择极限模式并完成', reward: '勇气徽章', icon: '💀' },
+                { text: '尝试所有4个主题', reward: '探索者徽章', icon: '🔍' }
+            ];
+
+            const today = new Date().toDateString();
+            const savedDate = localStorage.getItem('dailyChallengeDate');
+            const savedChallenge = localStorage.getItem('dailyChallenge');
+
+            if (savedDate !== today) {
+                const randomChallenge = challenges[Math.floor(Math.random() * challenges.length)];
+                localStorage.setItem('dailyChallengeDate', today);
+                localStorage.setItem('dailyChallenge', JSON.stringify(randomChallenge));
+                displayDailyChallenge(randomChallenge);
+            } else {
+                displayDailyChallenge(JSON.parse(savedChallenge));
+            }
+        }
+
+        function displayDailyChallenge(challenge) {
+            document.getElementById('daily-challenge-text').textContent = challenge.text;
+            document.getElementById('daily-reward').textContent = challenge.icon + ' ' + challenge.reward;
+        }
+
+        // 9. 小游戏系统
+        function startMiniGame(gameType) {
+            currentMiniGame = gameType;
+            const gameDiv = document.createElement('div');
+            gameDiv.className = 'mini-game';
+            gameDiv.id = 'minigame-overlay';
+
+            let content = '';
+            if (gameType === 'memory') {
+                content = `
+                    <div class="mini-game-title">🧠 记忆翻牌游戏</div>
+                    <div class="mini-game-content">
+                        <div style="text-align: center;">
+                            <p style="color: white; margin-bottom: 20px;">找出相同的符号！</p>
+                            <div id="memory-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; max-width: 400px; margin: 0 auto;"></div>
+                            <div id="memory-score" style="color: #F8A51C; margin-top: 20px;">得分: 0</div>
+                        </div>
+                    </div>
+                `;
+            } else if (gameType === 'reaction') {
+                content = `
+                    <div class="mini-game-title">⚡ 反应速度测试</div>
+                    <div class="mini-game-content">
+                        <div style="text-align: center;">
+                            <p style="color: white; margin-bottom: 20px;">看到绿色就点击！</p>
+                            <button id="reaction-btn" style="padding: 20px 40px; font-size: 24px; background: #F25C5C; border: none; border-radius: 15px; color: white; cursor: pointer;">等待...</button>
+                            <div id="reaction-score" style="color: #F8A51C; margin-top: 20px;">点击次数: 0 / 5</div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            gameDiv.innerHTML = content;
+            document.body.appendChild(gameDiv);
+
+            if (gameType === 'memory') {
+                initMemoryGame();
+            } else if (gameType === 'reaction') {
+                initReactionGame();
+            }
+        }
+
+        function initMemoryGame() {
+            const symbols = ['🎃', '👻', '🦇', '🕷️', '💀', '🎩', '🔮', '🕯️'];
+            const grid = document.getElementById('memory-grid');
+            let score = 0;
+            let flipped = [];
+            let matched = [];
+
+            // 创建16张牌（8对）
+            const cards = [...symbols, ...symbols].sort(() => Math.random() - 0.5);
+
+            cards.forEach((symbol, index) => {
+                const card = document.createElement('div');
+                card.style.cssText = 'width: 80px; height: 80px; background: #6b1d9e; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 36px; cursor: pointer; transition: all 0.3s;';
+                card.dataset.symbol = symbol;
+                card.dataset.index = index;
+                card.textContent = '?';
+                card.onclick = () => flipCard(card);
+                grid.appendChild(card);
+            });
+
+            function flipCard(card) {
+                if (flipped.length < 2 && !flipped.includes(card) && !matched.includes(card)) {
+                    card.textContent = card.dataset.symbol;
+                    flipped.push(card);
+
+                    if (flipped.length === 2) {
+                        setTimeout(() => {
+                            if (flipped[0].dataset.symbol === flipped[1].dataset.symbol) {
+                                matched.push(...flipped);
+                                flipped[0].style.background = '#F8A51C';
+                                flipped[1].style.background = '#F8A51C';
+                                score += 10;
+                            } else {
+                                flipped[0].textContent = '?';
+                                flipped[1].textContent = '?';
+                            }
+                            flipped = [];
+                            document.getElementById('memory-score').textContent = `得分: ${score}`;
+                            if (matched.length === 16) {
+                                setTimeout(() => {
+                                    addReward('memory-game', score);
+                                    document.getElementById('minigame-overlay').remove();
+                                }, 1000);
+                            }
+                        }, 1000);
+                    }
+                }
+            }
+        }
+
+        function initReactionGame() {
+            const btn = document.getElementById('reaction-btn');
+            let clicks = 0;
+            let gameActive = false;
+            let timeout;
+
+            btn.onclick = () => {
+                if (!gameActive) {
+                    // 开始游戏
+                    gameActive = true;
+                    clicks = 0;
+                    updateReactionScore();
+                    setTimeout(() => {
+                        btn.style.background = '#00ff00';
+                        btn.textContent = '点击！';
+                        timeout = setTimeout(() => {
+                            endReactionGame();
+                        }, 3000);
+                    }, Math.random() * 2000 + 1000);
+                } else {
+                    // 点击有效
+                    clicks++;
+                    updateReactionScore();
+                    if (clicks >= 5) {
+                        clearTimeout(timeout);
+                        endReactionGame();
+                    }
+                }
+            };
+
+            function updateReactionScore() {
+                document.getElementById('reaction-score').textContent = `点击次数: ${clicks} / 5`;
+            }
+
+            function endReactionGame() {
+                btn.style.background = '#F8A51C';
+                btn.textContent = '完成！';
+                setTimeout(() => {
+                    addReward('reaction-game', clicks * 20);
+                    document.getElementById('minigame-overlay').remove();
+                }, 1000);
+            }
+        }
+
+        function addReward(gameType, score) {
+            gameStats.gamesPlayed++;
+            if (gameType === 'memory-game' && score >= 80) {
+                gameStats.perfectAnswers++;
+            }
+            if (gameType === 'reaction-game' && score >= 80) {
+                gameStats.perfectAnswers++;
+            }
+
+            const rewards = {
+                'memory-game': { name: '记忆宝石', icon: '💎' },
+                'reaction-game': { name: '速度符文', icon: '⚡' }
+            };
+
+            const reward = rewards[gameType];
+            showNpcMessage(`🎁 游戏奖励：${reward.icon} ${reward.name}！`);
+        }
+
+        // 10. 随机触发系统
+        function initRandomSystems() {
+            // 随机事件
+            setInterval(() => {
+                if (Math.random() < 0.1 && randomEventsTriggered.length < 5) {
+                    triggerRandomEvent();
+                }
+            }, 20000);
+
+            // 技能经验自动增长
+            setInterval(() => {
+                const skillTypes = ['快速思考', '直觉洞察', '社交魅力', '逻辑分析', '情绪感知'];
+                const randomType = skillTypes[Math.floor(Math.random() * skillTypes.length)];
+                if (Math.random() < 0.3) {
+                    addSkillExperience(randomType);
+                }
+            }, 30000);
+
+            // 装备随机掉落
+            setInterval(() => {
+                if (Math.random() < 0.15) {
+                    triggerEquipmentDrop();
+                }
+            }, 60000);
+        }
+
+        // 初始化所有新系统
+        function initNewSystems() {
+            initThemeSystem();
+            initSkillSystem();
+            initEquipmentSystem();
+            initNpcSystem();
+            initDailyChallenge();
+            initRandomSystems();
+        }
+
+        // 选择答案
+        function selectAnswer(index, value) {
+            answers[currentQuestion] = value;
+            document.querySelectorAll('#options .option').forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            document.querySelectorAll('#options .option')[index].classList.add('selected');
+            document.getElementById('next-btn').classList.remove('hidden');
+        }
+
+        // 下一题
+        function nextQuestion() {
+            if (currentQuestion < questions.length - 1) {
+                // 触发问题切换特效
+                triggerQuestionTransition();
+
+                setTimeout(() => {
+                    currentQuestion++;
+                    showQuestion();
+                }, 800);
+            } else {
+                showResult();
+            }
+        }
+
+        // 显示结果
+        function showResult() {
+            // 停止计时器
+            if (timerInterval) {
+                clearInterval(timerInterval);
+            }
+            totalTime = Math.floor((Date.now() - startTime) / 1000);
+
+            const counts = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
+            answers.forEach(a => counts[a]++);
+
+            let type = '';
+            type += counts.E > counts.I ? 'E' : 'I';
+            type += counts.S > counts.N ? 'S' : 'N';
+            type += counts.T > counts.F ? 'T' : 'F';
+            type += counts.J > counts.P ? 'J' : 'P';
+
+            const personality = personalities[type];
+
+            // 触发完成测试特效合集
+            triggerCompletionEffects();
+
+            // 显示完成动画
+            showCompletionAnimation();
+
+            document.getElementById('quiz').classList.add('hidden');
+            document.getElementById('result').classList.remove('hidden');
+            document.getElementById('type-emoji').textContent = personality.emoji;
+            document.getElementById('type-name').textContent = personality.name;
+            document.getElementById('type-description').textContent = personality.description;
+
+            // 计算成就
+            calculateAchievements();
+
+            const traitsList = document.getElementById('traits');
+            traitsList.innerHTML = '';
+            personality.traits.forEach(trait => {
+                const li = document.createElement('li');
+                li.textContent = `• ${trait}`;
+                li.style.margin = '10px 0';
+                li.style.animation = `fadeInUp 0.5s ease ${traitsList.children.length * 0.1}s forwards`;
+                li.style.opacity = '0';
+                traitsList.appendChild(li);
+            });
+
+            document.getElementById('progress').style.width = '100%';
+            document.getElementById('progress-text').textContent = '100% 完成！';
+
+            // 显示保存按钮
+            setTimeout(() => {
+                document.getElementById('save-btn').style.display = 'block';
+            }, 1000);
+        }
+
+        // 显示完成动画
+        function showCompletionAnimation() {
+            const animation = document.createElement('div');
+            animation.className = 'completion-animation';
+            animation.textContent = '🎉';
+            document.body.appendChild(animation);
+
+            setTimeout(() => animation.remove(), 1000);
+        }
+
+        // 计算成就
+        function calculateAchievements() {
+            achievements = [];
+
+            // 速度成就
+            if (totalTime < 30) {
+                achievements.push({ icon: '⚡', name: '闪电侠', desc: '30秒内完成' });
+            } else if (totalTime < 60) {
+                achievements.push({ icon: '🏃', name: '快节奏', desc: '1分钟内完成' });
+            }
+
+            // 完美成就
+            if (currentQuestion === questions.length) {
+                achievements.push({ icon: '💯', name: '完美主义者', desc: '完成所有题目' });
+            }
+
+            // 万圣节达人成就
+            achievements.push({ icon: '🎃', name: '万圣节探险家', desc: '完成测试' });
+
+            // 惊吓模式成就
+            if (selectedLevel === 'extreme') {
+                achievements.push({ icon: '💀', name: '死神挑战者', desc: '选择极限模式' });
+                achievements.push({ icon: '😱', name: '无畏勇士', desc: '在惊吓中完成测试' });
+            } else if (selectedLevel === 'normal') {
+                achievements.push({ icon: '👻', name: '勇敢探索者', desc: '选择标准模式' });
+            } else {
+                achievements.push({ icon: '🌙', name: '小心谨慎', desc: '选择温和模式' });
+            }
+
+            // 特殊成就：如果经历了惊吓并保持冷静
+            if (scareActive) {
+                achievements.push({ icon: '🧠', name: '冷静大师', desc: '在惊吓中保持镇定' });
+            }
+
+            // 显示成就
+            const achievementsContainer = document.getElementById('achievements');
+            achievementsContainer.innerHTML = '<h4 style="color: #FFD700; margin-bottom: 15px;">🏆 获得成就</h4>';
+            achievements.forEach((achievement, index) => {
+                const div = document.createElement('div');
+                div.className = 'achievement';
+                div.style.animationDelay = `${index * 0.2}s`;
+                div.innerHTML = `${achievement.icon} ${achievement.name} - ${achievement.desc}`;
+                achievementsContainer.appendChild(div);
+            });
+        }
+
+        // 分享功能
+        function shareToWeChat() {
+            const type = document.getElementById('type-name').textContent;
+            const emoji = document.getElementById('type-emoji').textContent;
+            const text = `我在万圣节MBTI测试中是：${emoji} ${type}！快来测试你的万圣节人格吧！`;
+            alert(`分享到微信：\n${text}\n\n（请手动复制到微信）`);
+        }
+
+        function shareToQQ() {
+            const type = document.getElementById('type-name').textContent;
+            const emoji = document.getElementById('type-emoji').textContent;
+            const text = `我在万圣节MBTI测试中是：${emoji} ${type}！快来测试你的万圣节人格吧！`;
+            alert(`分享到QQ：\n${text}\n\n（请手动复制到QQ）`);
+        }
+
+        function copyResult() {
+            const type = document.getElementById('type-name').textContent;
+            const emoji = document.getElementById('type-emoji').textContent;
+            const description = document.getElementById('type-description').textContent;
+            const traits = Array.from(document.querySelectorAll('#traits li')).map(li => li.textContent).join('\n');
+            const achievementsText = achievements.map(a => a.icon + ' ' + a.name).join(' ');
+
+            const text = `🎃 万圣节MBTI测试结果\n\n${emoji} ${type}\n\n${description}\n\n${traits}\n\n${achievementsText}\n\n用时：${Math.floor(totalTime / 60)}:${String(totalTime % 60).padStart(2, '0')}`;
+
+            navigator.clipboard.writeText(text).then(() => {
+                alert('✅ 结果已复制到剪贴板！');
+            }).catch(() => {
+                // 备用方案
+                const textarea = document.createElement('textarea');
+                textarea.value = text;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                textarea.remove();
+                alert('✅ 结果已复制到剪贴板！');
+            });
+        }
+
+        // 保存结果
+        function saveResult() {
+            const type = document.getElementById('type-name').textContent;
+            const emoji = document.getElementById('type-emoji').textContent;
+            const description = document.getElementById('type-description').textContent;
+
+            const result = {
+                type: type,
+                emoji: emoji,
+                description: description,
+                time: new Date().toLocaleString(),
+                timeSpent: `${Math.floor(totalTime / 60)}:${String(totalTime % 60).padStart(2, '0')}`,
+                achievements: achievements
+            };
+
+            const saved = JSON.parse(localStorage.getItem('mbtiResults') || '[]');
+            saved.push(result);
+            localStorage.setItem('mbtiResults', JSON.stringify(saved));
+
+            alert('💾 结果已保存！可以随时查看历史记录。');
+        }
+
+        // 重新开始
+        function restart() {
+            currentQuestion = 0;
+            answers = [];
+            selectedLevel = 'normal';
+            startTime = null;
+            totalTime = 0;
+            achievements = [];
+            scareActive = false;
+
+            if (timerInterval) {
+                clearInterval(timerInterval);
+            }
+            if (scaryElementsInterval) {
+                clearInterval(scaryElementsInterval);
+            }
+
+            // 隐藏惊吓相关UI
+            document.getElementById('scare-indicator').classList.add('hidden');
+            document.getElementById('sound-wave').classList.add('hidden');
+            document.getElementById('level-warning').classList.add('hidden');
+
+            // 隐藏保存按钮
+            document.getElementById('save-btn').style.display = 'none';
+
+            // 清理所有恐怖元素和炫酷特效
+            const selectors = [
+                '.ghost-walk', '.bat-fly', '.pumpkin-glow', '.spider-swing', '.will-o-wisp',
+                '.scare-msg', '.scary-element', '.rainbow-stream', '.magic-circle', '.lightning-bolt',
+                '.energy-wave', '.firework', '.floating-text', '.black-hole', '.aurora',
+                '.mega-msg', '.cube', '.portal', '.hologram-text', '.hologram-effect',
+                '.completion-animation'
+            ];
+            selectors.forEach(selector => {
+                document.querySelectorAll(selector).forEach(el => el.remove());
+            });
+
+            // 移除body上的特效类
+            document.body.classList.remove('screen-shake', 'screen-flash', 'mega-shake', 'time-slow');
+
+            document.getElementById('result').classList.add('hidden');
+            document.getElementById('level-selection').classList.remove('hidden');
+            document.getElementById('quiz').classList.add('hidden');
+        }
+
+        // 初始化
+        window.addEventListener('DOMContentLoaded', () => {
+            createStars();
+            initNewSystems(); // 初始化所有新系统
+            setTimeout(() => {
+                document.getElementById('loading').classList.add('hidden');
+                document.getElementById('level-selection').classList.remove('hidden');
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

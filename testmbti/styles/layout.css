@@ -1,0 +1,416 @@
+/* ====================================
+   布局样式 - 页面结构和定位
+   ==================================== */
+
+/* 夜空背景 */
+.night-sky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: var(--z-background);
+    pointer-events: none;
+}
+
+/* 星星容器 */
+.stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    animation: starTwinkle 3s ease-in-out infinite;
+}
+
+/* 月亮 */
+.moon {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    width: 100px;
+    height: 100px;
+    background: var(--ghost-white);
+    border-radius: 50%;
+    animation: moonGlow 4s ease-in-out infinite;
+    box-shadow: 0 0 30px rgba(230, 232, 240, 0.5);
+}
+
+/* 鬼火 */
+.will-o-wisp {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: var(--pumpkin-glow);
+    border-radius: 50%;
+    filter: blur(5px);
+    animation: wispFloat 8s ease-in-out infinite;
+}
+
+/* 粒子系统 */
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: var(--z-background);
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: rgba(248, 165, 28, 0.5);
+    border-radius: 50%;
+    animation: particleRise 15s linear infinite;
+}
+
+/* 雾气效果 */
+.fog-effect {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(to top, rgba(176, 179, 193, 0.1), transparent);
+    pointer-events: none;
+}
+
+/* 过渡覆盖层 */
+.transition-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--primary-black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9998;
+}
+
+.transition-content {
+    text-align: center;
+}
+
+.spinning-pumpkin {
+    font-size: 100px;
+    animation: pumpkinSpin 1s linear infinite;
+}
+
+.transition-text {
+    margin-top: var(--spacing-md);
+    font-size: var(--font-lg);
+    color: var(--halloween-orange);
+}
+
+/* 浮动元素 */
+.floating-pumpkin,
+.floating-ghost,
+.floating-bat,
+.floating-skull {
+    position: absolute;
+    font-size: 60px;
+    animation: float 4s ease-in-out infinite;
+    opacity: 0.6;
+}
+
+.floating-pumpkin {
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.floating-ghost {
+    top: 20%;
+    right: 15%;
+    animation-delay: 1s;
+}
+
+.floating-bat {
+    bottom: 30%;
+    left: 20%;
+    animation-delay: 2s;
+}
+
+.floating-skull {
+    bottom: 20%;
+    right: 10%;
+    animation-delay: 3s;
+}
+
+/* 结果特效容器 */
+.result-effects {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* 恐惧等级选择器 */
+.fear-level-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    backdrop-filter: blur(10px);
+}
+
+.fear-level-card {
+    background: rgba(26, 26, 26, 0.98);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    max-width: 600px;
+    width: 90%;
+    border: 3px solid var(--halloween-orange);
+    box-shadow: 0 20px 60px rgba(255, 102, 0, 0.4);
+}
+
+.fear-level-title {
+    text-align: center;
+    font-size: var(--font-xl);
+    color: var(--halloween-orange);
+    margin-bottom: var(--spacing-md);
+}
+
+.fear-level-subtitle {
+    text-align: center;
+    color: var(--fog-gray);
+    margin-bottom: var(--spacing-lg);
+}
+
+.fear-levels {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.fear-level-option {
+    background: rgba(0, 0, 0, 0.4);
+    border: 2px solid var(--dark-gray);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.fear-level-option:hover {
+    border-color: var(--halloween-orange);
+    background: rgba(248, 165, 28, 0.1);
+    transform: translateX(5px);
+}
+
+.fear-level-option.selected {
+    border-color: var(--pumpkin-glow);
+    background: rgba(248, 165, 28, 0.2);
+    box-shadow: 0 0 20px var(--shadow-color);
+}
+
+.fear-level-name {
+    font-size: var(--font-lg);
+    color: var(--ghost-white);
+    margin-bottom: var(--spacing-sm);
+    font-weight: bold;
+}
+
+.fear-level-desc {
+    font-size: var(--font-sm);
+    color: var(--fog-gray);
+}
+
+.fear-level-warning {
+    background: rgba(242, 92, 92, 0.1);
+    border: 1px solid var(--blood-red);
+    border-radius: var(--radius-sm);
+    padding: var(--spacing-md);
+    color: var(--blood-red);
+    font-size: var(--font-sm);
+    text-align: center;
+}
+
+/* 护身符容器 */
+.talisman-container {
+    position: fixed;
+    bottom: var(--spacing-md);
+    left: var(--spacing-md);
+    z-index: 1000;
+}
+
+.talisman {
+    background: rgba(26, 26, 26, 0.9);
+    border: 2px solid var(--magic-blue);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    text-align: center;
+    font-size: 40px;
+}
+
+.talisman:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px var(--magic-blue);
+}
+
+.talisman.used {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.talisman-label {
+    font-size: var(--font-sm);
+    color: var(--fog-gray);
+    margin-top: var(--spacing-sm);
+}
+
+/* 追逐游戏 */
+.chase-game {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 10001;
+    display: none;
+}
+
+.chase-game.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chase-scene {
+    width: 80%;
+    max-width: 800px;
+    height: 400px;
+    background: rgba(26, 26, 26, 0.8);
+    border-radius: var(--radius-md);
+    border: 2px solid var(--blood-red);
+    position: relative;
+    overflow: hidden;
+}
+
+.chase-player,
+.chase-ghost {
+    position: absolute;
+    bottom: 50px;
+    font-size: 60px;
+    transition: left 0.1s linear;
+}
+
+.chase-player {
+    left: 20%;
+}
+
+.chase-ghost {
+    left: 70%;
+    animation: float 2s ease-in-out infinite;
+}
+
+/* 谜题游戏 */
+.riddle-game {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 10001;
+    display: none;
+}
+
+.riddle-game.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.riddle-altar {
+    background: rgba(26, 26, 26, 0.95);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    max-width: 600px;
+    width: 90%;
+    border: 3px solid var(--spooky-purple);
+}
+
+.riddle-symbols {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
+    margin: var(--spacing-lg) 0;
+}
+
+.symbol-grid {
+    aspect-ratio: 1;
+    background: rgba(0, 0, 0, 0.4);
+    border: 2px solid var(--dark-gray);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.symbol-grid:hover {
+    border-color: var(--magic-blue);
+    transform: scale(1.05);
+}
+
+.symbol-grid.matched {
+    border-color: var(--pumpkin-glow);
+    background: rgba(248, 165, 28, 0.2);
+}
+
+/* 响应式布局 */
+@media (max-width: 768px) {
+    .moon {
+        width: 60px;
+        height: 60px;
+        top: 5%;
+        right: 5%;
+    }
+
+    .fear-level-card {
+        padding: var(--spacing-md);
+    }
+
+    .chase-scene {
+        width: 95%;
+        height: 300px;
+    }
+
+    .chase-player,
+    .chase-ghost {
+        font-size: 40px;
+    }
+
+    .riddle-symbols {
+        gap: var(--spacing-sm);
+    }
+
+    .symbol-grid {
+        font-size: 32px;
+    }
+}

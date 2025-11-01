@@ -1,0 +1,451 @@
+/* ====================================
+   组件样式 - 所有UI组件
+   ==================================== */
+
+/* 加载动画组件 */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--primary-black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity var(--transition-slow), visibility var(--transition-slow);
+}
+
+.pumpkin-loader {
+    text-align: center;
+    position: relative;
+}
+
+.pumpkin {
+    font-size: 120px;
+    animation: pumpkinSpin 2s linear infinite, pumpkinGlow 1.5s ease-in-out infinite;
+    display: inline-block;
+}
+
+.spider {
+    position: absolute;
+    font-size: 40px;
+    animation: spiderCrawl 3s linear infinite;
+}
+
+.web1 {
+    top: -20px;
+    right: -20px;
+    animation-delay: 0s;
+}
+
+.web2 {
+    bottom: -20px;
+    left: -20px;
+    animation-delay: 1.5s;
+}
+
+.loading-text {
+    margin-top: 30px;
+    font-size: var(--font-lg);
+    color: var(--halloween-orange);
+    font-weight: bold;
+    animation: textPulse 1.5s ease-in-out infinite;
+}
+
+/* 惊吓开场组件 */
+.scare-intro {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: var(--spacing-lg) var(--spacing-md);
+    position: relative;
+    overflow: hidden;
+}
+
+.scare-content {
+    text-align: center;
+    z-index: var(--z-normal);
+}
+
+.creepy-title {
+    font-family: 'Creepster', cursive;
+    font-size: var(--font-xxl);
+    color: var(--halloween-orange);
+    text-shadow:
+        0 0 20px var(--shadow-color),
+        0 0 40px var(--shadow-color),
+        5px 5px 0 var(--blood-red);
+    animation: titleFlicker 3s ease-in-out infinite;
+    margin-bottom: var(--spacing-md);
+}
+
+.creepy-subtitle {
+    font-size: var(--font-xl);
+    color: var(--spooky-purple);
+    text-shadow: 0 0 15px rgba(107, 29, 158, 0.6);
+    margin-bottom: var(--spacing-lg);
+    animation: subtitleGlow 2s ease-in-out infinite;
+}
+
+.haunted-message {
+    margin: var(--spacing-lg) 0;
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.typing-text {
+    font-size: var(--font-lg);
+    color: var(--ghost-white);
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+}
+
+/* 飞行蝙蝠 */
+.flying-bats {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.bat {
+    position: absolute;
+    font-size: 40px;
+    animation: batFly 10s linear infinite;
+}
+
+.bat:nth-child(1) {
+    top: 20%;
+    animation-delay: 0s;
+}
+
+.bat:nth-child(2) {
+    top: 50%;
+    animation-delay: 3s;
+}
+
+.bat:nth-child(3) {
+    top: 80%;
+    animation-delay: 6s;
+}
+
+/* 进度条组件 */
+.progress-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(11, 12, 30, 0.95);
+    padding: var(--spacing-md);
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid var(--halloween-orange);
+}
+
+.progress-header {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.progress-title {
+    text-align: center;
+    color: var(--halloween-orange);
+    font-size: var(--font-lg);
+    margin-bottom: var(--spacing-sm);
+}
+
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background: var(--dark-gray);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--halloween-orange), var(--pumpkin-glow));
+    transition: width var(--transition-normal);
+    box-shadow: var(--shadow-glow);
+}
+
+.progress-text {
+    text-align: center;
+    margin-top: var(--spacing-sm);
+    color: var(--fog-gray);
+    font-size: var(--font-sm);
+}
+
+/* 问题卡片组件 */
+.question-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 120px var(--spacing-md) var(--spacing-md);
+}
+
+.question-card {
+    background: rgba(26, 26, 26, 0.95);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    max-width: 700px;
+    width: 100%;
+    box-shadow: var(--shadow-lg);
+    border: 2px solid var(--halloween-orange);
+}
+
+.question-number {
+    text-align: center;
+    color: var(--fog-gray);
+    font-size: var(--font-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.question-text {
+    font-size: var(--font-xl);
+    color: var(--ghost-white);
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.6;
+}
+
+/* 答案选项 */
+.answers-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.answer-option {
+    background: rgba(0, 0, 0, 0.4);
+    border: 2px solid var(--dark-gray);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    position: relative;
+    overflow: hidden;
+}
+
+.answer-option:hover {
+    border-color: var(--halloween-orange);
+    background: rgba(248, 165, 28, 0.1);
+    transform: translateX(5px);
+}
+
+.answer-option.selected {
+    border-color: var(--pumpkin-glow);
+    background: rgba(248, 165, 28, 0.2);
+    box-shadow: 0 0 20px var(--shadow-color);
+}
+
+.answer-text {
+    font-size: var(--font-md);
+    color: var(--ghost-white);
+    position: relative;
+    z-index: 1;
+}
+
+/* 结果页面组件 */
+.result-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--spacing-lg) var(--spacing-md);
+}
+
+.result-card {
+    background: rgba(26, 26, 26, 0.95);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    max-width: 800px;
+    width: 100%;
+    box-shadow: var(--shadow-lg);
+    border: 3px solid var(--halloween-orange);
+}
+
+.result-title {
+    text-align: center;
+    font-size: var(--font-xl);
+    color: var(--halloween-orange);
+    margin-bottom: var(--spacing-lg);
+}
+
+.personality-type {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.type-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--halloween-orange), var(--blood-red));
+    color: white;
+    font-size: 48px;
+    font-weight: bold;
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-md);
+    box-shadow: var(--shadow-glow);
+}
+
+.type-name {
+    font-size: var(--font-xl);
+    color: var(--ghost-white);
+    margin-top: var(--spacing-md);
+}
+
+.personality-description {
+    color: var(--fog-gray);
+    font-size: var(--font-md);
+    line-height: 1.8;
+    margin-bottom: var(--spacing-lg);
+}
+
+.personality-traits ul {
+    list-style: none;
+    padding: 0;
+}
+
+.personality-traits li {
+    background: rgba(0, 0, 0, 0.3);
+    padding: var(--spacing-sm) var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    border-left: 3px solid var(--halloween-orange);
+}
+
+/* 音频控制组件 */
+.audio-control {
+    position: fixed;
+    bottom: var(--spacing-md);
+    right: var(--spacing-md);
+    z-index: 1000;
+}
+
+.sound-btn {
+    background: rgba(26, 26, 26, 0.9);
+    border: 2px solid var(--halloween-orange);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: var(--font-lg);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sound-btn:hover {
+    background: var(--halloween-orange);
+    transform: scale(1.1);
+}
+
+/* 惊吓特效组件 */
+.jumpscare {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--primary-black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    animation: flashRed 0.5s;
+}
+
+.jumpscare-content {
+    text-align: center;
+    animation: scareZoom 0.5s ease-out;
+}
+
+.jumpscare-image {
+    font-size: 200px;
+    animation: scareShake 0.5s;
+}
+
+.jumpscare-text {
+    font-size: 80px;
+    color: var(--blood-red);
+    font-weight: bold;
+    text-shadow: 0 0 30px var(--blood-red);
+}
+
+/* 恐惧值表 */
+.fear-meter {
+    position: fixed;
+    top: 100px;
+    left: var(--spacing-md);
+    background: rgba(26, 26, 26, 0.9);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    border: 2px solid var(--blood-red);
+    min-width: 150px;
+}
+
+.fear-meter-title {
+    text-align: center;
+    color: var(--blood-red);
+    font-weight: bold;
+    margin-bottom: var(--spacing-sm);
+}
+
+.fear-bar {
+    width: 100%;
+    height: 20px;
+    background: var(--dark-gray);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+}
+
+.fear-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--blood-red), var(--heartbeat-color));
+    transition: width var(--transition-normal);
+}
+
+.fear-value {
+    text-align: center;
+    margin-top: var(--spacing-sm);
+    color: var(--ghost-white);
+    font-size: var(--font-lg);
+    font-weight: bold;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .creepy-title {
+        font-size: 48px;
+    }
+
+    .creepy-subtitle {
+        font-size: var(--font-lg);
+    }
+
+    .question-card,
+    .result-card {
+        padding: var(--spacing-md);
+    }
+
+    .question-text {
+        font-size: var(--font-lg);
+    }
+
+    .fear-meter {
+        top: 80px;
+        left: var(--spacing-sm);
+        right: var(--spacing-sm);
+        width: auto;
+    }
+}
