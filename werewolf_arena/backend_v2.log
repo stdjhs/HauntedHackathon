@@ -1038,3 +1038,170 @@ WebSocket connected for session session_20251101_013732. Total connections: 2
 ⏱️ [夜间延迟] 暂停1.00秒
 [LLM调用] 第1/3次尝试 | 模型: siliconflow/deepseek-ai/DeepSeek-V3.2-Exp | 温度: 0.50
 INFO:     127.0.0.1:51974 - "GET /health HTTP/1.1" 200 OK
+[LLM响应] 成功获取响应，长度: 231 字符
+[LLM原始响应开始]
+{
+"reasoning": "由于这是第0轮夜晚阶段，游戏刚刚开始，没有任何玩家的发言或行为信息可供参考。作为狼人，我需要随机选择一名玩家进行淘汰。考虑到剩余玩家中，Qwen3-32B、Ring-flash-2.0、Kimi-Dev-72B、MiniMax-M1-80k和GLM-4.6都是潜在目标，我随机选择了GLM-4.6。这样做的目的是避免暴露任何模式或策略，同时减少村民方的玩家数量，为狼人胜利创造条件。",
+"remove": "GLM-4.6"
+}
+[LLM原始响应结束]
+[JSON解析] 开始解析响应...
+[JSON解析] 开始解析，输入文本长度: 231 字符
+[JSON解析] 输入文本预览: {
+"reasoning": "由于这是第0轮夜晚阶段，游戏刚刚开始，没有任何玩家的发言或行为信息可供参考。作为狼人，我需要随机选择一名玩家进行淘汰。考虑到剩余玩家中，Qwen3-32B、Ring-f...
+[语言清理] 开始清理混合语言响应...
+[语言清理] 策略2成功：提取到完整JSON对象
+[JSON解析] 尝试从markdown中解析JSON...
+[Markdown解析] 开始解析markdown文本...
+[Markdown解析] AST解析成功，子元素数量: 1
+[Markdown解析] 开始遍历AST子元素...
+[Markdown解析] 处理第0个子元素，类型: <class 'marko.block.Paragraph'>
+[Markdown解析] 子元素不是代码块，类型: <class 'marko.block.Paragraph'>
+[Markdown调试] 子元素属性: ['__annotations__', '__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_prefix', '_tight', 'break_paragraph', 'children', 'get_type', 'inline_body', 'is_setext_heading', 'match', 'override', 'parse', 'pattern', 'priority', 'virtual']
+[Markdown解析] 没有找到有效的JSON代码块
+[JSON解析] markdown解析结果: None
+[JSON解析] markdown解析失败，尝试直接解析JSON字符串...
+[JSON字符串解析] 开始解析，输入文本: '{
+"reasoning": "由于这是第0轮夜晚阶段，游戏刚刚开始，没有任何玩家的发言或行为信息可供参考。作为狼人，我需要随机选择一名玩家进行淘汰。考虑到剩余玩家中，Qwen3-32B、Ring-flash-2.0、Kimi-Dev-72B、MiniMax-M1-80k和GLM-4.6都是潜在目标，我随机选择了GLM-4.6。这样做的目的是避免暴露任何模式或策略，同时减少村民方的玩家数量，为狼人胜利创造条件。",
+"remove": "GLM-4.6"
+}'
+[JSON字符串解析] 文本长度: 231 字符
+[JSON字符串解析] 使用yaml.safe_load解析...
+[JSON字符串解析] yaml.safe_load成功，结果类型: <class 'dict'>, 内容: {'reasoning': '由于这是第0轮夜晚阶段，游戏刚刚开始，没有任何玩家的发言或行为信息可供参考。作为狼人，我需要随机选择一名玩家进行淘汰。考虑到剩余玩家中，Qwen3-32B、Ring-flash-2.0、Kimi-Dev-72B、MiniMax-M1-80k和GLM-4.6都是潜在目标，我随机选择了GLM-4.6。这样做的目的是避免暴露任何模式或策略，同时减少村民方的玩家数量，为狼人胜利创造条件。', 'remove': 'GLM-4.6'}
+[JSON字符串解析] 解析完成，返回: {'reasoning': '由于这是第0轮夜晚阶段，游戏刚刚开始，没有任何玩家的发言或行为信息可供参考。作为狼人，我需要随机选择一名玩家进行淘汰。考虑到剩余玩家中，Qwen3-32B、Ring-flash-2.0、Kimi-Dev-72B、MiniMax-M1-80k和GLM-4.6都是潜在目标，我随机选择了GLM-4.6。这样做的目的是避免暴露任何模式或策略，同时减少村民方的玩家数量，为狼人胜利创造条件。', 'remove': 'GLM-4.6'}
+[JSON解析] 直接解析结果: {'reasoning': '由于这是第0轮夜晚阶段，游戏刚刚开始，没有任何玩家的发言或行为信息可供参考。作为狼人，我需要随机选择一名玩家进行淘汰。考虑到剩余玩家中，Qwen3-32B、Ring-flash-2.0、Kimi-Dev-72B、MiniMax-M1-80k和GLM-4.6都是潜在目标，我随机选择了GLM-4.6。这样做的目的是避免暴露任何模式或策略，同时减少村民方的玩家数量，为狼人胜利创造条件。', 'remove': 'GLM-4.6'}
+[JSON解析] 最终结果: {'reasoning': '由于这是第0轮夜晚阶段，游戏刚刚开始，没有任何玩家的发言或行为信息可供参考。作为狼人，我需要随机选择一名玩家进行淘汰。考虑到剩余玩家中，Qwen3-32B、Ring-flash-2.0、Kimi-Dev-72B、MiniMax-M1-80k和GLM-4.6都是潜在目标，我随机选择了GLM-4.6。这样做的目的是避免暴露任何模式或策略，同时减少村民方的玩家数量，为狼人胜利创造条件。', 'remove': 'GLM-4.6'}
+[JSON解析] 解析完成，结果类型: <class 'dict'>, 内容: {'reasoning': '由于这是第0轮夜晚阶段，游戏刚刚开始，没有任何玩家的发言或行为信息可供参考。作为狼人，我需要随机选择一名玩家进行淘汰。考虑到剩余玩家中，Qwen3-32B、Ring-flash-2.0、Kimi-Dev-72B、MiniMax-M1-80k和GLM-4.6都是潜在目标，我随机选择了GLM-4.6。这样做的目的是避免暴露任何模式或策略，同时减少村民方的玩家数量，为狼人胜利创造条件。', 'remove': 'GLM-4.6'}
+[LLM结果] 提取键 'remove': GLM-4.6
+[LLM成功] 返回有效结果: GLM-4.6
+⏱️ [狼人击杀] 狼人 DeepSeek-V3.2 行动完成: 14.47秒
+DeepSeek-V3.2 eliminated GLM-4.6
+[WebSocket] 夜间行动通知已发送: night_eliminate by DeepSeek-V3.2
+⏱️ [狼人正在选择淘汰目标。] 狼人正在选择淘汰目标。完成: 14.48秒
+
+⏱️ 【医生正在选择保护目标。】
+⏱️ [夜间延迟] 暂停1.00秒
+[LLM调用] 第1/3次尝试 | 模型: inclusionAI/Ling-mini-2.0 | 温度: 0.50
+[LLM调用错误] 第1/3次失败: BadRequestError: Error code: 400 - {'code': 20012, 'message': 'Model does not exist. Please check it carefully.', 'data': None}
+[错误详情] 这是一个LLM调用异常，不是JSON解析异常
+[LLM错误] 没有获取到任何响应内容
+[LLM调用] 第2/3次尝试 | 模型: inclusionAI/Ling-mini-2.0 | 温度: 0.70
+[LLM调用错误] 第2/3次失败: BadRequestError: Error code: 400 - {'code': 20012, 'message': 'Model does not exist. Please check it carefully.', 'data': None}
+[错误详情] 这是一个LLM调用异常，不是JSON解析异常
+[LLM错误] 没有获取到任何响应内容
+[LLM调用] 第3/3次尝试 | 模型: inclusionAI/Ling-mini-2.0 | 温度: 0.90
+[LLM调用错误] 第3/3次失败: BadRequestError: Error code: 400 - {'code': 20012, 'message': 'Model does not exist. Please check it carefully.', 'data': None}
+[错误详情] 这是一个LLM调用异常，不是JSON解析异常
+[LLM错误] 没有获取到任何响应内容
+[LLM失败] 所有3次重试均失败，返回None
+⏱️ [医生保护] 医生 Ring-flash-2.0 行动完成: 1.15秒
+Warning: Ring-flash-2.0 failed to choose protection target, randomly selected Ring-flash-2.0
+Ring-flash-2.0 protected Ring-flash-2.0
+[WebSocket] 夜间行动通知已发送: night_protect by Ring-flash-2.0
+⏱️ [医生正在选择保护目标。] 医生正在选择保护目标。完成: 1.16秒
+
+⏱️ 【预言家正在查验身份。】
+⏱️ [夜间延迟] 暂停1.00秒
+[LLM调用] 第1/3次尝试 | 模型: siliconflow/moonshotai/Kimi-Dev-72B | 温度: 0.50
+INFO:     127.0.0.1:52081 - "GET /health HTTP/1.1" 200 OK
+[LLM响应] 成功获取响应，长度: 81 字符
+[LLM原始响应开始]
+{
+"reasoning": "由于是第一轮，没有可用信息，因此随机选择一名玩家进行调查。",
+"investigate": "Ring-flash-2.0"
+}
+[LLM原始响应结束]
+[JSON解析] 开始解析响应...
+[JSON解析] 开始解析，输入文本长度: 81 字符
+[JSON解析] 输入文本: {
+"reasoning": "由于是第一轮，没有可用信息，因此随机选择一名玩家进行调查。",
+"investigate": "Ring-flash-2.0"
+}
+[语言清理] 开始清理混合语言响应...
+[语言清理] 策略2成功：提取到完整JSON对象
+[JSON解析] 尝试从markdown中解析JSON...
+[Markdown解析] 开始解析markdown文本...
+[Markdown解析] AST解析成功，子元素数量: 1
+[Markdown解析] 开始遍历AST子元素...
+[Markdown解析] 处理第0个子元素，类型: <class 'marko.block.Paragraph'>
+[Markdown解析] 子元素不是代码块，类型: <class 'marko.block.Paragraph'>
+[Markdown调试] 子元素属性: ['__annotations__', '__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_prefix', '_tight', 'break_paragraph', 'children', 'get_type', 'inline_body', 'is_setext_heading', 'match', 'override', 'parse', 'pattern', 'priority', 'virtual']
+[Markdown解析] 没有找到有效的JSON代码块
+[JSON解析] markdown解析结果: None
+[JSON解析] markdown解析失败，尝试直接解析JSON字符串...
+[JSON字符串解析] 开始解析，输入文本: '{
+"reasoning": "由于是第一轮，没有可用信息，因此随机选择一名玩家进行调查。",
+"investigate": "Ring-flash-2.0"
+}'
+[JSON字符串解析] 文本长度: 81 字符
+[JSON字符串解析] 使用yaml.safe_load解析...
+[JSON字符串解析] yaml.safe_load成功，结果类型: <class 'dict'>, 内容: {'reasoning': '由于是第一轮，没有可用信息，因此随机选择一名玩家进行调查。', 'investigate': 'Ring-flash-2.0'}
+[JSON字符串解析] 解析完成，返回: {'reasoning': '由于是第一轮，没有可用信息，因此随机选择一名玩家进行调查。', 'investigate': 'Ring-flash-2.0'}
+[JSON解析] 直接解析结果: {'reasoning': '由于是第一轮，没有可用信息，因此随机选择一名玩家进行调查。', 'investigate': 'Ring-flash-2.0'}
+[JSON解析] 最终结果: {'reasoning': '由于是第一轮，没有可用信息，因此随机选择一名玩家进行调查。', 'investigate': 'Ring-flash-2.0'}
+[JSON解析] 解析完成，结果类型: <class 'dict'>, 内容: {'reasoning': '由于是第一轮，没有可用信息，因此随机选择一名玩家进行调查。', 'investigate': 'Ring-flash-2.0'}
+[LLM结果] 提取键 'investigate': Ring-flash-2.0
+[LLM成功] 返回有效结果: Ring-flash-2.0
+⏱️ [预言家查验] 预言家 Kimi-Dev-72B 行动完成: 3.12秒
+[WebSocket] 夜间行动通知已发送: night_investigate by Kimi-Dev-72B
+⏱️ [预言家正在查验身份。] 预言家正在查验身份。完成: 3.12秒
+
+⏱️ 【夜晚阶段解决】
+[调试] 成功从current_players中移除玩家: GLM-4.6, 剩余玩家: ['Kimi-Dev-72B', 'Ring-flash-2.0', 'DeepSeek-V3.2', 'MiniMax-M1-80k', 'Qwen3-32B']
+Player GLM-4.6 not in current players: ['Kimi-Dev-72B', 'Ring-flash-2.0', 'DeepSeek-V3.2', 'MiniMax-M1-80k', 'Qwen3-32B']
+[调试] remove_player调用时玩家GLM-4.6已不在current_players中，可能是重复移除或状态不同步
+Player GLM-4.6 not in current players: ['Kimi-Dev-72B', 'Ring-flash-2.0', 'DeepSeek-V3.2', 'MiniMax-M1-80k', 'Qwen3-32B']
+[调试] remove_player调用时玩家GLM-4.6已不在current_players中，可能是重复移除或状态不同步
+Player GLM-4.6 not in current players: ['Kimi-Dev-72B', 'Ring-flash-2.0', 'DeepSeek-V3.2', 'MiniMax-M1-80k', 'Qwen3-32B']
+[调试] remove_player调用时玩家GLM-4.6已不在current_players中，可能是重复移除或状态不同步
+Player GLM-4.6 not in current players: ['Kimi-Dev-72B', 'Ring-flash-2.0', 'DeepSeek-V3.2', 'MiniMax-M1-80k', 'Qwen3-32B']
+[调试] remove_player调用时玩家GLM-4.6已不在current_players中，可能是重复移除或状态不同步
+狼人在夜晚阶段淘汰了GLM-4.6。
+⏱️ [天亮阶段] 切换暂停1秒...
+[RealtimeLogger] session_20251101_013732 [phase_change] 进入day阶段
+[WebSocket] 阶段变更通知已发送: day (第0轮)
+⏱️ [夜晚阶段解决] 夜晚阶段解决完成: 1.01秒
+
+⏱️ 【夜晚阶段后检查胜负。】
+⏱️ [夜晚阶段后检查胜负。] 夜晚阶段后检查胜负。完成: 0.00秒
+
+⏱️ 【玩家开始辩论和投票。】
+⏱️ [阶段切换] 暂停1秒...
+⏱️ [切换暂停] 切换暂停完成: 1.00秒
+[RealtimeLogger] session_20251101_013732 [phase_change] 进入debate阶段
+[WebSocket] 阶段变更通知已发送: debate (第0轮)
+⏱️ [阶段通知] 阶段通知发送: 0.00秒
+本轮发言顺序: MiniMax-M1-80k, Kimi-Dev-72B, Ring-flash-2.0, Qwen3-32B, DeepSeek-V3.2
+[并发生成] 使用3线程并发生成发言内容...
+[批次 1/2] 并发生成: MiniMax-M1-80k, Kimi-Dev-72B, Ring-flash-2.0
+[LLM调用] 第1/3次尝试 | 模型: MiniMaxAI/MiniMax-M1-80k | 温度: 1.00
+[LLM调用] 第1/3次尝试 | 模型: siliconflow/moonshotai/Kimi-Dev-72B | 温度: 1.00
+[LLM调用] 第1/3次尝试 | 模型: inclusionAI/Ling-mini-2.0 | 温度: 1.00
+[LLM调用错误] 第1/3次失败: TypeError: 'NoneType' object is not subscriptable
+[错误详情] 这是一个LLM调用异常，不是JSON解析异常
+[LLM错误] 没有获取到任何响应内容
+[LLM调用] 第2/3次尝试 | 模型: MiniMaxAI/MiniMax-M1-80k | 温度: 1.00
+[LLM调用错误] 第1/3次失败: BadRequestError: Error code: 400 - {'code': 20012, 'message': 'Model does not exist. Please check it carefully.', 'data': None}
+[错误详情] 这是一个LLM调用异常，不是JSON解析异常
+[LLM错误] 没有获取到任何响应内容
+[LLM调用] 第2/3次尝试 | 模型: inclusionAI/Ling-mini-2.0 | 温度: 1.00
+[LLM调用错误] 第2/3次失败: TypeError: 'NoneType' object is not subscriptable
+[错误详情] 这是一个LLM调用异常，不是JSON解析异常
+[LLM错误] 没有获取到任何响应内容
+[LLM调用] 第3/3次尝试 | 模型: MiniMaxAI/MiniMax-M1-80k | 温度: 1.00
+[LLM调用错误] 第2/3次失败: BadRequestError: Error code: 400 - {'code': 20012, 'message': 'Model does not exist. Please check it carefully.', 'data': None}
+[错误详情] 这是一个LLM调用异常，不是JSON解析异常
+[LLM错误] 没有获取到任何响应内容
+[LLM调用] 第3/3次尝试 | 模型: inclusionAI/Ling-mini-2.0 | 温度: 1.00
+[LLM调用错误] 第3/3次失败: TypeError: 'NoneType' object is not subscriptable
+[错误详情] 这是一个LLM调用异常，不是JSON解析异常
+[LLM错误] 没有获取到任何响应内容
+[LLM失败] 所有3次重试均失败，返回None
+Warning: MiniMax-M1-80k did not return a valid dialogue, using default
+  ✓ MiniMax-M1-80k 发言生成完成 (13字)
+[LLM调用错误] 第3/3次失败: BadRequestError: Error code: 400 - {'code': 20012, 'message': 'Model does not exist. Please check it carefully.', 'data': None}
+[错误详情] 这是一个LLM调用异常，不是JSON解析异常
+[LLM错误] 没有获取到任何响应内容
+[LLM失败] 所有3次重试均失败，返回None
+Warning: Ring-flash-2.0 did not return a valid dialogue, using default
+INFO:     127.0.0.1:52219 - "GET /health HTTP/1.1" 200 OK
