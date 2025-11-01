@@ -18,6 +18,7 @@ from collections import Counter
 from concurrent.futures import ThreadPoolExecutor
 import random
 from typing import List, Optional, Callable, Dict, Any
+from datetime import datetime
 
 import tqdm
 import time
@@ -33,6 +34,26 @@ def get_max_bids(d):
   max_value = max(d.values())
   max_keys = [key for key, value in d.items() if value == max_value]
   return max_keys
+
+
+class Timer:
+  """简单的计时器类，用于性能统计"""
+  def __init__(self, name: str):
+    self.name = name
+    self.start_time = time.time()
+  
+  def elapsed(self) -> float:
+    """返回已经过的时间（秒）"""
+    return time.time() - self.start_time
+  
+  def log(self, message: str = ""):
+    """记录当前耗时"""
+    elapsed = self.elapsed()
+    if message:
+      tqdm.tqdm.write(f"⏱️ [{self.name}] {message}: {elapsed:.2f}秒")
+    else:
+      tqdm.tqdm.write(f"⏱️ [{self.name}] 耗时: {elapsed:.2f}秒")
+    return elapsed
 
 
 class GameMaster:
@@ -58,6 +79,13 @@ class GameMaster:
     self.logs: List[RoundLog] = []
     self.on_progress = on_progress
     self.should_stop = False  # 添加停止标志
+    
+    # 时间统计
+    self.timing_stats = {
+      "round_times": [],
+      "phase_times": {},
+      "action_times": []
+    }
 
     # 应用游戏模式延迟倍数
     self.delay_multiplier = apply_game_mode(game_mode)
@@ -78,8 +106,12 @@ class GameMaster:
 
   def eliminate(self):
     """Werewolves choose a player to eliminate."""
+    action_timer = Timer("狼人击杀")
+    
     # 添加夜间行动延迟（使用配置文件）
     delay = get_delay("night_action", self.delay_multiplier)
+    if delay > 0:
+      tqdm.tqdm.write(f"⏱️ [夜间延迟] 暂停{delay:.2f}秒")
     time.sleep(delay)
 
     werewolves_alive = [
@@ -92,6 +124,8 @@ class GameMaster:
     wolf = random.choice(werewolves_alive)
     eliminated, log = wolf.eliminate()
     self.this_round_log.eliminate = log
+    
+    action_timer.log(f"狼人 {wolf.name} 行动完成")
 
     # 如果返回None，选择一个默认目标
     if eliminated is None:
@@ -149,12 +183,18 @@ class GameMaster:
     if self.state.doctor.name not in self.this_round.players:
       return  # Doctor no longer in the game
 
+    action_timer = Timer("医生保护")
+    
     # 添加夜间行动延迟（使用配置文件）
     delay = get_delay("night_action", self.delay_multiplier)
+    if delay > 0:
+      tqdm.tqdm.write(f"⏱️ [夜间延迟] 暂停{delay:.2f}秒")
     time.sleep(delay)
 
     protect, log = self.state.doctor.save()
     self.this_round_log.protect = log
+    
+    action_timer.log(f"医生 {self.state.doctor.name} 行动完成")
 
     if protect is None:
       # 如果没有返回保护目标，随机选择一个
@@ -204,12 +244,18 @@ class GameMaster:
     if self.state.seer.name not in self.this_round.players:
       return  # Seer no longer in the game
 
+    action_timer = Timer("预言家查验")
+    
     # 添加夜间行动延迟（使用配置文件）
     delay = get_delay("night_action", self.delay_multiplier)
+    if delay > 0:
+      tqdm.tqdm.write(f"⏱️ [夜间延迟] 暂停{delay:.2f}秒")
     time.sleep(delay)
 
     unmask, log = self.state.seer.unmask()
     self.this_round_log.investigate = log
+    
+    action_timer.log(f"预言家 {self.state.seer.name} 行动完成")
 
     if unmask is None:
       # 如果没有返回调查目标，随机选择一个未调查过的玩家
@@ -338,6 +384,9 @@ class GameMaster:
 
   def run_summaries(self):
     """Collect summaries from players after the debate."""
+    
+    summary_timer = Timer("玩家总结")
+    tqdm.tqdm.write("⏱️ [玩家总结] 开始收集玩家总结...")
 
     with ThreadPoolExecutor(max_workers=self.num_threads) as executor:
       player_summaries = {
@@ -371,83 +420,157 @@ class GameMaster:
 
             # 添加总结延迟（使用配置文件）
             delay = get_delay("summary", self.delay_multiplier)
+            if delay > 0:
+              tqdm.tqdm.write(f"⏱️ [总结延迟] 暂停{delay:.2f}秒")
             time.sleep(delay)
 
         self._progress()
+    
+    summary_timer.log("玩家总结完成")
+
+  def _generate_speech(self, speaker_name: str):
+    """生成单个玩家的发言内容"""
+    player = self.state.players[speaker_name]
+    try:
+      dialogue, log = player.debate()
+      if dialogue is None:
+        # 如果发言为空，使用默认发言并记录警告
+        print(f"Warning: {speaker_name} did not return a valid dialogue, using default")
+        dialogue = f"我需要仔细观察并寻找线索。"
+        log = f"Default dialogue used due to empty response"
+    except Exception as e:
+      # 如果发言过程出错，使用默认发言并记录错误
+      import traceback
+      print(f"[辩论错误] 玩家 {speaker_name} 发言失败: {e}")
+      print(f"[辩论错误] 错误类型: {type(e).__name__}")
+      print(f"[辩论错误] 详细调用栈:")
+      traceback.print_exc()
+      dialogue = f"我需要仔细观察并寻找线索。"
+      log = f"Error: {str(e)}"
+    
+    return dialogue, log
 
   def run_day_phase(self):
-    """Run the day phase which consists of the debate and voting."""
+    """Run the day phase with concurrent speech generation but sequential delivery."""
+    
+    phase_timer = Timer("发言阶段")
 
     # 状态切换前暂停5秒
+    tqdm.tqdm.write("⏱️ [阶段切换] 暂停5秒...")
+    pause_timer = Timer("切换暂停")
     time.sleep(5)
+    pause_timer.log("切换暂停完成")
     
     # 发送白天/发言阶段通知
+    notify_timer = Timer("阶段通知")
     self._notify_phase_change(phase="debate", round_number=self.current_round_num)
+    notify_timer.log("阶段通知发送")
 
     # 改为每个存活玩家都发言一次（打乱顺序以增加随机性）
     speakers = self.this_round.players.copy()
     random.shuffle(speakers)  # 打乱发言顺序
     
     tqdm.tqdm.write(f"本轮发言顺序: {', '.join(speakers)}")
+    tqdm.tqdm.write(f"[并发生成] 使用3线程并发生成发言内容...")
 
-    for idx, next_speaker in enumerate(speakers):
-      if not next_speaker:
-        raise ValueError("发言者无效")
+    # 并发生成所有发言内容（分批处理，每批最多3个）
+    speeches = {}
+    speech_logs = {}
+    
+    generation_timer = Timer("发言生成")
+    batch_size = 3  # 每批3个玩家并发
+    for batch_start in range(0, len(speakers), batch_size):
+      batch_speakers = speakers[batch_start:batch_start+batch_size]
+      batch_num = batch_start // batch_size + 1
+      total_batches = (len(speakers) + batch_size - 1) // batch_size
+      
+      batch_timer = Timer(f"批次{batch_num}")
+      tqdm.tqdm.write(f"[批次 {batch_num}/{total_batches}] 并发生成: {', '.join(batch_speakers)}")
+      
+      with ThreadPoolExecutor(max_workers=3) as executor:
+        # 提交任务
+        futures = {
+          speaker: executor.submit(self._generate_speech, speaker)
+          for speaker in batch_speakers
+        }
+        
+        # 等待这一批全部完成
+        for speaker in batch_speakers:
+          dialogue, log = futures[speaker].result()
+          speeches[speaker] = dialogue
+          speech_logs[speaker] = log
+          tqdm.tqdm.write(f"  ✓ {speaker} 发言生成完成 ({len(dialogue)}字)")
+      
+      batch_timer.log(f"批次{batch_num}完成")
+    
+    generation_timer.log("所有发言生成完成")
+    tqdm.tqdm.write(f"[生成完成] 所有发言已生成，开始按顺序发送和展示...")
 
-      player = self.state.players[next_speaker]
-      try:
-        dialogue, log = player.debate()
-        if dialogue is None:
-          # 如果发言为空，使用默认发言并记录警告
-          print(f"Warning: {next_speaker} did not return a valid dialogue, using default")
-          dialogue = f"我需要仔细观察并寻找线索。"
-          log = f"Default dialogue used due to empty response"
-      except Exception as e:
-        # 如果发言过程出错，使用默认发言并记录错误
-        import traceback
-        print(f"[辩论错误] 玩家 {next_speaker} 发言失败: {e}")
-        print(f"[辩论错误] 错误类型: {type(e).__name__}")
-        print(f"[辩论错误] 详细调用栈:")
-        traceback.print_exc()
-        dialogue = f"我需要仔细观察并寻找线索。"
-        log = f"Error: {str(e)}"
-
-      self.this_round_log.debate.append((next_speaker, log))
-      self.this_round.debate.append([next_speaker, dialogue])
-      tqdm.tqdm.write(f"[{idx + 1}/{len(speakers)}] {next_speaker} ({player.role}): {dialogue}")
-
-      # 添加辩论延迟（使用配置文件）
-      delay = get_delay("debate", self.delay_multiplier)
-      time.sleep(delay)
-
-      # 发送 WebSocket 通知 - 辩论发言
+    # 按顺序发送和处理（保证顺序）
+    delivery_timer = Timer("发言发送")
+    total_pause_time = 0
+    
+    for idx, speaker in enumerate(speakers):
+      dialogue = speeches[speaker]
+      log = speech_logs[speaker]
+      
+      send_timer = Timer(f"发送-{speaker}")
+      
+      # 保存到游戏状态
+      self.this_round_log.debate.append((speaker, log))
+      self.this_round.debate.append([speaker, dialogue])
+      tqdm.tqdm.write(f"[{idx + 1}/{len(speakers)}] {speaker} ({self.state.players[speaker].role}): {dialogue}")
+      
+      # 发送 WebSocket 通知
       self._notify_debate_turn(
-        player_name=next_speaker,
+        player_name=speaker,
         dialogue=dialogue,
-        player_role=player.role,
+        player_role=self.state.players[speaker].role,
         turn_number=idx + 1
       )
-
+      
       # 更新其他玩家的游戏状态
       for name in self.this_round.players:
         player = self.state.players[name]
         if player.gamestate:
-          player.gamestate.update_debate(next_speaker, dialogue)
+          player.gamestate.update_debate(speaker, dialogue)
         else:
           raise ValueError(f"{name}.gamestate needs to be initialized.")
-
+      
       self._progress()
+      
+      send_elapsed = send_timer.log(f"{speaker}发送完成")
+      
+      # 计算暂停时间：每20个字1秒，最少1秒
+      char_count = len(dialogue)
+      pause_seconds = max(1.0, char_count / 20.0)
+      tqdm.tqdm.write(f"⏱️ [展示暂停] {char_count}字 → 暂停 {pause_seconds:.1f}秒")
+      time.sleep(pause_seconds)
+      total_pause_time += pause_seconds
+    
+    delivery_timer.log("所有发言发送完成")
+    tqdm.tqdm.write(f"⏱️ [发言暂停汇总] 总暂停时间: {total_pause_time:.1f}秒")
+    
+    phase_timer.log("发言阶段总耗时")
 
     # 所有人发言完毕后，进入投票阶段
     if True or RUN_SYNTHETIC_VOTES:
         # 进入投票阶段
         # 状态切换前暂停5秒
+        tqdm.tqdm.write("⏱️ [投票阶段] 切换暂停5秒...")
+        pause_timer = Timer("投票切换")
         time.sleep(5)
+        pause_timer.log("投票切换完成")
         
         # 发送投票阶段通知
+        notify_timer = Timer("投票通知")
         self._notify_phase_change(phase="voting", round_number=self.current_round_num)
+        notify_timer.log("投票通知发送")
         
+        voting_timer = Timer("投票阶段")
         votes, vote_logs = self.run_voting()
+        voting_timer.log("投票阶段完成")
+        
         self.this_round.votes.append(votes)
         self.this_round_log.votes.append(vote_logs)
         self._progress()
@@ -460,8 +583,10 @@ class GameMaster:
     vote_log = []
     votes = {}
 
+    tqdm.tqdm.write("⏱️ [投票] 开始顺序处理投票...")
     # 改为顺序处理投票，以便发送实时通知
     for player_name in self.this_round.players:
+      player_timer = Timer(f"投票-{player_name}")
       player = self.state.players[player_name]
       try:
         vote, log = player.vote()
@@ -487,6 +612,8 @@ class GameMaster:
           target=vote,
           voter_role=player.role
         )
+        
+        player_timer.log(f"{player_name}投票完成")
 
         # 添加投票延迟（使用配置文件）
         delay = get_delay("vote", self.delay_multiplier)
@@ -510,6 +637,8 @@ class GameMaster:
 
   def exile(self):
     """Exile the player who received the most votes."""
+    
+    exile_timer = Timer("放逐处理")
 
     most_voted, vote_count = Counter(
         self.this_round.votes[-1].values()
@@ -527,6 +656,8 @@ class GameMaster:
             f"大多数人投票淘汰了{exiled_player}。"
         )
 
+        tqdm.tqdm.write(f"⏱️ [放逐] {exiled_player} 被投票放逐")
+        
         # 发送放逐通知
         self._notify_player_exile(exiled_player, self.current_round_num)
 
@@ -549,6 +680,7 @@ class GameMaster:
       announcement = (
           "没有达到多数票，因此没有人被淘汰。"
       )
+      tqdm.tqdm.write("⏱️ [放逐] 无人被放逐（未达到多数票）")
       # 通知所有玩家
       for name in self.this_round.players:
         player = self.state.players.get(name)
@@ -556,6 +688,7 @@ class GameMaster:
           player.add_announcement(announcement)
 
     tqdm.tqdm.write(announcement)
+    exile_timer.log("放逐处理完成")
     self._progress()
 
   def resolve_night_phase(self):
@@ -606,6 +739,11 @@ class GameMaster:
 
   def run_round(self):
     """Run a single round of the game."""
+    round_timer = Timer(f"第{self.current_round_num}轮")
+    tqdm.tqdm.write(f"\n{'='*80}")
+    tqdm.tqdm.write(f"⏱️ 【第 {self.current_round_num} 轮开始】")
+    tqdm.tqdm.write(f"{'='*80}\n")
+    
     self.state.rounds.append(Round())
     self.logs.append(RoundLog())
 
@@ -616,11 +754,17 @@ class GameMaster:
     )
 
     # 状态切换前暂停5秒
+    tqdm.tqdm.write("⏱️ [夜晚开始] 切换暂停5秒...")
+    pause_timer = Timer("夜晚切换")
     time.sleep(5)
+    pause_timer.log("夜晚切换完成")
     
     # 发送夜晚阶段通知
+    notify_timer = Timer("夜晚通知")
     self._notify_phase_change(phase="night", round_number=self.current_round_num)
+    notify_timer.log("夜晚通知发送")
 
+    action_timers = {}
     for action, message in [
         (
             self.eliminate,
@@ -628,26 +772,53 @@ class GameMaster:
         ),
         (self.protect, "医生正在选择保护目标。"),
         (self.unmask, "预言家正在查验身份。"),
-        (self.resolve_night_phase, ""),
+        (self.resolve_night_phase, "夜晚阶段解决"),
         (self.check_for_winner, "夜晚阶段后检查胜负。"),
         (self.run_day_phase, "玩家开始辩论和投票。"),
-        (self.exile, ""),
+        (self.exile, "投票后放逐"),
         (self.check_for_winner, "白天阶段后检查胜负。"),
         (self.run_summaries, "玩家开始总结辩论。"),
     ]:
-      tqdm.tqdm.write(message)
+      if message:
+        tqdm.tqdm.write(f"\n⏱️ 【{message}】")
+        action_timer = Timer(message)
+      
       action()
+      
+      if message:
+        action_timers[message] = action_timer.elapsed()
+        action_timer.log(f"{message}完成")
+      
       # Save progress after each major action in the round
       self._progress()
 
       if self.state.winner:
-        tqdm.tqdm.write(f"第{self.current_round_num}轮结束。")
+        tqdm.tqdm.write(f"\n⏱️ 第{self.current_round_num}轮结束（游戏结束）")
         self.this_round.success = True
+        round_timer.log(f"第{self.current_round_num}轮总耗时")
+        self._print_round_summary(action_timers, round_timer.elapsed())
         return
 
-    tqdm.tqdm.write(f"第{self.current_round_num}轮结束。")
+    tqdm.tqdm.write(f"\n⏱️ 第{self.current_round_num}轮结束")
     self.this_round.success = True
     self._progress()
+    
+    total_time = round_timer.log(f"第{self.current_round_num}轮总耗时")
+    self._print_round_summary(action_timers, total_time)
+  
+  def _print_round_summary(self, action_timers: dict, total_time: float):
+    """打印本轮时间统计摘要"""
+    tqdm.tqdm.write(f"\n{'='*80}")
+    tqdm.tqdm.write(f"📊 【第 {self.current_round_num} 轮时间统计】")
+    tqdm.tqdm.write(f"{'='*80}")
+    
+    for action, elapsed in action_timers.items():
+      percentage = (elapsed / total_time * 100) if total_time > 0 else 0
+      tqdm.tqdm.write(f"  {action:30s}: {elapsed:6.2f}秒 ({percentage:5.1f}%)")
+    
+    tqdm.tqdm.write(f"{'─'*80}")
+    tqdm.tqdm.write(f"  {'总耗时':30s}: {total_time:6.2f}秒 (100.0%)")
+    tqdm.tqdm.write(f"{'='*80}\n")
 
   def get_winner(self) -> str:
     """Determine the winner of the game."""
@@ -717,8 +888,10 @@ class GameMaster:
         future.result(timeout=1.0)
       except concurrent.futures.TimeoutError:
         print(f"[WebSocket警告] 夜间行动通知发送超时")
+      except Exception as e:
+        print(f"[WebSocket错误] 夜间行动通知异常: {e}")
       finally:
-        executor.shutdown(wait=False)
+        executor.shutdown(wait=True)  # 等待任务完成后再关闭
 
     except Exception as e:
       print(f"[WebSocket错误] 夜间行动通知失败: {e}")
@@ -754,8 +927,10 @@ class GameMaster:
         future.result(timeout=1.0)
       except concurrent.futures.TimeoutError:
         print(f"[WebSocket警告] 辩论发言通知发送超时")
+      except Exception as e:
+        print(f"[WebSocket错误] 辩论发言通知异常: {e}")
       finally:
-        executor.shutdown(wait=False)
+        executor.shutdown(wait=True)  # 等待任务完成后再关闭
 
     except Exception as e:
       print(f"[WebSocket错误] 辩论发言通知失败: {e}")
@@ -791,8 +966,10 @@ class GameMaster:
         future.result(timeout=1.0)
       except concurrent.futures.TimeoutError:
         print(f"[WebSocket警告] 投票通知发送超时")
+      except Exception as e:
+        print(f"[WebSocket错误] 投票通知异常: {e}")
       finally:
-        executor.shutdown(wait=False)
+        executor.shutdown(wait=True)  # 等待任务完成后再关闭
 
     except Exception as e:
       print(f"[WebSocket错误] 投票通知失败: {e}")
@@ -827,8 +1004,10 @@ class GameMaster:
         future.result(timeout=1.0)
       except concurrent.futures.TimeoutError:
         print(f"[WebSocket警告] 阶段变更通知发送超时: {phase}")
+      except Exception as e:
+        print(f"[WebSocket错误] 阶段变更通知异常: {e}")
       finally:
-        executor.shutdown(wait=False)
+        executor.shutdown(wait=True)  # 等待任务完成后再关闭
 
     except Exception as e:
       print(f"[WebSocket错误] 阶段变更通知失败: {e}")
@@ -863,8 +1042,10 @@ class GameMaster:
         future.result(timeout=1.0)
       except concurrent.futures.TimeoutError:
         print(f"[WebSocket警告] 玩家放逐通知发送超时: {exiled_player}")
+      except Exception as e:
+        print(f"[WebSocket错误] 玩家放逐通知异常: {e}")
       finally:
-        executor.shutdown(wait=False)
+        executor.shutdown(wait=True)  # 等待任务完成后再关闭
 
     except Exception as e:
       print(f"[WebSocket错误] 玩家放逐通知失败: {e}")
@@ -900,8 +1081,10 @@ class GameMaster:
         future.result(timeout=1.0)
       except concurrent.futures.TimeoutError:
         print(f"[WebSocket警告] 玩家总结通知发送超时: {player_name}")
+      except Exception as e:
+        print(f"[WebSocket错误] 玩家总结通知异常: {e}")
       finally:
-        executor.shutdown(wait=False)
+        executor.shutdown(wait=True)  # 等待任务完成后再关闭
 
     except Exception as e:
       print(f"[WebSocket错误] 玩家总结通知失败: {e}")
@@ -946,8 +1129,10 @@ class GameMaster:
         future.result(timeout=1.0)
       except concurrent.futures.TimeoutError:
         print(f"[WebSocket警告] 游戏结束通知发送超时")
+      except Exception as e:
+        print(f"[WebSocket错误] 游戏结束通知异常: {e}")
       finally:
-        executor.shutdown(wait=False)
+        executor.shutdown(wait=True)  # 等待任务完成后再关闭
 
     except Exception as e:
       print(f"[WebSocket错误] 游戏结束通知失败: {e}")
