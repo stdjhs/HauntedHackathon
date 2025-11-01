@@ -79,6 +79,8 @@ export default function LiveGamePage() {
   // when it receives messages from the server
 
   const handleBackToHome = () => {
+    // Clear the redirect flag to prevent auto-redirect
+    sessionStorage.removeItem('shouldRedirectToGame');
     router.push('/');
   };
 

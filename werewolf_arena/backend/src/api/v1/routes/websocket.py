@@ -100,15 +100,21 @@ class ConnectionManager:
         }
         await self.broadcast_to_session(json.dumps(message), session_id)
 
-    async def broadcast_log(self, session_id: str, log_entry: dict):
-        """Broadcast log entry to all connections in a session"""
+    async def broadcast_game_complete_v2(self, session_id: str, winner: str, winner_name: str, players_info: dict, round_number: int):
+        """Broadcast game completion with player roles to all connections in a session"""
         message = {
-            "type": "log_update",
-            "data": log_entry,
+            "type": "game_complete",
+            "data": {
+                "winner": winner,
+                "winner_name": winner_name,
+                "players_info": players_info,
+                "round_number": round_number
+            },
             "timestamp": datetime.now().isoformat()
         }
         await self.broadcast_to_session(json.dumps(message), session_id)
 
+    
     async def broadcast_player_action(self, session_id: str, action_event):
         """Broadcast player action with sequence number"""
         message = {
@@ -177,6 +183,35 @@ class ConnectionManager:
         }
         await self.broadcast_to_session(json.dumps(message), session_id)
 
+    async def broadcast_player_exile(self, session_id: str, exiled_player: str, round_number: int, sequence_number: Optional[int] = None):
+        """Broadcast player exile"""
+        message = {
+            "type": "player_exile",
+            "data": {
+                "sequence_number": sequence_number,
+                "exiled_player": exiled_player,
+                "round_number": round_number,
+                "timestamp": datetime.now().isoformat()
+            },
+            "timestamp": datetime.now().isoformat()
+        }
+        await self.broadcast_to_session(json.dumps(message), session_id)
+
+    async def broadcast_player_summary(self, session_id: str, player_name: str, summary: str, round_number: int, sequence_number: Optional[int] = None):
+        """Broadcast player summary"""
+        message = {
+            "type": "player_summary",
+            "data": {
+                "sequence_number": sequence_number,
+                "player_name": player_name,
+                "summary": summary,
+                "round_number": round_number,
+                "timestamp": datetime.now().isoformat()
+            },
+            "timestamp": datetime.now().isoformat()
+        }
+        await self.broadcast_to_session(json.dumps(message), session_id)
+
     def get_connection_count(self, session_id: str) -> int:
         """Get number of active connections for a session"""
         return len(self.active_connections.get(session_id, []))
@@ -188,14 +223,6 @@ manager = ConnectionManager()
 async def websocket_endpoint(websocket: WebSocket, session_id: str):
     """WebSocket endpoint for real-time game updates"""
     await manager.connect(websocket, session_id)
-
-    # 创建日志回调函数
-    async def log_callback(log_entry):
-        """当有新日志时，通过WebSocket推送"""
-        await manager.broadcast_log(session_id, log_entry.to_dict())
-
-    # 订阅日志更新
-    realtime_logger.subscribe(session_id, log_callback)
 
     try:
         # Send initial connection confirmation
@@ -293,15 +320,11 @@ async def websocket_endpoint(websocket: WebSocket, session_id: str):
                 }), websocket)
 
     except WebSocketDisconnect:
-        # 取消订阅日志
-        realtime_logger.unsubscribe(session_id, log_callback)
         manager.disconnect(websocket, session_id)
         print(f"WebSocket disconnected for session {session_id}")
 
     except Exception as e:
         print(f"WebSocket error for session {session_id}: {e}")
-        # 取消订阅日志
-        realtime_logger.unsubscribe(session_id, log_callback)
         manager.disconnect(websocket, session_id)
 
 # Helper functions to be used by other parts of the application
@@ -313,9 +336,14 @@ async def notify_round_complete(session_id: str, round_data: dict, next_phase: d
     """Notify all clients about round completion"""
     await manager.broadcast_round_complete(session_id, round_data, next_phase)
 
-async def notify_game_complete(session_id: str, winner: str, final_round: dict, game_state: dict):
+async def notify_game_complete(session_id: str, winner: str, winner_name: str = None, players_info: dict = None, round_number: int = 0, final_round: dict = None, game_state: dict = None):
     """Notify all clients about game completion"""
-    await manager.broadcast_game_complete(session_id, winner, final_round, game_state)
+    # 如果提供了新参数，使用新格式
+    if winner_name and players_info is not None:
+        await manager.broadcast_game_complete_v2(session_id, winner, winner_name, players_info, round_number)
+    else:
+        # 兼容旧格式
+        await manager.broadcast_game_complete(session_id, winner, final_round or {}, game_state or {})
 
 async def notify_player_action(session_id: str, action_type: ActionType, player_name: str, player_role: str, target_name: Optional[str] = None, details: Optional[Dict[str, Any]] = None):
     """Notify all clients about a player action with sequence"""
@@ -378,6 +406,18 @@ async def notify_phase_change(session_id: str, phase: str, round_number: int):
 
     return sequence_number
 
+async def notify_player_exile(session_id: str, exiled_player: str, round_number: int):
+    """Notify all clients about player exile"""
+    sequence_number = sequence_manager.get_next_sequence(session_id)
+    await manager.broadcast_player_exile(session_id, exiled_player, round_number, sequence_number)
+    return sequence_number
+
+async def notify_player_summary(session_id: str, player_name: str, summary: str, round_number: int):
+    """Notify all clients about player summary"""
+    sequence_number = sequence_manager.get_next_sequence(session_id)
+    await manager.broadcast_player_summary(session_id, player_name, summary, round_number, sequence_number)
+    return sequence_number
+
 def get_active_connections_count(session_id: str) -> int:
     """Get number of active connections for a session"""
     return manager.get_connection_count(session_id)
@@ -392,5 +432,7 @@ __all__ = [
     'notify_vote_cast',
     'notify_night_action',
     'notify_phase_change',
+    'notify_player_exile',
+    'notify_player_summary',
     'get_active_connections_count'
 ]
