@@ -35,6 +35,8 @@ const LiveGamePage = () => {
   const [wsConnection, setWsConnection] = useState<WebSocket | null>(null);
   const [nightActions, setNightActions] = useState<Array<{player: string, action: string, target?: string}>>([]);
   const [voteRecords, setVoteRecords] = useState<Array<{voter: string, target: string}>>([]);
+  const [exiledPlayer, setExiledPlayer] = useState<string>("");
+  const [playerSummaries, setPlayerSummaries] = useState<Array<{player: string, summary: string}>>([]);
 
   // 初始化WebSocket连接
   useEffect(() => {
@@ -127,6 +129,14 @@ const LiveGamePage = () => {
           console.log(`[WebSocket] 处理夜晚行动:`, messageData);
           handleNightAction(messageData);
           break;
+        case "player_exile":
+          console.log(`[WebSocket] 处理玩家放逐:`, messageData);
+          handlePlayerExile(messageData);
+          break;
+        case "player_summary":
+          console.log(`[WebSocket] 处理玩家总结:`, messageData);
+          handlePlayerSummary(messageData);
+          break;
         case "game_update":
           console.log(`[WebSocket] 处理游戏更新:`, messageData);
           handleGameUpdate(messageData);
@@ -145,16 +155,16 @@ const LiveGamePage = () => {
     console.log(`[阶段变更] 阶段: ${phase}, 轮数: ${round_number}`);
     setCurrentRound(round_number);
 
-    // 重置发言者状态（除非是发言阶段）
+    // 重置发言者状态（非发言阶段清空，发言阶段保持等待状态）
     if (phase !== "debate") {
       console.log(`[阶段变更] 重置发言者状态，因为不是发言阶段`);
       setCurrentSpeaker(-1); // 设置为-1表示没有活跃发言者
       setCurrentSpeakerName("等待发言");
       setCurrentSpeech("");
     } else {
-      console.log(`[阶段变更] 进入发言阶段，等待发言`);
-      setCurrentSpeakerName("等待发言");
-      setCurrentSpeech("");
+      console.log(`[阶段变更] 进入发言阶段，清空上轮发言者但不清空内容（等待新发言覆盖）`);
+      setCurrentSpeaker(-1);
+      // 注意：不清空 currentSpeech，等待第一个 debate_turn 消息到来时自然覆盖
     }
 
     // 如果从夜晚阶段切换到白天阶段，清空夜晚行动记录
@@ -351,6 +361,37 @@ const LiveGamePage = () => {
     });
   };
 
+  // 处理玩家放逐
+  const handlePlayerExile = (data: any) => {
+    console.log(`[玩家放逐] 收到放逐消息:`, data);
+    const { exiled_player } = data;
+    setExiledPlayer(exiled_player);
+    // 清空总结列表，准备接收新的总结
+    setPlayerSummaries([]);
+  };
+
+  // 处理玩家总结
+  const handlePlayerSummary = (data: any) => {
+    console.log(`[玩家总结] 收到总结消息:`, data);
+    const { player_name, summary } = data;
+    
+    setPlayerSummaries(prev => {
+      // 检查是否已存在该玩家的总结
+      const isDuplicate = prev.some(s => s.player === player_name);
+      
+      if (isDuplicate) {
+        console.warn(`[玩家总结去重] 检测到重复总结，已过滤: ${player_name}`);
+        return prev;
+      }
+      
+      // 添加新总结
+      return [...prev, {
+        player: player_name,
+        summary: summary
+      }];
+    });
+  };
+
   // 处理游戏更新
   const handleGameUpdate = (data: any) => {
     console.log(`[游戏更新] 🎮 收到game_update消息`);
@@ -475,20 +516,7 @@ const LiveGamePage = () => {
             </Button>
             <div className="h-6 w-px bg-slate-700" />
             <span className="text-xl font-bold text-amber-400">
-              AI狼人杀直播 - {sessionId}
-            </span>
-            <Badge variant="outline" className="bg-red-500/20 border-red-500 text-red-400">
-              <div className="w-2 h-2 rounded-full bg-red-500 mr-2 animate-pulse" />
-              {wsConnection ? "连接中" : "未连接"}
-            </Badge>
-          </div>
-
-          <div className="flex items-center gap-3">
-            <Badge variant="outline" className="text-sm text-amber-400 border-amber-400/30">
-              {godMode === "outside" ? "🔍 场外上帝" : "👁️ 场内上帝"}
-            </Badge>
-            <span className="text-xs text-slate-400 flex items-center gap-1">
-              {gamePhaseIcon} 第{currentRound}轮 - {gamePhaseType}
+              AI狼人杀直播
             </span>
           </div>
         </div>

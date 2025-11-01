@@ -305,5 +305,21 @@ async def _notify_phase_change(session_id: str, phase: str, round_number: int):
     except Exception as e:
         print(f"Failed to send phase change notification: {e}")
 
+async def _notify_player_exile(session_id: str, exiled_player: str, round_number: int):
+    """发送玩家放逐通知"""
+    try:
+        from src.api.v1.routes.websocket import notify_player_exile
+        await notify_player_exile(session_id, exiled_player, round_number)
+    except Exception as e:
+        print(f"Failed to send player exile notification: {e}")
+
+async def _notify_player_summary(session_id: str, player_name: str, summary: str, round_number: int):
+    """发送玩家总结通知"""
+    try:
+        from src.api.v1.routes.websocket import notify_player_summary
+        await notify_player_summary(session_id, player_name, summary, round_number)
+    except Exception as e:
+        print(f"Failed to send player summary notification: {e}")
+
 # 全局实例
 game_manager = GameSessionManager()

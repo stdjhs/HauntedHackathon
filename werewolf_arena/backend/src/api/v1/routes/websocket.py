@@ -169,6 +169,35 @@ class ConnectionManager:
         }
         await self.broadcast_to_session(json.dumps(message), session_id)
 
+    async def broadcast_player_exile(self, session_id: str, exiled_player: str, round_number: int, sequence_number: Optional[int] = None):
+        """Broadcast player exile"""
+        message = {
+            "type": "player_exile",
+            "data": {
+                "sequence_number": sequence_number,
+                "exiled_player": exiled_player,
+                "round_number": round_number,
+                "timestamp": datetime.now().isoformat()
+            },
+            "timestamp": datetime.now().isoformat()
+        }
+        await self.broadcast_to_session(json.dumps(message), session_id)
+
+    async def broadcast_player_summary(self, session_id: str, player_name: str, summary: str, round_number: int, sequence_number: Optional[int] = None):
+        """Broadcast player summary"""
+        message = {
+            "type": "player_summary",
+            "data": {
+                "sequence_number": sequence_number,
+                "player_name": player_name,
+                "summary": summary,
+                "round_number": round_number,
+                "timestamp": datetime.now().isoformat()
+            },
+            "timestamp": datetime.now().isoformat()
+        }
+        await self.broadcast_to_session(json.dumps(message), session_id)
+
     def get_connection_count(self, session_id: str) -> int:
         """Get number of active connections for a session"""
         return len(self.active_connections.get(session_id, []))
@@ -358,6 +387,18 @@ async def notify_phase_change(session_id: str, phase: str, round_number: int):
 
     return sequence_number
 
+async def notify_player_exile(session_id: str, exiled_player: str, round_number: int):
+    """Notify all clients about player exile"""
+    sequence_number = sequence_manager.get_next_sequence(session_id)
+    await manager.broadcast_player_exile(session_id, exiled_player, round_number, sequence_number)
+    return sequence_number
+
+async def notify_player_summary(session_id: str, player_name: str, summary: str, round_number: int):
+    """Notify all clients about player summary"""
+    sequence_number = sequence_manager.get_next_sequence(session_id)
+    await manager.broadcast_player_summary(session_id, player_name, summary, round_number, sequence_number)
+    return sequence_number
+
 def get_active_connections_count(session_id: str) -> int:
     """Get number of active connections for a session"""
     return manager.get_connection_count(session_id)
@@ -372,5 +413,7 @@ __all__ = [
     'notify_vote_cast',
     'notify_night_action',
     'notify_phase_change',
+    'notify_player_exile',
+    'notify_player_summary',
     'get_active_connections_count'
 ]

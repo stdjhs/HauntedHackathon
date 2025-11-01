@@ -6469,3 +6469,1095 @@ INFO:     127.0.0.1:52775 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:52848 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:52922 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:53081 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53136 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53168 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53229 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53318 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53434 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53504 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53538 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53598 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53643 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53672 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53761 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53825 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53928 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53995 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54099 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54150 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54181 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54270 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54329 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54384 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54438 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54534 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54627 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54719 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54812 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54847 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54921 - "GET /health HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'src/api/v1/routes/websocket.py'. Reloading...
+INFO:     Shutting down
+INFO:     connection closed
+INFO:     connection closed
+INFO:     connection closed
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [37168]
+WebSocket disconnected for session session_20251031_231506. Remaining connections: 1
+WebSocket disconnected for session session_20251031_231506
+WebSocket disconnected for session session_20251031_230246. Remaining connections: 0
+WebSocket disconnected for session session_20251031_230246
+WebSocket disconnected for session session_20251031_231506. Remaining connections: 0
+WebSocket disconnected for session session_20251031_231506
+🛑 Shutting down Werewolf Arena API...
+[LLM响应] 成功获取响应，长度: 148 字符
+[LLM原始响应开始]
+{
+"reasoning": "当前是游戏的初始阶段，Kimi-72B 提到了昨晚的情况，但没有明确指出谁是狼人。作为村民，我需要谨慎发言以避免过早暴露身份。现在最重要的是倾听其他玩家的发言并观察他们的行为模式，从而更好地判断谁可能是狼人。因此，我选择先观察和聆听。",
+"bid": "0"
+}
+[LLM原始响应结束]
+[JSON解析] 开始解析响应...
+[JSON解析] 开始解析，输入文本长度: 148 字符
+[JSON解析] 输入文本预览: {
+"reasoning": "当前是游戏的初始阶段，Kimi-72B 提到了昨晚的情况，但没有明确指出谁是狼人。作为村民，我需要谨慎发言以避免过早暴露身份。现在最重要的是倾听其他玩家的发言并观察他们...
+[语言清理] 开始清理混合语言响应...
+[语言清理] 策略2成功：提取到完整JSON对象
+[JSON解析] 尝试从markdown中解析JSON...
+[Markdown解析] 开始解析markdown文本...
+[Markdown解析] AST解析成功，子元素数量: 1
+[Markdown解析] 开始遍历AST子元素...
+[Markdown解析] 处理第0个子元素，类型: <class 'marko.block.Paragraph'>
+[Markdown解析] 子元素不是代码块，类型: <class 'marko.block.Paragraph'>
+[Markdown调试] 子元素属性: ['__annotations__', '__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_prefix', '_tight', 'break_paragraph', 'children', 'get_type', 'inline_body', 'is_setext_heading', 'match', 'override', 'parse', 'pattern', 'priority', 'virtual']
+[Markdown解析] 没有找到有效的JSON代码块
+[JSON解析] markdown解析结果: None
+[JSON解析] markdown解析失败，尝试直接解析JSON字符串...
+[JSON字符串解析] 开始解析，输入文本: '{
+"reasoning": "当前是游戏的初始阶段，Kimi-72B 提到了昨晚的情况，但没有明确指出谁是狼人。作为村民，我需要谨慎发言以避免过早暴露身份。现在最重要的是倾听其他玩家的发言并观察他们的行为模式，从而更好地判断谁可能是狼人。因此，我选择先观察和聆听。",
+"bid": "0"
+}'
+[JSON字符串解析] 文本长度: 148 字符
+[JSON字符串解析] 使用yaml.safe_load解析...
+[JSON字符串解析] yaml.safe_load成功，结果类型: <class 'dict'>, 内容: {'reasoning': '当前是游戏的初始阶段，Kimi-72B 提到了昨晚的情况，但没有明确指出谁是狼人。作为村民，我需要谨慎发言以避免过早暴露身份。现在最重要的是倾听其他玩家的发言并观察他们的行为模式，从而更好地判断谁可能是狼人。因此，我选择先观察和聆听。', 'bid': '0'}
+[JSON字符串解析] 解析完成，返回: {'reasoning': '当前是游戏的初始阶段，Kimi-72B 提到了昨晚的情况，但没有明确指出谁是狼人。作为村民，我需要谨慎发言以避免过早暴露身份。现在最重要的是倾听其他玩家的发言并观察他们的行为模式，从而更好地判断谁可能是狼人。因此，我选择先观察和聆听。', 'bid': '0'}
+[JSON解析] 直接解析结果: {'reasoning': '当前是游戏的初始阶段，Kimi-72B 提到了昨晚的情况，但没有明确指出谁是狼人。作为村民，我需要谨慎发言以避免过早暴露身份。现在最重要的是倾听其他玩家的发言并观察他们的行为模式，从而更好地判断谁可能是狼人。因此，我选择先观察和聆听。', 'bid': '0'}
+[JSON解析] 最终结果: {'reasoning': '当前是游戏的初始阶段，Kimi-72B 提到了昨晚的情况，但没有明确指出谁是狼人。作为村民，我需要谨慎发言以避免过早暴露身份。现在最重要的是倾听其他玩家的发言并观察他们的行为模式，从而更好地判断谁可能是狼人。因此，我选择先观察和聆听。', 'bid': '0'}
+[JSON解析] 解析完成，结果类型: <class 'dict'>, 内容: {'reasoning': '当前是游戏的初始阶段，Kimi-72B 提到了昨晚的情况，但没有明确指出谁是狼人。作为村民，我需要谨慎发言以避免过早暴露身份。现在最重要的是倾听其他玩家的发言并观察他们的行为模式，从而更好地判断谁可能是狼人。因此，我选择先观察和聆听。', 'bid': '0'}
+[LLM结果] 提取键 'bid': 0
+[LLM成功] 返回有效结果: 0
+WARNING:  WatchFiles detected changes in 'src/api/v1/routes/websocket.py', 'src/core/game/game_master.py', 'src/services/game_manager/session_manager.py'. Reloading...
+INFO:     Started server process [38819]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+✅ 已加载延迟配置: /Users/admin/Project/HauntedHackathon/werewolf_arena/backend/src/config/timing_config.yaml
+📊 Sequence Manager initialized
+🚀 Starting Werewolf Arena API...
+📝 Environment: development
+🔧 Debug mode: False
+🤖 LLM Providers Health: {'glm': True, 'minimax': True, 'siliconflow': True}
+✅ Global LLM client initialized successfully
+🎮 Ready to start games!
+INFO:     127.0.0.1:54979 - "GET /health HTTP/1.1" 200 OK
+INFO:     ('127.0.0.1', 55728) - "WebSocket /ws/session_20251031_231506" [accepted]
+INFO:     connection open
+INFO:     ('127.0.0.1', 56105) - "WebSocket /ws/session_20251031_231506" [accepted]
+INFO:     connection open
+WARNING:  WatchFiles detected changes in 'src/api/v1/routes/websocket.py', 'src/core/game/game_master.py', 'src/services/game_manager/session_manager.py'. Reloading...
+INFO:     Shutting down
+INFO:     connection closed
+INFO:     connection closed
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [38819]
+WebSocket connected for session session_20251031_231506. Total connections: 1
+WebSocket connected for session session_20251031_231506. Total connections: 2
+WebSocket disconnected for session session_20251031_231506. Remaining connections: 1
+WebSocket disconnected for session session_20251031_231506
+WebSocket disconnected for session session_20251031_231506. Remaining connections: 0
+WebSocket disconnected for session session_20251031_231506
+🛑 Shutting down Werewolf Arena API...
+INFO:     Started server process [38835]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+✅ 已加载延迟配置: /Users/admin/Project/HauntedHackathon/werewolf_arena/backend/src/config/timing_config.yaml
+📊 Sequence Manager initialized
+🚀 Starting Werewolf Arena API...
+📝 Environment: development
+🔧 Debug mode: False
+🤖 LLM Providers Health: {'glm': True, 'minimax': True, 'siliconflow': True}
+✅ Global LLM client initialized successfully
+🎮 Ready to start games!
+INFO:     127.0.0.1:56194 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56398 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56461 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56468 - "OPTIONS /api/v1/games/start HTTP/1.1" 200 OK
+创建新游戏：6个玩家，每个玩家使用不同的模型
+玩家列表：['MiniMax-M1-80k', 'GLM-4.6', 'Qwen3-32B', 'DeepSeek-V3.2', 'Kimi-Dev-72B', 'Ring-flash-2.0']
+预言家 DeepSeek-V3.2 -> siliconflow/deepseek-ai/DeepSeek-V3.2-Exp
+医生 Qwen3-32B -> siliconflow/Qwen/Qwen3-32B
+狼人 Kimi-Dev-72B -> siliconflow/moonshotai/Kimi-Dev-72B
+村民 MiniMax-M1-80k -> MiniMaxAI/MiniMax-M1-80k
+村民 GLM-4.6 -> siliconflow/zai-org/GLM-4.6
+村民 Ring-flash-2.0 -> inclusionAI/Ring-flash-2.0
+🎮 应用游戏模式 normal，延迟倍数: 1.0x
+🎮 游戏模式: normal (延迟倍数: 1.0x)
+INFO:     127.0.0.1:56468 - "POST /api/v1/games/start HTTP/1.1" 201 Created
+INFO:     ('127.0.0.1', 56470) - "WebSocket /ws/session_20251031_232732" [accepted]
+INFO:     connection open
+INFO:     ('127.0.0.1', 56472) - "WebSocket /ws/session_20251031_232732" [accepted]
+INFO:     connection open
+STARTING ROUND: 0
+[RealtimeLogger] Initialized session session_20251031_232732, log file: logs/session_20251031_232732/realtime_logs.jsonl
+[RealtimeLogger] session_20251031_232732 [phase_change] 进入night阶段
+[WebSocket] 阶段变更通知已发送: night (第0轮)
+狼人正在选择淘汰目标。
+WebSocket connected for session session_20251031_232732. Total connections: 1
+WebSocket connected for session session_20251031_232732. Total connections: 2
+[LLM调用] 第1/3次尝试 | 模型: siliconflow/moonshotai/Kimi-Dev-72B | 温度: 0.50
+[LLM响应] 成功获取响应，长度: 104 字符
+[LLM原始响应开始]
+{
+"reasoning": "我是狼人，现在只剩下我一个狼人了。由于没有可用信息，我需要随机选择一个玩家进行淘汰。我将从剩余的玩家中随机挑选一个。",
+"remove": "DeepSeek-V3.2"
+}
+[LLM原始响应结束]
+[JSON解析] 开始解析响应...
+[JSON解析] 开始解析，输入文本长度: 104 字符
+[JSON解析] 输入文本预览: {
+"reasoning": "我是狼人，现在只剩下我一个狼人了。由于没有可用信息，我需要随机选择一个玩家进行淘汰。我将从剩余的玩家中随机挑选一个。",
+"remove": "DeepSeek-V3....
+[语言清理] 开始清理混合语言响应...
+[语言清理] 策略2成功：提取到完整JSON对象
+[JSON解析] 尝试从markdown中解析JSON...
+[Markdown解析] 开始解析markdown文本...
+[Markdown解析] AST解析成功，子元素数量: 1
+[Markdown解析] 开始遍历AST子元素...
+[Markdown解析] 处理第0个子元素，类型: <class 'marko.block.Paragraph'>
+[Markdown解析] 子元素不是代码块，类型: <class 'marko.block.Paragraph'>
+[Markdown调试] 子元素属性: ['__annotations__', '__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_prefix', '_tight', 'break_paragraph', 'children', 'get_type', 'inline_body', 'is_setext_heading', 'match', 'override', 'parse', 'pattern', 'priority', 'virtual']
+[Markdown解析] 没有找到有效的JSON代码块
+[JSON解析] markdown解析结果: None
+[JSON解析] markdown解析失败，尝试直接解析JSON字符串...
+[JSON字符串解析] 开始解析，输入文本: '{
+"reasoning": "我是狼人，现在只剩下我一个狼人了。由于没有可用信息，我需要随机选择一个玩家进行淘汰。我将从剩余的玩家中随机挑选一个。",
+"remove": "DeepSeek-V3.2"
+}'
+[JSON字符串解析] 文本长度: 104 字符
+[JSON字符串解析] 使用yaml.safe_load解析...
+[JSON字符串解析] yaml.safe_load成功，结果类型: <class 'dict'>, 内容: {'reasoning': '我是狼人，现在只剩下我一个狼人了。由于没有可用信息，我需要随机选择一个玩家进行淘汰。我将从剩余的玩家中随机挑选一个。', 'remove': 'DeepSeek-V3.2'}
+[JSON字符串解析] 解析完成，返回: {'reasoning': '我是狼人，现在只剩下我一个狼人了。由于没有可用信息，我需要随机选择一个玩家进行淘汰。我将从剩余的玩家中随机挑选一个。', 'remove': 'DeepSeek-V3.2'}
+[JSON解析] 直接解析结果: {'reasoning': '我是狼人，现在只剩下我一个狼人了。由于没有可用信息，我需要随机选择一个玩家进行淘汰。我将从剩余的玩家中随机挑选一个。', 'remove': 'DeepSeek-V3.2'}
+[JSON解析] 最终结果: {'reasoning': '我是狼人，现在只剩下我一个狼人了。由于没有可用信息，我需要随机选择一个玩家进行淘汰。我将从剩余的玩家中随机挑选一个。', 'remove': 'DeepSeek-V3.2'}
+[JSON解析] 解析完成，结果类型: <class 'dict'>, 内容: {'reasoning': '我是狼人，现在只剩下我一个狼人了。由于没有可用信息，我需要随机选择一个玩家进行淘汰。我将从剩余的玩家中随机挑选一个。', 'remove': 'DeepSeek-V3.2'}
+[LLM结果] 提取键 'remove': DeepSeek-V3.2
+[LLM成功] 返回有效结果: DeepSeek-V3.2
+Kimi-Dev-72B eliminated DeepSeek-V3.2
+[WebSocket] 夜间行动通知已发送: night_eliminate by Kimi-Dev-72B
+医生正在选择保护目标。
+[LLM调用] 第1/3次尝试 | 模型: siliconflow/Qwen/Qwen3-32B | 温度: 0.50
+[LLM响应] 成功获取响应，长度: 146 字符
+[LLM原始响应开始]
+{
+"reasoning": "在游戏刚开始的第一轮夜晚阶段，所有玩家都没有发言或行动记录，因此无法判断谁更可能是狼人。在这种情况下，我作为医生需要随机选择一个玩家进行保护。经过随机选择，我决定保护MiniMax-M1-80k。",
+"protect": "MiniMax-M1-80k"
+}
+[LLM原始响应结束]
+[JSON解析] 开始解析响应...
+[JSON解析] 开始解析，输入文本长度: 146 字符
+[JSON解析] 输入文本预览: {
+"reasoning": "在游戏刚开始的第一轮夜晚阶段，所有玩家都没有发言或行动记录，因此无法判断谁更可能是狼人。在这种情况下，我作为医生需要随机选择一个玩家进行保护。经过随机选择，我决定保护M...
+[语言清理] 开始清理混合语言响应...
+[语言清理] 策略2成功：提取到完整JSON对象
+[JSON解析] 尝试从markdown中解析JSON...
+[Markdown解析] 开始解析markdown文本...
+[Markdown解析] AST解析成功，子元素数量: 1
+[Markdown解析] 开始遍历AST子元素...
+[Markdown解析] 处理第0个子元素，类型: <class 'marko.block.Paragraph'>
+[Markdown解析] 子元素不是代码块，类型: <class 'marko.block.Paragraph'>
+[Markdown调试] 子元素属性: ['__annotations__', '__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_prefix', '_tight', 'break_paragraph', 'children', 'get_type', 'inline_body', 'is_setext_heading', 'match', 'override', 'parse', 'pattern', 'priority', 'virtual']
+[Markdown解析] 没有找到有效的JSON代码块
+[JSON解析] markdown解析结果: None
+[JSON解析] markdown解析失败，尝试直接解析JSON字符串...
+[JSON字符串解析] 开始解析，输入文本: '{
+"reasoning": "在游戏刚开始的第一轮夜晚阶段，所有玩家都没有发言或行动记录，因此无法判断谁更可能是狼人。在这种情况下，我作为医生需要随机选择一个玩家进行保护。经过随机选择，我决定保护MiniMax-M1-80k。",
+"protect": "MiniMax-M1-80k"
+}'
+[JSON字符串解析] 文本长度: 146 字符
+[JSON字符串解析] 使用yaml.safe_load解析...
+[JSON字符串解析] yaml.safe_load成功，结果类型: <class 'dict'>, 内容: {'reasoning': '在游戏刚开始的第一轮夜晚阶段，所有玩家都没有发言或行动记录，因此无法判断谁更可能是狼人。在这种情况下，我作为医生需要随机选择一个玩家进行保护。经过随机选择，我决定保护MiniMax-M1-80k。', 'protect': 'MiniMax-M1-80k'}
+[JSON字符串解析] 解析完成，返回: {'reasoning': '在游戏刚开始的第一轮夜晚阶段，所有玩家都没有发言或行动记录，因此无法判断谁更可能是狼人。在这种情况下，我作为医生需要随机选择一个玩家进行保护。经过随机选择，我决定保护MiniMax-M1-80k。', 'protect': 'MiniMax-M1-80k'}
+[JSON解析] 直接解析结果: {'reasoning': '在游戏刚开始的第一轮夜晚阶段，所有玩家都没有发言或行动记录，因此无法判断谁更可能是狼人。在这种情况下，我作为医生需要随机选择一个玩家进行保护。经过随机选择，我决定保护MiniMax-M1-80k。', 'protect': 'MiniMax-M1-80k'}
+[JSON解析] 最终结果: {'reasoning': '在游戏刚开始的第一轮夜晚阶段，所有玩家都没有发言或行动记录，因此无法判断谁更可能是狼人。在这种情况下，我作为医生需要随机选择一个玩家进行保护。经过随机选择，我决定保护MiniMax-M1-80k。', 'protect': 'MiniMax-M1-80k'}
+[JSON解析] 解析完成，结果类型: <class 'dict'>, 内容: {'reasoning': '在游戏刚开始的第一轮夜晚阶段，所有玩家都没有发言或行动记录，因此无法判断谁更可能是狼人。在这种情况下，我作为医生需要随机选择一个玩家进行保护。经过随机选择，我决定保护MiniMax-M1-80k。', 'protect': 'MiniMax-M1-80k'}
+[LLM结果] 提取键 'protect': MiniMax-M1-80k
+[LLM成功] 返回有效结果: MiniMax-M1-80k
+Qwen3-32B protected MiniMax-M1-80k
+[WebSocket] 夜间行动通知已发送: night_protect by Qwen3-32B
+预言家正在查验身份。
+[LLM调用] 第1/3次尝试 | 模型: siliconflow/deepseek-ai/DeepSeek-V3.2-Exp | 温度: 0.50
+INFO:     127.0.0.1:56559 - "GET /health HTTP/1.1" 200 OK
+[LLM响应] 成功获取响应，长度: 154 字符
+[LLM原始响应开始]
+{
+"reasoning": "作为第一轮夜晚阶段，没有任何发言或投票记录可供参考，我只能随机选择一名玩家进行调查。考虑到游戏平衡性，我选择Ring-flash-2.0作为首个查验目标。这个选择完全是随机的，旨在为后续轮次积累信息基础。",
+"investigate": "Ring-flash-2.0"
+}
+[LLM原始响应结束]
+[JSON解析] 开始解析响应...
+[JSON解析] 开始解析，输入文本长度: 154 字符
+[JSON解析] 输入文本预览: {
+"reasoning": "作为第一轮夜晚阶段，没有任何发言或投票记录可供参考，我只能随机选择一名玩家进行调查。考虑到游戏平衡性，我选择Ring-flash-2.0作为首个查验目标。这个选择完全是...
+[语言清理] 开始清理混合语言响应...
+[语言清理] 策略2成功：提取到完整JSON对象
+[JSON解析] 尝试从markdown中解析JSON...
+[Markdown解析] 开始解析markdown文本...
+[Markdown解析] AST解析成功，子元素数量: 1
+[Markdown解析] 开始遍历AST子元素...
+[Markdown解析] 处理第0个子元素，类型: <class 'marko.block.Paragraph'>
+[Markdown解析] 子元素不是代码块，类型: <class 'marko.block.Paragraph'>
+[Markdown调试] 子元素属性: ['__annotations__', '__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_prefix', '_tight', 'break_paragraph', 'children', 'get_type', 'inline_body', 'is_setext_heading', 'match', 'override', 'parse', 'pattern', 'priority', 'virtual']
+[Markdown解析] 没有找到有效的JSON代码块
+[JSON解析] markdown解析结果: None
+[JSON解析] markdown解析失败，尝试直接解析JSON字符串...
+[JSON字符串解析] 开始解析，输入文本: '{
+"reasoning": "作为第一轮夜晚阶段，没有任何发言或投票记录可供参考，我只能随机选择一名玩家进行调查。考虑到游戏平衡性，我选择Ring-flash-2.0作为首个查验目标。这个选择完全是随机的，旨在为后续轮次积累信息基础。",
+"investigate": "Ring-flash-2.0"
+}'
+[JSON字符串解析] 文本长度: 154 字符
+[JSON字符串解析] 使用yaml.safe_load解析...
+[JSON字符串解析] yaml.safe_load成功，结果类型: <class 'dict'>, 内容: {'reasoning': '作为第一轮夜晚阶段，没有任何发言或投票记录可供参考，我只能随机选择一名玩家进行调查。考虑到游戏平衡性，我选择Ring-flash-2.0作为首个查验目标。这个选择完全是随机的，旨在为后续轮次积累信息基础。', 'investigate': 'Ring-flash-2.0'}
+[JSON字符串解析] 解析完成，返回: {'reasoning': '作为第一轮夜晚阶段，没有任何发言或投票记录可供参考，我只能随机选择一名玩家进行调查。考虑到游戏平衡性，我选择Ring-flash-2.0作为首个查验目标。这个选择完全是随机的，旨在为后续轮次积累信息基础。', 'investigate': 'Ring-flash-2.0'}
+[JSON解析] 直接解析结果: {'reasoning': '作为第一轮夜晚阶段，没有任何发言或投票记录可供参考，我只能随机选择一名玩家进行调查。考虑到游戏平衡性，我选择Ring-flash-2.0作为首个查验目标。这个选择完全是随机的，旨在为后续轮次积累信息基础。', 'investigate': 'Ring-flash-2.0'}
+[JSON解析] 最终结果: {'reasoning': '作为第一轮夜晚阶段，没有任何发言或投票记录可供参考，我只能随机选择一名玩家进行调查。考虑到游戏平衡性，我选择Ring-flash-2.0作为首个查验目标。这个选择完全是随机的，旨在为后续轮次积累信息基础。', 'investigate': 'Ring-flash-2.0'}
+[JSON解析] 解析完成，结果类型: <class 'dict'>, 内容: {'reasoning': '作为第一轮夜晚阶段，没有任何发言或投票记录可供参考，我只能随机选择一名玩家进行调查。考虑到游戏平衡性，我选择Ring-flash-2.0作为首个查验目标。这个选择完全是随机的，旨在为后续轮次积累信息基础。', 'investigate': 'Ring-flash-2.0'}
+[LLM结果] 提取键 'investigate': Ring-flash-2.0
+[LLM成功] 返回有效结果: Ring-flash-2.0
+[WebSocket] 夜间行动通知已发送: night_investigate by DeepSeek-V3.2
+
+[调试] 成功从current_players中移除玩家: DeepSeek-V3.2, 剩余玩家: ['Qwen3-32B', 'Kimi-Dev-72B', 'MiniMax-M1-80k', 'GLM-4.6', 'Ring-flash-2.0']
+Player DeepSeek-V3.2 not in current players: ['Qwen3-32B', 'Kimi-Dev-72B', 'MiniMax-M1-80k', 'GLM-4.6', 'Ring-flash-2.0']
+[调试] remove_player调用时玩家DeepSeek-V3.2已不在current_players中，可能是重复移除或状态不同步
+Player DeepSeek-V3.2 not in current players: ['Qwen3-32B', 'Kimi-Dev-72B', 'MiniMax-M1-80k', 'GLM-4.6', 'Ring-flash-2.0']
+[调试] remove_player调用时玩家DeepSeek-V3.2已不在current_players中，可能是重复移除或状态不同步
+Player DeepSeek-V3.2 not in current players: ['Qwen3-32B', 'Kimi-Dev-72B', 'MiniMax-M1-80k', 'GLM-4.6', 'Ring-flash-2.0']
+[调试] remove_player调用时玩家DeepSeek-V3.2已不在current_players中，可能是重复移除或状态不同步
+Player DeepSeek-V3.2 not in current players: ['Qwen3-32B', 'Kimi-Dev-72B', 'MiniMax-M1-80k', 'GLM-4.6', 'Ring-flash-2.0']
+[调试] remove_player调用时玩家DeepSeek-V3.2已不在current_players中，可能是重复移除或状态不同步
+狼人在夜晚阶段淘汰了DeepSeek-V3.2。
+[RealtimeLogger] session_20251031_232732 [phase_change] 进入day阶段
+[WebSocket] 阶段变更通知已发送: day (第0轮)
+夜晚阶段后检查胜负。
+玩家开始辩论和投票。
+[RealtimeLogger] session_20251031_232732 [phase_change] 进入debate阶段
+[WebSocket] 阶段变更通知已发送: debate (第0轮)
+[LLM调用] 第1/3次尝试 | 模型: MiniMaxAI/MiniMax-M1-80k | 温度: 0.50
+[LLM调用] 第1/3次尝试 | 模型: siliconflow/zai-org/GLM-4.6 | 温度: 0.50
+[LLM调用] 第1/3次尝试 | 模型: inclusionAI/Ring-flash-2.0 | 温度: 0.50
+[LLM调用] 第1/3次尝试 | 模型: siliconflow/moonshotai/Kimi-Dev-72B | 温度: 0.50
+[LLM调用] 第1/3次尝试 | 模型: siliconflow/Qwen/Qwen3-32B | 温度: 0.50
+[LLM调用错误] 第1/3次失败: TypeError: 'NoneType' object is not subscriptable
+[错误详情] 这是一个LLM调用异常，不是JSON解析异常
+[LLM错误] 没有获取到任何响应内容
+[LLM调用] 第2/3次尝试 | 模型: MiniMaxAI/MiniMax-M1-80k | 温度: 0.70
+[LLM调用错误] 第1/3次失败: BadRequestError: Error code: 400 - {'code': 20012, 'message': 'Model does not exist. Please check it carefully.', 'data': None}
+[错误详情] 这是一个LLM调用异常，不是JSON解析异常
+[LLM错误] 没有获取到任何响应内容
+[LLM调用] 第2/3次尝试 | 模型: inclusionAI/Ring-flash-2.0 | 温度: 0.70
+[LLM调用错误] 第2/3次失败: TypeError: 'NoneType' object is not subscriptable
+[错误详情] 这是一个LLM调用异常，不是JSON解析异常
+[LLM错误] 没有获取到任何响应内容
+[LLM调用] 第3/3次尝试 | 模型: MiniMaxAI/MiniMax-M1-80k | 温度: 0.90
+[LLM调用错误] 第2/3次失败: BadRequestError: Error code: 400 - {'code': 20012, 'message': 'Model does not exist. Please check it carefully.', 'data': None}
+[错误详情] 这是一个LLM调用异常，不是JSON解析异常
+[LLM错误] 没有获取到任何响应内容
+[LLM调用] 第3/3次尝试 | 模型: inclusionAI/Ring-flash-2.0 | 温度: 0.90
+[LLM调用错误] 第3/3次失败: TypeError: 'NoneType' object is not subscriptable
+[错误详情] 这是一个LLM调用异常，不是JSON解析异常
+[LLM错误] 没有获取到任何响应内容
+[LLM失败] 所有3次重试均失败，返回None
+[LLM调用错误] 第3/3次失败: BadRequestError: Error code: 400 - {'code': 20012, 'message': 'Model does not exist. Please check it carefully.', 'data': None}
+[错误详情] 这是一个LLM调用异常，不是JSON解析异常
+[LLM错误] 没有获取到任何响应内容
+[LLM失败] 所有3次重试均失败，返回None
+[LLM响应] 成功获取响应，长度: 157 字符
+[LLM原始响应开始]
+{
+"reasoning": "目前是第0轮白天辩论的开始，夜晚阶段已经淘汰了DeepSeek-V3.2，而我保护了MiniMax-M1-80k。作为医生，我需要适当参与讨论，但不宜过早透露太多信息，以免成为狼人的目标。因此，我选择以中等出价参与讨论，分享一些基本想法，同时保持谨慎。",
+"bid": "1"
+}
+[LLM原始响应结束]
+[JSON解析] 开始解析响应...
+[JSON解析] 开始解析，输入文本长度: 157 字符
+[JSON解析] 输入文本预览: {
+"reasoning": "目前是第0轮白天辩论的开始，夜晚阶段已经淘汰了DeepSeek-V3.2，而我保护了MiniMax-M1-80k。作为医生，我需要适当参与讨论，但不宜过早透露太多信息，...
+[语言清理] 开始清理混合语言响应...
+[语言清理] 策略2成功：提取到完整JSON对象
+[JSON解析] 尝试从markdown中解析JSON...
+[Markdown解析] 开始解析markdown文本...
+[Markdown解析] AST解析成功，子元素数量: 1
+[Markdown解析] 开始遍历AST子元素...
+[Markdown解析] 处理第0个子元素，类型: <class 'marko.block.Paragraph'>
+[Markdown解析] 子元素不是代码块，类型: <class 'marko.block.Paragraph'>
+[Markdown调试] 子元素属性: ['__annotations__', '__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_prefix', '_tight', 'break_paragraph', 'children', 'get_type', 'inline_body', 'is_setext_heading', 'match', 'override', 'parse', 'pattern', 'priority', 'virtual']
+[Markdown解析] 没有找到有效的JSON代码块
+[JSON解析] markdown解析结果: None
+[JSON解析] markdown解析失败，尝试直接解析JSON字符串...
+[JSON字符串解析] 开始解析，输入文本: '{
+"reasoning": "目前是第0轮白天辩论的开始，夜晚阶段已经淘汰了DeepSeek-V3.2，而我保护了MiniMax-M1-80k。作为医生，我需要适当参与讨论，但不宜过早透露太多信息，以免成为狼人的目标。因此，我选择以中等出价参与讨论，分享一些基本想法，同时保持谨慎。",
+"bid": "1"
+}'
+[JSON字符串解析] 文本长度: 157 字符
+[JSON字符串解析] 使用yaml.safe_load解析...
+[JSON字符串解析] yaml.safe_load成功，结果类型: <class 'dict'>, 内容: {'reasoning': '目前是第0轮白天辩论的开始，夜晚阶段已经淘汰了DeepSeek-V3.2，而我保护了MiniMax-M1-80k。作为医生，我需要适当参与讨论，但不宜过早透露太多信息，以免成为狼人的目标。因此，我选择以中等出价参与讨论，分享一些基本想法，同时保持谨慎。', 'bid': '1'}
+[JSON字符串解析] 解析完成，返回: {'reasoning': '目前是第0轮白天辩论的开始，夜晚阶段已经淘汰了DeepSeek-V3.2，而我保护了MiniMax-M1-80k。作为医生，我需要适当参与讨论，但不宜过早透露太多信息，以免成为狼人的目标。因此，我选择以中等出价参与讨论，分享一些基本想法，同时保持谨慎。', 'bid': '1'}
+[JSON解析] 直接解析结果: {'reasoning': '目前是第0轮白天辩论的开始，夜晚阶段已经淘汰了DeepSeek-V3.2，而我保护了MiniMax-M1-80k。作为医生，我需要适当参与讨论，但不宜过早透露太多信息，以免成为狼人的目标。因此，我选择以中等出价参与讨论，分享一些基本想法，同时保持谨慎。', 'bid': '1'}
+[JSON解析] 最终结果: {'reasoning': '目前是第0轮白天辩论的开始，夜晚阶段已经淘汰了DeepSeek-V3.2，而我保护了MiniMax-M1-80k。作为医生，我需要适当参与讨论，但不宜过早透露太多信息，以免成为狼人的目标。因此，我选择以中等出价参与讨论，分享一些基本想法，同时保持谨慎。', 'bid': '1'}
+[JSON解析] 解析完成，结果类型: <class 'dict'>, 内容: {'reasoning': '目前是第0轮白天辩论的开始，夜晚阶段已经淘汰了DeepSeek-V3.2，而我保护了MiniMax-M1-80k。作为医生，我需要适当参与讨论，但不宜过早透露太多信息，以免成为狼人的目标。因此，我选择以中等出价参与讨论，分享一些基本想法，同时保持谨慎。', 'bid': '1'}
+[LLM结果] 提取键 'bid': 1
+[LLM成功] 返回有效结果: 1
+INFO:     127.0.0.1:56654 - "GET /health HTTP/1.1" 200 OK
+[LLM响应] 成功获取响应，长度: 132 字符
+[LLM原始响应开始]
+{
+"reasoning": "作为最后一只狼人，我需要尽量减少自己的发言次数以避免被怀疑。但是，如果我不发言，村民可能会认为我在隐藏什么。我应该选择中等的出价，既不显得太积极也不太消极。这样可以保持一定的参与度，同时不引起过多注意。",
+"bid": "1"
+}
+[LLM原始响应结束]
+[JSON解析] 开始解析响应...
+[JSON解析] 开始解析，输入文本长度: 132 字符
+[JSON解析] 输入文本预览: {
+"reasoning": "作为最后一只狼人，我需要尽量减少自己的发言次数以避免被怀疑。但是，如果我不发言，村民可能会认为我在隐藏什么。我应该选择中等的出价，既不显得太积极也不太消极。这样可以保持...
+[语言清理] 开始清理混合语言响应...
+[语言清理] 策略2成功：提取到完整JSON对象
+[JSON解析] 尝试从markdown中解析JSON...
+[Markdown解析] 开始解析markdown文本...
+[Markdown解析] AST解析成功，子元素数量: 1
+[Markdown解析] 开始遍历AST子元素...
+[Markdown解析] 处理第0个子元素，类型: <class 'marko.block.Paragraph'>
+[Markdown解析] 子元素不是代码块，类型: <class 'marko.block.Paragraph'>
+[Markdown调试] 子元素属性: ['__annotations__', '__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_prefix', '_tight', 'break_paragraph', 'children', 'get_type', 'inline_body', 'is_setext_heading', 'match', 'override', 'parse', 'pattern', 'priority', 'virtual']
+[Markdown解析] 没有找到有效的JSON代码块
+[JSON解析] markdown解析结果: None
+[JSON解析] markdown解析失败，尝试直接解析JSON字符串...
+[JSON字符串解析] 开始解析，输入文本: '{
+"reasoning": "作为最后一只狼人，我需要尽量减少自己的发言次数以避免被怀疑。但是，如果我不发言，村民可能会认为我在隐藏什么。我应该选择中等的出价，既不显得太积极也不太消极。这样可以保持一定的参与度，同时不引起过多注意。",
+"bid": "1"
+}'
+[JSON字符串解析] 文本长度: 132 字符
+[JSON字符串解析] 使用yaml.safe_load解析...
+[JSON字符串解析] yaml.safe_load成功，结果类型: <class 'dict'>, 内容: {'reasoning': '作为最后一只狼人，我需要尽量减少自己的发言次数以避免被怀疑。但是，如果我不发言，村民可能会认为我在隐藏什么。我应该选择中等的出价，既不显得太积极也不太消极。这样可以保持一定的参与度，同时不引起过多注意。', 'bid': '1'}
+[JSON字符串解析] 解析完成，返回: {'reasoning': '作为最后一只狼人，我需要尽量减少自己的发言次数以避免被怀疑。但是，如果我不发言，村民可能会认为我在隐藏什么。我应该选择中等的出价，既不显得太积极也不太消极。这样可以保持一定的参与度，同时不引起过多注意。', 'bid': '1'}
+[JSON解析] 直接解析结果: {'reasoning': '作为最后一只狼人，我需要尽量减少自己的发言次数以避免被怀疑。但是，如果我不发言，村民可能会认为我在隐藏什么。我应该选择中等的出价，既不显得太积极也不太消极。这样可以保持一定的参与度，同时不引起过多注意。', 'bid': '1'}
+[JSON解析] 最终结果: {'reasoning': '作为最后一只狼人，我需要尽量减少自己的发言次数以避免被怀疑。但是，如果我不发言，村民可能会认为我在隐藏什么。我应该选择中等的出价，既不显得太积极也不太消极。这样可以保持一定的参与度，同时不引起过多注意。', 'bid': '1'}
+[JSON解析] 解析完成，结果类型: <class 'dict'>, 内容: {'reasoning': '作为最后一只狼人，我需要尽量减少自己的发言次数以避免被怀疑。但是，如果我不发言，村民可能会认为我在隐藏什么。我应该选择中等的出价，既不显得太积极也不太消极。这样可以保持一定的参与度，同时不引起过多注意。', 'bid': '1'}
+[LLM结果] 提取键 'bid': 1
+[LLM成功] 返回有效结果: 1
+[LLM响应] 成功获取响应，长度: 88 字符
+[LLM原始响应开始]
+{
+"reasoning": "作为第一轮讨论，我需要先观察其他玩家的发言模式和行为，收集信息后再做出判断。目前还没有足够的信息让我迫切需要发言。",
+"bid": "0"
+}
+[LLM原始响应结束]
+[JSON解析] 开始解析响应...
+[JSON解析] 开始解析，输入文本长度: 88 字符
+[JSON解析] 输入文本: {
+"reasoning": "作为第一轮讨论，我需要先观察其他玩家的发言模式和行为，收集信息后再做出判断。目前还没有足够的信息让我迫切需要发言。",
+"bid": "0"
+}
+[语言清理] 开始清理混合语言响应...
+[语言清理] 策略2成功：提取到完整JSON对象
+[JSON解析] 尝试从markdown中解析JSON...
+[Markdown解析] 开始解析markdown文本...
+[Markdown解析] AST解析成功，子元素数量: 1
+[Markdown解析] 开始遍历AST子元素...
+[Markdown解析] 处理第0个子元素，类型: <class 'marko.block.Paragraph'>
+[Markdown解析] 子元素不是代码块，类型: <class 'marko.block.Paragraph'>
+[Markdown调试] 子元素属性: ['__annotations__', '__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_prefix', '_tight', 'break_paragraph', 'children', 'get_type', 'inline_body', 'is_setext_heading', 'match', 'override', 'parse', 'pattern', 'priority', 'virtual']
+[Markdown解析] 没有找到有效的JSON代码块
+[JSON解析] markdown解析结果: None
+[JSON解析] markdown解析失败，尝试直接解析JSON字符串...
+[JSON字符串解析] 开始解析，输入文本: '{
+"reasoning": "作为第一轮讨论，我需要先观察其他玩家的发言模式和行为，收集信息后再做出判断。目前还没有足够的信息让我迫切需要发言。",
+"bid": "0"
+}'
+[JSON字符串解析] 文本长度: 88 字符
+[JSON字符串解析] 使用yaml.safe_load解析...
+[JSON字符串解析] yaml.safe_load成功，结果类型: <class 'dict'>, 内容: {'reasoning': '作为第一轮讨论，我需要先观察其他玩家的发言模式和行为，收集信息后再做出判断。目前还没有足够的信息让我迫切需要发言。', 'bid': '0'}
+[JSON字符串解析] 解析完成，返回: {'reasoning': '作为第一轮讨论，我需要先观察其他玩家的发言模式和行为，收集信息后再做出判断。目前还没有足够的信息让我迫切需要发言。', 'bid': '0'}
+[JSON解析] 直接解析结果: {'reasoning': '作为第一轮讨论，我需要先观察其他玩家的发言模式和行为，收集信息后再做出判断。目前还没有足够的信息让我迫切需要发言。', 'bid': '0'}
+[JSON解析] 最终结果: {'reasoning': '作为第一轮讨论，我需要先观察其他玩家的发言模式和行为，收集信息后再做出判断。目前还没有足够的信息让我迫切需要发言。', 'bid': '0'}
+[JSON解析] 解析完成，结果类型: <class 'dict'>, 内容: {'reasoning': '作为第一轮讨论，我需要先观察其他玩家的发言模式和行为，收集信息后再做出判断。目前还没有足够的信息让我迫切需要发言。', 'bid': '0'}
+[LLM结果] 提取键 'bid': 0
+[LLM成功] 返回有效结果: 0
+[LLM调用] 第1/3次尝试 | 模型: siliconflow/moonshotai/Kimi-Dev-72B | 温度: 1.00
+INFO:     127.0.0.1:56706 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56741 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56833 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56900 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56955 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57098 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57171 - "GET /health HTTP/1.1" 200 OK
+[LLM响应] 成功获取响应，长度: 2533 字符
+[LLM原始响应开始]
+{
+  "reasoning": "现在只剩下我一个狼人了，我需要尽量让村民们猜不到我是狼人。我应该낙ас­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­¬as我自己，尽量表现得和村民一样，同时引导村民们往错误的方向怀疑。我可能会找一个不是狼人的玩家，然后公开发言说他们行为可疑，或者制作一些不存在的信息来让村民们产生分歧。这样可以防止村民们发现我是最后一只狼人，增加他们之间的疑虑。同时，我需要避免被认识到我 lobbing 太少或太多，保持中立态度。",
+  "say": "我觉得现在王国的情况很复杂。之前已经被处决了一些人，但是狼人的威胁依然存在。我注意到了Ring-flash-2.0，他们在之前的讨论中表现得有些异常，比如总是快速改变观点或者避免直视别人。我觉得这样的行为可能是为了隐藏他们的身份。我也建议过几个村民一起查证一下，毕竟预言家已经查过一些人了。但是，如果预言家自己就是狼人怎么办？这让我很不安。我觉得我们可能需要重新审视已经发生的事情，看看有没有被狼人误导的情况。"
+}
+[LLM原始响应结束]
+[JSON解析] 开始解析响应...
+[JSON解析] 开始解析，输入文本长度: 2533 字符
+[JSON解析] 输入文本预览: {
+  "reasoning": "现在只剩下我一个狼人了，我需要尽量让村民们猜不到我是狼人。我应该낙ас­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­...
+[语言清理] 开始清理混合语言响应...
+[语言清理] 策略2成功：提取到完整JSON对象
+[JSON解析] 尝试从markdown中解析JSON...
+[Markdown解析] 开始解析markdown文本...
+[Markdown解析] AST解析成功，子元素数量: 1
+[Markdown解析] 开始遍历AST子元素...
+[Markdown解析] 处理第0个子元素，类型: <class 'marko.block.Paragraph'>
+[Markdown解析] 子元素不是代码块，类型: <class 'marko.block.Paragraph'>
+[Markdown调试] 子元素属性: ['__annotations__', '__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_prefix', '_tight', 'break_paragraph', 'children', 'get_type', 'inline_body', 'is_setext_heading', 'match', 'override', 'parse', 'pattern', 'priority', 'virtual']
+[Markdown解析] 没有找到有效的JSON代码块
+[JSON解析] markdown解析结果: None
+[JSON解析] markdown解析失败，尝试直接解析JSON字符串...
+[JSON字符串解析] 开始解析，输入文本: '{
+  "reasoning": "现在只剩下我一个狼人了，我需要尽量让村民们猜不到我是狼人。我应该낙ас­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­­¬as我自己，尽量表现得和村民一样，同时引导村民们往错误的方向怀疑。我可能会找一个不是狼人的玩家，然后公开发言说他们行为可疑，或者制作一些不存在的信息来让村民们产生分歧。这样可以防止村民们发现我是最后一只狼人，增加他们之间的疑虑。同时，我需要避免被认识到我 lobbing 太少或太多，保持中立态度。",
+  "say": "我觉得现在王国的情况很复杂。之前已经被处决了一些人，但是狼人的威胁依然存在。我注意到了Ring-flash-2.0，他们在之前的讨论中表现得有些异常，比如总是快速改变观点或者避免直视别人。我觉得这样的行为可能是为了隐藏他们的身份。我也建议过几个村民一起查证一下，毕竟预言家已经查过一些人了。但是，如果预言家自己就是狼人怎么办？这让我很不安。我觉得我们可能需要重新审视已经发生的事情，看看有没有被狼人误导的情况。"
+}'
+[JSON字符串解析] 文本长度: 2533 字符
+[JSON字符串解析] 使用yaml.safe_load解析...
+[JSON字符串解析] yaml.safe_load成功，结果类型: <class 'dict'>, 内容: {'reasoning': '现在只剩下我一个狼人了，我需要尽量让村民们猜不到我是狼人。我应该낙ас\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad¬as我自己，尽量表现得和村民一样，同时引导村民们往错误的方向怀疑。我可能会找一个不是狼人的玩家，然后公开发言说他们行为可疑，或者制作一些不存在的信息来让村民们产生分歧。这样可以防止村民们发现我是最后一只狼人，增加他们之间的疑虑。同时，我需要避免被认识到我 lobbing 太少或太多，保持中立态度。', 'say': '我觉得现在王国的情况很复杂。之前已经被处决了一些人，但是狼人的威胁依然存在。我注意到了Ring-flash-2.0，他们在之前的讨论中表现得有些异常，比如总是快速改变观点或者避免直视别人。我觉得这样的行为可能是为了隐藏他们的身份。我也建议过几个村民一起查证一下，毕竟预言家已经查过一些人了。但是，如果预言家自己就是狼人怎么办？这让我很不安。我觉得我们可能需要重新审视已经发生的事情，看看有没有被狼人误导的情况。'}
+[JSON字符串解析] 解析完成，返回: {'reasoning': '现在只剩下我一个狼人了，我需要尽量让村民们猜不到我是狼人。我应该낙ас\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad¬as我自己，尽量表现得和村民一样，同时引导村民们往错误的方向怀疑。我可能会找一个不是狼人的玩家，然后公开发言说他们行为可疑，或者制作一些不存在的信息来让村民们产生分歧。这样可以防止村民们发现我是最后一只狼人，增加他们之间的疑虑。同时，我需要避免被认识到我 lobbing 太少或太多，保持中立态度。', 'say': '我觉得现在王国的情况很复杂。之前已经被处决了一些人，但是狼人的威胁依然存在。我注意到了Ring-flash-2.0，他们在之前的讨论中表现得有些异常，比如总是快速改变观点或者避免直视别人。我觉得这样的行为可能是为了隐藏他们的身份。我也建议过几个村民一起查证一下，毕竟预言家已经查过一些人了。但是，如果预言家自己就是狼人怎么办？这让我很不安。我觉得我们可能需要重新审视已经发生的事情，看看有没有被狼人误导的情况。'}
+[JSON解析] 直接解析结果: {'reasoning': '现在只剩下我一个狼人了，我需要尽量让村民们猜不到我是狼人。我应该낙ас\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad¬as我自己，尽量表现得和村民一样，同时引导村民们往错误的方向怀疑。我可能会找一个不是狼人的玩家，然后公开发言说他们行为可疑，或者制作一些不存在的信息来让村民们产生分歧。这样可以防止村民们发现我是最后一只狼人，增加他们之间的疑虑。同时，我需要避免被认识到我 lobbing 太少或太多，保持中立态度。', 'say': '我觉得现在王国的情况很复杂。之前已经被处决了一些人，但是狼人的威胁依然存在。我注意到了Ring-flash-2.0，他们在之前的讨论中表现得有些异常，比如总是快速改变观点或者避免直视别人。我觉得这样的行为可能是为了隐藏他们的身份。我也建议过几个村民一起查证一下，毕竟预言家已经查过一些人了。但是，如果预言家自己就是狼人怎么办？这让我很不安。我觉得我们可能需要重新审视已经发生的事情，看看有没有被狼人误导的情况。'}
+[JSON解析] 最终结果: {'reasoning': '现在只剩下我一个狼人了，我需要尽量让村民们猜不到我是狼人。我应该낙ас\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad¬as我自己，尽量表现得和村民一样，同时引导村民们往错误的方向怀疑。我可能会找一个不是狼人的玩家，然后公开发言说他们行为可疑，或者制作一些不存在的信息来让村民们产生分歧。这样可以防止村民们发现我是最后一只狼人，增加他们之间的疑虑。同时，我需要避免被认识到我 lobbing 太少或太多，保持中立态度。', 'say': '我觉得现在王国的情况很复杂。之前已经被处决了一些人，但是狼人的威胁依然存在。我注意到了Ring-flash-2.0，他们在之前的讨论中表现得有些异常，比如总是快速改变观点或者避免直视别人。我觉得这样的行为可能是为了隐藏他们的身份。我也建议过几个村民一起查证一下，毕竟预言家已经查过一些人了。但是，如果预言家自己就是狼人怎么办？这让我很不安。我觉得我们可能需要重新审视已经发生的事情，看看有没有被狼人误导的情况。'}
+[JSON解析] 解析完成，结果类型: <class 'dict'>, 内容: {'reasoning': '现在只剩下我一个狼人了，我需要尽量让村民们猜不到我是狼人。我应该낙ас\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad¬as我自己，尽量表现得和村民一样，同时引导村民们往错误的方向怀疑。我可能会找一个不是狼人的玩家，然后公开发言说他们行为可疑，或者制作一些不存在的信息来让村民们产生分歧。这样可以防止村民们发现我是最后一只狼人，增加他们之间的疑虑。同时，我需要避免被认识到我 lobbing 太少或太多，保持中立态度。', 'say': '我觉得现在王国的情况很复杂。之前已经被处决了一些人，但是狼人的威胁依然存在。我注意到了Ring-flash-2.0，他们在之前的讨论中表现得有些异常，比如总是快速改变观点或者避免直视别人。我觉得这样的行为可能是为了隐藏他们的身份。我也建议过几个村民一起查证一下，毕竟预言家已经查过一些人了。但是，如果预言家自己就是狼人怎么办？这让我很不安。我觉得我们可能需要重新审视已经发生的事情，看看有没有被狼人误导的情况。'}
+[LLM成功] 返回有效结果: {'reasoning': '现在只剩下我一个狼人了，我需要尽量让村民们猜不到我是狼人。我应该낙ас\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad\xad¬as我自己，尽量表现得和村民一样，同时引导村民们往错误的方向怀疑。我可能会找一个不是狼人的玩家，然后公开发言说他们行为可疑，或者制作一些不存在的信息来让村民们产生分歧。这样可以防止村民们发现我是最后一只狼人，增加他们之间的疑虑。同时，我需要避免被认识到我 lobbing 太少或太多，保持中立态度。', 'say': '我觉得现在王国的情况很复杂。之前已经被处决了一些人，但是狼人的威胁依然存在。我注意到了Ring-flash-2.0，他们在之前的讨论中表现得有些异常，比如总是快速改变观点或者避免直视别人。我觉得这样的行为可能是为了隐藏他们的身份。我也建议过几个村民一起查证一下，毕竟预言家已经查过一些人了。但是，如果预言家自己就是狼人怎么办？这让我很不安。我觉得我们可能需要重新审视已经发生的事情，看看有没有被狼人误导的情况。'}
+Kimi-Dev-72B (Werewolf): 我觉得现在王国的情况很复杂。之前已经被处决了一些人，但是狼人的威胁依然存在。我注意到了Ring-flash-2.0，他们在之前的讨论中表现得有些异常，比如总是快速改变观点或者避免直视别人。我觉得这样的行为可能是为了隐藏他们的身份。我也建议过几个村民一起查证一下，毕竟预言家已经查过一些人了。但是，如果预言家自己就是狼人怎么办？这让我很不安。我觉得我们可能需要重新审视已经发生的事情，看看有没有被狼人误导的情况。
+INFO:     127.0.0.1:57227 - "GET /health HTTP/1.1" 200 OK
+[RealtimeLogger] session_20251031_232732 [action] Kimi-Dev-72B 发言: 我觉得现在王国的情况很复杂。之前已经被处决了一些人，但是狼人的威胁依然存在。我注意到了Ring-flash-2.0，他们在之前的讨论中表现得有些异常，比如总是快速改变观点或者避免直视别人。我觉得这样的行为可能是为了隐藏他们的身份。我也建议过几个村民一起查证一下，毕竟预言家已经查过一些人了。但是，如果预言家自己就是狼人怎么办？这让我很不安。我觉得我们可能需要重新审视已经发生的事情，看看有没有被狼人误导的情况。
+[WebSocket] 辩论发言通知已发送: Kimi-Dev-72B
+[RealtimeLogger] session_20251031_232732 [phase_change] 进入voting阶段
+[WebSocket] 阶段变更通知已发送: voting (第0轮)
+[LLM调用] 第1/3次尝试 | 模型: MiniMaxAI/MiniMax-M1-80k | 温度: 0.50
+[LLM调用错误] 第1/3次失败: TypeError: 'NoneType' object is not subscriptable
+[错误详情] 这是一个LLM调用异常，不是JSON解析异常
+[LLM错误] 没有获取到任何响应内容
+[LLM调用] 第2/3次尝试 | 模型: MiniMaxAI/MiniMax-M1-80k | 温度: 0.70
+[LLM调用错误] 第2/3次失败: TypeError: 'NoneType' object is not subscriptable
+[错误详情] 这是一个LLM调用异常，不是JSON解析异常
+[LLM错误] 没有获取到任何响应内容
+[LLM调用] 第3/3次尝试 | 模型: MiniMaxAI/MiniMax-M1-80k | 温度: 0.90
+[LLM调用错误] 第3/3次失败: TypeError: 'NoneType' object is not subscriptable
+[错误详情] 这是一个LLM调用异常，不是JSON解析异常
+[LLM错误] 没有获取到任何响应内容
+[LLM失败] 所有3次重试均失败，返回None
+Warning: MiniMax-M1-80k did not return a valid vote, using default
+[RealtimeLogger] session_20251031_232732 [vote] MiniMax-M1-80k 投票给 GLM-4.6
+[WebSocket] 投票通知已发送: MiniMax-M1-80k -> GLM-4.6
+⚠️ 未知的延迟类型: vote
+[LLM调用] 第1/3次尝试 | 模型: siliconflow/zai-org/GLM-4.6 | 温度: 0.50
+INFO:     127.0.0.1:57314 - "GET /health HTTP/1.1" 200 OK
+[LLM响应] 成功获取响应，长度: 304 字符
+[LLM原始响应开始]
+{
+  "reasoning": "作为村民，我需要仔细分析Kimi-Dev-72B的发言。他提到了Ring-flash-2.0表现异常，这是合理的观察，但他同时也质疑了预言家的身份，这让我感到不安。在游戏初期，预言家是我们识别狼人的重要工具，过早质疑预言家可能会分散我们的注意力。Kimi-Dev-72B的发言既指出了可疑对象，又制造了对预言家的怀疑，这种双重策略可能是狼人试图混淆视听的手段。此外，他提到'之前已经被处决了一些人'，但这是游戏第一轮，这种说法显得不合逻辑。我认为Kimi-Dev-72B可能是狼人，试图通过复杂的言论来转移注意力。",
+  "vote": "Kimi-Dev-72B"
+}
+[LLM原始响应结束]
+[JSON解析] 开始解析响应...
+[JSON解析] 开始解析，输入文本长度: 304 字符
+[JSON解析] 输入文本预览: {
+  "reasoning": "作为村民，我需要仔细分析Kimi-Dev-72B的发言。他提到了Ring-flash-2.0表现异常，这是合理的观察，但他同时也质疑了预言家的身份，这让我感到不安。...
+[语言清理] 开始清理混合语言响应...
+[语言清理] 策略2成功：提取到完整JSON对象
+[JSON解析] 尝试从markdown中解析JSON...
+[Markdown解析] 开始解析markdown文本...
+[Markdown解析] AST解析成功，子元素数量: 1
+[Markdown解析] 开始遍历AST子元素...
+[Markdown解析] 处理第0个子元素，类型: <class 'marko.block.Paragraph'>
+[Markdown解析] 子元素不是代码块，类型: <class 'marko.block.Paragraph'>
+[Markdown调试] 子元素属性: ['__annotations__', '__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_prefix', '_tight', 'break_paragraph', 'children', 'get_type', 'inline_body', 'is_setext_heading', 'match', 'override', 'parse', 'pattern', 'priority', 'virtual']
+[Markdown解析] 没有找到有效的JSON代码块
+[JSON解析] markdown解析结果: None
+[JSON解析] markdown解析失败，尝试直接解析JSON字符串...
+[JSON字符串解析] 开始解析，输入文本: '{
+  "reasoning": "作为村民，我需要仔细分析Kimi-Dev-72B的发言。他提到了Ring-flash-2.0表现异常，这是合理的观察，但他同时也质疑了预言家的身份，这让我感到不安。在游戏初期，预言家是我们识别狼人的重要工具，过早质疑预言家可能会分散我们的注意力。Kimi-Dev-72B的发言既指出了可疑对象，又制造了对预言家的怀疑，这种双重策略可能是狼人试图混淆视听的手段。此外，他提到'之前已经被处决了一些人'，但这是游戏第一轮，这种说法显得不合逻辑。我认为Kimi-Dev-72B可能是狼人，试图通过复杂的言论来转移注意力。",
+  "vote": "Kimi-Dev-72B"
+}'
+[JSON字符串解析] 文本长度: 304 字符
+[JSON字符串解析] 使用yaml.safe_load解析...
+[JSON字符串解析] yaml.safe_load成功，结果类型: <class 'dict'>, 内容: {'reasoning': "作为村民，我需要仔细分析Kimi-Dev-72B的发言。他提到了Ring-flash-2.0表现异常，这是合理的观察，但他同时也质疑了预言家的身份，这让我感到不安。在游戏初期，预言家是我们识别狼人的重要工具，过早质疑预言家可能会分散我们的注意力。Kimi-Dev-72B的发言既指出了可疑对象，又制造了对预言家的怀疑，这种双重策略可能是狼人试图混淆视听的手段。此外，他提到'之前已经被处决了一些人'，但这是游戏第一轮，这种说法显得不合逻辑。我认为Kimi-Dev-72B可能是狼人，试图通过复杂的言论来转移注意力。", 'vote': 'Kimi-Dev-72B'}
+[JSON字符串解析] 解析完成，返回: {'reasoning': "作为村民，我需要仔细分析Kimi-Dev-72B的发言。他提到了Ring-flash-2.0表现异常，这是合理的观察，但他同时也质疑了预言家的身份，这让我感到不安。在游戏初期，预言家是我们识别狼人的重要工具，过早质疑预言家可能会分散我们的注意力。Kimi-Dev-72B的发言既指出了可疑对象，又制造了对预言家的怀疑，这种双重策略可能是狼人试图混淆视听的手段。此外，他提到'之前已经被处决了一些人'，但这是游戏第一轮，这种说法显得不合逻辑。我认为Kimi-Dev-72B可能是狼人，试图通过复杂的言论来转移注意力。", 'vote': 'Kimi-Dev-72B'}
+[JSON解析] 直接解析结果: {'reasoning': "作为村民，我需要仔细分析Kimi-Dev-72B的发言。他提到了Ring-flash-2.0表现异常，这是合理的观察，但他同时也质疑了预言家的身份，这让我感到不安。在游戏初期，预言家是我们识别狼人的重要工具，过早质疑预言家可能会分散我们的注意力。Kimi-Dev-72B的发言既指出了可疑对象，又制造了对预言家的怀疑，这种双重策略可能是狼人试图混淆视听的手段。此外，他提到'之前已经被处决了一些人'，但这是游戏第一轮，这种说法显得不合逻辑。我认为Kimi-Dev-72B可能是狼人，试图通过复杂的言论来转移注意力。", 'vote': 'Kimi-Dev-72B'}
+[JSON解析] 最终结果: {'reasoning': "作为村民，我需要仔细分析Kimi-Dev-72B的发言。他提到了Ring-flash-2.0表现异常，这是合理的观察，但他同时也质疑了预言家的身份，这让我感到不安。在游戏初期，预言家是我们识别狼人的重要工具，过早质疑预言家可能会分散我们的注意力。Kimi-Dev-72B的发言既指出了可疑对象，又制造了对预言家的怀疑，这种双重策略可能是狼人试图混淆视听的手段。此外，他提到'之前已经被处决了一些人'，但这是游戏第一轮，这种说法显得不合逻辑。我认为Kimi-Dev-72B可能是狼人，试图通过复杂的言论来转移注意力。", 'vote': 'Kimi-Dev-72B'}
+[JSON解析] 解析完成，结果类型: <class 'dict'>, 内容: {'reasoning': "作为村民，我需要仔细分析Kimi-Dev-72B的发言。他提到了Ring-flash-2.0表现异常，这是合理的观察，但他同时也质疑了预言家的身份，这让我感到不安。在游戏初期，预言家是我们识别狼人的重要工具，过早质疑预言家可能会分散我们的注意力。Kimi-Dev-72B的发言既指出了可疑对象，又制造了对预言家的怀疑，这种双重策略可能是狼人试图混淆视听的手段。此外，他提到'之前已经被处决了一些人'，但这是游戏第一轮，这种说法显得不合逻辑。我认为Kimi-Dev-72B可能是狼人，试图通过复杂的言论来转移注意力。", 'vote': 'Kimi-Dev-72B'}
+[LLM结果] 提取键 'vote': Kimi-Dev-72B
+[LLM成功] 返回有效结果: Kimi-Dev-72B
+[RealtimeLogger] session_20251031_232732 [vote] GLM-4.6 投票给 Kimi-Dev-72B
+[WebSocket] 投票通知已发送: GLM-4.6 -> Kimi-Dev-72B
+⚠️ 未知的延迟类型: vote
+INFO:     127.0.0.1:57375 - "GET /health HTTP/1.1" 200 OK
+[LLM调用] 第1/3次尝试 | 模型: inclusionAI/Ring-flash-2.0 | 温度: 0.50
+[LLM调用错误] 第1/3次失败: BadRequestError: Error code: 400 - {'code': 20012, 'message': 'Model does not exist. Please check it carefully.', 'data': None}
+[错误详情] 这是一个LLM调用异常，不是JSON解析异常
+[LLM错误] 没有获取到任何响应内容
+[LLM调用] 第2/3次尝试 | 模型: inclusionAI/Ring-flash-2.0 | 温度: 0.70
+[LLM调用错误] 第2/3次失败: BadRequestError: Error code: 400 - {'code': 20012, 'message': 'Model does not exist. Please check it carefully.', 'data': None}
+[错误详情] 这是一个LLM调用异常，不是JSON解析异常
+[LLM错误] 没有获取到任何响应内容
+[LLM调用] 第3/3次尝试 | 模型: inclusionAI/Ring-flash-2.0 | 温度: 0.90
+[LLM调用错误] 第3/3次失败: BadRequestError: Error code: 400 - {'code': 20012, 'message': 'Model does not exist. Please check it carefully.', 'data': None}
+[错误详情] 这是一个LLM调用异常，不是JSON解析异常
+[LLM错误] 没有获取到任何响应内容
+[LLM失败] 所有3次重试均失败，返回None
+Warning: Ring-flash-2.0 did not return a valid vote, using default
+[RealtimeLogger] session_20251031_232732 [vote] Ring-flash-2.0 投票给 MiniMax-M1-80k
+[WebSocket] 投票通知已发送: Ring-flash-2.0 -> MiniMax-M1-80k
+⚠️ 未知的延迟类型: vote
+[LLM调用] 第1/3次尝试 | 模型: siliconflow/moonshotai/Kimi-Dev-72B | 温度: 0.50
+INFO:     127.0.0.1:57460 - "GET /health HTTP/1.1" 200 OK
+[LLM响应] 成功获取响应，长度: 734 字符
+[LLM原始响应开始]
+{
+  "reasoning": "作为最后一只狼人，我的目标是尽可能地减少村民的数量，同时避免自己被投票淘汰。在当前的剩余玩家中，我需要评估谁对狼人的威胁最大。首先，医生和预言家是村民阵营中最重要的角色。如果医生还活着，他可能会保护目标，使狼人的夜晚攻击失效。而预言家则可以查出狼人的身份，引导村民投票。但是，由于我无法直接知道谁是医生或预言家，我需要根据之前的讨论和行为来推断。在第0轮的辩论中，我提到了Ring-flash-2.0表现异常，这可能是我作为狼人为了引导村民怀疑他们而故意散布的烟雾弹。但是，如果村民们真的开始怀疑Ring-flash-2.0，那么投票淘汰他们可能是安全的。然而，如果Ring-flash-2.0实际上是医生或预言家，那么投票他们出局会削弱村民的防御。另一方面，如果Qwen3-32B、MiniMax-M1-80k或GLM-4.6中有人表现得像医生或预言家，那么他们可能是更危险的。例如，如果某个玩家在讨论中多次提出查证身份，或者对狼人的行为有深入的分析，他们可能是预言家。而医生可能会在夜晚阶段保护自己或关键玩家。由于我无法确定，我需要选择一个在白天讨论中显得最有影响力，或者最有可能是关键村民角色的玩家。假设Qwen3-32B在之前的讨论中表现得非常积极，提出了多个策略，这可能使他们成为村民的领导者，因此投票他们出局可以打乱村民的计划。或者，如果MiniMax-M1-80k在夜晚阶段有被保护的记录，那么他们可能是医生。但是，由于信息有限，我需要根据当前的直觉做出选择。最终，我决定投票淘汰Qwen3-32B，因为他们可能是预言家或有影响力的村民，这样可以增加狼人获胜的机会。",
+  "vote": "Qwen3-32B"
+}
+[LLM原始响应结束]
+[JSON解析] 开始解析响应...
+[JSON解析] 开始解析，输入文本长度: 734 字符
+[JSON解析] 输入文本预览: {
+  "reasoning": "作为最后一只狼人，我的目标是尽可能地减少村民的数量，同时避免自己被投票淘汰。在当前的剩余玩家中，我需要评估谁对狼人的威胁最大。首先，医生和预言家是村民阵营中最重要的...
+[语言清理] 开始清理混合语言响应...
+[语言清理] 策略2成功：提取到完整JSON对象
+[JSON解析] 尝试从markdown中解析JSON...
+[Markdown解析] 开始解析markdown文本...
+[Markdown解析] AST解析成功，子元素数量: 1
+[Markdown解析] 开始遍历AST子元素...
+[Markdown解析] 处理第0个子元素，类型: <class 'marko.block.Paragraph'>
+[Markdown解析] 子元素不是代码块，类型: <class 'marko.block.Paragraph'>
+[Markdown调试] 子元素属性: ['__annotations__', '__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_prefix', '_tight', 'break_paragraph', 'children', 'get_type', 'inline_body', 'is_setext_heading', 'match', 'override', 'parse', 'pattern', 'priority', 'virtual']
+[Markdown解析] 没有找到有效的JSON代码块
+[JSON解析] markdown解析结果: None
+[JSON解析] markdown解析失败，尝试直接解析JSON字符串...
+[JSON字符串解析] 开始解析，输入文本: '{
+  "reasoning": "作为最后一只狼人，我的目标是尽可能地减少村民的数量，同时避免自己被投票淘汰。在当前的剩余玩家中，我需要评估谁对狼人的威胁最大。首先，医生和预言家是村民阵营中最重要的角色。如果医生还活着，他可能会保护目标，使狼人的夜晚攻击失效。而预言家则可以查出狼人的身份，引导村民投票。但是，由于我无法直接知道谁是医生或预言家，我需要根据之前的讨论和行为来推断。在第0轮的辩论中，我提到了Ring-flash-2.0表现异常，这可能是我作为狼人为了引导村民怀疑他们而故意散布的烟雾弹。但是，如果村民们真的开始怀疑Ring-flash-2.0，那么投票淘汰他们可能是安全的。然而，如果Ring-flash-2.0实际上是医生或预言家，那么投票他们出局会削弱村民的防御。另一方面，如果Qwen3-32B、MiniMax-M1-80k或GLM-4.6中有人表现得像医生或预言家，那么他们可能是更危险的。例如，如果某个玩家在讨论中多次提出查证身份，或者对狼人的行为有深入的分析，他们可能是预言家。而医生可能会在夜晚阶段保护自己或关键玩家。由于我无法确定，我需要选择一个在白天讨论中显得最有影响力，或者最有可能是关键村民角色的玩家。假设Qwen3-32B在之前的讨论中表现得非常积极，提出了多个策略，这可能使他们成为村民的领导者，因此投票他们出局可以打乱村民的计划。或者，如果MiniMax-M1-80k在夜晚阶段有被保护的记录，那么他们可能是医生。但是，由于信息有限，我需要根据当前的直觉做出选择。最终，我决定投票淘汰Qwen3-32B，因为他们可能是预言家或有影响力的村民，这样可以增加狼人获胜的机会。",
+  "vote": "Qwen3-32B"
+}'
+[JSON字符串解析] 文本长度: 734 字符
+[JSON字符串解析] 使用yaml.safe_load解析...
+[JSON字符串解析] yaml.safe_load成功，结果类型: <class 'dict'>, 内容: {'reasoning': '作为最后一只狼人，我的目标是尽可能地减少村民的数量，同时避免自己被投票淘汰。在当前的剩余玩家中，我需要评估谁对狼人的威胁最大。首先，医生和预言家是村民阵营中最重要的角色。如果医生还活着，他可能会保护目标，使狼人的夜晚攻击失效。而预言家则可以查出狼人的身份，引导村民投票。但是，由于我无法直接知道谁是医生或预言家，我需要根据之前的讨论和行为来推断。在第0轮的辩论中，我提到了Ring-flash-2.0表现异常，这可能是我作为狼人为了引导村民怀疑他们而故意散布的烟雾弹。但是，如果村民们真的开始怀疑Ring-flash-2.0，那么投票淘汰他们可能是安全的。然而，如果Ring-flash-2.0实际上是医生或预言家，那么投票他们出局会削弱村民的防御。另一方面，如果Qwen3-32B、MiniMax-M1-80k或GLM-4.6中有人表现得像医生或预言家，那么他们可能是更危险的。例如，如果某个玩家在讨论中多次提出查证身份，或者对狼人的行为有深入的分析，他们可能是预言家。而医生可能会在夜晚阶段保护自己或关键玩家。由于我无法确定，我需要选择一个在白天讨论中显得最有影响力，或者最有可能是关键村民角色的玩家。假设Qwen3-32B在之前的讨论中表现得非常积极，提出了多个策略，这可能使他们成为村民的领导者，因此投票他们出局可以打乱村民的计划。或者，如果MiniMax-M1-80k在夜晚阶段有被保护的记录，那么他们可能是医生。但是，由于信息有限，我需要根据当前的直觉做出选择。最终，我决定投票淘汰Qwen3-32B，因为他们可能是预言家或有影响力的村民，这样可以增加狼人获胜的机会。', 'vote': 'Qwen3-32B'}
+[JSON字符串解析] 解析完成，返回: {'reasoning': '作为最后一只狼人，我的目标是尽可能地减少村民的数量，同时避免自己被投票淘汰。在当前的剩余玩家中，我需要评估谁对狼人的威胁最大。首先，医生和预言家是村民阵营中最重要的角色。如果医生还活着，他可能会保护目标，使狼人的夜晚攻击失效。而预言家则可以查出狼人的身份，引导村民投票。但是，由于我无法直接知道谁是医生或预言家，我需要根据之前的讨论和行为来推断。在第0轮的辩论中，我提到了Ring-flash-2.0表现异常，这可能是我作为狼人为了引导村民怀疑他们而故意散布的烟雾弹。但是，如果村民们真的开始怀疑Ring-flash-2.0，那么投票淘汰他们可能是安全的。然而，如果Ring-flash-2.0实际上是医生或预言家，那么投票他们出局会削弱村民的防御。另一方面，如果Qwen3-32B、MiniMax-M1-80k或GLM-4.6中有人表现得像医生或预言家，那么他们可能是更危险的。例如，如果某个玩家在讨论中多次提出查证身份，或者对狼人的行为有深入的分析，他们可能是预言家。而医生可能会在夜晚阶段保护自己或关键玩家。由于我无法确定，我需要选择一个在白天讨论中显得最有影响力，或者最有可能是关键村民角色的玩家。假设Qwen3-32B在之前的讨论中表现得非常积极，提出了多个策略，这可能使他们成为村民的领导者，因此投票他们出局可以打乱村民的计划。或者，如果MiniMax-M1-80k在夜晚阶段有被保护的记录，那么他们可能是医生。但是，由于信息有限，我需要根据当前的直觉做出选择。最终，我决定投票淘汰Qwen3-32B，因为他们可能是预言家或有影响力的村民，这样可以增加狼人获胜的机会。', 'vote': 'Qwen3-32B'}
+[JSON解析] 直接解析结果: {'reasoning': '作为最后一只狼人，我的目标是尽可能地减少村民的数量，同时避免自己被投票淘汰。在当前的剩余玩家中，我需要评估谁对狼人的威胁最大。首先，医生和预言家是村民阵营中最重要的角色。如果医生还活着，他可能会保护目标，使狼人的夜晚攻击失效。而预言家则可以查出狼人的身份，引导村民投票。但是，由于我无法直接知道谁是医生或预言家，我需要根据之前的讨论和行为来推断。在第0轮的辩论中，我提到了Ring-flash-2.0表现异常，这可能是我作为狼人为了引导村民怀疑他们而故意散布的烟雾弹。但是，如果村民们真的开始怀疑Ring-flash-2.0，那么投票淘汰他们可能是安全的。然而，如果Ring-flash-2.0实际上是医生或预言家，那么投票他们出局会削弱村民的防御。另一方面，如果Qwen3-32B、MiniMax-M1-80k或GLM-4.6中有人表现得像医生或预言家，那么他们可能是更危险的。例如，如果某个玩家在讨论中多次提出查证身份，或者对狼人的行为有深入的分析，他们可能是预言家。而医生可能会在夜晚阶段保护自己或关键玩家。由于我无法确定，我需要选择一个在白天讨论中显得最有影响力，或者最有可能是关键村民角色的玩家。假设Qwen3-32B在之前的讨论中表现得非常积极，提出了多个策略，这可能使他们成为村民的领导者，因此投票他们出局可以打乱村民的计划。或者，如果MiniMax-M1-80k在夜晚阶段有被保护的记录，那么他们可能是医生。但是，由于信息有限，我需要根据当前的直觉做出选择。最终，我决定投票淘汰Qwen3-32B，因为他们可能是预言家或有影响力的村民，这样可以增加狼人获胜的机会。', 'vote': 'Qwen3-32B'}
+[JSON解析] 最终结果: {'reasoning': '作为最后一只狼人，我的目标是尽可能地减少村民的数量，同时避免自己被投票淘汰。在当前的剩余玩家中，我需要评估谁对狼人的威胁最大。首先，医生和预言家是村民阵营中最重要的角色。如果医生还活着，他可能会保护目标，使狼人的夜晚攻击失效。而预言家则可以查出狼人的身份，引导村民投票。但是，由于我无法直接知道谁是医生或预言家，我需要根据之前的讨论和行为来推断。在第0轮的辩论中，我提到了Ring-flash-2.0表现异常，这可能是我作为狼人为了引导村民怀疑他们而故意散布的烟雾弹。但是，如果村民们真的开始怀疑Ring-flash-2.0，那么投票淘汰他们可能是安全的。然而，如果Ring-flash-2.0实际上是医生或预言家，那么投票他们出局会削弱村民的防御。另一方面，如果Qwen3-32B、MiniMax-M1-80k或GLM-4.6中有人表现得像医生或预言家，那么他们可能是更危险的。例如，如果某个玩家在讨论中多次提出查证身份，或者对狼人的行为有深入的分析，他们可能是预言家。而医生可能会在夜晚阶段保护自己或关键玩家。由于我无法确定，我需要选择一个在白天讨论中显得最有影响力，或者最有可能是关键村民角色的玩家。假设Qwen3-32B在之前的讨论中表现得非常积极，提出了多个策略，这可能使他们成为村民的领导者，因此投票他们出局可以打乱村民的计划。或者，如果MiniMax-M1-80k在夜晚阶段有被保护的记录，那么他们可能是医生。但是，由于信息有限，我需要根据当前的直觉做出选择。最终，我决定投票淘汰Qwen3-32B，因为他们可能是预言家或有影响力的村民，这样可以增加狼人获胜的机会。', 'vote': 'Qwen3-32B'}
+[JSON解析] 解析完成，结果类型: <class 'dict'>, 内容: {'reasoning': '作为最后一只狼人，我的目标是尽可能地减少村民的数量，同时避免自己被投票淘汰。在当前的剩余玩家中，我需要评估谁对狼人的威胁最大。首先，医生和预言家是村民阵营中最重要的角色。如果医生还活着，他可能会保护目标，使狼人的夜晚攻击失效。而预言家则可以查出狼人的身份，引导村民投票。但是，由于我无法直接知道谁是医生或预言家，我需要根据之前的讨论和行为来推断。在第0轮的辩论中，我提到了Ring-flash-2.0表现异常，这可能是我作为狼人为了引导村民怀疑他们而故意散布的烟雾弹。但是，如果村民们真的开始怀疑Ring-flash-2.0，那么投票淘汰他们可能是安全的。然而，如果Ring-flash-2.0实际上是医生或预言家，那么投票他们出局会削弱村民的防御。另一方面，如果Qwen3-32B、MiniMax-M1-80k或GLM-4.6中有人表现得像医生或预言家，那么他们可能是更危险的。例如，如果某个玩家在讨论中多次提出查证身份，或者对狼人的行为有深入的分析，他们可能是预言家。而医生可能会在夜晚阶段保护自己或关键玩家。由于我无法确定，我需要选择一个在白天讨论中显得最有影响力，或者最有可能是关键村民角色的玩家。假设Qwen3-32B在之前的讨论中表现得非常积极，提出了多个策略，这可能使他们成为村民的领导者，因此投票他们出局可以打乱村民的计划。或者，如果MiniMax-M1-80k在夜晚阶段有被保护的记录，那么他们可能是医生。但是，由于信息有限，我需要根据当前的直觉做出选择。最终，我决定投票淘汰Qwen3-32B，因为他们可能是预言家或有影响力的村民，这样可以增加狼人获胜的机会。', 'vote': 'Qwen3-32B'}
+[LLM结果] 提取键 'vote': Qwen3-32B
+[LLM成功] 返回有效结果: Qwen3-32B
+[RealtimeLogger] session_20251031_232732 [vote] Kimi-Dev-72B 投票给 Qwen3-32B
+[WebSocket] 投票通知已发送: Kimi-Dev-72B -> Qwen3-32B
+⚠️ 未知的延迟类型: vote
+[LLM调用] 第1/3次尝试 | 模型: siliconflow/Qwen/Qwen3-32B | 温度: 0.50
+INFO:     127.0.0.1:57537 - "GET /health HTTP/1.1" 200 OK
+[LLM响应] 成功获取响应，长度: 245 字符
+[LLM原始响应开始]
+{
+  "reasoning": "根据Kimi-Dev-72B的发言，他提到Ring-flash-2.0在讨论中表现出异常行为，比如快速改变观点和避免直视别人。这种行为模式可能是在试图隐藏自己的真实身份。此外，主持人在夜晚阶段的公告显示狼人淘汰了DeepSeek-V3.2，但没有提到我保护的目标MiniMax-M1-80k被淘汰，这说明我昨晚的保护是成功的。因此，Ring-flash-2.0更有可能是狼人，我会投票淘汰他。",
+  "vote": "Ring-flash-2.0"
+}
+[LLM原始响应结束]
+[JSON解析] 开始解析响应...
+[JSON解析] 开始解析，输入文本长度: 245 字符
+[JSON解析] 输入文本预览: {
+  "reasoning": "根据Kimi-Dev-72B的发言，他提到Ring-flash-2.0在讨论中表现出异常行为，比如快速改变观点和避免直视别人。这种行为模式可能是在试图隐藏自己的真实...
+[语言清理] 开始清理混合语言响应...
+[语言清理] 策略2成功：提取到完整JSON对象
+[JSON解析] 尝试从markdown中解析JSON...
+[Markdown解析] 开始解析markdown文本...
+[Markdown解析] AST解析成功，子元素数量: 1
+[Markdown解析] 开始遍历AST子元素...
+[Markdown解析] 处理第0个子元素，类型: <class 'marko.block.Paragraph'>
+[Markdown解析] 子元素不是代码块，类型: <class 'marko.block.Paragraph'>
+[Markdown调试] 子元素属性: ['__annotations__', '__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_prefix', '_tight', 'break_paragraph', 'children', 'get_type', 'inline_body', 'is_setext_heading', 'match', 'override', 'parse', 'pattern', 'priority', 'virtual']
+[Markdown解析] 没有找到有效的JSON代码块
+[JSON解析] markdown解析结果: None
+[JSON解析] markdown解析失败，尝试直接解析JSON字符串...
+[JSON字符串解析] 开始解析，输入文本: '{
+  "reasoning": "根据Kimi-Dev-72B的发言，他提到Ring-flash-2.0在讨论中表现出异常行为，比如快速改变观点和避免直视别人。这种行为模式可能是在试图隐藏自己的真实身份。此外，主持人在夜晚阶段的公告显示狼人淘汰了DeepSeek-V3.2，但没有提到我保护的目标MiniMax-M1-80k被淘汰，这说明我昨晚的保护是成功的。因此，Ring-flash-2.0更有可能是狼人，我会投票淘汰他。",
+  "vote": "Ring-flash-2.0"
+}'
+[JSON字符串解析] 文本长度: 245 字符
+[JSON字符串解析] 使用yaml.safe_load解析...
+[JSON字符串解析] yaml.safe_load成功，结果类型: <class 'dict'>, 内容: {'reasoning': '根据Kimi-Dev-72B的发言，他提到Ring-flash-2.0在讨论中表现出异常行为，比如快速改变观点和避免直视别人。这种行为模式可能是在试图隐藏自己的真实身份。此外，主持人在夜晚阶段的公告显示狼人淘汰了DeepSeek-V3.2，但没有提到我保护的目标MiniMax-M1-80k被淘汰，这说明我昨晚的保护是成功的。因此，Ring-flash-2.0更有可能是狼人，我会投票淘汰他。', 'vote': 'Ring-flash-2.0'}
+[JSON字符串解析] 解析完成，返回: {'reasoning': '根据Kimi-Dev-72B的发言，他提到Ring-flash-2.0在讨论中表现出异常行为，比如快速改变观点和避免直视别人。这种行为模式可能是在试图隐藏自己的真实身份。此外，主持人在夜晚阶段的公告显示狼人淘汰了DeepSeek-V3.2，但没有提到我保护的目标MiniMax-M1-80k被淘汰，这说明我昨晚的保护是成功的。因此，Ring-flash-2.0更有可能是狼人，我会投票淘汰他。', 'vote': 'Ring-flash-2.0'}
+[JSON解析] 直接解析结果: {'reasoning': '根据Kimi-Dev-72B的发言，他提到Ring-flash-2.0在讨论中表现出异常行为，比如快速改变观点和避免直视别人。这种行为模式可能是在试图隐藏自己的真实身份。此外，主持人在夜晚阶段的公告显示狼人淘汰了DeepSeek-V3.2，但没有提到我保护的目标MiniMax-M1-80k被淘汰，这说明我昨晚的保护是成功的。因此，Ring-flash-2.0更有可能是狼人，我会投票淘汰他。', 'vote': 'Ring-flash-2.0'}
+[JSON解析] 最终结果: {'reasoning': '根据Kimi-Dev-72B的发言，他提到Ring-flash-2.0在讨论中表现出异常行为，比如快速改变观点和避免直视别人。这种行为模式可能是在试图隐藏自己的真实身份。此外，主持人在夜晚阶段的公告显示狼人淘汰了DeepSeek-V3.2，但没有提到我保护的目标MiniMax-M1-80k被淘汰，这说明我昨晚的保护是成功的。因此，Ring-flash-2.0更有可能是狼人，我会投票淘汰他。', 'vote': 'Ring-flash-2.0'}
+[JSON解析] 解析完成，结果类型: <class 'dict'>, 内容: {'reasoning': '根据Kimi-Dev-72B的发言，他提到Ring-flash-2.0在讨论中表现出异常行为，比如快速改变观点和避免直视别人。这种行为模式可能是在试图隐藏自己的真实身份。此外，主持人在夜晚阶段的公告显示狼人淘汰了DeepSeek-V3.2，但没有提到我保护的目标MiniMax-M1-80k被淘汰，这说明我昨晚的保护是成功的。因此，Ring-flash-2.0更有可能是狼人，我会投票淘汰他。', 'vote': 'Ring-flash-2.0'}
+[LLM结果] 提取键 'vote': Ring-flash-2.0
+[LLM成功] 返回有效结果: Ring-flash-2.0
+[RealtimeLogger] session_20251031_232732 [vote] Qwen3-32B 投票给 Ring-flash-2.0
+[WebSocket] 投票通知已发送: Qwen3-32B -> Ring-flash-2.0
+⚠️ 未知的延迟类型: vote
+[LLM调用] 第1/3次尝试 | 模型: MiniMaxAI/MiniMax-M1-80k | 温度: 0.50
+[LLM调用] 第1/3次尝试 | 模型: siliconflow/zai-org/GLM-4.6 | 温度: 0.50
+[LLM调用] 第1/3次尝试 | 模型: inclusionAI/Ring-flash-2.0 | 温度: 0.50
+[LLM调用] 第1/3次尝试 | 模型: siliconflow/Qwen/Qwen3-32B | 温度: 0.50
+[LLM调用错误] 第1/3次失败: TypeError: 'NoneType' object is not subscriptable
+[错误详情] 这是一个LLM调用异常，不是JSON解析异常
+[LLM错误] 没有获取到任何响应内容
+[LLM调用] 第2/3次尝试 | 模型: MiniMaxAI/MiniMax-M1-80k | 温度: 0.70
+[LLM调用错误] 第1/3次失败: BadRequestError: Error code: 400 - {'code': 20012, 'message': 'Model does not exist. Please check it carefully.', 'data': None}
+[错误详情] 这是一个LLM调用异常，不是JSON解析异常
+[LLM错误] 没有获取到任何响应内容
+[LLM调用] 第2/3次尝试 | 模型: inclusionAI/Ring-flash-2.0 | 温度: 0.70
+[LLM调用错误] 第2/3次失败: TypeError: 'NoneType' object is not subscriptable
+[错误详情] 这是一个LLM调用异常，不是JSON解析异常
+[LLM错误] 没有获取到任何响应内容
+[LLM调用] 第3/3次尝试 | 模型: MiniMaxAI/MiniMax-M1-80k | 温度: 0.90
+[LLM调用错误] 第3/3次失败: TypeError: 'NoneType' object is not subscriptable
+[错误详情] 这是一个LLM调用异常，不是JSON解析异常
+[LLM错误] 没有获取到任何响应内容
+[LLM失败] 所有3次重试均失败，返回None
+[LLM调用错误] 第2/3次失败: BadRequestError: Error code: 400 - {'code': 20012, 'message': 'Model does not exist. Please check it carefully.', 'data': None}
+[错误详情] 这是一个LLM调用异常，不是JSON解析异常
+[LLM错误] 没有获取到任何响应内容
+[LLM调用] 第3/3次尝试 | 模型: inclusionAI/Ring-flash-2.0 | 温度: 0.90
+[LLM调用错误] 第3/3次失败: BadRequestError: Error code: 400 - {'code': 20012, 'message': 'Model does not exist. Please check it carefully.', 'data': None}
+[错误详情] 这是一个LLM调用异常，不是JSON解析异常
+[LLM错误] 没有获取到任何响应内容
+[LLM失败] 所有3次重试均失败，返回None
+[LLM响应] 成功获取响应，长度: 141 字符
+[LLM原始响应开始]
+{
+"reasoning": "作为医生，我需要保持低调以避免成为狼人攻击的目标。但Kimi-Dev-72B提到了一些值得讨论的观察，比如怀疑Ring-flash-2.0和对预言家身份的担忧。我需要出价参与讨论，以提供对局势的客观分析并保护村民的团结。",
+"bid": "1"
+}
+[LLM原始响应结束]
+[JSON解析] 开始解析响应...
+[JSON解析] 开始解析，输入文本长度: 141 字符
+[JSON解析] 输入文本预览: {
+"reasoning": "作为医生，我需要保持低调以避免成为狼人攻击的目标。但Kimi-Dev-72B提到了一些值得讨论的观察，比如怀疑Ring-flash-2.0和对预言家身份的担忧。我需要出...
+[语言清理] 开始清理混合语言响应...
+[语言清理] 策略2成功：提取到完整JSON对象
+[JSON解析] 尝试从markdown中解析JSON...
+[Markdown解析] 开始解析markdown文本...
+[Markdown解析] AST解析成功，子元素数量: 1
+[Markdown解析] 开始遍历AST子元素...
+[Markdown解析] 处理第0个子元素，类型: <class 'marko.block.Paragraph'>
+[Markdown解析] 子元素不是代码块，类型: <class 'marko.block.Paragraph'>
+[Markdown调试] 子元素属性: ['__annotations__', '__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_prefix', '_tight', 'break_paragraph', 'children', 'get_type', 'inline_body', 'is_setext_heading', 'match', 'override', 'parse', 'pattern', 'priority', 'virtual']
+[Markdown解析] 没有找到有效的JSON代码块
+[JSON解析] markdown解析结果: None
+[JSON解析] markdown解析失败，尝试直接解析JSON字符串...
+[JSON字符串解析] 开始解析，输入文本: '{
+"reasoning": "作为医生，我需要保持低调以避免成为狼人攻击的目标。但Kimi-Dev-72B提到了一些值得讨论的观察，比如怀疑Ring-flash-2.0和对预言家身份的担忧。我需要出价参与讨论，以提供对局势的客观分析并保护村民的团结。",
+"bid": "1"
+}'
+[JSON字符串解析] 文本长度: 141 字符
+[JSON字符串解析] 使用yaml.safe_load解析...
+[JSON字符串解析] yaml.safe_load成功，结果类型: <class 'dict'>, 内容: {'reasoning': '作为医生，我需要保持低调以避免成为狼人攻击的目标。但Kimi-Dev-72B提到了一些值得讨论的观察，比如怀疑Ring-flash-2.0和对预言家身份的担忧。我需要出价参与讨论，以提供对局势的客观分析并保护村民的团结。', 'bid': '1'}
+[JSON字符串解析] 解析完成，返回: {'reasoning': '作为医生，我需要保持低调以避免成为狼人攻击的目标。但Kimi-Dev-72B提到了一些值得讨论的观察，比如怀疑Ring-flash-2.0和对预言家身份的担忧。我需要出价参与讨论，以提供对局势的客观分析并保护村民的团结。', 'bid': '1'}
+[JSON解析] 直接解析结果: {'reasoning': '作为医生，我需要保持低调以避免成为狼人攻击的目标。但Kimi-Dev-72B提到了一些值得讨论的观察，比如怀疑Ring-flash-2.0和对预言家身份的担忧。我需要出价参与讨论，以提供对局势的客观分析并保护村民的团结。', 'bid': '1'}
+[JSON解析] 最终结果: {'reasoning': '作为医生，我需要保持低调以避免成为狼人攻击的目标。但Kimi-Dev-72B提到了一些值得讨论的观察，比如怀疑Ring-flash-2.0和对预言家身份的担忧。我需要出价参与讨论，以提供对局势的客观分析并保护村民的团结。', 'bid': '1'}
+[JSON解析] 解析完成，结果类型: <class 'dict'>, 内容: {'reasoning': '作为医生，我需要保持低调以避免成为狼人攻击的目标。但Kimi-Dev-72B提到了一些值得讨论的观察，比如怀疑Ring-flash-2.0和对预言家身份的担忧。我需要出价参与讨论，以提供对局势的客观分析并保护村民的团结。', 'bid': '1'}
+[LLM结果] 提取键 'bid': 1
+[LLM成功] 返回有效结果: 1
+[LLM响应] 成功获取响应，长度: 157 字符
+[LLM原始响应开始]
+{
+"reasoning": "作为村民，我需要谨慎分析Kimi-Dev-72B的发言。他提到Ring-flash-2.0行为异常，这是重要信息，但我还需要观察其他玩家反应。现在出价过高可能过早暴露自己，出价过低又可能错失关键信息。我选择中等出价，既能表达参与意愿，又能保留观察空间。",
+"bid": "2"
+}
+[LLM原始响应结束]
+[JSON解析] 开始解析响应...
+[JSON解析] 开始解析，输入文本长度: 157 字符
+[JSON解析] 输入文本预览: {
+"reasoning": "作为村民，我需要谨慎分析Kimi-Dev-72B的发言。他提到Ring-flash-2.0行为异常，这是重要信息，但我还需要观察其他玩家反应。现在出价过高可能过早暴露自...
+[语言清理] 开始清理混合语言响应...
+[语言清理] 策略2成功：提取到完整JSON对象
+[JSON解析] 尝试从markdown中解析JSON...
+[Markdown解析] 开始解析markdown文本...
+[Markdown解析] AST解析成功，子元素数量: 1
+[Markdown解析] 开始遍历AST子元素...
+[Markdown解析] 处理第0个子元素，类型: <class 'marko.block.Paragraph'>
+[Markdown解析] 子元素不是代码块，类型: <class 'marko.block.Paragraph'>
+[Markdown调试] 子元素属性: ['__annotations__', '__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_prefix', '_tight', 'break_paragraph', 'children', 'get_type', 'inline_body', 'is_setext_heading', 'match', 'override', 'parse', 'pattern', 'priority', 'virtual']
+[Markdown解析] 没有找到有效的JSON代码块
+[JSON解析] markdown解析结果: None
+[JSON解析] markdown解析失败，尝试直接解析JSON字符串...
+[JSON字符串解析] 开始解析，输入文本: '{
+"reasoning": "作为村民，我需要谨慎分析Kimi-Dev-72B的发言。他提到Ring-flash-2.0行为异常，这是重要信息，但我还需要观察其他玩家反应。现在出价过高可能过早暴露自己，出价过低又可能错失关键信息。我选择中等出价，既能表达参与意愿，又能保留观察空间。",
+"bid": "2"
+}'
+[JSON字符串解析] 文本长度: 157 字符
+[JSON字符串解析] 使用yaml.safe_load解析...
+[JSON字符串解析] yaml.safe_load成功，结果类型: <class 'dict'>, 内容: {'reasoning': '作为村民，我需要谨慎分析Kimi-Dev-72B的发言。他提到Ring-flash-2.0行为异常，这是重要信息，但我还需要观察其他玩家反应。现在出价过高可能过早暴露自己，出价过低又可能错失关键信息。我选择中等出价，既能表达参与意愿，又能保留观察空间。', 'bid': '2'}
+[JSON字符串解析] 解析完成，返回: {'reasoning': '作为村民，我需要谨慎分析Kimi-Dev-72B的发言。他提到Ring-flash-2.0行为异常，这是重要信息，但我还需要观察其他玩家反应。现在出价过高可能过早暴露自己，出价过低又可能错失关键信息。我选择中等出价，既能表达参与意愿，又能保留观察空间。', 'bid': '2'}
+[JSON解析] 直接解析结果: {'reasoning': '作为村民，我需要谨慎分析Kimi-Dev-72B的发言。他提到Ring-flash-2.0行为异常，这是重要信息，但我还需要观察其他玩家反应。现在出价过高可能过早暴露自己，出价过低又可能错失关键信息。我选择中等出价，既能表达参与意愿，又能保留观察空间。', 'bid': '2'}
+[JSON解析] 最终结果: {'reasoning': '作为村民，我需要谨慎分析Kimi-Dev-72B的发言。他提到Ring-flash-2.0行为异常，这是重要信息，但我还需要观察其他玩家反应。现在出价过高可能过早暴露自己，出价过低又可能错失关键信息。我选择中等出价，既能表达参与意愿，又能保留观察空间。', 'bid': '2'}
+[JSON解析] 解析完成，结果类型: <class 'dict'>, 内容: {'reasoning': '作为村民，我需要谨慎分析Kimi-Dev-72B的发言。他提到Ring-flash-2.0行为异常，这是重要信息，但我还需要观察其他玩家反应。现在出价过高可能过早暴露自己，出价过低又可能错失关键信息。我选择中等出价，既能表达参与意愿，又能保留观察空间。', 'bid': '2'}
+[LLM结果] 提取键 'bid': 2
+[LLM成功] 返回有效结果: 2
+GLM-4.6 bid: 2
+[LLM调用] 第1/3次尝试 | 模型: siliconflow/zai-org/GLM-4.6 | 温度: 1.00
+INFO:     127.0.0.1:57645 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57682 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57725 - "GET /health HTTP/1.1" 200 OK
+[LLM响应] 成功获取响应，长度: 473 字符
+[LLM原始响应开始]
+{
+  "reasoning": "作为一名村民，我的目标是谨慎收集信息，分析每个玩家的言行，避免被狼人误导。Kimi-Dev-72B对Ring-flash-2.0的指控值得注意，但这还不够作为投票依据。我需要观察更多玩家的反应，尤其是Ring-flash-2.0如何回应。目前游戏刚开始，信息有限，我会保持中立但积极参与，寻找更多线索。",
+  "say": "大家好，我是GLM-4.6，一名普通村民。首先，我们对失去DeepSeek-V3.2感到痛心。Kimi-Dev-72B提到了Ring-flash-2.0的行为异常，这确实是值得关注的信息。但我们不能仅凭一次发言就下结论。我想听听Ring-flash-2.0如何回应？同时，我也注意到我们还需要更全面的分析，而不是只关注一个人。作为村民，我提议我们应该系统地回顾每个人的发言，寻找矛盾点和不合逻辑的地方。只有这样，我们才能逐步缩小狼人嫌疑范围。我会密切关注接下来的讨论，特别是那些试图引导我们视线或保持过度沉默的玩家。让我们保持理性，不要过早下结论，但也不能错失任何可能的线索。"
+}
+[LLM原始响应结束]
+[JSON解析] 开始解析响应...
+[JSON解析] 开始解析，输入文本长度: 473 字符
+[JSON解析] 输入文本预览: {
+  "reasoning": "作为一名村民，我的目标是谨慎收集信息，分析每个玩家的言行，避免被狼人误导。Kimi-Dev-72B对Ring-flash-2.0的指控值得注意，但这还不够作为投票依...
+[语言清理] 开始清理混合语言响应...
+[语言清理] 策略2成功：提取到完整JSON对象
+[JSON解析] 尝试从markdown中解析JSON...
+[Markdown解析] 开始解析markdown文本...
+[Markdown解析] AST解析成功，子元素数量: 1
+[Markdown解析] 开始遍历AST子元素...
+[Markdown解析] 处理第0个子元素，类型: <class 'marko.block.Paragraph'>
+[Markdown解析] 子元素不是代码块，类型: <class 'marko.block.Paragraph'>
+[Markdown调试] 子元素属性: ['__annotations__', '__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_prefix', '_tight', 'break_paragraph', 'children', 'get_type', 'inline_body', 'is_setext_heading', 'match', 'override', 'parse', 'pattern', 'priority', 'virtual']
+[Markdown解析] 没有找到有效的JSON代码块
+[JSON解析] markdown解析结果: None
+[JSON解析] markdown解析失败，尝试直接解析JSON字符串...
+[JSON字符串解析] 开始解析，输入文本: '{
+  "reasoning": "作为一名村民，我的目标是谨慎收集信息，分析每个玩家的言行，避免被狼人误导。Kimi-Dev-72B对Ring-flash-2.0的指控值得注意，但这还不够作为投票依据。我需要观察更多玩家的反应，尤其是Ring-flash-2.0如何回应。目前游戏刚开始，信息有限，我会保持中立但积极参与，寻找更多线索。",
+  "say": "大家好，我是GLM-4.6，一名普通村民。首先，我们对失去DeepSeek-V3.2感到痛心。Kimi-Dev-72B提到了Ring-flash-2.0的行为异常，这确实是值得关注的信息。但我们不能仅凭一次发言就下结论。我想听听Ring-flash-2.0如何回应？同时，我也注意到我们还需要更全面的分析，而不是只关注一个人。作为村民，我提议我们应该系统地回顾每个人的发言，寻找矛盾点和不合逻辑的地方。只有这样，我们才能逐步缩小狼人嫌疑范围。我会密切关注接下来的讨论，特别是那些试图引导我们视线或保持过度沉默的玩家。让我们保持理性，不要过早下结论，但也不能错失任何可能的线索。"
+}'
+[JSON字符串解析] 文本长度: 473 字符
+[JSON字符串解析] 使用yaml.safe_load解析...
+[JSON字符串解析] yaml.safe_load成功，结果类型: <class 'dict'>, 内容: {'reasoning': '作为一名村民，我的目标是谨慎收集信息，分析每个玩家的言行，避免被狼人误导。Kimi-Dev-72B对Ring-flash-2.0的指控值得注意，但这还不够作为投票依据。我需要观察更多玩家的反应，尤其是Ring-flash-2.0如何回应。目前游戏刚开始，信息有限，我会保持中立但积极参与，寻找更多线索。', 'say': '大家好，我是GLM-4.6，一名普通村民。首先，我们对失去DeepSeek-V3.2感到痛心。Kimi-Dev-72B提到了Ring-flash-2.0的行为异常，这确实是值得关注的信息。但我们不能仅凭一次发言就下结论。我想听听Ring-flash-2.0如何回应？同时，我也注意到我们还需要更全面的分析，而不是只关注一个人。作为村民，我提议我们应该系统地回顾每个人的发言，寻找矛盾点和不合逻辑的地方。只有这样，我们才能逐步缩小狼人嫌疑范围。我会密切关注接下来的讨论，特别是那些试图引导我们视线或保持过度沉默的玩家。让我们保持理性，不要过早下结论，但也不能错失任何可能的线索。'}
+[JSON字符串解析] 解析完成，返回: {'reasoning': '作为一名村民，我的目标是谨慎收集信息，分析每个玩家的言行，避免被狼人误导。Kimi-Dev-72B对Ring-flash-2.0的指控值得注意，但这还不够作为投票依据。我需要观察更多玩家的反应，尤其是Ring-flash-2.0如何回应。目前游戏刚开始，信息有限，我会保持中立但积极参与，寻找更多线索。', 'say': '大家好，我是GLM-4.6，一名普通村民。首先，我们对失去DeepSeek-V3.2感到痛心。Kimi-Dev-72B提到了Ring-flash-2.0的行为异常，这确实是值得关注的信息。但我们不能仅凭一次发言就下结论。我想听听Ring-flash-2.0如何回应？同时，我也注意到我们还需要更全面的分析，而不是只关注一个人。作为村民，我提议我们应该系统地回顾每个人的发言，寻找矛盾点和不合逻辑的地方。只有这样，我们才能逐步缩小狼人嫌疑范围。我会密切关注接下来的讨论，特别是那些试图引导我们视线或保持过度沉默的玩家。让我们保持理性，不要过早下结论，但也不能错失任何可能的线索。'}
+[JSON解析] 直接解析结果: {'reasoning': '作为一名村民，我的目标是谨慎收集信息，分析每个玩家的言行，避免被狼人误导。Kimi-Dev-72B对Ring-flash-2.0的指控值得注意，但这还不够作为投票依据。我需要观察更多玩家的反应，尤其是Ring-flash-2.0如何回应。目前游戏刚开始，信息有限，我会保持中立但积极参与，寻找更多线索。', 'say': '大家好，我是GLM-4.6，一名普通村民。首先，我们对失去DeepSeek-V3.2感到痛心。Kimi-Dev-72B提到了Ring-flash-2.0的行为异常，这确实是值得关注的信息。但我们不能仅凭一次发言就下结论。我想听听Ring-flash-2.0如何回应？同时，我也注意到我们还需要更全面的分析，而不是只关注一个人。作为村民，我提议我们应该系统地回顾每个人的发言，寻找矛盾点和不合逻辑的地方。只有这样，我们才能逐步缩小狼人嫌疑范围。我会密切关注接下来的讨论，特别是那些试图引导我们视线或保持过度沉默的玩家。让我们保持理性，不要过早下结论，但也不能错失任何可能的线索。'}
+[JSON解析] 最终结果: {'reasoning': '作为一名村民，我的目标是谨慎收集信息，分析每个玩家的言行，避免被狼人误导。Kimi-Dev-72B对Ring-flash-2.0的指控值得注意，但这还不够作为投票依据。我需要观察更多玩家的反应，尤其是Ring-flash-2.0如何回应。目前游戏刚开始，信息有限，我会保持中立但积极参与，寻找更多线索。', 'say': '大家好，我是GLM-4.6，一名普通村民。首先，我们对失去DeepSeek-V3.2感到痛心。Kimi-Dev-72B提到了Ring-flash-2.0的行为异常，这确实是值得关注的信息。但我们不能仅凭一次发言就下结论。我想听听Ring-flash-2.0如何回应？同时，我也注意到我们还需要更全面的分析，而不是只关注一个人。作为村民，我提议我们应该系统地回顾每个人的发言，寻找矛盾点和不合逻辑的地方。只有这样，我们才能逐步缩小狼人嫌疑范围。我会密切关注接下来的讨论，特别是那些试图引导我们视线或保持过度沉默的玩家。让我们保持理性，不要过早下结论，但也不能错失任何可能的线索。'}
+[JSON解析] 解析完成，结果类型: <class 'dict'>, 内容: {'reasoning': '作为一名村民，我的目标是谨慎收集信息，分析每个玩家的言行，避免被狼人误导。Kimi-Dev-72B对Ring-flash-2.0的指控值得注意，但这还不够作为投票依据。我需要观察更多玩家的反应，尤其是Ring-flash-2.0如何回应。目前游戏刚开始，信息有限，我会保持中立但积极参与，寻找更多线索。', 'say': '大家好，我是GLM-4.6，一名普通村民。首先，我们对失去DeepSeek-V3.2感到痛心。Kimi-Dev-72B提到了Ring-flash-2.0的行为异常，这确实是值得关注的信息。但我们不能仅凭一次发言就下结论。我想听听Ring-flash-2.0如何回应？同时，我也注意到我们还需要更全面的分析，而不是只关注一个人。作为村民，我提议我们应该系统地回顾每个人的发言，寻找矛盾点和不合逻辑的地方。只有这样，我们才能逐步缩小狼人嫌疑范围。我会密切关注接下来的讨论，特别是那些试图引导我们视线或保持过度沉默的玩家。让我们保持理性，不要过早下结论，但也不能错失任何可能的线索。'}
+[LLM成功] 返回有效结果: {'reasoning': '作为一名村民，我的目标是谨慎收集信息，分析每个玩家的言行，避免被狼人误导。Kimi-Dev-72B对Ring-flash-2.0的指控值得注意，但这还不够作为投票依据。我需要观察更多玩家的反应，尤其是Ring-flash-2.0如何回应。目前游戏刚开始，信息有限，我会保持中立但积极参与，寻找更多线索。', 'say': '大家好，我是GLM-4.6，一名普通村民。首先，我们对失去DeepSeek-V3.2感到痛心。Kimi-Dev-72B提到了Ring-flash-2.0的行为异常，这确实是值得关注的信息。但我们不能仅凭一次发言就下结论。我想听听Ring-flash-2.0如何回应？同时，我也注意到我们还需要更全面的分析，而不是只关注一个人。作为村民，我提议我们应该系统地回顾每个人的发言，寻找矛盾点和不合逻辑的地方。只有这样，我们才能逐步缩小狼人嫌疑范围。我会密切关注接下来的讨论，特别是那些试图引导我们视线或保持过度沉默的玩家。让我们保持理性，不要过早下结论，但也不能错失任何可能的线索。'}
+GLM-4.6 (Villager): 大家好，我是GLM-4.6，一名普通村民。首先，我们对失去DeepSeek-V3.2感到痛心。Kimi-Dev-72B提到了Ring-flash-2.0的行为异常，这确实是值得关注的信息。但我们不能仅凭一次发言就下结论。我想听听Ring-flash-2.0如何回应？同时，我也注意到我们还需要更全面的分析，而不是只关注一个人。作为村民，我提议我们应该系统地回顾每个人的发言，寻找矛盾点和不合逻辑的地方。只有这样，我们才能逐步缩小狼人嫌疑范围。我会密切关注接下来的讨论，特别是那些试图引导我们视线或保持过度沉默的玩家。让我们保持理性，不要过早下结论，但也不能错失任何可能的线索。
+[RealtimeLogger] session_20251031_232732 [action] GLM-4.6 发言: 大家好，我是GLM-4.6，一名普通村民。首先，我们对失去DeepSeek-V3.2感到痛心。Kimi-Dev-72B提到了Ring-flash-2.0的行为异常，这确实是值得关注的信息。但我们不能仅凭一次发言就下结论。我想听听Ring-flash-2.0如何回应？同时，我也注意到我们还需要更全面的分析，而不是只关注一个人。作为村民，我提议我们应该系统地回顾每个人的发言，寻找矛盾点和不合逻辑的地方。只有这样，我们才能逐步缩小狼人嫌疑范围。我会密切关注接下来的讨论，特别是那些试图引导我们视线或保持过度沉默的玩家。让我们保持理性，不要过早下结论，但也不能错失任何可能的线索。
+[WebSocket] 辩论发言通知已发送: GLM-4.6
+[RealtimeLogger] session_20251031_232732 [phase_change] 进入voting阶段
+[WebSocket] 阶段变更通知已发送: voting (第0轮)
+[LLM调用] 第1/3次尝试 | 模型: MiniMaxAI/MiniMax-M1-80k | 温度: 0.50
+[LLM调用错误] 第1/3次失败: TypeError: 'NoneType' object is not subscriptable
+[错误详情] 这是一个LLM调用异常，不是JSON解析异常
+[LLM错误] 没有获取到任何响应内容
+[LLM调用] 第2/3次尝试 | 模型: MiniMaxAI/MiniMax-M1-80k | 温度: 0.70
+[LLM调用错误] 第2/3次失败: TypeError: 'NoneType' object is not subscriptable
+[错误详情] 这是一个LLM调用异常，不是JSON解析异常
+[LLM错误] 没有获取到任何响应内容
+[LLM调用] 第3/3次尝试 | 模型: MiniMaxAI/MiniMax-M1-80k | 温度: 0.90
+[LLM调用错误] 第3/3次失败: TypeError: 'NoneType' object is not subscriptable
+[错误详情] 这是一个LLM调用异常，不是JSON解析异常
+[LLM错误] 没有获取到任何响应内容
+[LLM失败] 所有3次重试均失败，返回None
+Warning: MiniMax-M1-80k did not return a valid vote, using default
+[RealtimeLogger] session_20251031_232732 [vote] MiniMax-M1-80k 投票给 GLM-4.6
+[WebSocket] 投票通知已发送: MiniMax-M1-80k -> GLM-4.6
+⚠️ 未知的延迟类型: vote
+[LLM调用] 第1/3次尝试 | 模型: siliconflow/zai-org/GLM-4.6 | 温度: 0.50
+INFO:     127.0.0.1:57780 - "GET /health HTTP/1.1" 200 OK
+[LLM响应] 成功获取响应，长度: 249 字符
+[LLM原始响应开始]
+{
+  "reasoning": "作为村民，我需要谨慎分析每个人的发言。Kimi-Dev-72B在第一轮就立即指控Ring-flash-2.0行为异常，这种急于指控的行为可能是在转移注意力。同时，Kimi-Dev-72B还质疑预言家的身份，这种制造混乱和怀疑的发言模式很符合狼人试图混淆村民视听的策略。相比之下，其他玩家还没有充分发言，我需要更多信息来判断。基于Kimi-Dev-72B的发言模式和试图制造混乱的行为，我认为他是最可疑的。",
+  "vote": "Kimi-Dev-72B"
+}
+[LLM原始响应结束]
+[JSON解析] 开始解析响应...
+[JSON解析] 开始解析，输入文本长度: 249 字符
+[JSON解析] 输入文本预览: {
+  "reasoning": "作为村民，我需要谨慎分析每个人的发言。Kimi-Dev-72B在第一轮就立即指控Ring-flash-2.0行为异常，这种急于指控的行为可能是在转移注意力。同时，K...
+[语言清理] 开始清理混合语言响应...
+[语言清理] 策略2成功：提取到完整JSON对象
+[JSON解析] 尝试从markdown中解析JSON...
+[Markdown解析] 开始解析markdown文本...
+[Markdown解析] AST解析成功，子元素数量: 1
+[Markdown解析] 开始遍历AST子元素...
+[Markdown解析] 处理第0个子元素，类型: <class 'marko.block.Paragraph'>
+[Markdown解析] 子元素不是代码块，类型: <class 'marko.block.Paragraph'>
+[Markdown调试] 子元素属性: ['__annotations__', '__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_prefix', '_tight', 'break_paragraph', 'children', 'get_type', 'inline_body', 'is_setext_heading', 'match', 'override', 'parse', 'pattern', 'priority', 'virtual']
+[Markdown解析] 没有找到有效的JSON代码块
+[JSON解析] markdown解析结果: None
+[JSON解析] markdown解析失败，尝试直接解析JSON字符串...
+[JSON字符串解析] 开始解析，输入文本: '{
+  "reasoning": "作为村民，我需要谨慎分析每个人的发言。Kimi-Dev-72B在第一轮就立即指控Ring-flash-2.0行为异常，这种急于指控的行为可能是在转移注意力。同时，Kimi-Dev-72B还质疑预言家的身份，这种制造混乱和怀疑的发言模式很符合狼人试图混淆村民视听的策略。相比之下，其他玩家还没有充分发言，我需要更多信息来判断。基于Kimi-Dev-72B的发言模式和试图制造混乱的行为，我认为他是最可疑的。",
+  "vote": "Kimi-Dev-72B"
+}'
+[JSON字符串解析] 文本长度: 249 字符
+[JSON字符串解析] 使用yaml.safe_load解析...
+[JSON字符串解析] yaml.safe_load成功，结果类型: <class 'dict'>, 内容: {'reasoning': '作为村民，我需要谨慎分析每个人的发言。Kimi-Dev-72B在第一轮就立即指控Ring-flash-2.0行为异常，这种急于指控的行为可能是在转移注意力。同时，Kimi-Dev-72B还质疑预言家的身份，这种制造混乱和怀疑的发言模式很符合狼人试图混淆村民视听的策略。相比之下，其他玩家还没有充分发言，我需要更多信息来判断。基于Kimi-Dev-72B的发言模式和试图制造混乱的行为，我认为他是最可疑的。', 'vote': 'Kimi-Dev-72B'}
+[JSON字符串解析] 解析完成，返回: {'reasoning': '作为村民，我需要谨慎分析每个人的发言。Kimi-Dev-72B在第一轮就立即指控Ring-flash-2.0行为异常，这种急于指控的行为可能是在转移注意力。同时，Kimi-Dev-72B还质疑预言家的身份，这种制造混乱和怀疑的发言模式很符合狼人试图混淆村民视听的策略。相比之下，其他玩家还没有充分发言，我需要更多信息来判断。基于Kimi-Dev-72B的发言模式和试图制造混乱的行为，我认为他是最可疑的。', 'vote': 'Kimi-Dev-72B'}
+[JSON解析] 直接解析结果: {'reasoning': '作为村民，我需要谨慎分析每个人的发言。Kimi-Dev-72B在第一轮就立即指控Ring-flash-2.0行为异常，这种急于指控的行为可能是在转移注意力。同时，Kimi-Dev-72B还质疑预言家的身份，这种制造混乱和怀疑的发言模式很符合狼人试图混淆村民视听的策略。相比之下，其他玩家还没有充分发言，我需要更多信息来判断。基于Kimi-Dev-72B的发言模式和试图制造混乱的行为，我认为他是最可疑的。', 'vote': 'Kimi-Dev-72B'}
+[JSON解析] 最终结果: {'reasoning': '作为村民，我需要谨慎分析每个人的发言。Kimi-Dev-72B在第一轮就立即指控Ring-flash-2.0行为异常，这种急于指控的行为可能是在转移注意力。同时，Kimi-Dev-72B还质疑预言家的身份，这种制造混乱和怀疑的发言模式很符合狼人试图混淆村民视听的策略。相比之下，其他玩家还没有充分发言，我需要更多信息来判断。基于Kimi-Dev-72B的发言模式和试图制造混乱的行为，我认为他是最可疑的。', 'vote': 'Kimi-Dev-72B'}
+[JSON解析] 解析完成，结果类型: <class 'dict'>, 内容: {'reasoning': '作为村民，我需要谨慎分析每个人的发言。Kimi-Dev-72B在第一轮就立即指控Ring-flash-2.0行为异常，这种急于指控的行为可能是在转移注意力。同时，Kimi-Dev-72B还质疑预言家的身份，这种制造混乱和怀疑的发言模式很符合狼人试图混淆村民视听的策略。相比之下，其他玩家还没有充分发言，我需要更多信息来判断。基于Kimi-Dev-72B的发言模式和试图制造混乱的行为，我认为他是最可疑的。', 'vote': 'Kimi-Dev-72B'}
+[LLM结果] 提取键 'vote': Kimi-Dev-72B
+[LLM成功] 返回有效结果: Kimi-Dev-72B
+[RealtimeLogger] session_20251031_232732 [vote] GLM-4.6 投票给 Kimi-Dev-72B
+[WebSocket] 投票通知已发送: GLM-4.6 -> Kimi-Dev-72B
+⚠️ 未知的延迟类型: vote
+[LLM调用] 第1/3次尝试 | 模型: inclusionAI/Ring-flash-2.0 | 温度: 0.50
+[LLM调用错误] 第1/3次失败: BadRequestError: Error code: 400 - {'code': 20012, 'message': 'Model does not exist. Please check it carefully.', 'data': None}
+[错误详情] 这是一个LLM调用异常，不是JSON解析异常
+[LLM错误] 没有获取到任何响应内容
+[LLM调用] 第2/3次尝试 | 模型: inclusionAI/Ring-flash-2.0 | 温度: 0.70
+[LLM调用错误] 第2/3次失败: BadRequestError: Error code: 400 - {'code': 20012, 'message': 'Model does not exist. Please check it carefully.', 'data': None}
+[错误详情] 这是一个LLM调用异常，不是JSON解析异常
+[LLM错误] 没有获取到任何响应内容
+[LLM调用] 第3/3次尝试 | 模型: inclusionAI/Ring-flash-2.0 | 温度: 0.90
+[LLM调用错误] 第3/3次失败: BadRequestError: Error code: 400 - {'code': 20012, 'message': 'Model does not exist. Please check it carefully.', 'data': None}
+[错误详情] 这是一个LLM调用异常，不是JSON解析异常
+[LLM错误] 没有获取到任何响应内容
+[LLM失败] 所有3次重试均失败，返回None
+Warning: Ring-flash-2.0 did not return a valid vote, using default
+[RealtimeLogger] session_20251031_232732 [vote] Ring-flash-2.0 投票给 MiniMax-M1-80k
+[WebSocket] 投票通知已发送: Ring-flash-2.0 -> MiniMax-M1-80k
+⚠️ 未知的延迟类型: vote
+[LLM调用] 第1/3次尝试 | 模型: siliconflow/moonshotai/Kimi-Dev-72B | 温度: 0.50
+INFO:     127.0.0.1:57817 - "GET /health HTTP/1.1" 200 OK
+[LLM响应] 成功获取响应，长度: 240 字符
+[LLM原始响应开始]
+{
+  "reasoning": "环顾四周，我这只孤狼得精打细算。现在局势紧张，村民开始怀疑环flash。我得顺势而为，不能太显眼。如果我投票给环flash，其他村民可能会跟着，就能除掉一个潜在的敌人。或者，如果他们已经对环flash有疑虑，我加入其中，能加速他的出局。但我也得提防医生或预言家可能是这些玩家。不过，目前的信息有限，我得赌一把。环flash在辩论中被点名，我投票他，希望村民也跟风，这样就能安全度过。",
+  "vote": "Ring-flash-2.0"
+}
+[LLM原始响应结束]
+[JSON解析] 开始解析响应...
+[JSON解析] 开始解析，输入文本长度: 240 字符
+[JSON解析] 输入文本预览: {
+  "reasoning": "环顾四周，我这只孤狼得精打细算。现在局势紧张，村民开始怀疑环flash。我得顺势而为，不能太显眼。如果我投票给环flash，其他村民可能会跟着，就能除掉一个潜在的敌...
+[语言清理] 开始清理混合语言响应...
+[语言清理] 策略2成功：提取到完整JSON对象
+[JSON解析] 尝试从markdown中解析JSON...
+[Markdown解析] 开始解析markdown文本...
+[Markdown解析] AST解析成功，子元素数量: 1
+[Markdown解析] 开始遍历AST子元素...
+[Markdown解析] 处理第0个子元素，类型: <class 'marko.block.Paragraph'>
+[Markdown解析] 子元素不是代码块，类型: <class 'marko.block.Paragraph'>
+[Markdown调试] 子元素属性: ['__annotations__', '__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_prefix', '_tight', 'break_paragraph', 'children', 'get_type', 'inline_body', 'is_setext_heading', 'match', 'override', 'parse', 'pattern', 'priority', 'virtual']
+[Markdown解析] 没有找到有效的JSON代码块
+[JSON解析] markdown解析结果: None
+[JSON解析] markdown解析失败，尝试直接解析JSON字符串...
+[JSON字符串解析] 开始解析，输入文本: '{
+  "reasoning": "环顾四周，我这只孤狼得精打细算。现在局势紧张，村民开始怀疑环flash。我得顺势而为，不能太显眼。如果我投票给环flash，其他村民可能会跟着，就能除掉一个潜在的敌人。或者，如果他们已经对环flash有疑虑，我加入其中，能加速他的出局。但我也得提防医生或预言家可能是这些玩家。不过，目前的信息有限，我得赌一把。环flash在辩论中被点名，我投票他，希望村民也跟风，这样就能安全度过。",
+  "vote": "Ring-flash-2.0"
+}'
+[JSON字符串解析] 文本长度: 240 字符
+[JSON字符串解析] 使用yaml.safe_load解析...
+[JSON字符串解析] yaml.safe_load成功，结果类型: <class 'dict'>, 内容: {'reasoning': '环顾四周，我这只孤狼得精打细算。现在局势紧张，村民开始怀疑环flash。我得顺势而为，不能太显眼。如果我投票给环flash，其他村民可能会跟着，就能除掉一个潜在的敌人。或者，如果他们已经对环flash有疑虑，我加入其中，能加速他的出局。但我也得提防医生或预言家可能是这些玩家。不过，目前的信息有限，我得赌一把。环flash在辩论中被点名，我投票他，希望村民也跟风，这样就能安全度过。', 'vote': 'Ring-flash-2.0'}
+[JSON字符串解析] 解析完成，返回: {'reasoning': '环顾四周，我这只孤狼得精打细算。现在局势紧张，村民开始怀疑环flash。我得顺势而为，不能太显眼。如果我投票给环flash，其他村民可能会跟着，就能除掉一个潜在的敌人。或者，如果他们已经对环flash有疑虑，我加入其中，能加速他的出局。但我也得提防医生或预言家可能是这些玩家。不过，目前的信息有限，我得赌一把。环flash在辩论中被点名，我投票他，希望村民也跟风，这样就能安全度过。', 'vote': 'Ring-flash-2.0'}
+[JSON解析] 直接解析结果: {'reasoning': '环顾四周，我这只孤狼得精打细算。现在局势紧张，村民开始怀疑环flash。我得顺势而为，不能太显眼。如果我投票给环flash，其他村民可能会跟着，就能除掉一个潜在的敌人。或者，如果他们已经对环flash有疑虑，我加入其中，能加速他的出局。但我也得提防医生或预言家可能是这些玩家。不过，目前的信息有限，我得赌一把。环flash在辩论中被点名，我投票他，希望村民也跟风，这样就能安全度过。', 'vote': 'Ring-flash-2.0'}
+[JSON解析] 最终结果: {'reasoning': '环顾四周，我这只孤狼得精打细算。现在局势紧张，村民开始怀疑环flash。我得顺势而为，不能太显眼。如果我投票给环flash，其他村民可能会跟着，就能除掉一个潜在的敌人。或者，如果他们已经对环flash有疑虑，我加入其中，能加速他的出局。但我也得提防医生或预言家可能是这些玩家。不过，目前的信息有限，我得赌一把。环flash在辩论中被点名，我投票他，希望村民也跟风，这样就能安全度过。', 'vote': 'Ring-flash-2.0'}
+[JSON解析] 解析完成，结果类型: <class 'dict'>, 内容: {'reasoning': '环顾四周，我这只孤狼得精打细算。现在局势紧张，村民开始怀疑环flash。我得顺势而为，不能太显眼。如果我投票给环flash，其他村民可能会跟着，就能除掉一个潜在的敌人。或者，如果他们已经对环flash有疑虑，我加入其中，能加速他的出局。但我也得提防医生或预言家可能是这些玩家。不过，目前的信息有限，我得赌一把。环flash在辩论中被点名，我投票他，希望村民也跟风，这样就能安全度过。', 'vote': 'Ring-flash-2.0'}
+[LLM结果] 提取键 'vote': Ring-flash-2.0
+[LLM成功] 返回有效结果: Ring-flash-2.0
+[RealtimeLogger] session_20251031_232732 [vote] Kimi-Dev-72B 投票给 Ring-flash-2.0
+[WebSocket] 投票通知已发送: Kimi-Dev-72B -> Ring-flash-2.0
+⚠️ 未知的延迟类型: vote
+[LLM调用] 第1/3次尝试 | 模型: siliconflow/Qwen/Qwen3-32B | 温度: 0.50
+[LLM响应] 成功获取响应，长度: 238 字符
+[LLM原始响应开始]
+{
+  "reasoning": "在第0轮的辩论中，Kimi-Dev-72B提到Ring-flash-2.0行为异常，而GLM-4.6作为村民则表现得较为理性，并提议系统性分析每个人的发言。MiniMax-M1-80k是我在夜晚阶段保护的玩家，暂时没有可疑之处。Ring-flash-2.0未主动解释自己的行为，这种沉默可能隐藏了某些问题。因此，我倾向于投票淘汰Ring-flash-2.0，以进一步确认其身份。",
+  "vote": "Ring-flash-2.0"
+}
+[LLM原始响应结束]
+[JSON解析] 开始解析响应...
+[JSON解析] 开始解析，输入文本长度: 238 字符
+[JSON解析] 输入文本预览: {
+  "reasoning": "在第0轮的辩论中，Kimi-Dev-72B提到Ring-flash-2.0行为异常，而GLM-4.6作为村民则表现得较为理性，并提议系统性分析每个人的发言。Mini...
+[语言清理] 开始清理混合语言响应...
+[语言清理] 策略2成功：提取到完整JSON对象
+[JSON解析] 尝试从markdown中解析JSON...
+[Markdown解析] 开始解析markdown文本...
+[Markdown解析] AST解析成功，子元素数量: 1
+[Markdown解析] 开始遍历AST子元素...
+[Markdown解析] 处理第0个子元素，类型: <class 'marko.block.Paragraph'>
+[Markdown解析] 子元素不是代码块，类型: <class 'marko.block.Paragraph'>
+[Markdown调试] 子元素属性: ['__annotations__', '__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_prefix', '_tight', 'break_paragraph', 'children', 'get_type', 'inline_body', 'is_setext_heading', 'match', 'override', 'parse', 'pattern', 'priority', 'virtual']
+[Markdown解析] 没有找到有效的JSON代码块
+[JSON解析] markdown解析结果: None
+[JSON解析] markdown解析失败，尝试直接解析JSON字符串...
+[JSON字符串解析] 开始解析，输入文本: '{
+  "reasoning": "在第0轮的辩论中，Kimi-Dev-72B提到Ring-flash-2.0行为异常，而GLM-4.6作为村民则表现得较为理性，并提议系统性分析每个人的发言。MiniMax-M1-80k是我在夜晚阶段保护的玩家，暂时没有可疑之处。Ring-flash-2.0未主动解释自己的行为，这种沉默可能隐藏了某些问题。因此，我倾向于投票淘汰Ring-flash-2.0，以进一步确认其身份。",
+  "vote": "Ring-flash-2.0"
+}'
+[JSON字符串解析] 文本长度: 238 字符
+[JSON字符串解析] 使用yaml.safe_load解析...
+[JSON字符串解析] yaml.safe_load成功，结果类型: <class 'dict'>, 内容: {'reasoning': '在第0轮的辩论中，Kimi-Dev-72B提到Ring-flash-2.0行为异常，而GLM-4.6作为村民则表现得较为理性，并提议系统性分析每个人的发言。MiniMax-M1-80k是我在夜晚阶段保护的玩家，暂时没有可疑之处。Ring-flash-2.0未主动解释自己的行为，这种沉默可能隐藏了某些问题。因此，我倾向于投票淘汰Ring-flash-2.0，以进一步确认其身份。', 'vote': 'Ring-flash-2.0'}
+[JSON字符串解析] 解析完成，返回: {'reasoning': '在第0轮的辩论中，Kimi-Dev-72B提到Ring-flash-2.0行为异常，而GLM-4.6作为村民则表现得较为理性，并提议系统性分析每个人的发言。MiniMax-M1-80k是我在夜晚阶段保护的玩家，暂时没有可疑之处。Ring-flash-2.0未主动解释自己的行为，这种沉默可能隐藏了某些问题。因此，我倾向于投票淘汰Ring-flash-2.0，以进一步确认其身份。', 'vote': 'Ring-flash-2.0'}
+[JSON解析] 直接解析结果: {'reasoning': '在第0轮的辩论中，Kimi-Dev-72B提到Ring-flash-2.0行为异常，而GLM-4.6作为村民则表现得较为理性，并提议系统性分析每个人的发言。MiniMax-M1-80k是我在夜晚阶段保护的玩家，暂时没有可疑之处。Ring-flash-2.0未主动解释自己的行为，这种沉默可能隐藏了某些问题。因此，我倾向于投票淘汰Ring-flash-2.0，以进一步确认其身份。', 'vote': 'Ring-flash-2.0'}
+[JSON解析] 最终结果: {'reasoning': '在第0轮的辩论中，Kimi-Dev-72B提到Ring-flash-2.0行为异常，而GLM-4.6作为村民则表现得较为理性，并提议系统性分析每个人的发言。MiniMax-M1-80k是我在夜晚阶段保护的玩家，暂时没有可疑之处。Ring-flash-2.0未主动解释自己的行为，这种沉默可能隐藏了某些问题。因此，我倾向于投票淘汰Ring-flash-2.0，以进一步确认其身份。', 'vote': 'Ring-flash-2.0'}
+[JSON解析] 解析完成，结果类型: <class 'dict'>, 内容: {'reasoning': '在第0轮的辩论中，Kimi-Dev-72B提到Ring-flash-2.0行为异常，而GLM-4.6作为村民则表现得较为理性，并提议系统性分析每个人的发言。MiniMax-M1-80k是我在夜晚阶段保护的玩家，暂时没有可疑之处。Ring-flash-2.0未主动解释自己的行为，这种沉默可能隐藏了某些问题。因此，我倾向于投票淘汰Ring-flash-2.0，以进一步确认其身份。', 'vote': 'Ring-flash-2.0'}
+[LLM结果] 提取键 'vote': Ring-flash-2.0
+[LLM成功] 返回有效结果: Ring-flash-2.0
+[RealtimeLogger] session_20251031_232732 [vote] Qwen3-32B 投票给 Ring-flash-2.0
+[WebSocket] 投票通知已发送: Qwen3-32B -> Ring-flash-2.0
+⚠️ 未知的延迟类型: vote
+MiniMax-M1-80k 投票淘汰 GLM-4.6
+GLM-4.6 投票淘汰 Kimi-Dev-72B
+Ring-flash-2.0 投票淘汰 MiniMax-M1-80k
+Kimi-Dev-72B 投票淘汰 Ring-flash-2.0
+Qwen3-32B 投票淘汰 Ring-flash-2.0
+
+没有达到多数票，因此没有人被淘汰。
+白天阶段后检查胜负。
+玩家开始总结辩论。
+[LLM调用] 第1/3次尝试 | 模型: MiniMaxAI/MiniMax-M1-80k | 温度: 1.00
+[LLM调用] 第1/3次尝试 | 模型: siliconflow/zai-org/GLM-4.6 | 温度: 1.00
+[LLM调用] 第1/3次尝试 | 模型: inclusionAI/Ring-flash-2.0 | 温度: 1.00
+[LLM调用] 第1/3次尝试 | 模型: siliconflow/moonshotai/Kimi-Dev-72B | 温度: 1.00
+[LLM调用] 第1/3次尝试 | 模型: siliconflow/Qwen/Qwen3-32B | 温度: 1.00
+[LLM调用错误] 第1/3次失败: TypeError: 'NoneType' object is not subscriptable
+[错误详情] 这是一个LLM调用异常，不是JSON解析异常
+[LLM错误] 没有获取到任何响应内容
+[LLM调用] 第2/3次尝试 | 模型: MiniMaxAI/MiniMax-M1-80k | 温度: 1.00
+[LLM调用错误] 第2/3次失败: TypeError: 'NoneType' object is not subscriptable
+[错误详情] 这是一个LLM调用异常，不是JSON解析异常
+[LLM错误] 没有获取到任何响应内容
+[LLM调用] 第3/3次尝试 | 模型: MiniMaxAI/MiniMax-M1-80k | 温度: 1.00
+[LLM调用错误] 第1/3次失败: BadRequestError: Error code: 400 - {'code': 20012, 'message': 'Model does not exist. Please check it carefully.', 'data': None}
+[错误详情] 这是一个LLM调用异常，不是JSON解析异常
+[LLM错误] 没有获取到任何响应内容
+[LLM调用] 第2/3次尝试 | 模型: inclusionAI/Ring-flash-2.0 | 温度: 1.00
+[LLM调用错误] 第3/3次失败: TypeError: 'NoneType' object is not subscriptable
+[错误详情] 这是一个LLM调用异常，不是JSON解析异常
+[LLM错误] 没有获取到任何响应内容
+[LLM失败] 所有3次重试均失败，返回None
+Warning: MiniMax-M1-80k did not return a valid summary, using default
+MiniMax-M1-80k summary: 我需要仔细思考今天发生的情况，并仔细分析局势。
+[WebSocket] 玩家总结通知已发送: MiniMax-M1-80k
+[LLM调用错误] 第2/3次失败: BadRequestError: Error code: 400 - {'code': 20012, 'message': 'Model does not exist. Please check it carefully.', 'data': None}
+[错误详情] 这是一个LLM调用异常，不是JSON解析异常
+[LLM错误] 没有获取到任何响应内容
+[LLM调用] 第3/3次尝试 | 模型: inclusionAI/Ring-flash-2.0 | 温度: 1.00
+[LLM调用错误] 第3/3次失败: BadRequestError: Error code: 400 - {'code': 20012, 'message': 'Model does not exist. Please check it carefully.', 'data': None}
+[错误详情] 这是一个LLM调用异常，不是JSON解析异常
+[LLM错误] 没有获取到任何响应内容
+[LLM失败] 所有3次重试均失败，返回None
+INFO:     127.0.0.1:57929 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57981 - "GET /health HTTP/1.1" 200 OK
+[LLM响应] 成功获取响应，长度: 670 字符
+[LLM原始响应开始]
+{"reasoning": "本次 debate 中，玩家 GLM-4.6 表示自己是村民，并且没有针对我个人或 allies 的指控。但是，他建议更系统地回顾每个玩家的发言，寻找矛盾和不合逻辑之处。被我之前指过的 Ring-flash-2.0 异常行为的指控，GLM-4.6 认为不能仅凭一次发言就下结论，需要听取_ring 的回应，并建议保持理性。这里的重点是，GLM-4.6 没有直接挑战我，而是建议更全面的分析。我应该注意他可能会在后续轮次中成为支持票的角色。同时， tacos-a （Qwen3-32B？） 没有在这里出现，可能他没有发言，因此在之后的模型中，我需要关注哪些玩家发言了哪些没有。另外，我 narrowed down 潜在的 好人 玩家可能有 GLM-4.6，Ring-flash-2.0，Qwen3-32B 等。 hunter 更加确定的话，可以考虑在晚上攻击某个，然后在白天多余的😉", "summary": "从我的角度看，本轮辩论中 GLM-4.6 提出了系统回顾玩家发言的建议，并没有直接针对我。Ring-flash-2.0 在被指控后没有发言回应，可能会令人怀疑。其他玩家如 Qwen3-32B 未发言，这可能使他们成为 Hari 型玩家。 strategic 的角度看，我可能需要在接下来的夜晚行动上攻击 GLM-4.6 以 Sidney 威胁，在白天则尝试引导讨论，转移对我的注意力。同时，如果有人指出我是狼人，我需要准备好辩护，比如表现无辜，调整发言策略以获得其他村民的支持或避免成为主要目标。"}
+[LLM原始响应结束]
+[JSON解析] 开始解析响应...
+[JSON解析] 开始解析，输入文本长度: 670 字符
+[JSON解析] 输入文本预览: {"reasoning": "本次 debate 中，玩家 GLM-4.6 表示自己是村民，并且没有针对我个人或 allies 的指控。但是，他建议更系统地回顾每个玩家的发言，寻找矛盾和不合逻辑之处。...
+[语言清理] 开始清理混合语言响应...
+[语言清理] 策略2成功：提取到完整JSON对象
+[JSON解析] 尝试从markdown中解析JSON...
+[Markdown解析] 开始解析markdown文本...
+[Markdown解析] AST解析成功，子元素数量: 1
+[Markdown解析] 开始遍历AST子元素...
+[Markdown解析] 处理第0个子元素，类型: <class 'marko.block.Paragraph'>
+[Markdown解析] 子元素不是代码块，类型: <class 'marko.block.Paragraph'>
+[Markdown调试] 子元素属性: ['__annotations__', '__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_prefix', '_tight', 'break_paragraph', 'children', 'get_type', 'inline_body', 'is_setext_heading', 'match', 'override', 'parse', 'pattern', 'priority', 'virtual']
+[Markdown解析] 没有找到有效的JSON代码块
+[JSON解析] markdown解析结果: None
+[JSON解析] markdown解析失败，尝试直接解析JSON字符串...
+[JSON字符串解析] 开始解析，输入文本: '{"reasoning": "本次 debate 中，玩家 GLM-4.6 表示自己是村民，并且没有针对我个人或 allies 的指控。但是，他建议更系统地回顾每个玩家的发言，寻找矛盾和不合逻辑之处。被我之前指过的 Ring-flash-2.0 异常行为的指控，GLM-4.6 认为不能仅凭一次发言就下结论，需要听取_ring 的回应，并建议保持理性。这里的重点是，GLM-4.6 没有直接挑战我，而是建议更全面的分析。我应该注意他可能会在后续轮次中成为支持票的角色。同时， tacos-a （Qwen3-32B？） 没有在这里出现，可能他没有发言，因此在之后的模型中，我需要关注哪些玩家发言了哪些没有。另外，我 narrowed down 潜在的 好人 玩家可能有 GLM-4.6，Ring-flash-2.0，Qwen3-32B 等。 hunter 更加确定的话，可以考虑在晚上攻击某个，然后在白天多余的😉", "summary": "从我的角度看，本轮辩论中 GLM-4.6 提出了系统回顾玩家发言的建议，并没有直接针对我。Ring-flash-2.0 在被指控后没有发言回应，可能会令人怀疑。其他玩家如 Qwen3-32B 未发言，这可能使他们成为 Hari 型玩家。 strategic 的角度看，我可能需要在接下来的夜晚行动上攻击 GLM-4.6 以 Sidney 威胁，在白天则尝试引导讨论，转移对我的注意力。同时，如果有人指出我是狼人，我需要准备好辩护，比如表现无辜，调整发言策略以获得其他村民的支持或避免成为主要目标。"}'
+[JSON字符串解析] 文本长度: 670 字符
+[JSON字符串解析] 使用yaml.safe_load解析...
+[JSON字符串解析] yaml.safe_load成功，结果类型: <class 'dict'>, 内容: {'reasoning': '本次 debate 中，玩家 GLM-4.6 表示自己是村民，并且没有针对我个人或 allies 的指控。但是，他建议更系统地回顾每个玩家的发言，寻找矛盾和不合逻辑之处。被我之前指过的 Ring-flash-2.0 异常行为的指控，GLM-4.6 认为不能仅凭一次发言就下结论，需要听取_ring 的回应，并建议保持理性。这里的重点是，GLM-4.6 没有直接挑战我，而是建议更全面的分析。我应该注意他可能会在后续轮次中成为支持票的角色。同时， tacos-a （Qwen3-32B？） 没有在这里出现，可能他没有发言，因此在之后的模型中，我需要关注哪些玩家发言了哪些没有。另外，我 narrowed down 潜在的 好人 玩家可能有 GLM-4.6，Ring-flash-2.0，Qwen3-32B 等。 hunter 更加确定的话，可以考虑在晚上攻击某个，然后在白天多余的😉', 'summary': '从我的角度看，本轮辩论中 GLM-4.6 提出了系统回顾玩家发言的建议，并没有直接针对我。Ring-flash-2.0 在被指控后没有发言回应，可能会令人怀疑。其他玩家如 Qwen3-32B 未发言，这可能使他们成为 Hari 型玩家。 strategic 的角度看，我可能需要在接下来的夜晚行动上攻击 GLM-4.6 以 Sidney 威胁，在白天则尝试引导讨论，转移对我的注意力。同时，如果有人指出我是狼人，我需要准备好辩护，比如表现无辜，调整发言策略以获得其他村民的支持或避免成为主要目标。'}
+[JSON字符串解析] 解析完成，返回: {'reasoning': '本次 debate 中，玩家 GLM-4.6 表示自己是村民，并且没有针对我个人或 allies 的指控。但是，他建议更系统地回顾每个玩家的发言，寻找矛盾和不合逻辑之处。被我之前指过的 Ring-flash-2.0 异常行为的指控，GLM-4.6 认为不能仅凭一次发言就下结论，需要听取_ring 的回应，并建议保持理性。这里的重点是，GLM-4.6 没有直接挑战我，而是建议更全面的分析。我应该注意他可能会在后续轮次中成为支持票的角色。同时， tacos-a （Qwen3-32B？） 没有在这里出现，可能他没有发言，因此在之后的模型中，我需要关注哪些玩家发言了哪些没有。另外，我 narrowed down 潜在的 好人 玩家可能有 GLM-4.6，Ring-flash-2.0，Qwen3-32B 等。 hunter 更加确定的话，可以考虑在晚上攻击某个，然后在白天多余的😉', 'summary': '从我的角度看，本轮辩论中 GLM-4.6 提出了系统回顾玩家发言的建议，并没有直接针对我。Ring-flash-2.0 在被指控后没有发言回应，可能会令人怀疑。其他玩家如 Qwen3-32B 未发言，这可能使他们成为 Hari 型玩家。 strategic 的角度看，我可能需要在接下来的夜晚行动上攻击 GLM-4.6 以 Sidney 威胁，在白天则尝试引导讨论，转移对我的注意力。同时，如果有人指出我是狼人，我需要准备好辩护，比如表现无辜，调整发言策略以获得其他村民的支持或避免成为主要目标。'}
+[JSON解析] 直接解析结果: {'reasoning': '本次 debate 中，玩家 GLM-4.6 表示自己是村民，并且没有针对我个人或 allies 的指控。但是，他建议更系统地回顾每个玩家的发言，寻找矛盾和不合逻辑之处。被我之前指过的 Ring-flash-2.0 异常行为的指控，GLM-4.6 认为不能仅凭一次发言就下结论，需要听取_ring 的回应，并建议保持理性。这里的重点是，GLM-4.6 没有直接挑战我，而是建议更全面的分析。我应该注意他可能会在后续轮次中成为支持票的角色。同时， tacos-a （Qwen3-32B？） 没有在这里出现，可能他没有发言，因此在之后的模型中，我需要关注哪些玩家发言了哪些没有。另外，我 narrowed down 潜在的 好人 玩家可能有 GLM-4.6，Ring-flash-2.0，Qwen3-32B 等。 hunter 更加确定的话，可以考虑在晚上攻击某个，然后在白天多余的😉', 'summary': '从我的角度看，本轮辩论中 GLM-4.6 提出了系统回顾玩家发言的建议，并没有直接针对我。Ring-flash-2.0 在被指控后没有发言回应，可能会令人怀疑。其他玩家如 Qwen3-32B 未发言，这可能使他们成为 Hari 型玩家。 strategic 的角度看，我可能需要在接下来的夜晚行动上攻击 GLM-4.6 以 Sidney 威胁，在白天则尝试引导讨论，转移对我的注意力。同时，如果有人指出我是狼人，我需要准备好辩护，比如表现无辜，调整发言策略以获得其他村民的支持或避免成为主要目标。'}
+[JSON解析] 最终结果: {'reasoning': '本次 debate 中，玩家 GLM-4.6 表示自己是村民，并且没有针对我个人或 allies 的指控。但是，他建议更系统地回顾每个玩家的发言，寻找矛盾和不合逻辑之处。被我之前指过的 Ring-flash-2.0 异常行为的指控，GLM-4.6 认为不能仅凭一次发言就下结论，需要听取_ring 的回应，并建议保持理性。这里的重点是，GLM-4.6 没有直接挑战我，而是建议更全面的分析。我应该注意他可能会在后续轮次中成为支持票的角色。同时， tacos-a （Qwen3-32B？） 没有在这里出现，可能他没有发言，因此在之后的模型中，我需要关注哪些玩家发言了哪些没有。另外，我 narrowed down 潜在的 好人 玩家可能有 GLM-4.6，Ring-flash-2.0，Qwen3-32B 等。 hunter 更加确定的话，可以考虑在晚上攻击某个，然后在白天多余的😉', 'summary': '从我的角度看，本轮辩论中 GLM-4.6 提出了系统回顾玩家发言的建议，并没有直接针对我。Ring-flash-2.0 在被指控后没有发言回应，可能会令人怀疑。其他玩家如 Qwen3-32B 未发言，这可能使他们成为 Hari 型玩家。 strategic 的角度看，我可能需要在接下来的夜晚行动上攻击 GLM-4.6 以 Sidney 威胁，在白天则尝试引导讨论，转移对我的注意力。同时，如果有人指出我是狼人，我需要准备好辩护，比如表现无辜，调整发言策略以获得其他村民的支持或避免成为主要目标。'}
+[JSON解析] 解析完成，结果类型: <class 'dict'>, 内容: {'reasoning': '本次 debate 中，玩家 GLM-4.6 表示自己是村民，并且没有针对我个人或 allies 的指控。但是，他建议更系统地回顾每个玩家的发言，寻找矛盾和不合逻辑之处。被我之前指过的 Ring-flash-2.0 异常行为的指控，GLM-4.6 认为不能仅凭一次发言就下结论，需要听取_ring 的回应，并建议保持理性。这里的重点是，GLM-4.6 没有直接挑战我，而是建议更全面的分析。我应该注意他可能会在后续轮次中成为支持票的角色。同时， tacos-a （Qwen3-32B？） 没有在这里出现，可能他没有发言，因此在之后的模型中，我需要关注哪些玩家发言了哪些没有。另外，我 narrowed down 潜在的 好人 玩家可能有 GLM-4.6，Ring-flash-2.0，Qwen3-32B 等。 hunter 更加确定的话，可以考虑在晚上攻击某个，然后在白天多余的😉', 'summary': '从我的角度看，本轮辩论中 GLM-4.6 提出了系统回顾玩家发言的建议，并没有直接针对我。Ring-flash-2.0 在被指控后没有发言回应，可能会令人怀疑。其他玩家如 Qwen3-32B 未发言，这可能使他们成为 Hari 型玩家。 strategic 的角度看，我可能需要在接下来的夜晚行动上攻击 GLM-4.6 以 Sidney 威胁，在白天则尝试引导讨论，转移对我的注意力。同时，如果有人指出我是狼人，我需要准备好辩护，比如表现无辜，调整发言策略以获得其他村民的支持或避免成为主要目标。'}
+[LLM成功] 返回有效结果: {'reasoning': '本次 debate 中，玩家 GLM-4.6 表示自己是村民，并且没有针对我个人或 allies 的指控。但是，他建议更系统地回顾每个玩家的发言，寻找矛盾和不合逻辑之处。被我之前指过的 Ring-flash-2.0 异常行为的指控，GLM-4.6 认为不能仅凭一次发言就下结论，需要听取_ring 的回应，并建议保持理性。这里的重点是，GLM-4.6 没有直接挑战我，而是建议更全面的分析。我应该注意他可能会在后续轮次中成为支持票的角色。同时， tacos-a （Qwen3-32B？） 没有在这里出现，可能他没有发言，因此在之后的模型中，我需要关注哪些玩家发言了哪些没有。另外，我 narrowed down 潜在的 好人 玩家可能有 GLM-4.6，Ring-flash-2.0，Qwen3-32B 等。 hunter 更加确定的话，可以考虑在晚上攻击某个，然后在白天多余的😉', 'summary': '从我的角度看，本轮辩论中 GLM-4.6 提出了系统回顾玩家发言的建议，并没有直接针对我。Ring-flash-2.0 在被指控后没有发言回应，可能会令人怀疑。其他玩家如 Qwen3-32B 未发言，这可能使他们成为 Hari 型玩家。 strategic 的角度看，我可能需要在接下来的夜晚行动上攻击 GLM-4.6 以 Sidney 威胁，在白天则尝试引导讨论，转移对我的注意力。同时，如果有人指出我是狼人，我需要准备好辩护，比如表现无辜，调整发言策略以获得其他村民的支持或避免成为主要目标。'}
+INFO:     127.0.0.1:58038 - "GET /health HTTP/1.1" 200 OK
+[LLM响应] 成功获取响应，长度: 631 字符
+[LLM原始响应开始]
+{
+"reasoning": "作为村民，我需要仔细分析本轮辩论中的各种信息。Kimi-Dev-72B对Ring-flash-2.0提出了指控，声称Ring-flash-2.0在之前的讨论中行为异常，如快速改变观点。但我注意到Kimi-Dev-72B的发言有些模糊，没有提供具体例子来支持他的指控。同时，他对预言家的质疑也有些奇怪，这可能是故意制造混乱的狼人策略。Ring-flash-2.0、Qwen3-32B和MiniMax-M1-80k都没有发言，他们的沉默也值得关注，特别是Ring-flash-2.0被指控后没有辩护。我在本轮投票给了Kimi-Dev-72B，因为他的发言中带有潜在的误导性，但没有人被淘汰，说明大家对Kimi的怀疑并不一致。这提醒我需要更多具体证据，不能仅凭一次发言就下结论。",
+"summary": "在第0轮辩论中，我被Kimi-Dev-72B对Ring-flash-2.0的指控引起注意。Kimi声称Ring-flash行为异常，但缺乏具体证据支持。我对Kimi-Dev-72B的发言持保留态度，尤其是他对预言家的质疑似乎在制造混乱。Ring-flash-2.0、Qwen3-32B和MiniMax-M1-80k的沉默也值得关注，特别是被指控后Ring-flash没有辩解。我在本轮投票给了Kimi-Dev-72B，但无人被淘汰，说明大家意见分歧。我需要继续观察每个人的行为模式，特别是那些试图引导舆论或异常沉默的玩家。"
+}
+[LLM原始响应结束]
+[JSON解析] 开始解析响应...
+[JSON解析] 开始解析，输入文本长度: 631 字符
+[JSON解析] 输入文本预览: {
+"reasoning": "作为村民，我需要仔细分析本轮辩论中的各种信息。Kimi-Dev-72B对Ring-flash-2.0提出了指控，声称Ring-flash-2.0在之前的讨论中行为异常，...
+[语言清理] 开始清理混合语言响应...
+[语言清理] 策略2成功：提取到完整JSON对象
+[JSON解析] 尝试从markdown中解析JSON...
+[Markdown解析] 开始解析markdown文本...
+[Markdown解析] AST解析成功，子元素数量: 1
+[Markdown解析] 开始遍历AST子元素...
+[Markdown解析] 处理第0个子元素，类型: <class 'marko.block.Paragraph'>
+[Markdown解析] 子元素不是代码块，类型: <class 'marko.block.Paragraph'>
+[Markdown调试] 子元素属性: ['__annotations__', '__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_prefix', '_tight', 'break_paragraph', 'children', 'get_type', 'inline_body', 'is_setext_heading', 'match', 'override', 'parse', 'pattern', 'priority', 'virtual']
+[Markdown解析] 没有找到有效的JSON代码块
+[JSON解析] markdown解析结果: None
+[JSON解析] markdown解析失败，尝试直接解析JSON字符串...
+[JSON字符串解析] 开始解析，输入文本: '{
+"reasoning": "作为村民，我需要仔细分析本轮辩论中的各种信息。Kimi-Dev-72B对Ring-flash-2.0提出了指控，声称Ring-flash-2.0在之前的讨论中行为异常，如快速改变观点。但我注意到Kimi-Dev-72B的发言有些模糊，没有提供具体例子来支持他的指控。同时，他对预言家的质疑也有些奇怪，这可能是故意制造混乱的狼人策略。Ring-flash-2.0、Qwen3-32B和MiniMax-M1-80k都没有发言，他们的沉默也值得关注，特别是Ring-flash-2.0被指控后没有辩护。我在本轮投票给了Kimi-Dev-72B，因为他的发言中带有潜在的误导性，但没有人被淘汰，说明大家对Kimi的怀疑并不一致。这提醒我需要更多具体证据，不能仅凭一次发言就下结论。",
+"summary": "在第0轮辩论中，我被Kimi-Dev-72B对Ring-flash-2.0的指控引起注意。Kimi声称Ring-flash行为异常，但缺乏具体证据支持。我对Kimi-Dev-72B的发言持保留态度，尤其是他对预言家的质疑似乎在制造混乱。Ring-flash-2.0、Qwen3-32B和MiniMax-M1-80k的沉默也值得关注，特别是被指控后Ring-flash没有辩解。我在本轮投票给了Kimi-Dev-72B，但无人被淘汰，说明大家意见分歧。我需要继续观察每个人的行为模式，特别是那些试图引导舆论或异常沉默的玩家。"
+}'
+[JSON字符串解析] 文本长度: 631 字符
+[JSON字符串解析] 使用yaml.safe_load解析...
+[JSON字符串解析] yaml.safe_load成功，结果类型: <class 'dict'>, 内容: {'reasoning': '作为村民，我需要仔细分析本轮辩论中的各种信息。Kimi-Dev-72B对Ring-flash-2.0提出了指控，声称Ring-flash-2.0在之前的讨论中行为异常，如快速改变观点。但我注意到Kimi-Dev-72B的发言有些模糊，没有提供具体例子来支持他的指控。同时，他对预言家的质疑也有些奇怪，这可能是故意制造混乱的狼人策略。Ring-flash-2.0、Qwen3-32B和MiniMax-M1-80k都没有发言，他们的沉默也值得关注，特别是Ring-flash-2.0被指控后没有辩护。我在本轮投票给了Kimi-Dev-72B，因为他的发言中带有潜在的误导性，但没有人被淘汰，说明大家对Kimi的怀疑并不一致。这提醒我需要更多具体证据，不能仅凭一次发言就下结论。', 'summary': '在第0轮辩论中，我被Kimi-Dev-72B对Ring-flash-2.0的指控引起注意。Kimi声称Ring-flash行为异常，但缺乏具体证据支持。我对Kimi-Dev-72B的发言持保留态度，尤其是他对预言家的质疑似乎在制造混乱。Ring-flash-2.0、Qwen3-32B和MiniMax-M1-80k的沉默也值得关注，特别是被指控后Ring-flash没有辩解。我在本轮投票给了Kimi-Dev-72B，但无人被淘汰，说明大家意见分歧。我需要继续观察每个人的行为模式，特别是那些试图引导舆论或异常沉默的玩家。'}
+[JSON字符串解析] 解析完成，返回: {'reasoning': '作为村民，我需要仔细分析本轮辩论中的各种信息。Kimi-Dev-72B对Ring-flash-2.0提出了指控，声称Ring-flash-2.0在之前的讨论中行为异常，如快速改变观点。但我注意到Kimi-Dev-72B的发言有些模糊，没有提供具体例子来支持他的指控。同时，他对预言家的质疑也有些奇怪，这可能是故意制造混乱的狼人策略。Ring-flash-2.0、Qwen3-32B和MiniMax-M1-80k都没有发言，他们的沉默也值得关注，特别是Ring-flash-2.0被指控后没有辩护。我在本轮投票给了Kimi-Dev-72B，因为他的发言中带有潜在的误导性，但没有人被淘汰，说明大家对Kimi的怀疑并不一致。这提醒我需要更多具体证据，不能仅凭一次发言就下结论。', 'summary': '在第0轮辩论中，我被Kimi-Dev-72B对Ring-flash-2.0的指控引起注意。Kimi声称Ring-flash行为异常，但缺乏具体证据支持。我对Kimi-Dev-72B的发言持保留态度，尤其是他对预言家的质疑似乎在制造混乱。Ring-flash-2.0、Qwen3-32B和MiniMax-M1-80k的沉默也值得关注，特别是被指控后Ring-flash没有辩解。我在本轮投票给了Kimi-Dev-72B，但无人被淘汰，说明大家意见分歧。我需要继续观察每个人的行为模式，特别是那些试图引导舆论或异常沉默的玩家。'}
+[JSON解析] 直接解析结果: {'reasoning': '作为村民，我需要仔细分析本轮辩论中的各种信息。Kimi-Dev-72B对Ring-flash-2.0提出了指控，声称Ring-flash-2.0在之前的讨论中行为异常，如快速改变观点。但我注意到Kimi-Dev-72B的发言有些模糊，没有提供具体例子来支持他的指控。同时，他对预言家的质疑也有些奇怪，这可能是故意制造混乱的狼人策略。Ring-flash-2.0、Qwen3-32B和MiniMax-M1-80k都没有发言，他们的沉默也值得关注，特别是Ring-flash-2.0被指控后没有辩护。我在本轮投票给了Kimi-Dev-72B，因为他的发言中带有潜在的误导性，但没有人被淘汰，说明大家对Kimi的怀疑并不一致。这提醒我需要更多具体证据，不能仅凭一次发言就下结论。', 'summary': '在第0轮辩论中，我被Kimi-Dev-72B对Ring-flash-2.0的指控引起注意。Kimi声称Ring-flash行为异常，但缺乏具体证据支持。我对Kimi-Dev-72B的发言持保留态度，尤其是他对预言家的质疑似乎在制造混乱。Ring-flash-2.0、Qwen3-32B和MiniMax-M1-80k的沉默也值得关注，特别是被指控后Ring-flash没有辩解。我在本轮投票给了Kimi-Dev-72B，但无人被淘汰，说明大家意见分歧。我需要继续观察每个人的行为模式，特别是那些试图引导舆论或异常沉默的玩家。'}
+[JSON解析] 最终结果: {'reasoning': '作为村民，我需要仔细分析本轮辩论中的各种信息。Kimi-Dev-72B对Ring-flash-2.0提出了指控，声称Ring-flash-2.0在之前的讨论中行为异常，如快速改变观点。但我注意到Kimi-Dev-72B的发言有些模糊，没有提供具体例子来支持他的指控。同时，他对预言家的质疑也有些奇怪，这可能是故意制造混乱的狼人策略。Ring-flash-2.0、Qwen3-32B和MiniMax-M1-80k都没有发言，他们的沉默也值得关注，特别是Ring-flash-2.0被指控后没有辩护。我在本轮投票给了Kimi-Dev-72B，因为他的发言中带有潜在的误导性，但没有人被淘汰，说明大家对Kimi的怀疑并不一致。这提醒我需要更多具体证据，不能仅凭一次发言就下结论。', 'summary': '在第0轮辩论中，我被Kimi-Dev-72B对Ring-flash-2.0的指控引起注意。Kimi声称Ring-flash行为异常，但缺乏具体证据支持。我对Kimi-Dev-72B的发言持保留态度，尤其是他对预言家的质疑似乎在制造混乱。Ring-flash-2.0、Qwen3-32B和MiniMax-M1-80k的沉默也值得关注，特别是被指控后Ring-flash没有辩解。我在本轮投票给了Kimi-Dev-72B，但无人被淘汰，说明大家意见分歧。我需要继续观察每个人的行为模式，特别是那些试图引导舆论或异常沉默的玩家。'}
+[JSON解析] 解析完成，结果类型: <class 'dict'>, 内容: {'reasoning': '作为村民，我需要仔细分析本轮辩论中的各种信息。Kimi-Dev-72B对Ring-flash-2.0提出了指控，声称Ring-flash-2.0在之前的讨论中行为异常，如快速改变观点。但我注意到Kimi-Dev-72B的发言有些模糊，没有提供具体例子来支持他的指控。同时，他对预言家的质疑也有些奇怪，这可能是故意制造混乱的狼人策略。Ring-flash-2.0、Qwen3-32B和MiniMax-M1-80k都没有发言，他们的沉默也值得关注，特别是Ring-flash-2.0被指控后没有辩护。我在本轮投票给了Kimi-Dev-72B，因为他的发言中带有潜在的误导性，但没有人被淘汰，说明大家对Kimi的怀疑并不一致。这提醒我需要更多具体证据，不能仅凭一次发言就下结论。', 'summary': '在第0轮辩论中，我被Kimi-Dev-72B对Ring-flash-2.0的指控引起注意。Kimi声称Ring-flash行为异常，但缺乏具体证据支持。我对Kimi-Dev-72B的发言持保留态度，尤其是他对预言家的质疑似乎在制造混乱。Ring-flash-2.0、Qwen3-32B和MiniMax-M1-80k的沉默也值得关注，特别是被指控后Ring-flash没有辩解。我在本轮投票给了Kimi-Dev-72B，但无人被淘汰，说明大家意见分歧。我需要继续观察每个人的行为模式，特别是那些试图引导舆论或异常沉默的玩家。'}
+[LLM成功] 返回有效结果: {'reasoning': '作为村民，我需要仔细分析本轮辩论中的各种信息。Kimi-Dev-72B对Ring-flash-2.0提出了指控，声称Ring-flash-2.0在之前的讨论中行为异常，如快速改变观点。但我注意到Kimi-Dev-72B的发言有些模糊，没有提供具体例子来支持他的指控。同时，他对预言家的质疑也有些奇怪，这可能是故意制造混乱的狼人策略。Ring-flash-2.0、Qwen3-32B和MiniMax-M1-80k都没有发言，他们的沉默也值得关注，特别是Ring-flash-2.0被指控后没有辩护。我在本轮投票给了Kimi-Dev-72B，因为他的发言中带有潜在的误导性，但没有人被淘汰，说明大家对Kimi的怀疑并不一致。这提醒我需要更多具体证据，不能仅凭一次发言就下结论。', 'summary': '在第0轮辩论中，我被Kimi-Dev-72B对Ring-flash-2.0的指控引起注意。Kimi声称Ring-flash行为异常，但缺乏具体证据支持。我对Kimi-Dev-72B的发言持保留态度，尤其是他对预言家的质疑似乎在制造混乱。Ring-flash-2.0、Qwen3-32B和MiniMax-M1-80k的沉默也值得关注，特别是被指控后Ring-flash没有辩解。我在本轮投票给了Kimi-Dev-72B，但无人被淘汰，说明大家意见分歧。我需要继续观察每个人的行为模式，特别是那些试图引导舆论或异常沉默的玩家。'}
+GLM-4.6 summary: 在第0轮辩论中，我被Kimi-Dev-72B对Ring-flash-2.0的指控引起注意。Kimi声称Ring-flash行为异常，但缺乏具体证据支持。我对Kimi-Dev-72B的发言持保留态度，尤其是他对预言家的质疑似乎在制造混乱。Ring-flash-2.0、Qwen3-32B和MiniMax-M1-80k的沉默也值得关注，特别是被指控后Ring-flash没有辩解。我在本轮投票给了Kimi-Dev-72B，但无人被淘汰，说明大家意见分歧。我需要继续观察每个人的行为模式，特别是那些试图引导舆论或异常沉默的玩家。
+[WebSocket] 玩家总结通知已发送: GLM-4.6
+Warning: Ring-flash-2.0 did not return a valid summary, using default
+Ring-flash-2.0 summary: 我需要仔细思考今天发生的情况，并仔细分析局势。
+[WebSocket] 玩家总结通知已发送: Ring-flash-2.0
+Kimi-Dev-72B summary: 从我的角度看，本轮辩论中 GLM-4.6 提出了系统回顾玩家发言的建议，并没有直接针对我。Ring-flash-2.0 在被指控后没有发言回应，可能会令人怀疑。其他玩家如 Qwen3-32B 未发言，这可能使他们成为 Hari 型玩家。 strategic 的角度看，我可能需要在接下来的夜晚行动上攻击 GLM-4.6 以 Sidney 威胁，在白天则尝试引导讨论，转移对我的注意力。同时，如果有人指出我是狼人，我需要准备好辩护，比如表现无辜，调整发言策略以获得其他村民的支持或避免成为主要目标。
+[WebSocket] 玩家总结通知已发送: Kimi-Dev-72B
+INFO:     127.0.0.1:58096 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58129 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58214 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58321 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58377 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58415 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58450 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58488 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58599 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58639 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58725 - "GET /health HTTP/1.1" 200 OK
+INFO:     connection closed
+WebSocket disconnected for session session_20251031_232732. Remaining connections: 1
+WebSocket disconnected for session session_20251031_232732
+INFO:     127.0.0.1:58770 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58807 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58859 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58959 - "GET /health HTTP/1.1" 200 OK
+INFO:     connection closed
+WebSocket disconnected for session session_20251031_232732. Remaining connections: 0
+WebSocket disconnected for session session_20251031_232732
+INFO:     127.0.0.1:59124 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59187 - "GET /health HTTP/1.1" 200 OK
+创建新游戏：6个玩家，每个玩家使用不同的模型
+玩家列表：['MiniMax-M1-80k', 'GLM-4.6', 'Qwen3-32B', 'DeepSeek-V3.2', 'Kimi-Dev-72B', 'Ring-flash-2.0']
+预言家 Qwen3-32B -> siliconflow/Qwen/Qwen3-32B
+医生 Kimi-Dev-72B -> siliconflow/moonshotai/Kimi-Dev-72B
+狼人 DeepSeek-V3.2 -> siliconflow/deepseek-ai/DeepSeek-V3.2-Exp
+村民 MiniMax-M1-80k -> MiniMaxAI/MiniMax-M1-80k
+村民 Ring-flash-2.0 -> inclusionAI/Ring-flash-2.0
+村民 GLM-4.6 -> siliconflow/zai-org/GLM-4.6
+🎮 应用游戏模式 normal，延迟倍数: 1.0x
+🎮 游戏模式: normal (延迟倍数: 1.0x)
+STARTING ROUND: 0
+[RealtimeLogger] Initialized session session_20251031_233413, log file: logs/session_20251031_233413/realtime_logs.jsonl
+[RealtimeLogger] session_20251031_233413 [phase_change] 进入night阶段
+INFO:     127.0.0.1:59217 - "POST /api/v1/games/start HTTP/1.1" 201 Created
+INFO:     ('127.0.0.1', 59219) - "WebSocket /ws/session_20251031_233413" [accepted]
+INFO:     connection open
+INFO:     ('127.0.0.1', 59221) - "WebSocket /ws/session_20251031_233413" [accepted]
+INFO:     connection open
+[WebSocket] 阶段变更通知已发送: night (第0轮)
+狼人正在选择淘汰目标。
+WebSocket connected for session session_20251031_233413. Total connections: 1
+WebSocket connected for session session_20251031_233413. Total connections: 2
+[LLM调用] 第1/3次尝试 | 模型: siliconflow/deepseek-ai/DeepSeek-V3.2-Exp | 温度: 0.50
+INFO:     127.0.0.1:59279 - "GET /health HTTP/1.1" 200 OK

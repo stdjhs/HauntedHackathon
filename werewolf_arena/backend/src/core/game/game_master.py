@@ -355,6 +355,9 @@ class GameMaster:
                 log = f"Default summary used due to empty response"
             tqdm.tqdm.write(f"{player_name} summary: {summary}")
             self.this_round_log.summaries.append((player_name, log))
+            
+            # 发送总结通知
+            self._notify_player_summary(player_name, summary, self.current_round_num)
         except Exception as e:
             # 如果总结过程出错，使用默认总结并记录错误
             print(f"Error during summary for {player_name}: {e}")
@@ -362,6 +365,9 @@ class GameMaster:
             log = f"Error: {str(e)}"
             tqdm.tqdm.write(f"{player_name} summary: {summary}")
             self.this_round_log.summaries.append((player_name, log))
+            
+            # 发送总结通知
+            self._notify_player_summary(player_name, summary, self.current_round_num)
 
             # 添加总结延迟（使用配置文件）
             delay = get_delay("summary", self.delay_multiplier)
@@ -508,6 +514,9 @@ class GameMaster:
         announcement = (
             f"大多数人投票淘汰了{exiled_player}。"
         )
+
+        # 发送放逐通知
+        self._notify_player_exile(exiled_player, self.current_round_num)
 
         # 更新所有剩余玩家的游戏状态
         for name in self.this_round.players:
@@ -801,6 +810,79 @@ class GameMaster:
 
     except Exception as e:
       print(f"[WebSocket错误] 阶段变更通知失败: {e}")
+
+  def _notify_player_exile(self, exiled_player: str, round_number: int):
+    """发送玩家放逐 WebSocket 通知"""
+    try:
+      from src.services.game_manager.session_manager import _notify_player_exile
+      import asyncio
+
+      def run_async():
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+        try:
+          loop.run_until_complete(
+            _notify_player_exile(
+              session_id=self.state.session_id,
+              exiled_player=exiled_player,
+              round_number=round_number
+            )
+          )
+          print(f"[WebSocket] 玩家放逐通知已发送: {exiled_player} (第{round_number}轮)")
+        except Exception as e:
+          print(f"[WebSocket错误] 玩家放逐通知发送失败: {e}")
+        finally:
+          loop.close()
+
+      import concurrent.futures
+      executor = concurrent.futures.ThreadPoolExecutor(max_workers=1)
+      future = executor.submit(run_async)
+      try:
+        future.result(timeout=1.0)
+      except concurrent.futures.TimeoutError:
+        print(f"[WebSocket警告] 玩家放逐通知发送超时: {exiled_player}")
+      finally:
+        executor.shutdown(wait=False)
+
+    except Exception as e:
+      print(f"[WebSocket错误] 玩家放逐通知失败: {e}")
+
+  def _notify_player_summary(self, player_name: str, summary: str, round_number: int):
+    """发送玩家总结 WebSocket 通知"""
+    try:
+      from src.services.game_manager.session_manager import _notify_player_summary
+      import asyncio
+
+      def run_async():
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+        try:
+          loop.run_until_complete(
+            _notify_player_summary(
+              session_id=self.state.session_id,
+              player_name=player_name,
+              summary=summary,
+              round_number=round_number
+            )
+          )
+          print(f"[WebSocket] 玩家总结通知已发送: {player_name}")
+        except Exception as e:
+          print(f"[WebSocket错误] 玩家总结通知发送失败: {e}")
+        finally:
+          loop.close()
+
+      import concurrent.futures
+      executor = concurrent.futures.ThreadPoolExecutor(max_workers=1)
+      future = executor.submit(run_async)
+      try:
+        future.result(timeout=1.0)
+      except concurrent.futures.TimeoutError:
+        print(f"[WebSocket警告] 玩家总结通知发送超时: {player_name}")
+      finally:
+        executor.shutdown(wait=False)
+
+    except Exception as e:
+      print(f"[WebSocket错误] 玩家总结通知失败: {e}")
 
   def run_game(self) -> str:
     """Run the entire Werewolf game and return the winner."""
