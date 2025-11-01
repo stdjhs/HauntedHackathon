@@ -6,11 +6,11 @@ Player Model Mapping Configuration
 # 玩家模型名到完整模型ID的一对一映射
 PLAYER_MODEL_MAPPING = {
     "MiniMax-M1-80k": "MiniMaxAI/MiniMax-M1-80k",
-    "GLM-4.6": "siliconflow/zai-org/GLM-4.6",
+    "GLM-4.6": "THUDM/GLM-Z1-9B-0414",
     "Qwen3-32B": "siliconflow/Qwen/Qwen3-32B",
     "DeepSeek-V3.2": "siliconflow/deepseek-ai/DeepSeek-V3.2-Exp",
     "Kimi-Dev-72B": "siliconflow/moonshotai/Kimi-Dev-72B",
-    "Ring-flash-2.0": "inclusionAI/Ring-flash-2.0"
+    "Ring-flash-2.0": "inclusionAI/Ling-mini-2.0"
 }
 
 def get_model_for_player(player_name: str, role: str = None) -> str:
