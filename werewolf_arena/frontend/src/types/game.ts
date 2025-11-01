@@ -124,8 +124,6 @@ export interface WebSocketMessage {
     | 'night_action'
     | 'phase_change'
     | 'player_action'
-    | 'log_update'
-    | 'log_history'
     | 'status_update';
   data: any;
   timestamp: string;
@@ -212,22 +210,6 @@ export interface PlayerActionMessage extends WebSocketMessage {
   };
 }
 
-export interface LogUpdateMessage extends WebSocketMessage {
-  type: 'log_update';
-  data: {
-    action: string;
-    player_name?: string;
-    round_number?: number;
-    phase?: string;
-  };
-}
-
-export interface LogHistoryMessage extends WebSocketMessage {
-  type: 'log_history';
-  data: {
-    logs: any[];
-  };
-}
 
 export interface StatusUpdateMessage extends WebSocketMessage {
   type: 'status_update';

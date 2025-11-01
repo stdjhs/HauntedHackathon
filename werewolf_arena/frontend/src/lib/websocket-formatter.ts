@@ -31,8 +31,6 @@ const GAME_MESSAGE_TYPES = {
   ]),
   // 过滤掉的消息类型（系统消息）
   FILTER: new Set([
-    'log_update',
-    'log_history',
     'game_update',
     'ping',
     'pong',
@@ -82,9 +80,6 @@ export class WebSocketMessageFormatter {
 
       case 'game_update':
         return this.formatGameUpdate(messageData, messageId);
-
-      case 'log_update':
-        return this.formatLogUpdate(messageData, messageId);
 
       case 'round_complete':
         return this.formatRoundComplete(messageData, messageId);
@@ -284,24 +279,6 @@ export class WebSocketMessageFormatter {
       content: '🔄 游戏状态已更新',
       icon: '🔄',
       colorClass: 'text-blue-400',
-      isSystemMessage: true
-    };
-  }
-
-  /**
-   * 格式化日志更新消息
-   */
-  private static formatLogUpdate(data: any, messageId: string): FormattedMessage {
-    const { action, player_name } = data;
-
-    return {
-      id: messageId,
-      timestamp: new Date().toLocaleTimeString(),
-      type: 'system',
-      content: `📝 ${player_name ? `${player_name}: ` : ''}${action}`,
-      playerName: player_name,
-      icon: '📝',
-      colorClass: 'text-gray-500',
       isSystemMessage: true
     };
   }

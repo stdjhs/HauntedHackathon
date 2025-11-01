@@ -100,15 +100,7 @@ class ConnectionManager:
         }
         await self.broadcast_to_session(json.dumps(message), session_id)
 
-    async def broadcast_log(self, session_id: str, log_entry: dict):
-        """Broadcast log entry to all connections in a session"""
-        message = {
-            "type": "log_update",
-            "data": log_entry,
-            "timestamp": datetime.now().isoformat()
-        }
-        await self.broadcast_to_session(json.dumps(message), session_id)
-
+    
     async def broadcast_player_action(self, session_id: str, action_event):
         """Broadcast player action with sequence number"""
         message = {
@@ -188,14 +180,6 @@ manager = ConnectionManager()
 async def websocket_endpoint(websocket: WebSocket, session_id: str):
     """WebSocket endpoint for real-time game updates"""
     await manager.connect(websocket, session_id)
-
-    # 创建日志回调函数
-    async def log_callback(log_entry):
-        """当有新日志时，通过WebSocket推送"""
-        await manager.broadcast_log(session_id, log_entry.to_dict())
-
-    # 订阅日志更新
-    realtime_logger.subscribe(session_id, log_callback)
 
     try:
         # Send initial connection confirmation
@@ -293,15 +277,11 @@ async def websocket_endpoint(websocket: WebSocket, session_id: str):
                 }), websocket)
 
     except WebSocketDisconnect:
-        # 取消订阅日志
-        realtime_logger.unsubscribe(session_id, log_callback)
         manager.disconnect(websocket, session_id)
         print(f"WebSocket disconnected for session {session_id}")
 
     except Exception as e:
         print(f"WebSocket error for session {session_id}: {e}")
-        # 取消订阅日志
-        realtime_logger.unsubscribe(session_id, log_callback)
         manager.disconnect(websocket, session_id)
 
 # Helper functions to be used by other parts of the application

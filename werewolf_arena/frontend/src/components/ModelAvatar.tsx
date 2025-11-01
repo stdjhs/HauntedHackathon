@@ -29,10 +29,10 @@ const ModelAvatar = ({ model, isActive, godMode, votes }: ModelAvatarProps) => {
       {/* 圆形容器 */}
       <Card
         className={`
-          relative w-24 h-24 rounded-full transition-all duration-500 border-2 flex flex-col items-center justify-center
+          relative w-24 h-24 rounded-full transition-all duration-300 border-2 flex flex-col items-center justify-center overflow-hidden
           ${isActive
-            ? "border-amber-500 shadow-2xl shadow-amber-500/30 bg-gradient-to-br from-amber-500/20 to-amber-600/10 scale-110"
-            : "border-slate-600 bg-gradient-to-br from-slate-800/90 to-slate-700/90 backdrop-blur-sm hover:border-amber-400/50 hover:scale-105 hover:shadow-lg hover:shadow-amber-400/20"
+            ? "border-amber-400 shadow-2xl shadow-amber-400/40 bg-gradient-to-br from-amber-400/25 via-amber-500/20 to-amber-600/15 scale-110 ring-4 ring-amber-400/20 ring-offset-2 ring-offset-slate-900"
+            : "border-slate-600 bg-gradient-to-br from-slate-800/90 to-slate-700/90 backdrop-blur-sm hover:border-amber-400/50 hover:scale-105 hover:shadow-lg hover:shadow-amber-400/20 transition-all duration-200"
           }
           ${model.status === "eliminated" ? "opacity-40 grayscale" : ""}
         `}
@@ -40,11 +40,14 @@ const ModelAvatar = ({ model, isActive, godMode, votes }: ModelAvatarProps) => {
         {/* 模型图标/名称 */}
         <div
           className={`
-            w-10 h-10 rounded-full flex items-center justify-center mb-1
-            ${isActive ? "bg-amber-500/30 text-amber-400" : "bg-slate-700/50 text-slate-400"}
+            w-10 h-10 rounded-full flex items-center justify-center mb-1 transition-all duration-300
+            ${isActive
+              ? "bg-gradient-to-br from-amber-400/40 to-amber-500/30 text-amber-300 shadow-inner shadow-amber-400/20"
+              : "bg-slate-700/50 text-slate-400"
+            }
           `}
         >
-          <Bot className="w-5 h-5" />
+          <Bot className={`w-5 h-5 transition-colors duration-300 ${isActive ? "text-amber-200" : ""}`} />
         </div>
 
         {/* 名称或角色 */}
@@ -72,9 +75,18 @@ const ModelAvatar = ({ model, isActive, godMode, votes }: ModelAvatarProps) => {
           </div>
         )}
 
-        {/* 激活指示器 */}
+        {/* 激活指示器 - 发言高亮效果 */}
         {isActive && (
-          <div className="absolute inset-0 rounded-full border-2 border-primary animate-ping opacity-75" />
+          <>
+            {/* 外层脉冲光环 */}
+            <div className="absolute inset-0 rounded-full border-2 border-amber-400 animate-ping opacity-75" />
+
+            {/* 中层持续光环 */}
+            <div className="absolute inset-0 rounded-full border border-amber-400 animate-pulse opacity-60" />
+
+            {/* 内层闪烁边框 */}
+            <div className="absolute inset-0 rounded-full border-2 border-amber-300 shadow-lg shadow-amber-400/50 animate-pulse" />
+          </>
         )}
       </Card>
 
