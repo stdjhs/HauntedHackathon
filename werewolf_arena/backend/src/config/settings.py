@@ -153,9 +153,9 @@ RUN_SYNTHETIC_VOTES = settings.game.run_synthetic_votes
 
 # 玩家名字列表
 NAMES = [
-    "Derek", "Scott", "Jacob", "Isaac", "Hayley", "David", "Tyler",
-    "Ginger", "Jackson", "Mason", "Dan", "Bert", "Will", "Sam",
-    "Paul", "Leah", "Harold"
+    "张伟", "王芳", "李娜", "刘洋", "陈明", "杨静", "赵强",
+    "黄丽", "周涛", "吴敏", "徐飞", "朱晓", "马超", "林婷",
+    "何勇", "高雪", "郑军"
 ]
 
 
