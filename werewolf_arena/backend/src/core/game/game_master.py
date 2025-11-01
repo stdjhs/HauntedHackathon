@@ -455,10 +455,10 @@ class GameMaster:
     
     phase_timer = Timer("发言阶段")
 
-    # 状态切换前暂停5秒
-    tqdm.tqdm.write("⏱️ [阶段切换] 暂停5秒...")
+    # 状态切换前暂停2秒（优化：从5秒减少到2秒）
+    tqdm.tqdm.write("⏱️ [阶段切换] 暂停2秒...")
     pause_timer = Timer("切换暂停")
-    time.sleep(5)
+    time.sleep(2)
     pause_timer.log("切换暂停完成")
     
     # 发送白天/发言阶段通知
@@ -541,9 +541,9 @@ class GameMaster:
       
       send_elapsed = send_timer.log(f"{speaker}发送完成")
       
-      # 计算暂停时间：每20个字1秒，最少1秒
+      # 计算暂停时间：每40个字1秒，最少0.5秒（优化：减少50%暂停时间）
       char_count = len(dialogue)
-      pause_seconds = max(1.0, char_count / 20.0)
+      pause_seconds = max(0.5, char_count / 40.0)
       tqdm.tqdm.write(f"⏱️ [展示暂停] {char_count}字 → 暂停 {pause_seconds:.1f}秒")
       time.sleep(pause_seconds)
       total_pause_time += pause_seconds
@@ -556,10 +556,10 @@ class GameMaster:
     # 所有人发言完毕后，进入投票阶段
     if True or RUN_SYNTHETIC_VOTES:
         # 进入投票阶段
-        # 状态切换前暂停5秒
-        tqdm.tqdm.write("⏱️ [投票阶段] 切换暂停5秒...")
+        # 状态切换前暂停2秒（优化：从5秒减少到2秒）
+        tqdm.tqdm.write("⏱️ [投票阶段] 切换暂停2秒...")
         pause_timer = Timer("投票切换")
-        time.sleep(5)
+        time.sleep(2)
         pause_timer.log("投票切换完成")
         
         # 发送投票阶段通知
@@ -583,55 +583,76 @@ class GameMaster:
     vote_log = []
     votes = {}
 
-    tqdm.tqdm.write("⏱️ [投票] 开始顺序处理投票...")
-    # 改为顺序处理投票，以便发送实时通知
+    tqdm.tqdm.write("⏱️ [投票] 开始顺序处理投票（20秒超时）...")
+    # 改为顺序处理投票，以便发送实时通知，添加20秒超时机制（优化4）
     for player_name in self.this_round.players:
       player_timer = Timer(f"投票-{player_name}")
       player = self.state.players[player_name]
-      try:
-        vote, log = player.vote()
+      
+      # 使用线程池实现20秒超时机制
+      with ThreadPoolExecutor(max_workers=1) as executor:
+        try:
+          future = executor.submit(player.vote)
+          vote, log = future.result(timeout=20.0)  # 20秒超时
 
-        if vote is None:
-          # 如果没有返回投票，使用默认投票
-          print(f"Warning: {player_name} did not return a valid vote, using default")
+          if vote is None:
+            # 如果没有返回投票，使用默认投票
+            tqdm.tqdm.write(f"⚠️ [{player_name}] 未返回有效投票，使用默认投票")
+            vote = next((p for p in self.this_round.players if p and p != player_name), player_name)
+            log = f"Default vote used due to empty response"
+
+          # 验证投票是否是有效的玩家名
+          if vote not in self.this_round.players:
+            tqdm.tqdm.write(f"⚠️ [{player_name}] 投票目标无效 '{vote}'，使用默认投票")
+            vote = next((p for p in self.this_round.players if p and p != player_name), player_name)
+            log = f"Invalid vote corrected to: {vote}"
+
+          votes[player_name] = vote
+          vote_log.append(VoteLog(player_name, vote, log))
+
+          # 发送 WebSocket 通知 - 投票
+          self._notify_vote_cast(
+            voter=player_name,
+            target=vote,
+            voter_role=player.role
+          )
+          
+          player_timer.log(f"{player_name}投票完成")
+
+          # 添加投票延迟（使用配置文件）
+          delay = get_delay("vote", self.delay_multiplier)
+          time.sleep(delay)
+
+        except TimeoutError:
+          # 投票超时，使用默认投票
+          tqdm.tqdm.write(f"⚠️ [{player_name}] 投票超时(>20秒)，使用默认投票")
           vote = next((p for p in self.this_round.players if p and p != player_name), player_name)
-          log = f"Default vote used due to empty response"
+          log = f"Timeout: Default vote used after 20s timeout"
+          votes[player_name] = vote
+          vote_log.append(VoteLog(player_name, vote, log))
+          
+          # 发送 WebSocket 通知 - 投票
+          self._notify_vote_cast(
+            voter=player_name,
+            target=vote,
+            voter_role=player.role
+          )
+          
+          player_timer.log(f"{player_name}投票超时，使用默认")
+          
+        except Exception as e:
+          # 如果投票过程出错，使用默认投票并记录错误
+          tqdm.tqdm.write(f"❌ [{player_name}] 投票异常: {e}")
+          default_target = next((p for p in self.this_round.players if p and p != player_name), player_name)
+          votes[player_name] = default_target
+          vote_log.append(VoteLog(player_name, default_target, f"Error: {str(e)}"))
 
-        # 验证投票是否是有效的玩家名
-        if vote not in self.this_round.players:
-          print(f"Warning: {player_name} voted for invalid player '{vote}', using default")
-          vote = next((p for p in self.this_round.players if p and p != player_name), player_name)
-          log = f"Invalid vote corrected to: {vote}"
-
-        votes[player_name] = vote
-        vote_log.append(VoteLog(player_name, vote, log))
-
-        # 发送 WebSocket 通知 - 投票
-        self._notify_vote_cast(
-          voter=player_name,
-          target=vote,
-          voter_role=player.role
-        )
-        
-        player_timer.log(f"{player_name}投票完成")
-
-        # 添加投票延迟（使用配置文件）
-        delay = get_delay("vote", self.delay_multiplier)
-        time.sleep(delay)
-
-      except Exception as e:
-        # 如果投票过程出错，使用默认投票并记录错误
-        print(f"Error during voting for {player_name}: {e}")
-        default_target = next((p for p in self.this_round.players if p and p != player_name), player_name)
-        votes[player_name] = default_target
-        vote_log.append(VoteLog(player_name, default_target, f"Error: {str(e)}"))
-
-        # 发送 WebSocket 通知 - 投票错误
-        self._notify_vote_cast(
-          voter=player_name,
-          target=default_target,
-          voter_role=player.role
-        )
+          # 发送 WebSocket 通知 - 投票错误
+          self._notify_vote_cast(
+            voter=player_name,
+            target=default_target,
+            voter_role=player.role
+          )
 
     return votes, vote_log
 
@@ -729,8 +750,9 @@ class GameMaster:
 
     tqdm.tqdm.write(announcement)
     
-    # 状态切换前暂停5秒
-    time.sleep(5)
+    # 状态切换前暂停2秒（优化：从5秒减少到2秒）
+    tqdm.tqdm.write("⏱️ [天亮阶段] 切换暂停2秒...")
+    time.sleep(2)
     
     # 发送天亮阶段通知
     self._notify_phase_change(phase="day", round_number=self.current_round_num)
@@ -753,10 +775,10 @@ class GameMaster:
         else self.state.rounds[self.current_round_num - 1].players.copy()
     )
 
-    # 状态切换前暂停5秒
-    tqdm.tqdm.write("⏱️ [夜晚开始] 切换暂停5秒...")
+    # 状态切换前暂停2秒（优化：从5秒减少到2秒）
+    tqdm.tqdm.write("⏱️ [夜晚开始] 切换暂停2秒...")
     pause_timer = Timer("夜晚切换")
-    time.sleep(5)
+    time.sleep(2)
     pause_timer.log("夜晚切换完成")
     
     # 发送夜晚阶段通知

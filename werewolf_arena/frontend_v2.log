@@ -7,24 +7,1059 @@
   - Environments: .env.local
 
  ✓ Starting...
- ✓ Ready in 2.6s
+ ✓ Ready in 4.1s
  ○ Compiling / ...
- ✓ Compiled / in 1880ms (1963 modules)
+ ✓ Compiled / in 7.8s (1977 modules)
 The width(-1) and height(-1) of chart should be greater than 0,
        please check the style of container, or the props width(100%) and height(100%),
        or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
        height and width.
- GET / 200 in 2193ms
+ GET / 200 in 8957ms
 The width(-1) and height(-1) of chart should be greater than 0,
        please check the style of container, or the props width(100%) and height(100%),
        or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
        height and width.
- GET / 200 in 20ms
+ GET / 200 in 124ms
+ ○ Compiling /live-game/[sessionId] ...
+ ✓ Compiled /live-game/[sessionId] in 1736ms (2011 modules)
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 357ms
+ ✓ Compiled in 1614ms (2011 modules)
+ ✓ Compiled in 1452ms (2011 modules)
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 133ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 41ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 41ms
+ ⚠ ./src/components/ui/Badge.tsx
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/Badge.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/app/page.tsx|app-pages-browser
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/badge.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/BettingPanel.tsx|app-pages-browser
+
+Import trace for requested module:
+./src/components/ui/Badge.tsx
+./src/app/page.tsx
+
+./src/components/ui/Button.tsx
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/Button.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/app/page.tsx|app-pages-browser
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/button.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/BettingPanel.tsx|app-pages-browser
+
+Import trace for requested module:
+./src/components/ui/Button.tsx
+./src/app/page.tsx
+
+./src/components/ui/Card.tsx
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/Card.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/app/page.tsx|app-pages-browser
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/card.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/BettingPanel.tsx|app-pages-browser
+
+Import trace for requested module:
+./src/components/ui/Card.tsx
+./src/app/page.tsx
+
+./src/components/ui/Input.tsx
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/Input.tsx|app-pages-browser
+    Used by 1 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/index.ts|app-pages-browser
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/input.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/BettingPanel.tsx|app-pages-browser
+
+Import trace for requested module:
+./src/components/ui/Input.tsx
+./src/components/ui/index.ts
+./src/pages/LiveGamePage.tsx
+./src/app/live-game/[sessionId]/page.tsx
+
+./src/components/ui/Badge.tsx
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/Badge.tsx|ssr
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/app/page.tsx|ssr
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/badge.tsx|ssr
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ChatPanel.tsx|ssr
+
+Import trace for requested module:
+./src/components/ui/Badge.tsx
+./src/app/page.tsx
+
+./src/components/ui/Button.tsx
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/Button.tsx|ssr
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/app/page.tsx|ssr
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/button.tsx|ssr
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ChatPanel.tsx|ssr
+
+Import trace for requested module:
+./src/components/ui/Button.tsx
+./src/app/page.tsx
+
+./src/components/ui/Card.tsx
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/Card.tsx|ssr
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/app/page.tsx|ssr
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/card.tsx|ssr
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ChatPanel.tsx|ssr
+
+Import trace for requested module:
+./src/components/ui/Card.tsx
+./src/app/page.tsx
+
+./src/components/ui/Input.tsx
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/Input.tsx|ssr
+    Used by 1 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/index.ts|ssr
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/input.tsx|ssr
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ChatPanel.tsx|ssr
+
+Import trace for requested module:
+./src/components/ui/Input.tsx
+./src/components/ui/index.ts
+./src/components/ModelAvatar.tsx
+./src/pages/LiveGamePage.tsx
+./src/app/live-game/[sessionId]/page.tsx
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 112ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 31ms
+ ⨯ ./src/components/ui/index.ts
+Error: 
+  [31mx[0m the name `ScrollArea` is exported multiple times
+   ,-[[36;1;4m/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/index.ts[0m:4:1]
+ [2m4[0m | export { Badge } from './Badge';
+ [2m5[0m | export { Input } from './Input';
+ [2m6[0m | export { Select } from './Select';
+ [2m7[0m | export { ScrollArea } from './ScrollArea';
+   : [31;1m         ^^^^^|^^^^[0m
+   :               [31;1m`-- [31;1mprevious exported here[0m[0m
+ [2m8[0m | export { ScrollArea } from './ScrollArea';
+   : [33;1m         ^^^^^|^^^^[0m
+   :               [33;1m`-- [33;1mexported more than once[0m[0m
+   `----
+
+Error: 
+  [36m>[0m Exported identifiers must be unique
+
+Import trace for requested module:
+./src/components/ui/index.ts
+./src/pages/LiveGamePage.tsx
+./src/app/live-game/[sessionId]/page.tsx
+ ○ Compiling /_error ...
+ ⨯ ./src/components/ui/index.ts
+Error: 
+  [31mx[0m the name `ScrollArea` is exported multiple times
+   ,-[[36;1;4m/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/index.ts[0m:4:1]
+ [2m4[0m | export { Badge } from './Badge';
+ [2m5[0m | export { Input } from './Input';
+ [2m6[0m | export { Select } from './Select';
+ [2m7[0m | export { ScrollArea } from './ScrollArea';
+   : [31;1m         ^^^^^|^^^^[0m
+   :               [31;1m`-- [31;1mprevious exported here[0m[0m
+ [2m8[0m | export { ScrollArea } from './ScrollArea';
+   : [33;1m         ^^^^^|^^^^[0m
+   :               [33;1m`-- [33;1mexported more than once[0m[0m
+   `----
+
+Error: 
+  [36m>[0m Exported identifiers must be unique
+
+Import trace for requested module:
+./src/components/ui/index.ts
+./src/pages/LiveGamePage.tsx
+./src/app/live-game/[sessionId]/page.tsx
+ GET / 500 in 4929ms
+ ⚠ ./src/components/ui/Badge.tsx
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/Badge.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/app/page.tsx|app-pages-browser
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/badge.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ChatPanel.tsx|app-pages-browser
+
+Import trace for requested module:
+./src/components/ui/Badge.tsx
+./src/app/page.tsx
+
+./src/components/ui/Button.tsx
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/Button.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/app/page.tsx|app-pages-browser
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/button.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ChatPanel.tsx|app-pages-browser
+
+Import trace for requested module:
+./src/components/ui/Button.tsx
+./src/app/page.tsx
+
+./src/components/ui/Card.tsx
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/Card.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/app/page.tsx|app-pages-browser
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/card.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ChatPanel.tsx|app-pages-browser
+
+Import trace for requested module:
+./src/components/ui/Card.tsx
+./src/app/page.tsx
+
+./src/components/ui/Input.tsx
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/Input.tsx|app-pages-browser
+    Used by 1 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/index.ts|app-pages-browser
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/input.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ChatPanel.tsx|app-pages-browser
+
+Import trace for requested module:
+./src/components/ui/Input.tsx
+./src/components/ui/index.ts
+./src/pages/LiveGamePage.tsx
+./src/app/live-game/[sessionId]/page.tsx
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 441ms
+ ⚠ ./src/components/ui/Badge.tsx
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/Badge.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/app/page.tsx|app-pages-browser
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/badge.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ChatPanel.tsx|app-pages-browser
+
+Import trace for requested module:
+./src/components/ui/Badge.tsx
+./src/app/page.tsx
+
+./src/components/ui/Button.tsx
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/Button.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/app/page.tsx|app-pages-browser
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/button.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ChatPanel.tsx|app-pages-browser
+
+Import trace for requested module:
+./src/components/ui/Button.tsx
+./src/app/page.tsx
+
+./src/components/ui/Card.tsx
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/Card.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/app/page.tsx|app-pages-browser
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/card.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ChatPanel.tsx|app-pages-browser
+
+Import trace for requested module:
+./src/components/ui/Card.tsx
+./src/app/page.tsx
+
+./src/components/ui/Input.tsx
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/Input.tsx|app-pages-browser
+    Used by 1 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/index.ts|app-pages-browser
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/input.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ChatPanel.tsx|app-pages-browser
+
+Import trace for requested module:
+./src/components/ui/Input.tsx
+./src/components/ui/index.ts
+./src/pages/LiveGamePage.tsx
+./src/app/live-game/[sessionId]/page.tsx
 The width(-1) and height(-1) of chart should be greater than 0,
        please check the style of container, or the props width(100%) and height(100%),
        or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
        height and width.
  GET / 200 in 26ms
+ ⚠ ./src/components/ui/Badge.tsx
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/Badge.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/app/page.tsx|app-pages-browser
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/badge.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ChatPanel.tsx|app-pages-browser
+
+Import trace for requested module:
+./src/components/ui/Badge.tsx
+./src/app/page.tsx
+
+./src/components/ui/Button.tsx
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/Button.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/app/page.tsx|app-pages-browser
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/button.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ChatPanel.tsx|app-pages-browser
+
+Import trace for requested module:
+./src/components/ui/Button.tsx
+./src/app/page.tsx
+
+./src/components/ui/Card.tsx
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/Card.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/app/page.tsx|app-pages-browser
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/card.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ChatPanel.tsx|app-pages-browser
+
+Import trace for requested module:
+./src/components/ui/Card.tsx
+./src/app/page.tsx
+
+./src/components/ui/Input.tsx
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/Input.tsx|app-pages-browser
+    Used by 1 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/index.ts|app-pages-browser
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/input.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ChatPanel.tsx|app-pages-browser
+
+Import trace for requested module:
+./src/components/ui/Input.tsx
+./src/components/ui/index.ts
+./src/pages/LiveGamePage.tsx
+./src/app/live-game/[sessionId]/page.tsx
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 18ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 20ms
+ ⚠ ./src/components/ui/Badge.tsx
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/Badge.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/app/page.tsx|app-pages-browser
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/badge.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ChatPanel.tsx|app-pages-browser
+
+Import trace for requested module:
+./src/components/ui/Badge.tsx
+./src/app/page.tsx
+
+./src/components/ui/Button.tsx
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/Button.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/app/page.tsx|app-pages-browser
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/button.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ChatPanel.tsx|app-pages-browser
+
+Import trace for requested module:
+./src/components/ui/Button.tsx
+./src/app/page.tsx
+
+./src/components/ui/Card.tsx
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/Card.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/app/page.tsx|app-pages-browser
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/card.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ChatPanel.tsx|app-pages-browser
+
+Import trace for requested module:
+./src/components/ui/Card.tsx
+./src/app/page.tsx
+
+./src/components/ui/Input.tsx
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/Input.tsx|app-pages-browser
+    Used by 1 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/index.ts|app-pages-browser
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/input.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ChatPanel.tsx|app-pages-browser
+
+Import trace for requested module:
+./src/components/ui/Input.tsx
+./src/components/ui/index.ts
+./src/components/ModelAvatar.tsx
+./src/pages/LiveGamePage.tsx
+./src/app/live-game/[sessionId]/page.tsx
+ ⚠ ./src/components/ui/Badge.tsx
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/Badge.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/app/page.tsx|app-pages-browser
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/badge.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ChatPanel.tsx|app-pages-browser
+
+Import trace for requested module:
+./src/components/ui/Badge.tsx
+./src/app/page.tsx
+
+./src/components/ui/Button.tsx
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/Button.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/app/page.tsx|app-pages-browser
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/button.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ChatPanel.tsx|app-pages-browser
+
+Import trace for requested module:
+./src/components/ui/Button.tsx
+./src/app/page.tsx
+
+./src/components/ui/Card.tsx
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/Card.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/app/page.tsx|app-pages-browser
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/card.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ChatPanel.tsx|app-pages-browser
+
+Import trace for requested module:
+./src/components/ui/Card.tsx
+./src/app/page.tsx
+
+./src/components/ui/Input.tsx
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/Input.tsx|app-pages-browser
+    Used by 1 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/index.ts|app-pages-browser
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/input.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ChatPanel.tsx|app-pages-browser
+
+Import trace for requested module:
+./src/components/ui/Input.tsx
+./src/components/ui/index.ts
+./src/pages/LiveGamePage.tsx
+./src/app/live-game/[sessionId]/page.tsx
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 21ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 19ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 17ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 23ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 29ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 27ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 29ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 25ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 19ms
+ ⚠ ./src/components/ui/Badge.tsx
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/Badge.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/app/page.tsx|app-pages-browser
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/badge.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ChatPanel.tsx|app-pages-browser
+
+Import trace for requested module:
+./src/components/ui/Badge.tsx
+./src/app/page.tsx
+
+./src/components/ui/Button.tsx
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/Button.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/app/page.tsx|app-pages-browser
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/button.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ChatPanel.tsx|app-pages-browser
+
+Import trace for requested module:
+./src/components/ui/Button.tsx
+./src/app/page.tsx
+
+./src/components/ui/Card.tsx
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/Card.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/app/page.tsx|app-pages-browser
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/card.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ChatPanel.tsx|app-pages-browser
+
+Import trace for requested module:
+./src/components/ui/Card.tsx
+./src/app/page.tsx
+
+./src/components/ui/Input.tsx
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/Input.tsx|app-pages-browser
+    Used by 1 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/index.ts|app-pages-browser
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/input.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ChatPanel.tsx|app-pages-browser
+
+Import trace for requested module:
+./src/components/ui/Input.tsx
+./src/components/ui/index.ts
+./src/pages/LiveGamePage.tsx
+./src/app/live-game/[sessionId]/page.tsx
+ ⚠ ./src/components/ui/Badge.tsx
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/Badge.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/app/page.tsx|app-pages-browser
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/badge.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ChatPanel.tsx|app-pages-browser
+
+Import trace for requested module:
+./src/components/ui/Badge.tsx
+./src/app/page.tsx
+
+./src/components/ui/Button.tsx
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/Button.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/app/page.tsx|app-pages-browser
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/button.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ChatPanel.tsx|app-pages-browser
+
+Import trace for requested module:
+./src/components/ui/Button.tsx
+./src/app/page.tsx
+
+./src/components/ui/Card.tsx
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/Card.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/app/page.tsx|app-pages-browser
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/card.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ChatPanel.tsx|app-pages-browser
+
+Import trace for requested module:
+./src/components/ui/Card.tsx
+./src/app/page.tsx
+
+./src/components/ui/Input.tsx
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/Input.tsx|app-pages-browser
+    Used by 1 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/index.ts|app-pages-browser
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/input.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ChatPanel.tsx|app-pages-browser
+
+Import trace for requested module:
+./src/components/ui/Input.tsx
+./src/components/ui/index.ts
+./src/pages/LiveGamePage.tsx
+./src/app/live-game/[sessionId]/page.tsx
+
+./src/components/ui/Badge.tsx
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/Badge.tsx|ssr
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/app/page.tsx|ssr
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/badge.tsx|ssr
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ChatPanel.tsx|ssr
+
+Import trace for requested module:
+./src/components/ui/Badge.tsx
+./src/app/page.tsx
+
+./src/components/ui/Button.tsx
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/Button.tsx|ssr
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/app/page.tsx|ssr
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/button.tsx|ssr
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ChatPanel.tsx|ssr
+
+Import trace for requested module:
+./src/components/ui/Button.tsx
+./src/app/page.tsx
+
+./src/components/ui/Card.tsx
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/Card.tsx|ssr
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/app/page.tsx|ssr
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/card.tsx|ssr
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ChatPanel.tsx|ssr
+
+Import trace for requested module:
+./src/components/ui/Card.tsx
+./src/app/page.tsx
+
+./src/components/ui/Input.tsx
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/Input.tsx|ssr
+    Used by 1 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/index.ts|ssr
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/input.tsx|ssr
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ChatPanel.tsx|ssr
+
+Import trace for requested module:
+./src/components/ui/Input.tsx
+./src/components/ui/index.ts
+./src/components/ModelAvatar.tsx
+./src/pages/LiveGamePage.tsx
+./src/app/live-game/[sessionId]/page.tsx
+[渲染] gameEnded=false, gamePhaseType="等待", currentSpeech=false, currentSpeaker=-1, voteRecords=0, nightActions=0
+ GET /live-game/session_20251101_004444 200 in 576ms
+ ⚠ ./src/components/ui/Badge.tsx
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/Badge.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/app/page.tsx|app-pages-browser
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/badge.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ChatPanel.tsx|app-pages-browser
+
+Import trace for requested module:
+./src/components/ui/Badge.tsx
+./src/app/page.tsx
+
+./src/components/ui/Button.tsx
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/Button.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/app/page.tsx|app-pages-browser
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/button.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ChatPanel.tsx|app-pages-browser
+
+Import trace for requested module:
+./src/components/ui/Button.tsx
+./src/app/page.tsx
+
+./src/components/ui/Card.tsx
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/Card.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/app/page.tsx|app-pages-browser
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/card.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ChatPanel.tsx|app-pages-browser
+
+Import trace for requested module:
+./src/components/ui/Card.tsx
+./src/app/page.tsx
+
+./src/components/ui/Input.tsx
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/Input.tsx|app-pages-browser
+    Used by 1 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/index.ts|app-pages-browser
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/input.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ChatPanel.tsx|app-pages-browser
+
+Import trace for requested module:
+./src/components/ui/Input.tsx
+./src/components/ui/index.ts
+./src/pages/LiveGamePage.tsx
+./src/app/live-game/[sessionId]/page.tsx
+
+./src/components/ui/Badge.tsx
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/Badge.tsx|ssr
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/app/page.tsx|ssr
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/badge.tsx|ssr
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ChatPanel.tsx|ssr
+
+Import trace for requested module:
+./src/components/ui/Badge.tsx
+./src/app/page.tsx
+
+./src/components/ui/Button.tsx
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/Button.tsx|ssr
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/app/page.tsx|ssr
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/button.tsx|ssr
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ChatPanel.tsx|ssr
+
+Import trace for requested module:
+./src/components/ui/Button.tsx
+./src/app/page.tsx
+
+./src/components/ui/Card.tsx
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/Card.tsx|ssr
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/app/page.tsx|ssr
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/card.tsx|ssr
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ChatPanel.tsx|ssr
+
+Import trace for requested module:
+./src/components/ui/Card.tsx
+./src/app/page.tsx
+
+./src/components/ui/Input.tsx
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/Input.tsx|ssr
+    Used by 1 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/index.ts|ssr
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/input.tsx|ssr
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ChatPanel.tsx|ssr
+
+Import trace for requested module:
+./src/components/ui/Input.tsx
+./src/components/ui/index.ts
+./src/components/ModelAvatar.tsx
+./src/pages/LiveGamePage.tsx
+./src/app/live-game/[sessionId]/page.tsx
+ ⚠ ./src/components/ui/Badge.tsx
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/Badge.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/app/page.tsx|app-pages-browser
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/badge.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ChatPanel.tsx|app-pages-browser
+
+Import trace for requested module:
+./src/components/ui/Badge.tsx
+./src/app/page.tsx
+
+./src/components/ui/Button.tsx
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/Button.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/app/page.tsx|app-pages-browser
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/button.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ChatPanel.tsx|app-pages-browser
+
+Import trace for requested module:
+./src/components/ui/Button.tsx
+./src/app/page.tsx
+
+./src/components/ui/Card.tsx
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/Card.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/app/page.tsx|app-pages-browser
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/card.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ChatPanel.tsx|app-pages-browser
+
+Import trace for requested module:
+./src/components/ui/Card.tsx
+./src/app/page.tsx
+
+./src/components/ui/Input.tsx
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/Input.tsx|app-pages-browser
+    Used by 1 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/index.ts|app-pages-browser
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/input.tsx|app-pages-browser
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[17].oneOf[5].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ChatPanel.tsx|app-pages-browser
+
+Import trace for requested module:
+./src/components/ui/Input.tsx
+./src/components/ui/index.ts
+./src/pages/LiveGamePage.tsx
+./src/app/live-game/[sessionId]/page.tsx
+
+./src/components/ui/Badge.tsx
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/Badge.tsx|ssr
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/app/page.tsx|ssr
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/badge.tsx|ssr
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ChatPanel.tsx|ssr
+
+Import trace for requested module:
+./src/components/ui/Badge.tsx
+./src/app/page.tsx
+
+./src/components/ui/Button.tsx
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/Button.tsx|ssr
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/app/page.tsx|ssr
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/button.tsx|ssr
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ChatPanel.tsx|ssr
+
+Import trace for requested module:
+./src/components/ui/Button.tsx
+./src/app/page.tsx
+
+./src/components/ui/Card.tsx
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/Card.tsx|ssr
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/app/page.tsx|ssr
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/card.tsx|ssr
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ChatPanel.tsx|ssr
+
+Import trace for requested module:
+./src/components/ui/Card.tsx
+./src/app/page.tsx
+
+./src/components/ui/Input.tsx
+There are multiple modules with names that only differ in casing.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Use equal casing. Compare these module identifiers:
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/Input.tsx|ssr
+    Used by 1 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/index.ts|ssr
+* javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ui/input.tsx|ssr
+    Used by 2 module(s), i. e.
+    javascript/auto|/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js??ruleSet[1].rules[16].oneOf[6].use[1]!/Users/admin/Project/HauntedHackathon/werewolf_arena/frontend/src/components/ChatPanel.tsx|ssr
+
+Import trace for requested module:
+./src/components/ui/Input.tsx
+./src/components/ui/index.ts
+./src/pages/LiveGamePage.tsx
+./src/app/live-game/[sessionId]/page.tsx
+ GET /favicon.ico 200 in 1351ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 207ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 41ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 79ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 52ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 43ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 38ms
 The width(-1) and height(-1) of chart should be greater than 0,
        please check the style of container, or the props width(100%) and height(100%),
        or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
@@ -39,22 +1074,52 @@ The width(-1) and height(-1) of chart should be greater than 0,
        please check the style of container, or the props width(100%) and height(100%),
        or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
        height and width.
- GET / 200 in 14ms
+ GET / 200 in 29ms
 The width(-1) and height(-1) of chart should be greater than 0,
        please check the style of container, or the props width(100%) and height(100%),
        or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
        height and width.
- GET / 200 in 17ms
+ GET / 200 in 22ms
 The width(-1) and height(-1) of chart should be greater than 0,
        please check the style of container, or the props width(100%) and height(100%),
        or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
        height and width.
- GET / 200 in 19ms
+ GET / 200 in 33ms
 The width(-1) and height(-1) of chart should be greater than 0,
        please check the style of container, or the props width(100%) and height(100%),
        or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
        height and width.
- GET / 200 in 39ms
+ GET / 200 in 31ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 24ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 25ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 30ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 47ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 21ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 21ms
 The width(-1) and height(-1) of chart should be greater than 0,
        please check the style of container, or the props width(100%) and height(100%),
        or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
@@ -69,4 +1134,244 @@ The width(-1) and height(-1) of chart should be greater than 0,
        please check the style of container, or the props width(100%) and height(100%),
        or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
        height and width.
+ GET / 200 in 16ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 18ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 22ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 18ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 20ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
  GET / 200 in 19ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 18ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 19ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 20ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 17ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 19ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 19ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 22ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 17ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 51ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 19ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 17ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 20ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 22ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 25ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 21ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 20ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 25ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 19ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 21ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 21ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 47ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 19ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 16ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 20ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 20ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 20ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 17ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 18ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 17ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 19ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 19ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 17ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 22ms
+[渲染] gameEnded=false, gamePhaseType="等待", currentSpeech=false, currentSpeaker=-1, voteRecords=0, nightActions=0
+ GET /live-game/session_20251101_004951 200 in 61ms
+ GET /favicon.ico 200 in 40ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 39ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 74ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 28ms
+ GET /favicon.ico 200 in 7ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 48ms
+ GET /favicon.ico 200 in 10ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 22ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 25ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 23ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 18ms
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+ GET / 200 in 21ms

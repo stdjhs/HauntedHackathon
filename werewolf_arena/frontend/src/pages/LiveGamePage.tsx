@@ -3,10 +3,12 @@ import { useParams } from "next/navigation";
 import { useRouter } from "next/navigation";
 import { Button, Card, Badge, ScrollArea } from "@/components/ui";
 import ModelAvatar from "@/components/ModelAvatar";
+import ChatPanel from "@/components/ChatPanel";
+import BettingPanel from "@/components/BettingPanel";
 import GameInfo from "@/components/GameInfo";
 import GameProgress from "@/components/GameProgress";
 import { WebSocketMessageFormatter, FormattedMessage } from "@/lib/websocket-formatter";
-import { ArrowLeft, MessageCircle, Zap, Moon, Sun, Users, Skull, Volume2 } from "lucide-react";
+import { ArrowLeft, MessageCircle, Zap, Moon, Sun, Users, Skull, Volume2, DollarSign } from "lucide-react";
 
 interface Player {
   id: number;
@@ -40,6 +42,8 @@ const LiveGamePage = () => {
   const [gameEnded, setGameEnded] = useState<boolean>(false);
   const [winner, setWinner] = useState<string>("");
   const [winnerName, setWinnerName] = useState<string>("");
+  const [showChat, setShowChat] = useState<boolean>(false);
+  const [showBetting, setShowBetting] = useState<boolean>(false);
 
   // 初始化WebSocket连接
   useEffect(() => {
@@ -1017,6 +1021,40 @@ const LiveGamePage = () => {
           </Card>
         </div>
       </div>
+
+      {/* 右下角浮动按钮组 */}
+      <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+        <Button
+          onClick={() => setShowChat(!showChat)}
+          className="rounded-full w-14 h-14 shadow-2xl shadow-amber-500/40 bg-gradient-to-br from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-amber-950 transition-all duration-300 hover:scale-110"
+          size="icon"
+        >
+          <MessageCircle className="w-6 h-6" />
+        </Button>
+        <Button
+          onClick={() => setShowBetting(!showBetting)}
+          className="rounded-full w-14 h-14 shadow-2xl shadow-green-500/40 bg-gradient-to-br from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-green-950 transition-all duration-300 hover:scale-110"
+          size="icon"
+        >
+          <DollarSign className="w-6 h-6" />
+        </Button>
+      </div>
+
+      {/* 聊天面板浮窗 */}
+      {showChat && (
+        <div className="fixed bottom-24 right-6 z-50 w-96 h-[600px] animate-in slide-in-from-right duration-300">
+          <ChatPanel onClose={() => setShowChat(false)} />
+        </div>
+      )}
+
+      {/* 下注面板浮窗 */}
+      {showBetting && (
+        <BettingPanel
+          onClose={() => setShowBetting(false)}
+          wolvesOdds={1.8}
+          villagersOdds={2.1}
+        />
+      )}
     </div>
   );
 };
