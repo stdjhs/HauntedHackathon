@@ -304,25 +304,72 @@ export class WebSocketMessageFormatter {
    * 格式化游戏完成消息
    */
   private static formatGameComplete(data: any, messageId: string): FormattedMessage {
-    const { winner, final_round } = data;
+    const { winner, winner_name, final_round, players_info } = data;
 
     let winnerText = '';
     switch (winner) {
+      case 'Werewolves':
+        winnerText = '🐺 狼人阵营获胜！';
+        break;
       case 'werewolves':
         winnerText = '🐺 狼人阵营获胜！';
         break;
+      case 'Villagers':
+        winnerText = '👥 好人阵营获胜！';
+        break;
       case 'villagers':
-        winnerText = '👥 村民阵营获胜！';
+        winnerText = '👥 好人阵营获胜！';
         break;
       default:
-        winnerText = `🎉 ${winner}获胜！`;
+        winnerText = `🎉 ${winner_name || winner}获胜！`;
+    }
+
+    // 构建详细的游戏结果信息
+    let content = `🎊 游戏结束！${winnerText}`;
+
+    if (final_round?.round_number) {
+      content += ` (总轮数: ${final_round.round_number})`;
+    }
+
+    // 添加玩家统计信息
+    if (players_info) {
+      const players = Object.values(players_info);
+      const aliveCount = players.filter((p: any) => p.alive).length;
+      const totalCount = players.length;
+
+      // 统计各角色数量
+      const roleStats = players.reduce((acc: any, player: any) => {
+        acc[player.role] = (acc[player.role] || 0) + 1;
+        return acc;
+      }, {});
+
+      content += `\n\n📊 游戏统计:`;
+      content += `\n  • 存活玩家: ${aliveCount}/${totalCount}人`;
+
+      Object.entries(roleStats).forEach(([role, count]) => {
+        const roleIcons: Record<string, string> = {
+          "Werewolf": "🐺",
+          "Seer": "🔮",
+          "Doctor": "⚕️",
+          "Villager": "👤"
+        };
+        const icon = roleIcons[role] || "❓";
+        const roleNames: Record<string, string> = {
+          "Werewolf": "狼人",
+          "Seer": "预言家",
+          "Doctor": "医生",
+          "Villager": "村民"
+        };
+        const roleName = roleNames[role] || role;
+        content += `\n  • ${icon}${roleName}: ${count}人`;
+      });
     }
 
     return {
       id: messageId,
       timestamp: new Date().toLocaleTimeString(),
       type: 'system',
-      content: `🎊 游戏结束！${winnerText} (总轮数: ${final_round?.round_number || 0})`,
+      content,
       icon: '🎊',
       colorClass: 'text-yellow-500',
       isSystemMessage: false

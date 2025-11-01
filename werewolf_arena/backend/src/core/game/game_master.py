@@ -657,16 +657,16 @@ class GameMaster:
     return votes, vote_log
 
   def exile(self):
-    """Exile the player who received the most votes."""
-    
+    """Exile the player who received the most votes (relative majority)."""
+
     exile_timer = Timer("放逐处理")
 
     most_voted, vote_count = Counter(
         self.this_round.votes[-1].values()
     ).most_common(1)[0]
 
-    if vote_count > len(self.this_round.players) / 2:
-      self.this_round.exiled = most_voted
+    # 相对多数制：得票最多的玩家直接出局（无需超过50%）
+    self.this_round.exiled = most_voted
 
     if self.this_round.exiled is not None:
       exiled_player = self.this_round.exiled
@@ -674,11 +674,11 @@ class GameMaster:
       if exiled_player in self.this_round.players:
         self.this_round.players.remove(exiled_player)
         announcement = (
-            f"大多数人投票淘汰了{exiled_player}。"
+            f"{exiled_player} 获得最高票数({vote_count}票)，被投票放逐。"
         )
 
         tqdm.tqdm.write(f"⏱️ [放逐] {exiled_player} 被投票放逐")
-        
+
         # 发送放逐通知
         self._notify_player_exile(exiled_player, self.current_round_num)
 
@@ -698,10 +698,8 @@ class GameMaster:
           if player:
             player.add_announcement(announcement)
     else:
-      announcement = (
-          "没有达到多数票，因此没有人被淘汰。"
-      )
-      tqdm.tqdm.write("⏱️ [放逐] 无人被放逐（未达到多数票）")
+      announcement = "没有玩家被放逐。"
+      tqdm.tqdm.write("⏱️ [放逐] 无人被放逐")
       # 通知所有玩家
       for name in self.this_round.players:
         player = self.state.players.get(name)

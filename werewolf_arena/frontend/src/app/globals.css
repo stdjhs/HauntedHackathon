@@ -23,3 +23,193 @@ body {
     )
     rgb(var(--background));
 }
+
+/* Claw scratch animation styles */
+@keyframes claw-scratch-1 {
+  0% {
+    transform: translate(-100%, -100%) rotate(35deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(150%, 150%) rotate(35deg);
+    opacity: 0;
+  }
+}
+
+@keyframes claw-scratch-2 {
+  0% {
+    transform: translate(-100%, -100%) rotate(45deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(150%, 150%) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+@keyframes claw-scratch-3 {
+  0% {
+    transform: translate(-100%, -100%) rotate(55deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(150%, 150%) rotate(55deg);
+    opacity: 0;
+  }
+}
+
+.claw-scratch-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  border-radius: 50%;
+  z-index: 1000;
+}
+
+.claw-scratch {
+  position: absolute;
+  width: 8px;
+  height: 150%;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgb(220, 38, 38) 20%,
+    rgb(255, 0, 0) 50%,
+    rgb(220, 38, 38) 80%,
+    transparent 100%
+  );
+  border-radius: 4px;
+  top: -25%;
+  left: 50%;
+  transform-origin: center;
+  box-shadow:
+    0 0 15px rgb(255, 0, 0),
+    0 0 25px rgba(255, 0, 0, 0.8),
+    0 0 35px rgba(255, 0, 0, 0.6);
+  filter: brightness(1.2) contrast(1.3);
+}
+
+.claw-scratch-1 {
+  animation: claw-scratch-1 0.6s ease-out forwards;
+  margin-left: -12px;
+}
+
+.claw-scratch-2 {
+  animation: claw-scratch-2 0.6s ease-out 0.08s forwards;
+  margin-left: 0;
+}
+
+.claw-scratch-3 {
+  animation: claw-scratch-3 0.6s ease-out 0.16s forwards;
+  margin-left: 12px;
+}
+
+/* Persistent scratch marks for eliminated players */
+.scratch-marks-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 999;
+}
+
+.scratch-mark {
+  position: absolute;
+  width: 6px;
+  height: 120%;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgb(255, 0, 0) 20%,
+    rgb(220, 0, 0) 50%,
+    rgb(255, 0, 0) 80%,
+    transparent 100%
+  );
+  top: -10%;
+  left: 50%;
+  transform-origin: center;
+  box-shadow:
+    0 0 10px rgb(255, 0, 0),
+    0 0 20px rgba(255, 0, 0, 0.8);
+  filter: brightness(1.3) contrast(1.4) saturate(1.5);
+  mix-blend-mode: normal;
+}
+
+.scratch-mark-1 {
+  transform: translate(-9px, -10px) rotate(40deg);
+}
+
+.scratch-mark-2 {
+  transform: translate(0, 0) rotate(45deg);
+}
+
+.scratch-mark-3 {
+  transform: translate(9px, -10px) rotate(50deg);
+}
+
+/* 说话时边框闪烁动画 */
+@keyframes speaking-border-pulse {
+  0% {
+    border-color: rgb(251, 191, 36);
+    box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.7);
+  }
+  70% {
+    border-color: rgb(254, 240, 138);
+    box-shadow: 0 0 0 10px rgba(251, 191, 36, 0);
+  }
+  100% {
+    border-color: rgb(251, 191, 36);
+    box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.7);
+  }
+}
+
+.speaking-border-animate {
+  animation: speaking-border-pulse 2s ease-in-out infinite;
+}
+
+/* 说话时小头像闪烁动画 */
+@keyframes speaking-avatar-pulse {
+  0% {
+    border-color: rgb(251, 191, 36);
+    transform: scale(1);
+  }
+  50% {
+    border-color: rgb(254, 240, 138);
+    transform: scale(1.05);
+  }
+  100% {
+    border-color: rgb(251, 191, 36);
+    transform: scale(1);
+  }
+}
+
+.speaking-avatar-animate {
+  animation: speaking-avatar-pulse 2s ease-in-out infinite;
+}

@@ -162,6 +162,12 @@ const LiveGamePage = () => {
 
   // 处理阶段变更
   const handlePhaseChange = (data: any) => {
+    // 如果游戏已结束，忽略阶段变更，保持结束画面不变
+    if (gameEnded) {
+      console.log(`[阶段变更] 🚫 游戏已结束，忽略阶段变更以保持结束画面`);
+      return;
+    }
+
     const { phase, round_number } = data;
     console.log(`[阶段变更] 阶段: ${phase}, 轮数: ${round_number}`);
     setCurrentRound(round_number);
@@ -233,7 +239,13 @@ const LiveGamePage = () => {
   // 处理发言
   const handleDebateTurn = (data: any) => {
     console.log(`[发言处理] 🎯 开始处理发言消息，data:`, data);
-    
+
+    // 如果游戏已结束，忽略新的发言消息，保持结束画面不变
+    if (gameEnded) {
+      console.log(`[发言处理] 🚫 游戏已结束，忽略发言消息以保持结束画面`);
+      return;
+    }
+
     const { player_name, dialogue } = data;
 
     if (!player_name || !dialogue) {
@@ -300,6 +312,12 @@ const LiveGamePage = () => {
 
   // 处理投票
   const handleVoteCast = (data: any) => {
+    // 如果游戏已结束，忽略投票消息，保持结束画面不变
+    if (gameEnded) {
+      console.log(`[投票] 🚫 游戏已结束，忽略投票消息以保持结束画面`);
+      return;
+    }
+
     const { voter, target } = data;
 
     console.log(`[投票] ${voter} 投票给 ${target}`);
@@ -333,8 +351,14 @@ const LiveGamePage = () => {
 
   // 处理夜晚行动
   const handleNightAction = (data: any) => {
+    // 如果游戏已结束，忽略夜晚行动，保持结束画面不变
+    if (gameEnded) {
+      console.log(`[夜晚行动] 🚫 游戏已结束，忽略夜晚行动以保持结束画面`);
+      return;
+    }
+
     console.log(`[夜晚行动] 收到行动消息:`, data);
-    
+
     const { action_type, player_name, target_name, role } = data;
     
     // 构建行动描述 - 与系统消息格式一致，不显示玩家名字
@@ -407,11 +431,25 @@ const LiveGamePage = () => {
   // 处理游戏结束
   const handleGameComplete = (data: any) => {
     console.log(`[游戏结束] 收到游戏结束消息:`, data);
+    console.log(`[游戏结束] winner_name 类型:`, typeof data.winner_name);
+    console.log(`[游戏结束] winner_name 值:`, data.winner_name);
+
     const { winner, winner_name, players_info } = data;
-    
+
     setGameEnded(true);
     setWinner(winner);
-    setWinnerName(winner_name);
+
+    // 确保 winnerName 是字符串类型，防止设置为对象
+    if (typeof winner_name === 'string') {
+      setWinnerName(winner_name);
+    } else if (winner_name && typeof winner_name === 'object') {
+      // 如果 winner_name 是对象，尝试从中提取合适的文本
+      const nameText = winner_name.name || winner_name.display_name || winner_name.toString();
+      setWinnerName(nameText);
+    } else {
+      // 回退到默认值
+      setWinnerName(winner || '未知获胜方');
+    }
     
     // 更新玩家列表，显示真实角色
     if (players_info) {
@@ -681,64 +719,105 @@ const LiveGamePage = () => {
                   {console.log(`[渲染] gameEnded=${gameEnded}, gamePhaseType="${gamePhaseType}", currentSpeech=${!!currentSpeech}, currentSpeaker=${currentSpeaker}, voteRecords=${voteRecords.length}, nightActions=${nightActions.length}`)}
                   
                   {gameEnded ? (
-                    // 游戏结束 - 显示获胜信息
-                    <div className="w-full max-w-3xl text-center space-y-8 animate-in fade-in duration-700">
-                      {/* 庆祝图标 */}
-                      <div className="text-9xl mb-6 animate-bounce">
-                        {winner === "Werewolves" ? "🐺" : "👥"}
-                      </div>
-                      
-                      {/* 获胜信息 */}
-                      <div className="bg-gradient-to-r from-amber-500/20 to-yellow-500/20 border-2 border-amber-400/60 rounded-2xl p-10">
-                        <h2 className="text-5xl font-bold mb-4 bg-gradient-to-r from-amber-300 via-yellow-300 to-amber-400 bg-clip-text text-transparent">
+                    // 游戏结束 - 简化显示获胜信息
+                    <div className="w-full max-w-3xl text-center space-y-6 animate-in fade-in duration-700">
+                      {/* 简化的获胜信息卡片 */}
+                      <div className="bg-gradient-to-br from-amber-500/20 to-yellow-500/20 border-2 border-amber-400/60 rounded-2xl p-8 shadow-2xl">
+                        {/* 适配对话框的图标大小 */}
+                        <div className="text-6xl mb-4 animate-bounce">
+                          {winner === "Werewolves" ? "🐺" : "👥"}
+                        </div>
+
+                        <h2 className="text-3xl font-bold mb-4 bg-gradient-to-r from-amber-300 via-yellow-300 to-amber-400 bg-clip-text text-transparent">
                           游戏结束
                         </h2>
-                        <div className="text-3xl font-bold text-amber-200 mb-2">
-                          🎉 {winnerName} 获胜！🎉
+
+                        {/* 简化获胜方显示 */}
+                        <div className="text-2xl font-bold text-amber-200 mb-4">
+                          🎉 {winner === "Werewolves" ? "狼人阵营" : "好人阵营"} 获胜！🎉
                         </div>
-                        <div className="mt-6 text-slate-300 text-lg">
-                          共进行 {currentRound} 轮
+
+                        {/* 简化游戏信息 */}
+                        <div className="text-slate-300 text-base">
+                          第 {currentRound} 轮 · 存活 {players.filter(p => p.status === "alive").length}/{players.length} 人
+                        </div>
+                      </div>
+
+                      {/* 简化的角色结果 */}
+                      <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-600/50 rounded-xl p-6">
+                        <h3 className="text-lg font-bold text-amber-300 mb-4">角色分布</h3>
+                        <div className="flex justify-center gap-6">
+                          {(() => {
+                            const roleStats = players.reduce((acc, player) => {
+                              acc[player.role] = (acc[player.role] || 0) + 1;
+                              return acc;
+                            }, {} as Record<string, number>);
+
+                            const roleIcons: Record<string, string> = {
+                              "Werewolf": "🐺",
+                              "Seer": "🔮",
+                              "Doctor": "⚕️",
+                              "Villager": "👤"
+                            };
+
+                            return Object.entries(roleStats).map(([role, count]) => (
+                              <div key={role} className="text-center">
+                                <div className="text-2xl mb-1">{roleIcons[role] || "❓"}</div>
+                                <div className="text-sm text-slate-400">{count}</div>
+                              </div>
+                            ));
+                          })()}
                         </div>
                       </div>
 
                       {/* 提示信息 */}
                       <div className="text-slate-400 text-sm animate-pulse">
-                        查看左右两侧玩家卡片了解所有玩家的真实身份
+                        游戏已结束，查看左右两侧了解玩家真实身份
                       </div>
                     </div>
                   ) : currentSpeech && currentSpeakerName ? (
                     <div className="w-full max-w-4xl animate-in fade-in duration-500">
                       {/* 发言者头像区域 - 居中大头像 */}
                       <div className="flex flex-col items-center mb-8">
-                        {currentSpeaker >= 0 && players[currentSpeaker] ? (
-                          // 找到了玩家，显示头像
-                          <>
-                            {/* 发光效果外圈 */}
-                            <div className="relative">
-                              {/* 多层发光圆环 - 金黄色 */}
-                              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-500 blur-2xl opacity-50 animate-pulse scale-150" />
-                              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-500 blur-xl opacity-40 animate-pulse scale-125" />
-                              
-                              {/* 头像容器 */}
-                              <div className="relative transform scale-150">
-                                <ModelAvatar
-                                  model={players[currentSpeaker]}
-                                  isActive={true}
-                                  godMode={godMode}
-                                  votes={players[currentSpeaker].votes || 0}
-                                  showRole={gameEnded}
-                                />
+                        {(() => {
+                          // 通过姓名查找当前发言玩家
+                          const speakingPlayer = currentSpeakerName ?
+                            players.find(p => p.name === currentSpeakerName) : null;
+
+                          if (speakingPlayer) {
+                            // 找到了玩家，显示原始照片头像
+                            return (
+                              <div className="relative">
+                                {/* 头像容器 - 原始照片加圆边框 */}
+                                <div className="w-24 h-24 rounded-full border-4 border-amber-400 shadow-lg overflow-hidden bg-white speaking-border-animate">
+                                  {speakingPlayer.avatar ? (
+                                    <img
+                                      src={speakingPlayer.avatar}
+                                      alt={speakingPlayer.name}
+                                      className="w-full h-full rounded-full object-cover"
+                                    />
+                                  ) : (
+                                    <div className="w-full h-full rounded-full bg-gray-100 flex items-center justify-center text-2xl font-bold text-gray-600">
+                                      {speakingPlayer.name.charAt(0).toUpperCase()}
+                                    </div>
+                                  )}
+
+                                  {/* 发言状态指示器 */}
+                                  <div className="absolute bottom-0 right-0 w-6 h-6 bg-amber-400 rounded-full border-2 border-white animate-pulse" />
+                                </div>
                               </div>
-                            </div>
-                          </>
-                        ) : (
-                          // 没找到玩家，显示通用头像
-                          <div className="relative">
-                            <div className="w-24 h-24 rounded-full bg-gradient-to-br from-amber-500/30 to-yellow-500/30 border-2 border-amber-400 flex items-center justify-center">
-                              <Volume2 className="w-12 h-12 text-amber-400" />
-                            </div>
-                    </div>
-                  )}
+                            );
+                          } else {
+                            // 没找到玩家，显示通用头像
+                            return (
+                              <div className="relative">
+                                <div className="w-24 h-24 rounded-full border-2 border-amber-400 bg-gradient-to-br from-amber-500/30 to-yellow-500/30 flex items-center justify-center">
+                                  <Volume2 className="w-12 h-12 text-amber-400" />
+                                </div>
+                              </div>
+                            );
+                          }
+                        })()}
 
                         {/* 发言者名字 */}
                         <div className="mt-8 flex items-center gap-3">
