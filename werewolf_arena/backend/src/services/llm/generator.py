@@ -98,8 +98,8 @@ def generate(
     for attempt in range(RETRIES):
         raw_resp = None
         try:
-            # 添加中文系统消息
-            system_message = "请用中文回答所有问题和进行所有对话。你是狼人杀游戏的AI玩家，需要用中文进行发言、推理和互动。"
+            # 添加强制中文系统消息
+            system_message = "你必须使用纯中文回答所有问题。你是狼人杀游戏的AI玩家，所有发言、推理和互动都必须使用中文。返回的JSON格式响应中，所有字段值都必须是中文内容，不允许使用任何英文单词。请确保你的回答完全是中文格式，包括JSON中的所有字符串值。"
 
             # 详细的调试日志
             print(f"[LLM调用] 第{attempt + 1}/{RETRIES}次尝试 | 模型: {model} | 温度: {temperature:.2f}")
@@ -116,8 +116,18 @@ def generate(
 
             print(f"[LLM响应] 成功获取响应，长度: {len(raw_resp) if raw_resp else 0} 字符")
 
+            # 完整输出LLM原始响应用于调试
+            if raw_resp:
+                print(f"[LLM原始响应开始]")
+                print(raw_resp)
+                print(f"[LLM原始响应结束]")
+            else:
+                print(f"[LLM警告] 原始响应为空")
+
+            print(f"[JSON解析] 开始解析响应...")
             # 解析JSON响应
             result = parse_json(raw_resp)
+            print(f"[JSON解析] 解析完成，结果类型: {type(result)}, 内容: {result}")
 
             # 某些模型可能返回数组，转换为字典
             if isinstance(result, list):
@@ -146,11 +156,18 @@ def generate(
             print(f"[LLM警告] 结果 '{result}' 不在允许值 {allowed_values} 中，将重试...")
 
         except Exception as e:
-            print(f"[LLM错误] 第{attempt + 1}/{RETRIES}次失败: {type(e).__name__}: {e}")
+            print(f"[LLM调用错误] 第{attempt + 1}/{RETRIES}次失败: {type(e).__name__}: {e}")
+            print(f"[错误详情] 这是一个LLM调用异常，不是JSON解析异常")
+
             if raw_resp:
+                print(f"[LLM错误时的完整响应开始]")
+                print(raw_resp)
+                print(f"[LLM错误时的完整响应结束]")
                 # 截取响应的前200个字符用于调试
                 resp_snippet = str(raw_resp)[:200].replace('\n', ' ')
                 print(f"[LLM响应片段] {resp_snippet}")
+            else:
+                print(f"[LLM错误] 没有获取到任何响应内容")
 
             # 增加温度以获得更多样化的输出
             temperature = min(1.0, temperature + 0.2)
