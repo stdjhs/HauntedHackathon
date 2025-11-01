@@ -6,7 +6,7 @@ import ModelAvatar from "@/components/ModelAvatar";
 import GameInfo from "@/components/GameInfo";
 import GameProgress from "@/components/GameProgress";
 import { WebSocketMessageFormatter, FormattedMessage } from "@/lib/websocket-formatter";
-import { ArrowLeft, MessageCircle, Zap, Moon, Sun, Users, Skull } from "lucide-react";
+import { ArrowLeft, MessageCircle, Zap, Moon, Sun, Users, Skull, Volume2 } from "lucide-react";
 
 interface Player {
   id: number;
@@ -33,6 +33,8 @@ const LiveGamePage = () => {
   const [historySpeeches, setHistorySpeeches] = useState<Array<{name: string, content: string}>>([]);
   const [wsMessages, setWsMessages] = useState<FormattedMessage[]>([]);
   const [wsConnection, setWsConnection] = useState<WebSocket | null>(null);
+  const [nightActions, setNightActions] = useState<Array<{player: string, action: string, target?: string}>>([]);
+  const [voteRecords, setVoteRecords] = useState<Array<{voter: string, target: string}>>([]);
 
   // 初始化WebSocket连接
   useEffect(() => {
@@ -80,13 +82,29 @@ const LiveGamePage = () => {
   // 处理WebSocket消息
   const handleWebSocketMessage = (data: any) => {
     console.log(`[WebSocket] 收到消息类型: ${data.type}`, data);
+    console.log(`[WebSocket] 完整消息数据:`, JSON.stringify(data, null, 2));
 
     // 使用消息格式化器格式化消息
     const formattedMessage = WebSocketMessageFormatter.formatMessage(data);
 
     if (formattedMessage) {
-      // 添加消息到历史
-      setWsMessages(prev => [...prev, formattedMessage]);
+      // 添加消息到历史（去重逻辑：检查是否已存在相同内容和时间戳的消息）
+      setWsMessages(prev => {
+        // 检查最近10条消息中是否有重复（避免遍历所有历史消息）
+        const recentMessages = prev.slice(-10);
+        const isDuplicate = recentMessages.some(msg => 
+          msg.content === formattedMessage.content && 
+          msg.type === formattedMessage.type &&
+          msg.playerName === formattedMessage.playerName
+        );
+        
+        if (isDuplicate) {
+          console.warn(`[消息去重] 检测到重复消息，已过滤:`, formattedMessage.content);
+          return prev;
+        }
+        
+        return [...prev, formattedMessage];
+      });
 
       // 同时处理游戏状态更新逻辑
       const { type, data: messageData } = data;
@@ -97,7 +115,8 @@ const LiveGamePage = () => {
           handlePhaseChange(messageData);
           break;
         case "debate_turn":
-          console.log(`[WebSocket] 处理发言:`, messageData);
+          console.log(`[WebSocket] ✅ 收到发言消息，开始处理:`, messageData);
+          console.log(`[WebSocket] player_name: ${messageData?.player_name}, dialogue: ${messageData?.dialogue}`);
           handleDebateTurn(messageData);
           break;
         case "vote_cast":
@@ -138,6 +157,19 @@ const LiveGamePage = () => {
       setCurrentSpeech("");
     }
 
+    // 如果从夜晚阶段切换到白天阶段，清空夜晚行动记录
+    if (phase === "day" || phase === "debate") {
+      console.log(`[阶段变更] 进入白天阶段，清空夜晚行动记录`);
+      setNightActions([]);
+    }
+    
+    // 如果进入投票阶段，清空之前的投票记录和票数
+    if (phase === "voting") {
+      console.log(`[阶段变更] 进入投票阶段，清空投票记录`);
+      setVoteRecords([]);
+      setPlayers(prev => prev.map(player => ({ ...player, votes: 0 })));
+    }
+
     let phaseText = "";
     let phaseType = "";
     let phaseIcon = "";
@@ -176,49 +208,68 @@ const LiveGamePage = () => {
 
   // 处理发言
   const handleDebateTurn = (data: any) => {
+    console.log(`[发言处理] 🎯 开始处理发言消息，data:`, data);
+    
     const { player_name, dialogue } = data;
 
-    console.log(`[发言处理] 收到发言消息: ${player_name}`);
+    if (!player_name || !dialogue) {
+      console.error(`[发言处理] ❌ 缺少必要字段! player_name: ${player_name}, dialogue: ${dialogue}`);
+      return;
+    }
+
+    console.log(`[发言处理] ✅ 收到发言: player_name="${player_name}", dialogue长度=${dialogue?.length || 0}`);
+    console.log(`[发言处理] 当前玩家列表长度: ${players.length}`);
     console.log(`[发言处理] 当前玩家列表:`, players.map(p => ({ id: p.id, name: p.name })));
 
     // 更新历史发言记录
     setHistorySpeeches(prev => [...prev.slice(-4), { name: player_name, content: dialogue }]);
 
-    // 实时更新当前发言者姓名和内容
+    // ⚠️ 关键：实时更新当前发言者姓名和内容
+    console.log(`[发言处理] 🔄 更新状态: currentSpeakerName="${player_name}"`);
+    console.log(`[发言处理] 🔄 更新状态: currentSpeech="${dialogue.substring(0, 50)}..."`);
+    
     setCurrentSpeakerName(player_name);
     setCurrentSpeech(dialogue);
 
     // 改进的玩家查找逻辑：支持多种匹配方式
+    if (players.length === 0) {
+      console.warn(`[发言高亮] ⚠️ 玩家列表为空，无法匹配发言者`);
+      setCurrentSpeaker(-1);
+      return;
+    }
+
     let playerIndex = -1;
 
     // 1. 首先尝试精确匹配名称
     playerIndex = players.findIndex(p => p.name === player_name);
     if (playerIndex !== -1) {
-      console.log(`[发言高亮] 精确匹配成功: ${player_name} (索引: ${playerIndex})`);
+      console.log(`[发言高亮] ✅ 精确匹配成功: ${player_name} (索引: ${playerIndex})`);
     } else {
       // 2. 尝试忽略大小写匹配
       playerIndex = players.findIndex(p =>
         p.name.toLowerCase().trim() === player_name.toLowerCase().trim()
       );
       if (playerIndex !== -1) {
-        console.log(`[发言高亮] 忽略大小写匹配成功: ${player_name} -> ${players[playerIndex].name} (索引: ${playerIndex})`);
+        console.log(`[发言高亮] ✅ 忽略大小写匹配成功: ${player_name} -> ${players[playerIndex].name} (索引: ${playerIndex})`);
       } else {
         // 3. 尝试部分匹配（包含关系）
         playerIndex = players.findIndex(p =>
           p.name.includes(player_name) || player_name.includes(p.name)
         );
         if (playerIndex !== -1) {
-          console.log(`[发言高亮] 部分匹配成功: ${player_name} -> ${players[playerIndex].name} (索引: ${playerIndex})`);
+          console.log(`[发言高亮] ✅ 部分匹配成功: ${player_name} -> ${players[playerIndex].name} (索引: ${playerIndex})`);
         }
       }
     }
 
     if (playerIndex !== -1) {
       setCurrentSpeaker(playerIndex);
-      console.log(`[发言高亮] ${player_name} (索引: ${playerIndex}) 开始发言，头像应该亮起`);
+      console.log(`[发言高亮] 🌟 ${player_name} (索引: ${playerIndex}) 开始发言，头像应该亮起`);
+      console.log(`[发言高亮] 当前状态: currentSpeaker=${playerIndex}, currentSpeakerName="${player_name}"`);
     } else {
-      console.warn(`[发言高亮] 未找到玩家: ${player_name}，玩家列表:`, players.map(p => p.name));
-      // 如果找不到玩家，重置发言者状态
+      console.error(`[发言高亮] ❌ 未找到玩家: "${player_name}"`);
+      console.error(`[发言高亮] 玩家列表:`, players.map(p => `"${p.name}"`));
+      // 如果找不到玩家，重置发言者索引但保留名字和发言
       setCurrentSpeaker(-1);
     }
   };
@@ -227,41 +278,140 @@ const LiveGamePage = () => {
   const handleVoteCast = (data: any) => {
     const { voter, target } = data;
 
-    // 更新玩家票数
-    setPlayers(prev => prev.map(player => {
+    console.log(`[投票] ${voter} 投票给 ${target}`);
+
+    // 先检查是否重复
+    setVoteRecords(prev => {
+      // 检查是否已存在相同的投票记录
+      const isDuplicate = prev.some(record => 
+        record.voter === voter && record.target === target
+      );
+      
+      if (isDuplicate) {
+        console.warn(`[投票去重] 检测到重复投票，已过滤: ${voter} → ${target}`);
+        return prev;
+      }
+      
+      // 不重复，添加新投票记录
+      const newRecords = [...prev, { voter, target }];
+      
+      // 同时更新玩家票数
+      setPlayers(prevPlayers => prevPlayers.map(player => {
       if (player.name === target) {
         return { ...player, votes: player.votes + 1 };
       }
       return player;
     }));
+      
+      return newRecords;
+    });
   };
 
   // 处理夜晚行动
   const handleNightAction = (data: any) => {
-    // 夜晚行动的具体逻辑由WebSocket消息格式化器处理
+    console.log(`[夜晚行动] 收到行动消息:`, data);
+    
+    const { action_type, player_name, target_name, role } = data;
+    
+    // 构建行动描述和图标
+    let actionText = "";
+    let icon = "🌙";
+    
+    if (action_type === "kill" || action_type === "werewolf_kill") {
+      actionText = `🐺 狼人 ${player_name} 打算杀害 ${target_name}`;
+      icon = "🐺";
+    } else if (action_type === "protect") {
+      actionText = `⚕️ 医生 ${player_name} 保护 ${target_name}`;
+      icon = "⚕️";
+    } else if (action_type === "investigate" || action_type === "check") {
+      actionText = `🔮 预言家 ${player_name} 查验 ${target_name}`;
+      icon = "🔮";
+    } else {
+      actionText = `${player_name} 进行了 ${action_type} 行动`;
+      icon = "🌙";
+    }
+    
+    // 添加到夜晚行动列表（保留最近5条，并去重）
+    setNightActions(prev => {
+      // 检查是否已存在相同的行动
+      const isDuplicate = prev.some(action => 
+        action.player === player_name && 
+        action.target === target_name &&
+        action.action === actionText
+      );
+      
+      if (isDuplicate) {
+        console.warn(`[夜晚行动去重] 检测到重复行动，已过滤: ${actionText}`);
+        return prev;
+      }
+      
+      // 添加新行动，保留最近5条
+      return [...prev.slice(-4), {
+        player: player_name,
+        action: actionText,
+        target: target_name
+      }];
+    });
   };
 
   // 处理游戏更新
   const handleGameUpdate = (data: any) => {
+    console.log(`[游戏更新] 🎮 收到game_update消息`);
     const { game_state } = data;
+    
     if (game_state && game_state.players) {
-      const updatedPlayers: Player[] = Object.entries(game_state.players).map(([name, player]: [string, any], index: number) => {
-        // 尝试从player对象中获取更准确的ID
-        const playerId = player.id || parseInt(name) || index + 1;
-        const playerName = player.name || name; // 优先使用player.name
-
-        console.log(`[玩家数据] 初始化玩家: ID=${playerId}, Name=${playerName}, Role=${player.role}`);
+      console.log(`[游戏更新] 玩家数据类型:`, typeof game_state.players);
+      console.log(`[游戏更新] 玩家数据原始内容:`, JSON.stringify(game_state.players, null, 2));
+      
+      setPlayers(prevPlayers => {
+        // 如果是首次初始化（玩家列表为空），直接创建新列表
+        if (prevPlayers.length === 0) {
+          const newPlayers: Player[] = Object.entries(game_state.players).map(([key, player]: [string, any], index: number) => {
+            const playerName = key;
+            const playerId = index + 1;
+            
+            console.log(`[玩家初始化] ✅ Name="${playerName}", ID=${playerId}, Role=${player?.role}, Alive=${player?.alive}`);
 
         return {
           id: playerId,
           name: playerName,
-          role: player.role || "未知",
-          status: player.alive !== false ? "alive" : "eliminated", // 根据alive状态设置
+              role: player?.role || "未知",
+              status: player?.alive !== false ? "alive" : "eliminated",
           votes: 0,
         };
+          });
+          
+          console.log(`[玩家初始化] 🎉 总共初始化了 ${newPlayers.length} 个玩家`);
+          return newPlayers;
+        }
+        
+        // 如果玩家已存在，只更新状态和角色信息，保留票数和ID
+        const updatedPlayers = prevPlayers.map(prevPlayer => {
+          const backendPlayer = game_state.players[prevPlayer.name];
+          
+          if (backendPlayer) {
+            const newStatus = backendPlayer.alive !== false ? "alive" : "eliminated";
+            
+            // 如果状态发生变化，输出日志
+            if (prevPlayer.status !== newStatus) {
+              console.log(`[状态更新] ${prevPlayer.name}: ${prevPlayer.status} → ${newStatus}`);
+            }
+            
+            return {
+              ...prevPlayer,
+              role: backendPlayer.role || prevPlayer.role,
+              status: newStatus,
+            };
+          }
+          
+          return prevPlayer;
+        });
+        
+        console.log(`[游戏更新] 🔄 更新了 ${updatedPlayers.length} 个玩家状态`);
+        return updatedPlayers;
       });
-      setPlayers(updatedPlayers);
-      console.log(`[玩家数据] 总共初始化了 ${updatedPlayers.length} 个玩家`, updatedPlayers);
+    } else {
+      console.warn(`[游戏更新] ⚠️ 没有收到有效的game_state或players数据`);
     }
   };
 
@@ -305,7 +455,10 @@ const LiveGamePage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950">
+    <div 
+      className="min-h-screen bg-cover bg-center bg-no-repeat bg-fixed"
+      style={{ backgroundImage: 'url(/central_background.jpg)' }}
+    >
       {/* 顶部控制栏 */}
       <div className="border-b border-slate-800 bg-slate-900/90 backdrop-blur-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-3 flex items-center justify-between">
@@ -334,7 +487,7 @@ const LiveGamePage = () => {
           </div>
 
           <div className="flex items-center gap-3">
-            <Badge variant="outline" className="text-sm text-blue-400 border-blue-400/30">
+            <Badge variant="outline" className="text-sm text-amber-400 border-amber-400/30">
               {godMode === "outside" ? "🔍 场外上帝" : "👁️ 场内上帝"}
             </Badge>
             <span className="text-xs text-slate-400 flex items-center gap-1">
@@ -346,104 +499,407 @@ const LiveGamePage = () => {
 
       {/* 主要内容区域 */}
       <div className="container mx-auto px-4 py-6">
-        <div className="grid grid-cols-12 gap-4">
-          {/* 中间：圆桌布局 */}
-          <div className="col-span-8">
-            <Card className="h-[600px] bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 border-slate-700 p-6 shadow-2xl">
-              <div className="relative w-full h-full flex items-center justify-center">
-                {/* 圆桌玩家 - 围成一圈 */}
-                <div className="relative w-[500px] h-[500px]">
+        {/* 游戏进度卡片 - 顶部全宽 */}
+        <div className="mb-4">
+          <GameProgress
+            currentRound={currentRound}
+            gamePhase={gamePhase}
+            gamePhaseType={gamePhaseType}
+            gamePhaseIcon={gamePhaseIcon}
+            currentSpeakerName={currentSpeakerName}
+            totalPlayers={players.length}
+            alivePlayers={players.filter(p => p.status === "alive").length}
+          />
+        </div>
+
+        {/* 左中右三列布局 */}
+        <div className="grid grid-cols-12 gap-6">
+          {/* 左侧：玩家1-3 */}
+          <div className="col-span-2">
+            <div className="space-y-4">
                   {players.length > 0 ? (
-                    players.map((player, index) => {
-                      const angle = (index * 360) / players.length - 90;
-                      const radius = 200;
-                      const x = Math.cos((angle * Math.PI) / 180) * radius;
-                      const y = Math.sin((angle * Math.PI) / 180) * radius;
+                players
+                  .map((player, originalIndex) => ({ player, originalIndex }))
+                  .slice(0, Math.ceil(players.length / 2))
+                  .map(({ player, originalIndex }) => {
+                    const isActive = currentSpeaker >= 0 && currentSpeaker === originalIndex;
+                    
+                    // 调试日志
+                    if (isActive) {
+                      console.log(`[左侧高亮] 🌟 玩家 ${player.name} (原始索引${originalIndex}) 正在发言，卡片应该高亮`);
+                      console.log(`[左侧高亮] currentSpeaker=${currentSpeaker}, player.name="${player.name}"`);
+                    }
 
                       return (
                         <div
-                          key={`player-${player.id || index}`}
-                          className="absolute top-1/2 left-1/2"
-                          style={{
-                            transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`,
-                          }}
-                        >
+                        key={`player-left-${player.id || originalIndex}`}
+                        className={`transition-all duration-500 ease-out ${
+                          isActive ? 'scale-110 translate-x-3' : ''
+                        }`}
+                      >
+                      <Card className={`p-4 relative overflow-hidden ${
+                        isActive 
+                          ? 'border-4 border-amber-400 shadow-2xl shadow-amber-500/60 bg-gradient-to-br from-amber-500/40 to-amber-900/40 ring-4 ring-amber-400/30' 
+                          : player.status === 'eliminated'
+                          ? 'border-2 border-slate-700 opacity-40 bg-slate-800/30'
+                          : 'border-2 border-slate-700 bg-slate-800/50 hover:border-slate-600 hover:shadow-lg transition-all'
+                      }`}>
+                        {/* 多层发光边框效果 */}
+                        {isActive && (
+                          <>
+                            {/* 外层快速脉冲 */}
+                            <div className="absolute -inset-1 border-4 border-amber-300/60 rounded-lg animate-ping" />
+                            {/* 中层慢速脉冲 */}
+                            <div className="absolute -inset-0.5 border-2 border-amber-400/40 rounded-lg animate-pulse" />
+                            {/* 顶部光带 */}
+                            <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-transparent via-amber-300 to-transparent animate-pulse" />
+                            {/* 底部光带 */}
+                            <div className="absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-r from-transparent via-amber-300 to-transparent animate-pulse" />
+                            {/* 左侧光带 */}
+                            <div className="absolute top-0 left-0 bottom-0 w-2 bg-gradient-to-b from-transparent via-amber-300 to-transparent animate-pulse" />
+                          </>
+                        )}
+                        
+                        <div className="flex flex-col items-center gap-3 relative z-10">
                           <ModelAvatar
                             model={player}
-                            isActive={currentSpeaker >= 0 && currentSpeaker === index}
+                            isActive={isActive}
                             godMode={godMode}
                             votes={player.votes || 0}
                           />
-                          {/* 调试信息：显示当前玩家索引和发言状态 */}
-                          {currentSpeaker >= 0 && currentSpeaker === index && (
-                            <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-green-500 text-white text-xs px-2 py-1 rounded whitespace-nowrap z-20">
-                              发言中 (索引: {index})
+                          {isActive && (
+                            <div className="text-center mt-2">
+                              <div className="px-2 py-1 bg-amber-400/20 rounded-lg border border-amber-400/40">
+                                <div className="text-xs text-amber-200 font-extrabold animate-pulse flex items-center justify-center gap-1.5">
+                                  <div className="w-2 h-2 bg-amber-300 rounded-full animate-ping" />
+                                  <Volume2 className="w-3 h-3" />
+                                  发言中
+                                </div>
+                              </div>
                             </div>
                           )}
+                        </div>
+                      </Card>
                         </div>
                       );
                     })
                   ) : (
-                    <div className="text-center text-slate-400">
-                      <p>等待游戏开始...</p>
+                <div className="text-slate-400 text-center text-sm">等待玩家...</div>
+              )}
+            </div>
+          </div>
+
+          {/* 中间：本轮发言区域 */}
+          <div className="col-span-8">
+            <Card className="h-[650px] bg-gradient-to-br from-slate-900/80 via-slate-800/70 to-slate-900/80 border-slate-700 shadow-2xl">
+              <div className="h-full flex flex-col">
+                {/* 发言区标题 */}
+                <div className="p-4 border-b border-amber-500/30 bg-slate-800/50">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <div className="text-3xl">{gamePhaseIcon}</div>
+                      <div>
+                        <h3 className="font-bold text-lg text-amber-400">{gamePhase}</h3>
+                        <p className="text-sm text-slate-400">第 {currentRound} 轮</p>
+                      </div>
+                    </div>
+                    {currentSpeaker >= 0 && currentSpeakerName !== "等待发言" && (
+                      <Badge className="bg-amber-500/30 text-amber-200 border-amber-400/50 shadow-lg shadow-amber-500/20">
+                        <div className="w-2 h-2 bg-amber-300 rounded-full mr-2 animate-pulse" />
+                        {currentSpeakerName} 发言中
+                      </Badge>
+                    )}
+                  </div>
+                </div>
+
+                {/* 发言内容区域 */}
+                <div className="flex-1 flex items-center justify-center p-8 overflow-y-auto">
+                  {/* 调试信息 */}
+                  {console.log(`[渲染] currentSpeech=${!!currentSpeech}, currentSpeaker=${currentSpeaker}, players.length=${players.length}, currentSpeakerName="${currentSpeakerName}"`)}
+                  
+                  {currentSpeech && currentSpeakerName ? (
+                    <div className="w-full max-w-4xl animate-in fade-in duration-500">
+                      {/* 发言者头像区域 - 居中大头像 */}
+                      <div className="flex flex-col items-center mb-8">
+                        {currentSpeaker >= 0 && players[currentSpeaker] ? (
+                          // 找到了玩家，显示头像
+                          <>
+                            {/* 发光效果外圈 */}
+                            <div className="relative">
+                              {/* 多层发光圆环 - 金黄色 */}
+                              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-500 blur-2xl opacity-50 animate-pulse scale-150" />
+                              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-500 blur-xl opacity-40 animate-pulse scale-125" />
+                              
+                              {/* 头像容器 */}
+                              <div className="relative transform scale-150">
+                                <ModelAvatar
+                                  model={players[currentSpeaker]}
+                                  isActive={true}
+                                  godMode={godMode}
+                                  votes={players[currentSpeaker].votes || 0}
+                                />
+                              </div>
+                            </div>
+                          </>
+                        ) : (
+                          // 没找到玩家，显示通用头像
+                          <div className="relative">
+                            <div className="w-24 h-24 rounded-full bg-gradient-to-br from-amber-500/30 to-yellow-500/30 border-2 border-amber-400 flex items-center justify-center">
+                              <Volume2 className="w-12 h-12 text-amber-400" />
+                            </div>
                     </div>
                   )}
 
-                  {/* 中间法官 - 南瓜头 */}
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-4">
-                    <div className="text-8xl animate-pulse drop-shadow-2xl drop-shadow-amber-500/20">🎃</div>
-                    <div className="bg-slate-800/90 backdrop-blur-sm border border-slate-700 rounded-lg px-4 py-2 max-w-[250px] shadow-xl shadow-black/50">
-                      <div className="flex items-center justify-center gap-2">
-                        <span className="text-2xl">{gamePhaseIcon}</span>
-                        <p className="text-center text-sm font-medium text-amber-400 drop-shadow-lg">
-                          {gamePhase}
-                        </p>
+                        {/* 发言者名字 */}
+                        <div className="mt-8 flex items-center gap-3">
+                          <Volume2 className="w-6 h-6 text-amber-400 animate-pulse" />
+                          <h3 className="text-2xl font-bold text-amber-300">
+                            {currentSpeakerName}
+                          </h3>
+                        </div>
+                      </div>
+
+                      {/* 发言内容卡片 - 金黄色主题 */}
+                      <div className="bg-gradient-to-br from-amber-500/10 to-yellow-500/10 border-2 border-amber-500/40 rounded-2xl p-8 shadow-2xl relative overflow-hidden">
+                        {/* 发光背景效果 */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-amber-500/5 via-yellow-500/10 to-amber-500/5 animate-pulse" />
+                        
+                        {/* 顶部装饰条 */}
+                        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-amber-400 to-transparent shadow-lg shadow-amber-500/50" />
+                        
+                        {/* 左侧装饰条 */}
+                        <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-amber-400 via-yellow-400 to-amber-500 shadow-lg shadow-amber-500/50" />
+                        
+                        {/* 发言内容 */}
+                        <div className="relative z-10">
+                          <p className="text-slate-100 text-xl leading-relaxed whitespace-pre-wrap text-center">
+                            {currentSpeech}
+                          </p>
+                        </div>
                       </div>
                     </div>
-
-                    {/* 当前发言者状态指示器 */}
-                    {gamePhaseType === "讨论" && currentSpeaker >= 0 && currentSpeakerName && currentSpeakerName !== "等待发言" && (
-                      <div className="bg-gradient-to-r from-blue-500/20 to-cyan-500/20 backdrop-blur-sm border border-blue-500/30 rounded-lg px-4 py-2 max-w-[280px] shadow-lg shadow-blue-500/20">
-                        <div className="flex items-center justify-center gap-2">
-                          <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
-                          <p className="text-center text-xs font-medium text-blue-300">
-                            💬 {currentSpeakerName} 正在发言...
-                          </p>
+                  ) : (
+                    // 没有发言时，显示系统信息
+                    <div className="flex items-center justify-center h-full p-8">
+                      <div className="w-full max-w-3xl">
+                        {nightActions.length > 0 ? (
+                          // 显示夜晚行动
+                          <div className="space-y-4">
+                            <div className="text-center mb-6">
+                              <h3 className="text-2xl font-bold text-amber-400 mb-2">🌙 夜晚行动</h3>
+                              <p className="text-slate-400 text-sm">场外上帝视角</p>
+                            </div>
+                            {nightActions.map((action, index) => (
+                              <div 
+                                key={index}
+                                className="bg-gradient-to-r from-indigo-500/10 to-purple-500/10 border-2 border-indigo-500/30 rounded-xl p-5 animate-in fade-in duration-300 hover:border-indigo-400/50 transition-all"
+                              >
+                                <p className="text-slate-100 text-xl leading-relaxed">
+                                  {action.action}
+                                </p>
+                              </div>
+                            ))}
+                          </div>
+                        ) : gamePhaseType === "投票" ? (
+                          // 投票阶段 - 实时投票结果
+                          <div className="space-y-6 animate-in fade-in duration-500">
+                            <div className="text-center mb-6">
+                              <div className="text-6xl mb-4 animate-bounce">🗳️</div>
+                              <h3 className="text-2xl font-bold text-red-400 mb-2">{gamePhase}</h3>
+                              <div className="flex items-center justify-center gap-2">
+                                <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
+                                <p className="text-red-400 text-sm font-medium">第 {currentRound} 轮 · 已投 {voteRecords.length} 票</p>
+                              </div>
+                            </div>
+                            
+                            {/* 投票统计 */}
+                            <div className="bg-gradient-to-r from-red-500/10 to-orange-500/10 border-2 border-red-500/40 rounded-2xl p-6">
+                              <h4 className="text-lg font-bold text-red-300 mb-4 text-center">📊 得票统计</h4>
+                              <div className="space-y-3">
+                                {players
+                                  .filter(p => p.votes > 0)
+                                  .sort((a, b) => b.votes - a.votes)
+                                  .map((player, index) => (
+                                    <div 
+                                      key={player.id}
+                                      className="bg-slate-800/50 border border-red-500/30 rounded-lg p-3 flex items-center justify-between hover:border-red-400/50 transition-all"
+                                    >
+                                      <div className="flex items-center gap-3">
+                                        <Badge className="bg-red-500/80 text-white font-bold w-6 h-6 flex items-center justify-center p-0">
+                                          {index + 1}
+                                        </Badge>
+                                        <span className="text-slate-200 font-medium">{player.name}</span>
+                                      </div>
+                                      <div className="flex items-center gap-2">
+                                        <div className="flex gap-1">
+                                          {Array.from({ length: player.votes }).map((_, i) => (
+                                            <div key={i} className="w-2 h-2 rounded-full bg-red-400" />
+                                          ))}
+                                        </div>
+                                        <Badge variant="destructive" className="font-bold">
+                                          {player.votes} 票
+                                        </Badge>
+                                      </div>
+                                    </div>
+                                  ))}
+                                {players.filter(p => p.votes > 0).length === 0 && (
+                                  <div className="text-center text-slate-400 py-6">
+                                    <p className="text-sm">等待玩家投票...</p>
+                                  </div>
+                                )}
+                              </div>
+                            </div>
+                            
+                            {/* 投票详情 */}
+                            {voteRecords.length > 0 && (
+                              <div className="bg-gradient-to-r from-orange-500/10 to-red-500/10 border-2 border-orange-500/40 rounded-2xl p-6">
+                                <h4 className="text-lg font-bold text-orange-300 mb-4 text-center">📝 投票详情</h4>
+                                <div className="space-y-2 max-h-48 overflow-y-auto">
+                                  {voteRecords.map((record, index) => (
+                                    <div 
+                                      key={index}
+                                      className="bg-slate-800/30 border border-orange-500/20 rounded-lg p-2 flex items-center gap-2 text-sm animate-in fade-in duration-300"
+                                    >
+                                      <span className="text-slate-400 font-mono text-xs">{index + 1}.</span>
+                                      <span className="text-amber-300 font-medium">{record.voter}</span>
+                                      <span className="text-slate-500">→</span>
+                                      <span className="text-red-300 font-medium">{record.target}</span>
+                                    </div>
+                                  ))}
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        ) : gamePhaseType === "夜晚" ? (
+                          // 夜晚阶段系统信息
+                          <div className="text-center space-y-6 animate-in fade-in duration-500">
+                            <div className="text-8xl mb-6 animate-pulse">🌙</div>
+                            <div className="bg-gradient-to-r from-indigo-500/10 to-purple-500/10 border-2 border-indigo-500/40 rounded-2xl p-8">
+                              <h3 className="text-3xl font-bold text-indigo-400 mb-4">{gamePhase}</h3>
+                              <p className="text-slate-300 text-lg">天黑请闭眼...</p>
+                              <div className="mt-6 flex items-center justify-center gap-2">
+                                <div className="w-3 h-3 rounded-full bg-indigo-500 animate-pulse" />
+                                <p className="text-indigo-400 text-sm font-medium">第 {currentRound} 轮</p>
+                              </div>
+                            </div>
+                          </div>
+                        ) : gamePhase === "天亮了" || gamePhaseType === "白天" ? (
+                          // 白天阶段系统信息
+                          <div className="text-center space-y-6 animate-in fade-in duration-500">
+                            <div className="text-8xl mb-6 animate-bounce">☀️</div>
+                            <div className="bg-gradient-to-r from-yellow-500/10 to-orange-500/10 border-2 border-yellow-500/40 rounded-2xl p-8">
+                              <h3 className="text-3xl font-bold text-yellow-400 mb-4">{gamePhase}</h3>
+                              <p className="text-slate-300 text-lg">天亮了，请睁眼...</p>
+                              <div className="mt-6 flex items-center justify-center gap-2">
+                                <div className="w-3 h-3 rounded-full bg-yellow-500 animate-pulse" />
+                                <p className="text-yellow-400 text-sm font-medium">第 {currentRound} 轮</p>
+                              </div>
+                            </div>
+                          </div>
+                        ) : gamePhaseType === "讨论" && gamePhase !== "准备中" ? (
+                          // 讨论阶段等待发言
+                          <div className="text-center space-y-6 animate-in fade-in duration-500">
+                            <div className="text-8xl mb-6 animate-pulse">💬</div>
+                            <div className="bg-gradient-to-r from-amber-500/10 to-yellow-500/10 border-2 border-amber-500/40 rounded-2xl p-8">
+                              <h3 className="text-3xl font-bold text-amber-400 mb-4">{gamePhase}</h3>
+                              <p className="text-slate-300 text-lg">等待玩家发言...</p>
+                              <div className="mt-6 flex items-center justify-center gap-2">
+                                <div className="w-3 h-3 rounded-full bg-amber-500 animate-pulse" />
+                                <p className="text-amber-400 text-sm font-medium">第 {currentRound} 轮</p>
+                              </div>
+                            </div>
+                          </div>
+                        ) : (
+                          // 默认状态
+                          <div className="text-center space-y-6 animate-in fade-in duration-500">
+                            <div className="text-8xl mb-6 animate-pulse">🎃</div>
+                            <div className="bg-gradient-to-r from-slate-700/30 to-slate-600/30 border-2 border-slate-600/40 rounded-2xl p-8">
+                              <h3 className="text-2xl font-bold text-slate-400 mb-4">{gamePhase}</h3>
+                              <p className="text-slate-500 text-sm">游戏进行中...</p>
                         </div>
                       </div>
                     )}
                   </div>
+                    </div>
+                  )}
                 </div>
               </div>
             </Card>
           </div>
 
-          {/* 右侧：游戏信息 */}
-          <div className="col-span-4 space-y-4">
-            {/* 游戏进度 */}
-            <GameProgress
-              currentRound={currentRound}
-              gamePhase={gamePhase}
-              gamePhaseType={gamePhaseType}
-              gamePhaseIcon={gamePhaseIcon}
-              currentSpeakerName={currentSpeakerName}
-              totalPlayers={players.length}
-              alivePlayers={players.filter(p => p.status === "alive").length}
-            />
-
-            {/* 游戏详情信息 */}
-            <GameInfo
-              currentRound={currentRound}
-              currentPhase={gamePhase}
-              currentSpeaker={{
-                name: currentSpeakerName,
-                content: currentSpeech,
-              }}
-              historySpeeches={historySpeeches}
-              eliminatedPlayers={players
-                .filter((p) => p.status === "eliminated")
-                .map((p) => p.name)}
-            />
+          {/* 右侧：玩家4-6 */}
+          <div className="col-span-2">
+            <div className="space-y-4">
+              {players.length > 0 ? (
+                players
+                  .map((player, originalIndex) => ({ player, originalIndex }))
+                  .slice(Math.ceil(players.length / 2))
+                  .map(({ player, originalIndex }) => {
+                    const isActive = currentSpeaker >= 0 && currentSpeaker === originalIndex;
+                    
+                    // 调试日志
+                    if (isActive) {
+                      console.log(`[右侧高亮] 🌟 玩家 ${player.name} (原始索引${originalIndex}) 正在发言，卡片应该高亮`);
+                      console.log(`[右侧高亮] currentSpeaker=${currentSpeaker}, player.name="${player.name}"`);
+                    }
+                    
+                    return (
+                      <div
+                        key={`player-right-${player.id || originalIndex}`}
+                        className={`transition-all duration-500 ease-out ${
+                          isActive ? 'scale-110 -translate-x-3' : ''
+                        }`}
+                      >
+                      <Card className={`p-4 relative overflow-hidden ${
+                        isActive 
+                          ? 'border-4 border-amber-400 shadow-2xl shadow-amber-500/60 bg-gradient-to-br from-amber-500/40 to-amber-900/40 ring-4 ring-amber-400/30' 
+                          : player.status === 'eliminated'
+                          ? 'border-2 border-slate-700 opacity-40 bg-slate-800/30'
+                          : 'border-2 border-slate-700 bg-slate-800/50 hover:border-slate-600 hover:shadow-lg transition-all'
+                      }`}>
+                        {/* 多层发光边框效果 */}
+                        {isActive && (
+                          <>
+                            {/* 外层快速脉冲 */}
+                            <div className="absolute -inset-1 border-4 border-amber-300/60 rounded-lg animate-ping" />
+                            {/* 中层慢速脉冲 */}
+                            <div className="absolute -inset-0.5 border-2 border-amber-400/40 rounded-lg animate-pulse" />
+                            {/* 顶部光带 */}
+                            <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-transparent via-amber-300 to-transparent animate-pulse" />
+                            {/* 底部光带 */}
+                            <div className="absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-r from-transparent via-amber-300 to-transparent animate-pulse" />
+                            {/* 右侧光带 */}
+                            <div className="absolute top-0 right-0 bottom-0 w-2 bg-gradient-to-b from-transparent via-amber-300 to-transparent animate-pulse" />
+                          </>
+                        )}
+                        
+                        <div className="flex flex-col items-center gap-3 relative z-10">
+                          <ModelAvatar
+                            model={player}
+                            isActive={isActive}
+                            godMode={godMode}
+                            votes={player.votes || 0}
+                          />
+                          {isActive && (
+                            <div className="text-center mt-2">
+                              <div className="px-2 py-1 bg-amber-400/20 rounded-lg border border-amber-400/40">
+                                <div className="text-xs text-amber-200 font-extrabold animate-pulse flex items-center justify-center gap-1.5">
+                                  <div className="w-2 h-2 bg-amber-300 rounded-full animate-ping" />
+                                  <Volume2 className="w-3 h-3" />
+                                  发言中
+                                </div>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      </Card>
+                    </div>
+                  );
+                })
+              ) : (
+                <div className="text-slate-400 text-center text-sm">等待玩家...</div>
+              )}
+            </div>
           </div>
         </div>
 
@@ -455,7 +911,7 @@ const LiveGamePage = () => {
                 <MessageCircle className="w-4 h-4 text-amber-400" />
                 <h3 className="font-bold text-slate-100">游戏消息记录</h3>
               </div>
-              <Badge variant="outline" className="text-xs text-blue-400 border-blue-400/30">
+              <Badge variant="outline" className="text-xs text-amber-400 border-amber-400/30">
                 {WebSocketMessageFormatter.filterGameMessages(wsMessages).length} 条消息
               </Badge>
             </div>

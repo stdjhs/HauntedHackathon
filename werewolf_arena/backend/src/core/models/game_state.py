@@ -169,7 +169,23 @@ class State(Deserializable):
         self.winner: str = ""
 
     def to_dict(self):
-        return to_dict(self)
+        # 先序列化整个对象
+        data = to_dict(self)
+        
+        # 获取当前存活玩家列表
+        # 如果有回合记录，使用最后一轮的玩家列表；否则使用所有玩家
+        if self.rounds and len(self.rounds) > 0:
+            current_players = self.rounds[-1].players
+        else:
+            current_players = list(self.players.keys())
+        
+        # 为每个玩家动态添加 alive 字段
+        if 'players' in data and isinstance(data['players'], dict):
+            for player_name, player_data in data['players'].items():
+                if isinstance(player_data, dict):
+                    player_data['alive'] = player_name in current_players
+        
+        return data
 
     @classmethod
     def from_json(cls, data: Dict[Any, Any]):

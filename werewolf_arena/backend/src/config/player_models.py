@@ -5,12 +5,12 @@ Player Model Mapping Configuration
 
 # 玩家模型名到完整模型ID的一对一映射
 PLAYER_MODEL_MAPPING = {
-    "Hunyuan-A13B": "siliconflow/tencent/Hunyuan-A13B-Instruct",
+    "MiniMax-M1-80k": "MiniMaxAI/MiniMax-M1-80k",
     "GLM-4.6": "siliconflow/zai-org/GLM-4.6",
     "Qwen3-32B": "siliconflow/Qwen/Qwen3-32B",
     "DeepSeek-V3.2": "siliconflow/deepseek-ai/DeepSeek-V3.2-Exp",
     "Kimi-Dev-72B": "siliconflow/moonshotai/Kimi-Dev-72B",
-    "Hunyuan-MT-7B": "siliconflow/tencent/Hunyuan-MT-7B"
+    "Ring-flash-2.0": "inclusionAI/Ring-flash-2.0"
 }
 
 def get_model_for_player(player_name: str, role: str = None) -> str:
@@ -29,7 +29,7 @@ def get_model_for_player(player_name: str, role: str = None) -> str:
         return PLAYER_MODEL_MAPPING[player_name]
 
     # 如果没有找到映射，返回默认模型（兼容性处理）
-    return "siliconflow/deepseek-ai/DeepSeek-V3.2-Exp"
+    return "MiniMaxAI/MiniMax-M1-80k"
 
 def get_player_model_mapping(player_names: list[str]) -> dict[str, str]:
     """

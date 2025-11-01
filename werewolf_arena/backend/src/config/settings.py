@@ -156,12 +156,12 @@ RUN_SYNTHETIC_VOTES = settings.game.run_synthetic_votes
 
 # 玩家名字列表 - 使用模型名作为玩家名
 PLAYER_MODEL_NAMES = [
-    "Hunyuan-A13B",         # 使用 tencent/Hunyuan-A13B-Instruct (保留)
-    "GLM-4.6",             # 使用 zai-org/GLM-4.6 (替换GLM-4.5-Air)
-    "Qwen3-32B",           # 使用 Qwen/Qwen3-32B (替换Qwen3-VL-32B-Thinking)
+    "MiniMax-M1-80k",      # 使用 MiniMaxAI/MiniMax-M1-80k (替换Hunyuan-A13B)
+    "GLM-4.6",             # 使用 zai-org/GLM-4.6 (保留)
+    "Qwen3-32B",           # 使用 Qwen/Qwen3-32B (保留)
     "DeepSeek-V3.2",       # 使用 deepseek-ai/DeepSeek-V3.2-Exp (保留)
     "Kimi-Dev-72B",        # 使用 moonshotai/Kimi-Dev-72B (保留)
-    "Hunyuan-MT-7B"        # 使用 tencent/Hunyuan-MT-7B (保留)
+    "Ring-flash-2.0"       # 使用 inclusionAI/Ring-flash-2.0 (替换Hunyuan-MT-7B)
 ]
 
 
