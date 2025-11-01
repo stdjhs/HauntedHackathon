@@ -18,16 +18,26 @@ export default function Home() {
   const [isStarting, setIsStarting] = useState(false);
 
   // Auto-redirect to live game page when game starts successfully
+  // But only if we came from the home page initially (not from returning)
   useEffect(() => {
     if (currentGame && currentGame.session_id && gameLoading === 'success') {
-      console.log('Game started successfully, redirecting to live game page:', currentGame.session_id);
-      router.push(`/live-game/${currentGame.session_id}`);
+      // Check if we should auto-redirect (only when user just started a game)
+      const shouldRedirect = sessionStorage.getItem('shouldRedirectToGame') === 'true';
+      if (shouldRedirect) {
+        console.log('Game started successfully, redirecting to live game page:', currentGame.session_id);
+        // Clear the flag
+        sessionStorage.removeItem('shouldRedirectToGame');
+        router.push(`/live-game/${currentGame.session_id}`);
+      }
     }
   }, [currentGame, gameLoading, router]);
 
   const handleEnterLivestream = async () => {
     try {
       setIsStarting(true);
+
+      // Set flag to indicate we should redirect after game starts
+      sessionStorage.setItem('shouldRedirectToGame', 'true');
 
       // 使用默认参数启动游戏
       await startGame({
@@ -40,6 +50,8 @@ export default function Home() {
     } catch (error) {
       console.error('Failed to start game:', error);
       setIsStarting(false);
+      // Clear flag on error
+      sessionStorage.removeItem('shouldRedirectToGame');
     }
   };
 

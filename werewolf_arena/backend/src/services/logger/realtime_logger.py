@@ -70,8 +70,6 @@ class RealtimeGameLogger:
     def __init__(self):
         # 内存日志: {session_id: [log_entries]}
         self._logs: Dict[str, List[GameLogEntry]] = {}
-        # 订阅者: {session_id: [callback_functions]}
-        self._subscribers: Dict[str, List[callable]] = {}
         # 日志文件: {session_id: file_path}
         self._log_files: Dict[str, Path] = {}
         # 内存日志数量限制
@@ -83,7 +81,6 @@ class RealtimeGameLogger:
         """初始化会话"""
         if session_id not in self._logs:
             self._logs[session_id] = []
-            self._subscribers[session_id] = []
             # 不再使用asyncio.Lock，避免事件循环问题
             # 使用线程锁替代
             import threading
@@ -135,9 +132,6 @@ class RealtimeGameLogger:
         # 异步写入文件
         asyncio.create_task(self._write_to_file(session_id, entry))
 
-        # 通知订阅者
-        await self._notify_subscribers(session_id, entry)
-
         print(f"[RealtimeLogger] {session_id} [{level.value}] {message}")
 
     async def _write_to_file(self, session_id: str, entry: GameLogEntry):
@@ -169,31 +163,6 @@ class RealtimeGameLogger:
             pass
         except Exception as e:
             print(f"[RealtimeLogger] Error writing log to file: {e}")
-
-    async def _notify_subscribers(self, session_id: str, entry: GameLogEntry):
-        """通知订阅者"""
-        if session_id in self._subscribers:
-            for callback in self._subscribers[session_id]:
-                try:
-                    if asyncio.iscoroutinefunction(callback):
-                        await callback(entry)
-                    else:
-                        callback(entry)
-                except Exception as e:
-                    print(f"[RealtimeLogger] Error notifying subscriber: {e}")
-
-    def subscribe(self, session_id: str, callback: callable):
-        """订阅日志"""
-        if session_id not in self._subscribers:
-            self._subscribers[session_id] = []
-        self._subscribers[session_id].append(callback)
-        print(f"[RealtimeLogger] New subscriber for session {session_id}")
-
-    def unsubscribe(self, session_id: str, callback: callable):
-        """取消订阅"""
-        if session_id in self._subscribers and callback in self._subscribers[session_id]:
-            self._subscribers[session_id].remove(callback)
-            print(f"[RealtimeLogger] Subscriber removed for session {session_id}")
 
     def get_logs(
         self,
@@ -250,8 +219,6 @@ class RealtimeGameLogger:
         """清除会话"""
         if session_id in self._logs:
             del self._logs[session_id]
-        if session_id in self._subscribers:
-            del self._subscribers[session_id]
         if session_id in self._log_files:
             del self._log_files[session_id]
         if session_id in self._file_locks:

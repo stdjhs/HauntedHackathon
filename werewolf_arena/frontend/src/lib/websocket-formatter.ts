@@ -31,8 +31,6 @@ const GAME_MESSAGE_TYPES = {
   ]),
   // 过滤掉的消息类型（系统消息）
   FILTER: new Set([
-    'log_update',
-    'log_history',
     'game_update',
     'ping',
     'pong',
@@ -82,9 +80,6 @@ export class WebSocketMessageFormatter {
 
       case 'game_update':
         return this.formatGameUpdate(messageData, messageId);
-
-      case 'log_update':
-        return this.formatLogUpdate(messageData, messageId);
 
       case 'round_complete':
         return this.formatRoundComplete(messageData, messageId);
@@ -206,16 +201,19 @@ export class WebSocketMessageFormatter {
     switch (action_type) {
       case 'werewolf_kill':
       case 'eliminate':
+      case 'night_eliminate':
         content = `🐺 狼人杀了${target_name}`;
         icon = '🐺';
         break;
       case 'doctor_protect':
       case 'protect':
+      case 'night_protect':
         content = `👨‍⚕️ 医生保护了${target_name}`;
         icon = '👨‍⚕️';
         break;
       case 'seer_investigate':
       case 'investigate':
+      case 'night_investigate':
         content = `🔮 预言家查验了${target_name}${details?.investigation_result ? `，发现是${details.investigation_result}` : ''}`;
         icon = '🔮';
         break;
@@ -232,6 +230,31 @@ export class WebSocketMessageFormatter {
         icon = '⚡';
     }
 
+    // 添加详细的action和reasoning信息
+    if (details?.action || details?.reasoning) {
+      const actionInfo = details.action ? `行动: ${details.action}` : '';
+      const reasoningInfo = details.reasoning ? `推理: ${details.reasoning}` : '';
+
+      if (actionInfo || reasoningInfo) {
+        content += '\n';
+        if (actionInfo) {
+          content += `  ${actionInfo}`;
+        }
+        if (reasoningInfo) {
+          content += (actionInfo ? '\n' : '  ') + `💭 ${reasoningInfo}`;
+        }
+      }
+    }
+
+    // 如果是错误类型，添加错误信息
+    if (action_type === 'error' && details?.action) {
+      content = `❌ ${player_name}: ${details.action}`;
+      icon = '❌';
+      if (details?.reason) {
+        content += `\n原因: ${details.reason}`;
+      }
+    }
+
     return {
       id: messageId,
       timestamp: new Date().toLocaleTimeString(),
@@ -240,7 +263,7 @@ export class WebSocketMessageFormatter {
       playerName: player_name,
       targetName: target_name,
       icon,
-      colorClass: 'text-red-500',
+      colorClass: action_type === 'error' ? 'text-red-600' : 'text-red-500',
       isSystemMessage: false
     };
   }
@@ -256,24 +279,6 @@ export class WebSocketMessageFormatter {
       content: '🔄 游戏状态已更新',
       icon: '🔄',
       colorClass: 'text-blue-400',
-      isSystemMessage: true
-    };
-  }
-
-  /**
-   * 格式化日志更新消息
-   */
-  private static formatLogUpdate(data: any, messageId: string): FormattedMessage {
-    const { action, player_name } = data;
-
-    return {
-      id: messageId,
-      timestamp: new Date().toLocaleTimeString(),
-      type: 'system',
-      content: `📝 ${player_name ? `${player_name}: ` : ''}${action}`,
-      playerName: player_name,
-      icon: '📝',
-      colorClass: 'text-gray-500',
       isSystemMessage: true
     };
   }

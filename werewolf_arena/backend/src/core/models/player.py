@@ -37,7 +37,7 @@ def group_and_format_observations(observations):
     """按回合分组并格式化观察记录
 
     Args:
-        observations: 字符串列表，每个字符串以"Round X:"开头
+        observations: 字符串列表，每个字符串以"第X轮："开头
 
     Returns:
         格式化后的观察记录列表
@@ -46,21 +46,46 @@ def group_and_format_observations(observations):
     for obs in observations:
         try:
             # 安全地解析观察记录
-            parts = obs.split(":", 1)
+            parts = obs.split("：", 1)  # 使用中文冒号分割
             if len(parts) < 2:
                 print(f"[观察记录错误] 无效的观察记录格式: {obs}")
                 continue
 
-            prefix_parts = parts[0].split()
-            if len(prefix_parts) < 2:
-                print(f"[观察记录错误] 无效的前缀格式: {parts[0]}")
-                continue
+            prefix = parts[0]
 
-            # 尝试解析回合数字
-            try:
-                round_num = int(prefix_parts[1])
-            except (ValueError, IndexError) as e:
-                print(f"[观察记录错误] 无法解析回合数字 '{prefix_parts[1]}': {e}")
+            # 支持多种前缀格式：
+            # "第0轮"
+            # "第0轮主持人公告"
+            # "Round 0"
+            round_num = None
+
+            # 尝试从 "第X轮" 格式中提取数字
+            if "第" in prefix and "轮" in prefix:
+                import re
+                match = re.search(r'第(\d+)轮', prefix)
+                if match:
+                    round_num = int(match.group(1))
+
+            # 回退到空格分割的方式
+            if round_num is None:
+                prefix_parts = prefix.split()
+                if len(prefix_parts) >= 1:
+                    # 检查第一个部分是否包含轮次信息
+                    first_part = prefix_parts[0]
+                    if "第" in first_part and "轮" in first_part:
+                        import re
+                        match = re.search(r'第(\d+)轮', first_part)
+                        if match:
+                            round_num = int(match.group(1))
+                    elif len(prefix_parts) >= 2:
+                        # 尝试从第二部分获取数字
+                        try:
+                            round_num = int(prefix_parts[1])
+                        except (ValueError, IndexError):
+                            pass
+
+            if round_num is None:
+                print(f"[观察记录错误] 无法解析回合数字，前缀: '{prefix}'")
                 continue
 
             obs_text = parts[1].strip().replace('"', "")
