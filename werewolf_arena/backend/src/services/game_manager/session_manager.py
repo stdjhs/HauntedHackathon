@@ -15,6 +15,7 @@ from src.core.models.player import Seer, Doctor, Villager, Werewolf
 from src.services.logger.game_logger import log_directory, save_game
 from src.config.settings import get_player_names, DEFAULT_THREADS
 from src.config.loader import model_registry
+from src.config.player_models import get_model_for_player
 
 
 class GameSession:
@@ -59,20 +60,42 @@ class GameSessionManager:
         """创建新游戏会话"""
         import random
 
-        # 转换模型ID为完整格式
-        full_villager_model = model_registry.get_full_model_id(villager_model)
-        full_werewolf_model = model_registry.get_full_model_id(werewolf_model)
+        print("创建新游戏：6个玩家，每个玩家使用不同的模型")
 
-        print(f"Model conversion: {villager_model} -> {full_villager_model}")
-        print(f"Model conversion: {werewolf_model} -> {full_werewolf_model}")
+        # 获取所有玩家模型名（6个不同的模型名）
+        player_names = get_player_names()  # 现在返回6个模型名
 
-        # 初始化玩家
-        player_names = random.sample(get_player_names(), num_players)
+        if len(player_names) != num_players:
+            print(f"警告：期望 {num_players} 个玩家，但得到 {len(player_names)} 个玩家名")
 
-        seer = Seer(name=player_names.pop(), model=full_villager_model)
-        doctor = Doctor(name=player_names.pop(), model=full_villager_model)
-        werewolves = [Werewolf(name=player_names.pop(), model=full_werewolf_model) for _ in range(1)]
-        villagers = [Villager(name=name, model=full_villager_model) for name in player_names]
+        print(f"玩家列表：{player_names}")
+
+        # 随机打乱玩家名顺序，确保每次游戏角色分配不同
+        random.shuffle(player_names)
+
+        # 分配角色：1个预言家，1个医生，1个狼人，3个村民
+        seer_name = player_names[0]
+        seer_model = get_model_for_player(seer_name, "Seer")
+        seer = Seer(name=seer_name, model=seer_model)
+        print(f"预言家 {seer_name} -> {seer_model}")
+
+        doctor_name = player_names[1]
+        doctor_model = get_model_for_player(doctor_name, "Doctor")
+        doctor = Doctor(name=doctor_name, model=doctor_model)
+        print(f"医生 {doctor_name} -> {doctor_model}")
+
+        werewolf_name = player_names[2]
+        werewolf_model = get_model_for_player(werewolf_name, "Werewolf")
+        werewolves = [Werewolf(name=werewolf_name, model=werewolf_model)]
+        print(f"狼人 {werewolf_name} -> {werewolf_model}")
+
+        # 剩余3个作为村民
+        villagers = []
+        for name in player_names[3:]:
+            villager_model = get_model_for_player(name, "Villager")
+            villager = Villager(name=name, model=villager_model)
+            villagers.append(villager)
+            print(f"村民 {name} -> {villager_model}")
 
         # 初始化游戏视图
         all_player_names = [seer.name, doctor.name] + [w.name for w in werewolves] + [v.name for v in villagers]

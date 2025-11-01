@@ -69,8 +69,11 @@ class LLMSettings(BaseSettings):
     minimax_base_url: str = "https://api.minimaxi.com/anthropic"
     minimax_model: str = "MiniMax-M2"
 
-    # 默认使用的模型
-    default_model: str = "minimax/MiniMax-M2"
+    # SiliconFlow
+    siliconflow_api_key: Optional[str] = "sk-sxkkhitfrbmyjtmmuithkjzqptlrdeqmvchgakjyavwjsnvn"
+
+    # 默认使用的模型 - 改为硅基流动的模型
+    default_model: str = "siliconflow/deepseek-ai/DeepSeek-V3"
 
 
 class ServerSettings(BaseSettings):
@@ -151,14 +154,17 @@ RETRIES = settings.game.retries
 RUN_SYNTHETIC_VOTES = settings.game.run_synthetic_votes
 
 
-# 玩家名字列表
-NAMES = [
-    "张伟", "王芳", "李娜", "刘洋", "陈明", "杨静", "赵强",
-    "黄丽", "周涛", "吴敏", "徐飞", "朱晓", "马超", "林婷",
-    "何勇", "高雪", "郑军"
+# 玩家名字列表 - 使用模型名作为玩家名
+PLAYER_MODEL_NAMES = [
+    "Hunyuan-A13B",         # 使用 tencent/Hunyuan-A13B-Instruct (保留)
+    "GLM-4.6",             # 使用 zai-org/GLM-4.6 (替换GLM-4.5-Air)
+    "Qwen3-32B",           # 使用 Qwen/Qwen3-32B (替换Qwen3-VL-32B-Thinking)
+    "DeepSeek-V3.2",       # 使用 deepseek-ai/DeepSeek-V3.2-Exp (保留)
+    "Kimi-Dev-72B",        # 使用 moonshotai/Kimi-Dev-72B (保留)
+    "Hunyuan-MT-7B"        # 使用 tencent/Hunyuan-MT-7B (保留)
 ]
 
 
 def get_player_names():
-    """随机选择玩家名字"""
-    return random.sample(NAMES, NUM_PLAYERS)
+    """获取所有玩家模型名（6个玩家对应6个不同模型）"""
+    return PLAYER_MODEL_NAMES.copy()

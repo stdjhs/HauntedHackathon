@@ -186,19 +186,30 @@ const LiveGamePage = () => {
   // 格式化消息显示
   const formatMessageDisplay = (message: FormattedMessage) => {
     const isImportant = WebSocketMessageFormatter.isImportantMessage(message);
+    const hasMultiLine = message.content.includes('\n');
 
     return (
-      <div className={`flex items-start gap-2 p-2 rounded hover:bg-slate-800/50 ${
+      <div className={`flex items-start gap-2 p-3 rounded hover:bg-slate-800/50 ${
         isImportant ? 'bg-amber-500/10 border-l-2 border-amber-500' : ''
       }`}>
-        <span className="text-sm">{message.icon}</span>
+        <span className="text-sm mt-1">{message.icon}</span>
         <div className="flex-1 min-w-0">
-          <div className={`text-sm break-words ${
+          <div className={`text-sm ${
             isImportant ? 'font-semibold text-amber-400' : 'text-slate-300'
           }`}>
-            {message.content}
+            {hasMultiLine ? (
+              // 多行内容：第一行正常显示，详细信息缩进显示
+              message.content.split('\n').map((line, index) => (
+                <div key={index} className={index > 0 ? 'mt-1 text-xs text-slate-400 italic ml-2' : ''}>
+                  {line}
+                </div>
+              ))
+            ) : (
+              // 单行内容正常显示
+              message.content
+            )}
           </div>
-          <div className="text-xs text-slate-500">
+          <div className="text-xs text-slate-500 mt-1">
             {message.timestamp}
           </div>
         </div>
@@ -215,7 +226,11 @@ const LiveGamePage = () => {
             <Button
               variant="ghost"
               size="sm"
-              onClick={() => router.push("/")}
+              onClick={() => {
+                // Clear the redirect flag to prevent auto-redirect
+                sessionStorage.removeItem('shouldRedirectToGame');
+                router.push("/");
+              }}
               className="gap-2 text-slate-300 hover:text-amber-400 hover:bg-slate-800 transition-all duration-200"
             >
               <ArrowLeft className="w-4 h-4" />
