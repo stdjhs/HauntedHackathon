@@ -321,5 +321,19 @@ async def _notify_player_summary(session_id: str, player_name: str, summary: str
     except Exception as e:
         print(f"Failed to send player summary notification: {e}")
 
+async def _notify_game_complete(session_id: str, winner: str, winner_name: str, players_info: dict, round_number: int):
+    """发送游戏结束通知"""
+    try:
+        from src.api.v1.routes.websocket import notify_game_complete
+        await notify_game_complete(
+            session_id=session_id,
+            winner=winner,
+            winner_name=winner_name,
+            players_info=players_info,
+            round_number=round_number
+        )
+    except Exception as e:
+        print(f"Failed to send game complete notification: {e}")
+
 # 全局实例
 game_manager = GameSessionManager()

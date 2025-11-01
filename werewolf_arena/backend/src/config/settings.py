@@ -13,8 +13,8 @@ from .timing_loader import get_timing_config, TimingConfig
 class GameSettings(BaseSettings):
     """游戏配置"""
     num_players: int = 6
-    max_debate_turns: int = 5  # 增加辩论轮数到5轮
-    default_threads: int = 2
+    max_debate_turns: int = 1  # 增加辩论轮数到5轮
+    default_threads: int = 4
     retries: int = 3
     run_synthetic_votes: bool = True
 

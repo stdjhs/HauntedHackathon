@@ -100,6 +100,20 @@ class ConnectionManager:
         }
         await self.broadcast_to_session(json.dumps(message), session_id)
 
+    async def broadcast_game_complete_v2(self, session_id: str, winner: str, winner_name: str, players_info: dict, round_number: int):
+        """Broadcast game completion with player roles to all connections in a session"""
+        message = {
+            "type": "game_complete",
+            "data": {
+                "winner": winner,
+                "winner_name": winner_name,
+                "players_info": players_info,
+                "round_number": round_number
+            },
+            "timestamp": datetime.now().isoformat()
+        }
+        await self.broadcast_to_session(json.dumps(message), session_id)
+
     
     async def broadcast_player_action(self, session_id: str, action_event):
         """Broadcast player action with sequence number"""
@@ -322,9 +336,14 @@ async def notify_round_complete(session_id: str, round_data: dict, next_phase: d
     """Notify all clients about round completion"""
     await manager.broadcast_round_complete(session_id, round_data, next_phase)
 
-async def notify_game_complete(session_id: str, winner: str, final_round: dict, game_state: dict):
+async def notify_game_complete(session_id: str, winner: str, winner_name: str = None, players_info: dict = None, round_number: int = 0, final_round: dict = None, game_state: dict = None):
     """Notify all clients about game completion"""
-    await manager.broadcast_game_complete(session_id, winner, final_round, game_state)
+    # 如果提供了新参数，使用新格式
+    if winner_name and players_info is not None:
+        await manager.broadcast_game_complete_v2(session_id, winner, winner_name, players_info, round_number)
+    else:
+        # 兼容旧格式
+        await manager.broadcast_game_complete(session_id, winner, final_round or {}, game_state or {})
 
 async def notify_player_action(session_id: str, action_type: ActionType, player_name: str, player_role: str, target_name: Optional[str] = None, details: Optional[Dict[str, Any]] = None):
     """Notify all clients about a player action with sequence"""

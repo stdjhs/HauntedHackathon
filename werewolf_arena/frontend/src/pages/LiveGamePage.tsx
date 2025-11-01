@@ -37,6 +37,9 @@ const LiveGamePage = () => {
   const [voteRecords, setVoteRecords] = useState<Array<{voter: string, target: string}>>([]);
   const [exiledPlayer, setExiledPlayer] = useState<string>("");
   const [playerSummaries, setPlayerSummaries] = useState<Array<{player: string, summary: string}>>([]);
+  const [gameEnded, setGameEnded] = useState<boolean>(false);
+  const [winner, setWinner] = useState<string>("");
+  const [winnerName, setWinnerName] = useState<string>("");
 
   // 初始化WebSocket连接
   useEffect(() => {
@@ -141,6 +144,10 @@ const LiveGamePage = () => {
           console.log(`[WebSocket] 处理游戏更新:`, messageData);
           handleGameUpdate(messageData);
           break;
+        case "game_complete":
+          console.log(`[WebSocket] 处理游戏结束:`, messageData);
+          handleGameComplete(messageData);
+          break;
         default:
           console.log(`[WebSocket] 未处理的消息类型: ${type}`);
       }
@@ -155,29 +162,30 @@ const LiveGamePage = () => {
     console.log(`[阶段变更] 阶段: ${phase}, 轮数: ${round_number}`);
     setCurrentRound(round_number);
 
-    // 重置发言者状态（非发言阶段清空，发言阶段保持等待状态）
+    // 重置发言者状态
     if (phase !== "debate") {
       console.log(`[阶段变更] 重置发言者状态，因为不是发言阶段`);
       setCurrentSpeaker(-1); // 设置为-1表示没有活跃发言者
-      setCurrentSpeakerName("等待发言");
+      setCurrentSpeakerName("");
       setCurrentSpeech("");
     } else {
-      console.log(`[阶段变更] 进入发言阶段，清空上轮发言者但不清空内容（等待新发言覆盖）`);
+      console.log(`[阶段变更] 进入发言阶段，清空发言状态等待新发言`);
       setCurrentSpeaker(-1);
-      // 注意：不清空 currentSpeech，等待第一个 debate_turn 消息到来时自然覆盖
+      setCurrentSpeakerName("");
+      setCurrentSpeech("");
     }
 
-    // 如果从夜晚阶段切换到白天阶段，清空夜晚行动记录
+    // 如果从夜晚阶段切换到白天/发言阶段，清空夜晚行动和投票记录
     if (phase === "day" || phase === "debate") {
-      console.log(`[阶段变更] 进入白天阶段，清空夜晚行动记录`);
+      console.log(`[阶段变更] 进入白天/发言阶段，清空夜晚行动和旧的投票记录`);
       setNightActions([]);
+      setVoteRecords([]);
     }
     
-    // 如果进入投票阶段，清空之前的投票记录和票数，同时清空夜晚行动
+    // 如果进入投票阶段，清空之前的投票记录和票数
     if (phase === "voting") {
-      console.log(`[阶段变更] 进入投票阶段，清空投票记录和夜晚行动`);
+      console.log(`[阶段变更] 进入投票阶段，清空投票记录和票数`);
       setVoteRecords([]);
-      setNightActions([]);
       setPlayers(prev => prev.map(player => ({ ...player, votes: 0 })));
     }
 
@@ -325,17 +333,17 @@ const LiveGamePage = () => {
     
     const { action_type, player_name, target_name, role } = data;
     
-    // 构建行动描述 - 完整格式，包括图标、角色、玩家名和行动
+    // 构建行动描述 - 与系统消息格式一致，不显示玩家名字
     let actionText = "";
     
-    if (action_type === "kill" || action_type === "werewolf_kill") {
-      actionText = `🐺 狼人 ${player_name} 打算杀害 ${target_name}`;
-    } else if (action_type === "protect") {
-      actionText = `⚕️ 医生 ${player_name} 保护 ${target_name}`;
-    } else if (action_type === "investigate" || action_type === "check") {
-      actionText = `🔮 预言家 ${player_name} 查验 ${target_name}`;
+    if (action_type === "night_eliminate") {
+      actionText = `🐺 狼人打算杀害${target_name}`;
+    } else if (action_type === "night_protect") {
+      actionText = `⚕️ 医生保护${target_name}`;
+    } else if (action_type === "night_investigate") {
+      actionText = `🔮 预言家查验${target_name}`;
     } else {
-      actionText = `${player_name} 进行了 ${action_type} 行动`;
+      actionText = `${role || '未知角色'} 对 ${target_name || '未知目标'} 进行了行动`;
     }
     
     // 添加到夜晚行动列表（保留最近5条，并去重）
@@ -390,6 +398,31 @@ const LiveGamePage = () => {
         summary: summary
       }];
     });
+  };
+
+  // 处理游戏结束
+  const handleGameComplete = (data: any) => {
+    console.log(`[游戏结束] 收到游戏结束消息:`, data);
+    const { winner, winner_name, players_info } = data;
+    
+    setGameEnded(true);
+    setWinner(winner);
+    setWinnerName(winner_name);
+    
+    // 更新玩家列表，显示真实角色
+    if (players_info) {
+      setPlayers(prev => prev.map(player => {
+        const info = players_info[player.name];
+        if (info) {
+          return {
+            ...player,
+            role: info.role,
+            status: info.alive ? "alive" : "eliminated"
+          };
+        }
+        return player;
+      }));
+    }
   };
 
   // 处理游戏更新
@@ -591,6 +624,7 @@ const LiveGamePage = () => {
                             isActive={isActive}
                             godMode={godMode}
                             votes={player.votes || 0}
+                            showRole={gameEnded}
                           />
                           {isActive && (
                             <div className="text-center mt-2">
@@ -640,9 +674,35 @@ const LiveGamePage = () => {
                 {/* 发言内容区域 */}
                 <div className="flex-1 flex items-center justify-center p-8 overflow-y-auto">
                   {/* 调试信息 */}
-                  {console.log(`[渲染] gamePhaseType="${gamePhaseType}", currentSpeech=${!!currentSpeech}, currentSpeaker=${currentSpeaker}, voteRecords=${voteRecords.length}, nightActions=${nightActions.length}`)}
+                  {console.log(`[渲染] gameEnded=${gameEnded}, gamePhaseType="${gamePhaseType}", currentSpeech=${!!currentSpeech}, currentSpeaker=${currentSpeaker}, voteRecords=${voteRecords.length}, nightActions=${nightActions.length}`)}
                   
-                  {currentSpeech && currentSpeakerName ? (
+                  {gameEnded ? (
+                    // 游戏结束 - 显示获胜信息
+                    <div className="w-full max-w-3xl text-center space-y-8 animate-in fade-in duration-700">
+                      {/* 庆祝图标 */}
+                      <div className="text-9xl mb-6 animate-bounce">
+                        {winner === "Werewolves" ? "🐺" : "👥"}
+                      </div>
+                      
+                      {/* 获胜信息 */}
+                      <div className="bg-gradient-to-r from-amber-500/20 to-yellow-500/20 border-2 border-amber-400/60 rounded-2xl p-10">
+                        <h2 className="text-5xl font-bold mb-4 bg-gradient-to-r from-amber-300 via-yellow-300 to-amber-400 bg-clip-text text-transparent">
+                          游戏结束
+                        </h2>
+                        <div className="text-3xl font-bold text-amber-200 mb-2">
+                          🎉 {winnerName} 获胜！🎉
+                        </div>
+                        <div className="mt-6 text-slate-300 text-lg">
+                          共进行 {currentRound} 轮
+                        </div>
+                      </div>
+
+                      {/* 提示信息 */}
+                      <div className="text-slate-400 text-sm animate-pulse">
+                        查看左右两侧玩家卡片了解所有玩家的真实身份
+                      </div>
+                    </div>
+                  ) : currentSpeech && currentSpeakerName ? (
                     <div className="w-full max-w-4xl animate-in fade-in duration-500">
                       {/* 发言者头像区域 - 居中大头像 */}
                       <div className="flex flex-col items-center mb-8">
@@ -662,6 +722,7 @@ const LiveGamePage = () => {
                                   isActive={true}
                                   godMode={godMode}
                                   votes={players[currentSpeaker].votes || 0}
+                                  showRole={gameEnded}
                                 />
                               </div>
                             </div>
@@ -905,6 +966,7 @@ const LiveGamePage = () => {
                             isActive={isActive}
                             godMode={godMode}
                             votes={player.votes || 0}
+                            showRole={gameEnded}
                           />
                           {isActive && (
                             <div className="text-center mt-2">

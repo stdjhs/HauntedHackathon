@@ -12,13 +12,30 @@ interface ModelAvatarProps {
   isActive: boolean;
   godMode: "inside" | "outside";
   votes: number;
+  showRole?: boolean; // 是否显示角色（游戏结束时为true）
 }
 
-const ModelAvatar = ({ model, isActive, godMode, votes }: ModelAvatarProps) => {
+const ModelAvatar = ({ model, isActive, godMode, votes, showRole = false }: ModelAvatarProps) => {
   const [imageError, setImageError] = useState(false);
   
   // 构建图片路径
   const imagePath = `/${model.name}.png`;
+  
+  // 角色图标映射
+  const roleIcons: Record<string, string> = {
+    "Werewolf": "🐺",
+    "Seer": "🔮",
+    "Doctor": "⚕️",
+    "Villager": "👤"
+  };
+  
+  // 角色中文名映射
+  const roleNames: Record<string, string> = {
+    "Werewolf": "狼人",
+    "Seer": "预言家",
+    "Doctor": "医生",
+    "Villager": "村民"
+  };
   
   return (
     <div className="relative flex flex-col items-center">
@@ -104,11 +121,17 @@ const ModelAvatar = ({ model, isActive, godMode, votes }: ModelAvatarProps) => {
         </Card>
       </div>
 
-      {/* 名称显示在底部 */}
+      {/* 名称和角色显示在底部 */}
       <div className="mt-2 text-center">
         <div className="text-sm font-bold text-slate-200 truncate max-w-[90px]">
           {model.name}
         </div>
+        {showRole && model.role && (
+          <div className="mt-1 text-xs font-semibold text-amber-400 flex items-center justify-center gap-1">
+            <span>{roleIcons[model.role] || "❓"}</span>
+            <span>{roleNames[model.role] || model.role}</span>
+          </div>
+        )}
       </div>
     </div>
   );

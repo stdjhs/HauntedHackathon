@@ -378,13 +378,21 @@ class GameMaster:
   def run_day_phase(self):
     """Run the day phase which consists of the debate and voting."""
 
+    # 状态切换前暂停5秒
+    time.sleep(5)
+    
     # 发送白天/发言阶段通知
     self._notify_phase_change(phase="debate", round_number=self.current_round_num)
 
-    for idx in range(MAX_DEBATE_TURNS):
-      next_speaker = self.get_next_speaker()
+    # 改为每个存活玩家都发言一次（打乱顺序以增加随机性）
+    speakers = self.this_round.players.copy()
+    random.shuffle(speakers)  # 打乱发言顺序
+    
+    tqdm.tqdm.write(f"本轮发言顺序: {', '.join(speakers)}")
+
+    for idx, next_speaker in enumerate(speakers):
       if not next_speaker:
-        raise ValueError("get_next_speaker did not return a valid player.")
+        raise ValueError("发言者无效")
 
       player = self.state.players[next_speaker]
       try:
@@ -406,7 +414,7 @@ class GameMaster:
 
       self.this_round_log.debate.append((next_speaker, log))
       self.this_round.debate.append([next_speaker, dialogue])
-      tqdm.tqdm.write(f"{next_speaker} ({player.role}): {dialogue}")
+      tqdm.tqdm.write(f"[{idx + 1}/{len(speakers)}] {next_speaker} ({player.role}): {dialogue}")
 
       # 添加辩论延迟（使用配置文件）
       delay = get_delay("debate", self.delay_multiplier)
@@ -430,8 +438,12 @@ class GameMaster:
 
       self._progress()
 
-      if idx == MAX_DEBATE_TURNS - 1 or RUN_SYNTHETIC_VOTES:
+    # 所有人发言完毕后，进入投票阶段
+    if True or RUN_SYNTHETIC_VOTES:
         # 进入投票阶段
+        # 状态切换前暂停5秒
+        time.sleep(5)
+        
         # 发送投票阶段通知
         self._notify_phase_change(phase="voting", round_number=self.current_round_num)
         
@@ -584,6 +596,9 @@ class GameMaster:
 
     tqdm.tqdm.write(announcement)
     
+    # 状态切换前暂停5秒
+    time.sleep(5)
+    
     # 发送天亮阶段通知
     self._notify_phase_change(phase="day", round_number=self.current_round_num)
     
@@ -600,6 +615,9 @@ class GameMaster:
         else self.state.rounds[self.current_round_num - 1].players.copy()
     )
 
+    # 状态切换前暂停5秒
+    time.sleep(5)
+    
     # 发送夜晚阶段通知
     self._notify_phase_change(phase="night", round_number=self.current_round_num)
 
@@ -648,6 +666,10 @@ class GameMaster:
       # 转换胜利者名称为中文
       winner_name = "狼人" if self.state.winner == "Werewolves" else "好人"
       tqdm.tqdm.write(f"获胜者是：{winner_name}！")
+      
+      # 发送游戏结束通知
+      self._notify_game_complete(winner=self.state.winner, winner_name=winner_name)
+      
       self._progress()
 
   def stop(self):
@@ -883,6 +905,52 @@ class GameMaster:
 
     except Exception as e:
       print(f"[WebSocket错误] 玩家总结通知失败: {e}")
+
+  def _notify_game_complete(self, winner: str, winner_name: str):
+    """发送游戏结束 WebSocket 通知"""
+    try:
+      from src.services.game_manager.session_manager import _notify_game_complete
+      import asyncio
+
+      def run_async():
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+        try:
+          # 收集所有玩家的信息（包括身份）
+          players_info = {}
+          for player_name, player in self.state.players.items():
+            players_info[player_name] = {
+              "role": player.role,
+              "alive": player_name in self.this_round.players
+            }
+          
+          loop.run_until_complete(
+            _notify_game_complete(
+              session_id=self.state.session_id,
+              winner=winner,
+              winner_name=winner_name,
+              players_info=players_info,
+              round_number=self.current_round_num
+            )
+          )
+          print(f"[WebSocket] 游戏结束通知已发送: {winner_name} 获胜")
+        except Exception as e:
+          print(f"[WebSocket错误] 游戏结束通知发送失败: {e}")
+        finally:
+          loop.close()
+
+      import concurrent.futures
+      executor = concurrent.futures.ThreadPoolExecutor(max_workers=1)
+      future = executor.submit(run_async)
+      try:
+        future.result(timeout=1.0)
+      except concurrent.futures.TimeoutError:
+        print(f"[WebSocket警告] 游戏结束通知发送超时")
+      finally:
+        executor.shutdown(wait=False)
+
+    except Exception as e:
+      print(f"[WebSocket错误] 游戏结束通知失败: {e}")
 
   def run_game(self) -> str:
     """Run the entire Werewolf game and return the winner."""
