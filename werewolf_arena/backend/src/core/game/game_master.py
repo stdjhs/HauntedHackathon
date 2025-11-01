@@ -119,7 +119,7 @@ class GameMaster:
 
       # 发送 WebSocket 通知 - 狼人击杀行动
       self._notify_night_action(
-        action_type="eliminate",
+        action_type="night_eliminate",
         player_name=wolf.name,
         player_role="Werewolf",
         target_name=eliminated,
@@ -133,7 +133,7 @@ class GameMaster:
 
       # 发送 WebSocket 通知 - 狼人行动失败
       self._notify_night_action(
-        action_type="eliminate_failed",
+        action_type="error",
         player_name=wolf.name,
         player_role="Werewolf",
         details={
@@ -174,7 +174,7 @@ class GameMaster:
 
       # 发送 WebSocket 通知 - 医生保护行动
       self._notify_night_action(
-        action_type="protect",
+        action_type="night_protect",
         player_name=self.state.doctor.name,
         player_role="Doctor",
         target_name=protect,
@@ -188,7 +188,7 @@ class GameMaster:
 
       # 发送 WebSocket 通知 - 医生行动失败
       self._notify_night_action(
-        action_type="protect_failed",
+        action_type="error",
         player_name=self.state.doctor.name,
         player_role="Doctor",
         details={
@@ -233,7 +233,7 @@ class GameMaster:
 
       # 发送 WebSocket 通知 - 预言家查验行动
       self._notify_night_action(
-        action_type="investigate",
+        action_type="night_investigate",
         player_name=self.state.seer.name,
         player_role="Seer",
         target_name=unmask,
@@ -249,7 +249,7 @@ class GameMaster:
 
       # 发送 WebSocket 通知 - 预言家行动失败
       self._notify_night_action(
-        action_type="investigate_failed",
+        action_type="error",
         player_name=self.state.seer.name,
         player_role="Seer",
         details={
@@ -287,7 +287,11 @@ class GameMaster:
           log = f"Error: Invalid bid type"
     except Exception as e:
       # 如果出价过程出错，使用默认出价并记录错误
-      print(f"Error during bidding for {player_name}: {e}")
+      import traceback
+      print(f"[竞价错误] 玩家 {player_name} 竞价失败: {e}")
+      print(f"[竞价错误] 错误类型: {type(e).__name__}")
+      print(f"[竞价错误] 详细调用栈:")
+      traceback.print_exc()
       bid = 1
       log = f"Error: {str(e)}"
 
@@ -383,7 +387,11 @@ class GameMaster:
           log = f"Default dialogue used due to empty response"
       except Exception as e:
         # 如果发言过程出错，使用默认发言并记录错误
-        print(f"Error during debate for {next_speaker}: {e}")
+        import traceback
+        print(f"[辩论错误] 玩家 {next_speaker} 发言失败: {e}")
+        print(f"[辩论错误] 错误类型: {type(e).__name__}")
+        print(f"[辩论错误] 详细调用栈:")
+        traceback.print_exc()
         dialogue = f"我需要仔细观察并寻找线索。"
         log = f"Error: {str(e)}"
 

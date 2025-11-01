@@ -44,9 +44,31 @@ def group_and_format_observations(observations):
     """
     grouped = {}
     for obs in observations:
-        round_num = int(obs.split(":", 1)[0].split()[1])
-        obs_text = obs.split(":", 1)[1].strip().replace('"', "")
-        grouped.setdefault(round_num, []).append(obs_text)
+        try:
+            # 安全地解析观察记录
+            parts = obs.split(":", 1)
+            if len(parts) < 2:
+                print(f"[观察记录错误] 无效的观察记录格式: {obs}")
+                continue
+
+            prefix_parts = parts[0].split()
+            if len(prefix_parts) < 2:
+                print(f"[观察记录错误] 无效的前缀格式: {parts[0]}")
+                continue
+
+            # 尝试解析回合数字
+            try:
+                round_num = int(prefix_parts[1])
+            except (ValueError, IndexError) as e:
+                print(f"[观察记录错误] 无法解析回合数字 '{prefix_parts[1]}': {e}")
+                continue
+
+            obs_text = parts[1].strip().replace('"', "")
+            grouped.setdefault(round_num, []).append(obs_text)
+
+        except Exception as e:
+            print(f"[观察记录错误] 处理观察记录时发生错误 '{obs}': {e}")
+            continue
 
     formatted_obs = []
     for round_num, round_obs in sorted(grouped.items()):
