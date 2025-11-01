@@ -163,10 +163,11 @@ const LiveGamePage = () => {
       setNightActions([]);
     }
     
-    // 如果进入投票阶段，清空之前的投票记录和票数
+    // 如果进入投票阶段，清空之前的投票记录和票数，同时清空夜晚行动
     if (phase === "voting") {
-      console.log(`[阶段变更] 进入投票阶段，清空投票记录`);
+      console.log(`[阶段变更] 进入投票阶段，清空投票记录和夜晚行动`);
       setVoteRecords([]);
+      setNightActions([]);
       setPlayers(prev => prev.map(player => ({ ...player, votes: 0 })));
     }
 
@@ -201,6 +202,7 @@ const LiveGamePage = () => {
         phaseIcon = "❓";
     }
 
+    console.log(`[阶段变更] 设置状态: gamePhase="${phaseText}", gamePhaseType="${phaseType}", gamePhaseIcon="${phaseIcon}"`);
     setGamePhase(phaseText);
     setGamePhaseType(phaseType);
     setGamePhaseIcon(phaseIcon);
@@ -313,22 +315,17 @@ const LiveGamePage = () => {
     
     const { action_type, player_name, target_name, role } = data;
     
-    // 构建行动描述和图标
+    // 构建行动描述 - 完整格式，包括图标、角色、玩家名和行动
     let actionText = "";
-    let icon = "🌙";
     
     if (action_type === "kill" || action_type === "werewolf_kill") {
       actionText = `🐺 狼人 ${player_name} 打算杀害 ${target_name}`;
-      icon = "🐺";
     } else if (action_type === "protect") {
       actionText = `⚕️ 医生 ${player_name} 保护 ${target_name}`;
-      icon = "⚕️";
     } else if (action_type === "investigate" || action_type === "check") {
       actionText = `🔮 预言家 ${player_name} 查验 ${target_name}`;
-      icon = "🔮";
     } else {
       actionText = `${player_name} 进行了 ${action_type} 行动`;
-      icon = "🌙";
     }
     
     // 添加到夜晚行动列表（保留最近5条，并去重）
@@ -615,7 +612,7 @@ const LiveGamePage = () => {
                 {/* 发言内容区域 */}
                 <div className="flex-1 flex items-center justify-center p-8 overflow-y-auto">
                   {/* 调试信息 */}
-                  {console.log(`[渲染] currentSpeech=${!!currentSpeech}, currentSpeaker=${currentSpeaker}, players.length=${players.length}, currentSpeakerName="${currentSpeakerName}"`)}
+                  {console.log(`[渲染] gamePhaseType="${gamePhaseType}", currentSpeech=${!!currentSpeech}, currentSpeaker=${currentSpeaker}, voteRecords=${voteRecords.length}, nightActions=${nightActions.length}`)}
                   
                   {currentSpeech && currentSpeakerName ? (
                     <div className="w-full max-w-4xl animate-in fade-in duration-500">
@@ -682,7 +679,78 @@ const LiveGamePage = () => {
                     // 没有发言时，显示系统信息
                     <div className="flex items-center justify-center h-full p-8">
                       <div className="w-full max-w-3xl">
-                        {nightActions.length > 0 ? (
+                        {gamePhaseType === "投票" ? (
+                          // 投票阶段 - 实时投票结果
+                          <div className="space-y-4 animate-in fade-in duration-500">
+                            {/* 标题 */}
+                            <div className="text-center">
+                              <div className="inline-flex items-center gap-3 bg-gradient-to-r from-red-500/20 to-orange-500/20 border border-red-500/30 rounded-xl px-5 py-2">
+                                <span className="text-3xl">🗳️</span>
+                                <div className="text-left">
+                                  <h3 className="text-xl font-bold text-red-400">{gamePhase}</h3>
+                                  <p className="text-xs text-red-300">第 {currentRound} 轮 · {voteRecords.length}/{players.filter(p => p.status === 'alive').length} 票</p>
+                                </div>
+                              </div>
+                            </div>
+                            
+                            {/* 统一看板 */}
+                            <div className="bg-gradient-to-br from-red-500/10 to-orange-500/10 border border-red-500/30 rounded-xl p-4">
+                              {/* 得票排行 */}
+                              <div className="mb-3">
+                                <h4 className="text-sm font-bold text-red-300 mb-2 flex items-center gap-2">
+                                  <span>📊</span>
+                                  <span>得票统计</span>
+                                </h4>
+                                <div className="space-y-2">
+                                  {players
+                                    .filter(p => p.votes > 0)
+                                    .sort((a, b) => b.votes - a.votes)
+                                    .map((player, index) => (
+                                      <div 
+                                        key={player.id}
+                                        className="bg-slate-800/40 border border-red-500/20 rounded-lg px-3 py-2 flex items-center justify-between hover:border-red-400/40 transition-all"
+                                      >
+                                        <div className="flex items-center gap-2">
+                                          <span className="text-red-400 font-bold text-sm w-4">#{index + 1}</span>
+                                          <span className="text-slate-200 font-medium text-sm">{player.name}</span>
+                                        </div>
+                                        <Badge variant="destructive" className="font-bold text-xs px-2 py-0">
+                                          {player.votes} 票
+                                        </Badge>
+                                      </div>
+                                    ))}
+                                  {players.filter(p => p.votes > 0).length === 0 && (
+                                    <div className="text-center text-slate-400 py-4">
+                                      <p className="text-xs">等待玩家投票...</p>
+                                    </div>
+                                  )}
+                      </div>
+                    </div>
+
+                              {/* 投票记录 */}
+                              {voteRecords.length > 0 && (
+                                <div className="pt-3 border-t border-red-500/20">
+                                  <h4 className="text-sm font-bold text-orange-300 mb-2 flex items-center gap-2">
+                                    <span>📝</span>
+                                    <span>投票记录</span>
+                                  </h4>
+                                  <div className="flex flex-wrap gap-2 max-h-32 overflow-y-auto">
+                                    {voteRecords.map((record, index) => (
+                                      <div 
+                                        key={index}
+                                        className="inline-flex items-center gap-1.5 bg-slate-800/30 border border-orange-500/20 rounded-lg px-2 py-1 text-xs animate-in fade-in duration-300"
+                                      >
+                                        <span className="text-amber-300 font-medium">{record.voter}</span>
+                                        <span className="text-slate-500">→</span>
+                                        <span className="text-red-300 font-medium">{record.target}</span>
+                                      </div>
+                                    ))}
+                                  </div>
+                                </div>
+                              )}
+                            </div>
+                          </div>
+                        ) : nightActions.length > 0 ? (
                           // 显示夜晚行动
                           <div className="space-y-4">
                             <div className="text-center mb-6">
@@ -699,76 +767,6 @@ const LiveGamePage = () => {
                                 </p>
                               </div>
                             ))}
-                          </div>
-                        ) : gamePhaseType === "投票" ? (
-                          // 投票阶段 - 实时投票结果
-                          <div className="space-y-6 animate-in fade-in duration-500">
-                            <div className="text-center mb-6">
-                              <div className="text-6xl mb-4 animate-bounce">🗳️</div>
-                              <h3 className="text-2xl font-bold text-red-400 mb-2">{gamePhase}</h3>
-                              <div className="flex items-center justify-center gap-2">
-                                <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-                                <p className="text-red-400 text-sm font-medium">第 {currentRound} 轮 · 已投 {voteRecords.length} 票</p>
-                              </div>
-                            </div>
-                            
-                            {/* 投票统计 */}
-                            <div className="bg-gradient-to-r from-red-500/10 to-orange-500/10 border-2 border-red-500/40 rounded-2xl p-6">
-                              <h4 className="text-lg font-bold text-red-300 mb-4 text-center">📊 得票统计</h4>
-                              <div className="space-y-3">
-                                {players
-                                  .filter(p => p.votes > 0)
-                                  .sort((a, b) => b.votes - a.votes)
-                                  .map((player, index) => (
-                                    <div 
-                                      key={player.id}
-                                      className="bg-slate-800/50 border border-red-500/30 rounded-lg p-3 flex items-center justify-between hover:border-red-400/50 transition-all"
-                                    >
-                                      <div className="flex items-center gap-3">
-                                        <Badge className="bg-red-500/80 text-white font-bold w-6 h-6 flex items-center justify-center p-0">
-                                          {index + 1}
-                                        </Badge>
-                                        <span className="text-slate-200 font-medium">{player.name}</span>
-                                      </div>
-                                      <div className="flex items-center gap-2">
-                                        <div className="flex gap-1">
-                                          {Array.from({ length: player.votes }).map((_, i) => (
-                                            <div key={i} className="w-2 h-2 rounded-full bg-red-400" />
-                                          ))}
-                                        </div>
-                                        <Badge variant="destructive" className="font-bold">
-                                          {player.votes} 票
-                                        </Badge>
-                                      </div>
-                                    </div>
-                                  ))}
-                                {players.filter(p => p.votes > 0).length === 0 && (
-                                  <div className="text-center text-slate-400 py-6">
-                                    <p className="text-sm">等待玩家投票...</p>
-                                  </div>
-                                )}
-                              </div>
-                            </div>
-                            
-                            {/* 投票详情 */}
-                            {voteRecords.length > 0 && (
-                              <div className="bg-gradient-to-r from-orange-500/10 to-red-500/10 border-2 border-orange-500/40 rounded-2xl p-6">
-                                <h4 className="text-lg font-bold text-orange-300 mb-4 text-center">📝 投票详情</h4>
-                                <div className="space-y-2 max-h-48 overflow-y-auto">
-                                  {voteRecords.map((record, index) => (
-                                    <div 
-                                      key={index}
-                                      className="bg-slate-800/30 border border-orange-500/20 rounded-lg p-2 flex items-center gap-2 text-sm animate-in fade-in duration-300"
-                                    >
-                                      <span className="text-slate-400 font-mono text-xs">{index + 1}.</span>
-                                      <span className="text-amber-300 font-medium">{record.voter}</span>
-                                      <span className="text-slate-500">→</span>
-                                      <span className="text-red-300 font-medium">{record.target}</span>
-                                    </div>
-                                  ))}
-                                </div>
-                              </div>
-                            )}
                           </div>
                         ) : gamePhaseType === "夜晚" ? (
                           // 夜晚阶段系统信息

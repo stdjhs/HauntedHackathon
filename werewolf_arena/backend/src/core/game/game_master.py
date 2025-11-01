@@ -372,6 +372,9 @@ class GameMaster:
   def run_day_phase(self):
     """Run the day phase which consists of the debate and voting."""
 
+    # 发送白天/发言阶段通知
+    self._notify_phase_change(phase="debate", round_number=self.current_round_num)
+
     for idx in range(MAX_DEBATE_TURNS):
       next_speaker = self.get_next_speaker()
       if not next_speaker:
@@ -423,6 +426,9 @@ class GameMaster:
 
       if idx == MAX_DEBATE_TURNS - 1 or RUN_SYNTHETIC_VOTES:
         # 进入投票阶段
+        # 发送投票阶段通知
+        self._notify_phase_change(phase="voting", round_number=self.current_round_num)
+        
         votes, vote_logs = self.run_voting()
         self.this_round.votes.append(votes)
         self.this_round_log.votes.append(vote_logs)
@@ -568,6 +574,10 @@ class GameMaster:
           player.add_announcement(announcement)
 
     tqdm.tqdm.write(announcement)
+    
+    # 发送天亮阶段通知
+    self._notify_phase_change(phase="day", round_number=self.current_round_num)
+    
     self._progress()
 
   def run_round(self):
@@ -580,6 +590,9 @@ class GameMaster:
         if self.current_round_num == 0
         else self.state.rounds[self.current_round_num - 1].players.copy()
     )
+
+    # 发送夜晚阶段通知
+    self._notify_phase_change(phase="night", round_number=self.current_round_num)
 
     for action, message in [
         (
@@ -752,6 +765,42 @@ class GameMaster:
 
     except Exception as e:
       print(f"[WebSocket错误] 投票通知失败: {e}")
+
+  def _notify_phase_change(self, phase: str, round_number: int):
+    """发送阶段变更 WebSocket 通知"""
+    try:
+      from src.services.game_manager.session_manager import _notify_phase_change
+      import asyncio
+
+      def run_async():
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+        try:
+          loop.run_until_complete(
+            _notify_phase_change(
+              session_id=self.state.session_id,
+              phase=phase,
+              round_number=round_number
+            )
+          )
+          print(f"[WebSocket] 阶段变更通知已发送: {phase} (第{round_number}轮)")
+        except Exception as e:
+          print(f"[WebSocket错误] 阶段变更通知发送失败: {e}")
+        finally:
+          loop.close()
+
+      import concurrent.futures
+      executor = concurrent.futures.ThreadPoolExecutor(max_workers=1)
+      future = executor.submit(run_async)
+      try:
+        future.result(timeout=1.0)
+      except concurrent.futures.TimeoutError:
+        print(f"[WebSocket警告] 阶段变更通知发送超时: {phase}")
+      finally:
+        executor.shutdown(wait=False)
+
+    except Exception as e:
+      print(f"[WebSocket错误] 阶段变更通知失败: {e}")
 
   def run_game(self) -> str:
     """Run the entire Werewolf game and return the winner."""

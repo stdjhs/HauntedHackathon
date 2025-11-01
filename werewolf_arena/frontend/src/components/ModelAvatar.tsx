@@ -1,5 +1,6 @@
 import { Card, Badge } from "@/components/ui";
 import { Bot } from "lucide-react";
+import { useState } from "react";
 
 interface ModelAvatarProps {
   model: {
@@ -14,6 +15,11 @@ interface ModelAvatarProps {
 }
 
 const ModelAvatar = ({ model, isActive, godMode, votes }: ModelAvatarProps) => {
+  const [imageError, setImageError] = useState(false);
+  
+  // 构建图片路径
+  const imagePath = `/${model.name}.png`;
+  
   return (
     <div className="relative flex flex-col items-center">
       <div className="relative">
@@ -51,18 +57,27 @@ const ModelAvatar = ({ model, isActive, godMode, votes }: ModelAvatarProps) => {
             ${model.status === "eliminated" ? "opacity-40 grayscale" : ""}
           `}
         >
-          {/* 模型图标 */}
-          <div
-            className={`
-              w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300
-              ${isActive
-                ? "bg-gradient-to-br from-amber-400/40 to-amber-500/30 text-amber-300 shadow-inner shadow-amber-400/20"
-                : "bg-slate-700/50 text-slate-400"
-              }
-            `}
-          >
-            <Bot className={`w-5 h-5 transition-colors duration-300 ${isActive ? "text-amber-200" : ""}`} />
-          </div>
+          {/* 模型头像或图标 */}
+          {!imageError ? (
+            <img
+              src={imagePath}
+              alt={model.name}
+              className="w-full h-full object-cover rounded-full"
+              onError={() => setImageError(true)}
+            />
+          ) : (
+            <div
+              className={`
+                w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300
+                ${isActive
+                  ? "bg-gradient-to-br from-amber-400/40 to-amber-500/30 text-amber-300 shadow-inner shadow-amber-400/20"
+                  : "bg-slate-700/50 text-slate-400"
+                }
+              `}
+            >
+              <Bot className={`w-5 h-5 transition-colors duration-300 ${isActive ? "text-amber-200" : ""}`} />
+            </div>
+          )}
 
           {/* 票数 */}
           {votes > 0 && model.status === "alive" && (
