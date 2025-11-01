@@ -692,7 +692,7 @@ const LiveGamePage = () => {
 
           {/* 中间：本轮发言区域 */}
           <div className="col-span-8">
-            <Card className="h-[650px] bg-gradient-to-br from-slate-900/80 via-slate-800/70 to-slate-900/80 border-slate-700 shadow-2xl">
+            <Card className="h-[700px] bg-gradient-to-br from-slate-900/80 via-slate-800/70 to-slate-900/80 border-slate-700 shadow-2xl">
               <div className="h-full flex flex-col">
                 {/* 发言区标题 */}
                 <div className="p-4 border-b border-amber-500/30 bg-slate-800/50">
@@ -776,9 +776,9 @@ const LiveGamePage = () => {
                       </div>
                     </div>
                   ) : currentSpeech && currentSpeakerName ? (
-                    <div className="w-full max-w-4xl animate-in fade-in duration-500">
+                    <div className="w-full max-w-5xl animate-in fade-in duration-500">
                       {/* 发言者头像区域 - 居中大头像 */}
-                      <div className="flex flex-col items-center mb-8">
+                      <div className="flex flex-col items-center mb-6">
                         {(() => {
                           // 通过姓名查找当前发言玩家
                           const speakingPlayer = currentSpeakerName ?
@@ -789,7 +789,7 @@ const LiveGamePage = () => {
                             return (
                               <div className="relative">
                                 {/* 头像容器 - 原始照片加圆边框 */}
-                                <div className="w-24 h-24 rounded-full border-4 border-amber-400 shadow-lg overflow-hidden bg-white speaking-border-animate">
+                                <div className="w-20 h-20 rounded-full border-4 border-amber-400 shadow-lg overflow-hidden bg-white speaking-border-animate">
                                   {speakingPlayer.avatar ? (
                                     <img
                                       src={speakingPlayer.avatar}
@@ -803,7 +803,7 @@ const LiveGamePage = () => {
                                   )}
 
                                   {/* 发言状态指示器 */}
-                                  <div className="absolute bottom-0 right-0 w-6 h-6 bg-amber-400 rounded-full border-2 border-white animate-pulse" />
+                                  <div className="absolute bottom-0 right-0 w-5 h-5 bg-amber-400 rounded-full border-2 border-white animate-pulse" />
                                 </div>
                               </div>
                             );
@@ -811,8 +811,8 @@ const LiveGamePage = () => {
                             // 没找到玩家，显示通用头像
                             return (
                               <div className="relative">
-                                <div className="w-24 h-24 rounded-full border-2 border-amber-400 bg-gradient-to-br from-amber-500/30 to-yellow-500/30 flex items-center justify-center">
-                                  <Volume2 className="w-12 h-12 text-amber-400" />
+                                <div className="w-20 h-20 rounded-full border-2 border-amber-400 bg-gradient-to-br from-amber-500/30 to-yellow-500/30 flex items-center justify-center">
+                                  <Volume2 className="w-10 h-10 text-amber-400" />
                                 </div>
                               </div>
                             );
@@ -820,28 +820,28 @@ const LiveGamePage = () => {
                         })()}
 
                         {/* 发言者名字 */}
-                        <div className="mt-8 flex items-center gap-3">
-                          <Volume2 className="w-6 h-6 text-amber-400 animate-pulse" />
-                          <h3 className="text-2xl font-bold text-amber-300">
+                        <div className="mt-6 flex items-center gap-3">
+                          <Volume2 className="w-5 h-5 text-amber-400 animate-pulse" />
+                          <h3 className="text-xl font-bold text-amber-300">
                             {currentSpeakerName}
                           </h3>
                         </div>
                       </div>
 
                       {/* 发言内容卡片 - 金黄色主题 */}
-                      <div className="bg-gradient-to-br from-amber-500/10 to-yellow-500/10 border-2 border-amber-500/40 rounded-2xl p-8 shadow-2xl relative overflow-hidden">
+                      <div className="bg-gradient-to-br from-amber-500/10 to-yellow-500/10 border-2 border-amber-500/40 rounded-2xl p-10 shadow-2xl relative overflow-hidden">
                         {/* 发光背景效果 */}
                         <div className="absolute inset-0 bg-gradient-to-r from-amber-500/5 via-yellow-500/10 to-amber-500/5 animate-pulse" />
-                        
+
                         {/* 顶部装饰条 */}
                         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-amber-400 to-transparent shadow-lg shadow-amber-500/50" />
-                        
+
                         {/* 左侧装饰条 */}
                         <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-amber-400 via-yellow-400 to-amber-500 shadow-lg shadow-amber-500/50" />
-                        
+
                         {/* 发言内容 */}
                         <div className="relative z-10">
-                          <p className="text-slate-100 text-xl leading-relaxed whitespace-pre-wrap text-center">
+                          <p className="text-slate-100 text-lg leading-relaxed whitespace-pre-wrap text-center">
                             {currentSpeech}
                           </p>
                         </div>
